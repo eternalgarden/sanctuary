@@ -18,8 +18,6 @@ config/icon="uid://b25j34tue8wka"
 [autoload]
 
 DI="*res://sandbox/DI.cs"
-FrameProviderDispatcher="*uid://c0h1g3kwmw48l"
-ObservableTrackerRuntimeHook="*uid://bmuw474l1rjaj"
 
 [display]
 
