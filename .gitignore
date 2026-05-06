@@ -1,7 +1,6 @@
 # 🐖 Custom .gitignore
 
 # 🐖 Directories
-sanctuary/sandbox/
 **/node_modules/
 
 # 🐖 Blender stuff
