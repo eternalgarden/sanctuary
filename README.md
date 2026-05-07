@@ -1,11 +1,11 @@
 ![sanctuary image header](./docs/readme_media/sanctuary_header/sanctuary_header.png)
 
-sanctuary is a software for personal journaling. 
-- You walk around in a little 3D world, place your notes and edit them with a neat little text editor.
-- It is inspired by the idea of memory palaces.
-- It hopes to function as a spatial aid in both memorization and strengthening emotional connection to important events in your life and things you want to keep close to your heart in moments of darkness.
-- It uses a custom event-bus [rzeka](https://github.com/eternalgarden/rzeka) architecture.
-- The latest version `1.7.1_coreprincess` is freely available for download and your journaling [here & now on itch.io](https://eternalgarden.itch.io/sanctuary) for Linux, Mac & Windows. 
+sanctuary is a software for personal journaling
+- You walk around in a little 3D world, place your notes and edit them with a neat little text editor
+- It is inspired by the idea of memory palaces
+- It hopes to function as a spatial aid in both memorization and strengthening emotional connection to important events in your life and things you want to keep close to your heart in moments of darkness
+- It uses a custom event-bus [rzeka](https://github.com/eternalgarden/rzeka) architecture
+- The latest version `1.7.1_coreprincess` is freely available for download and your journaling [here & now on itch.io](https://eternalgarden.itch.io/sanctuary) for Linux, Mac & Windows
   - it is the legacy version built with Unity Engine
   - this repository is the port of that project to Godot (`7th May 2026` _in very early stages_)
   - 📜🍰 *your notes will be fully transferrable to the new Godot version*
@@ -32,11 +32,9 @@ The note editor supports:
 
 I no longer trust in the future Unity licensing decisions. Already locking access to *users' own projects* behind a login screen is a major red flag of their potential intentions and trajectories.
 
-I also firmly believe in the superiority of an open-source software (longevity, safety, transparency, community-orientation) as opposed to the black boxes like Unity Engine. 
+I also firmly believe in the superiority of an open-source software (longevity, safety, transparency, community-orientation) as opposed to the black boxes like Unity Engine.
 
-This is especially important for a notemaking software where people put their private thoughts.
-
-It was not a decision I made lightly, because Unity *Engine* is a magnificent machine that I came to know very closely over the last 10 years.
+This is especially important for a notemaking software where people put their private thoughts and it was not a decision I made lightly, because Unity *Engine* is a magnificent machine that I came to know very closely over the last 10 years.
 
 But Godot is very meow, I love it, it feels like breathing! The quest begins 🐱🪽🌟
 
