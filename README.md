@@ -4,6 +4,7 @@ sanctuary is a software for personal journaling.
 - You walk around in a little 3D world, place your notes and edit them with a neat little text editor.
 - It is inspired by the idea of memory palaces.
 - hopes to function as a spatial aid in both memorization and strengthening emotional connection to important events in your life and things you want to keep close to your heart in moments of darkness.
+- sanctuary uses [rzeka](https://github.com/eternalgarden/rzeka) architecture
 - The latest version `1.7.1_coreprincess` is freely available for download and your journaling [here & now on itch.io](https://eternalgarden.itch.io/sanctuary) for Linux, Mac & Windows. 
   - it is the legacy version built with Unity3D
   - this repository is the port of that project to Godot (`7th May 2026` _in very early stages_)
