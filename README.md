@@ -12,7 +12,7 @@ sanctuary is a software for personal journaling.
 
 ## Your notes are (quite) safe
 
-sanctuary inits a `git repository` in the place where it creates your user data & notes directory (`sanctuary_magic_box/` in your Documents).
+sanctuary inits a `git repository` where it created your user data & notes directory (`sanctuary_magic_box/` in your Documents).
 - It does that with help of [libgit2sharp](https://github.com/libgit2/libgit2sharp).
 - Every time your note is saved, a `git commit` with changes to this note is made. 
 - This ensures a much greater safety of your notes in case something goes really bad with e.g. data migration of a new sanctuary version or simply if you delete accidentally a bunch of your notes or made some accidental edits that you want to undo.
