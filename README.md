@@ -3,20 +3,21 @@
 sanctuary is a software for personal journaling. 
 - You walk around in a little 3D world, place your notes and edit them with a neat little text editor.
 - It is inspired by the idea of memory palaces.
-- hopes to function as a spatial aid in both memorization and strengthening emotional connection to important events in your life and things you want to keep close to your heart in moments of darkness.
-- sanctuary uses [rzeka](https://github.com/eternalgarden/rzeka) architecture
+- It hopes to function as a spatial aid in both memorization and strengthening emotional connection to important events in your life and things you want to keep close to your heart in moments of darkness.
+- It uses a custom event-bus [rzeka](https://github.com/eternalgarden/rzeka) architecture.
 - The latest version `1.7.1_coreprincess` is freely available for download and your journaling [here & now on itch.io](https://eternalgarden.itch.io/sanctuary) for Linux, Mac & Windows. 
-  - it is the legacy version built with Unity3D
+  - it is the legacy version built with Unity Engine
   - this repository is the port of that project to Godot (`7th May 2026` _in very early stages_)
   - 📜🍰 *your notes will be fully transferrable to the new Godot version*
 
 ## Your notes are (quite) safe
 
-sanctuary inits a `git repository` where it created your user data & notes directory (`sanctuary_magic_box/` in your Documents).
-- It does that with help of [libgit2sharp](https://github.com/libgit2/libgit2sharp).
-- Every time your note is saved, a `git commit` with changes to this note is made. 
-- This ensures a much greater safety of your notes in case something goes really bad with e.g. data migration of a new sanctuary version or simply if you delete accidentally a bunch of your notes or made some accidental edits that you want to undo.
-- "_quite_" because it is still your own responsibility to make sure to back up your sanctuary data.
+sanctuary inits a `git repository` where it created your user data & notes directory:
+- `~/Documents/sanctuary_magic_box/`
+- It does that with help of [libgit2sharp](https://github.com/libgit2/libgit2sharp)
+- Every time your note is saved, a `git commit` with changes to this note is made
+- This ensures a much greater safety of your notes in case something goes really bad with e.g. data migration of a new sanctuary version or simply if you delete accidentally a bunch of your notes or made some accidental edits that you want to undo
+- "_quite_" because it is still your responsibility to make sure to back up that magic box directory
 
 ## Note editor
 
