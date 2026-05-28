@@ -1,8 +1,10 @@
 # sanctuary
 
-> 🌟📜🐇 [Download Sanctuary at itch.io](https://eternalgarden.itch.io/sanctuary)
-
-This repository is a FOSS porting project of Sanctuary from its Unity implementation into Godot.
+> 🌟📜🐇 Download the final Unity version of [Sanctuary at itch.io](https://eternalgarden.itch.io/sanctuary)
+> 
+> This repository is a FOSS porting project of Sanctuary from Unity into Godot.
+>
+> 🍰 *Your notes will be fully transferrable to the new Godot version!*
 
 ![sanctuary image header](./docs/readme_media/sanctuary_header/sanctuary_header.png)
 
@@ -11,8 +13,15 @@ sanctuary is a software for personal journaling
 - It is inspired by the idea of memory palaces.
 - It hopes to function as a spatial aid in both memorization and strengthening emotional connection to things you want to keep close to your heart in the moments of darkness.
 - It uses [a custom event-bus 'rzeka'](https://github.com/eternalgarden/rzeka) architecture.
-- The final Unity version is freely available for download and your own journaling endeavours [here & now on itch.io](https://eternalgarden.itch.io/sanctuary) for Linux, Mac & Windows.
-  - 📜🍰 *Your notes will be fully transferrable to the new Godot version!*
+
+## Note editor
+
+![sanctuary note editor screenshot](./docs/readme_media/sanct_note_editor.png)
+
+The note editor supports:
+- basic text formatting (with a lil' emoji picker)
+- adding images (resizing them and setting their text flow property)
+- custom themes (that you write with `css` and see them updated in real-time in sanctuary, more notes on that inside sanctuary)
 
 ## Your notes are (quite) safe
 
@@ -24,15 +33,6 @@ sanctuary inits a `git repository` where it created your user data & notes direc
   - e.g. data migration of a new sanctuary version.
   - or simply if you accidentally delete a bunch of your notes or made some edits that you want to undo.
 - "_quite_" because it is still your responsibility to make sure to back up that `sanctuary_magic_box` directory.
-
-## Note editor
-
-![sanctuary note editor screenshot](./docs/readme_media/sanct_note_editor.png)
-
-The note editor supports:
-- basic text formatting (with a lil' emoji picker)
-- adding images (resizing them and setting their text flow property)
-- custom themes (that you write with `css` and see them updated in real-time in sanctuary, more notes on that inside sanctuary)
 
 ## Why switch to Godot?
 
