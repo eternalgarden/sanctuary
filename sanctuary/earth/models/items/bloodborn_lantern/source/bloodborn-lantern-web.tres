@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cdf8b6a6a2hgq"]
+
+[ext_resource type="Texture2D" uid="uid://m4d3pwvnjg3s" path="res://earth/models/items/bloodborn_lantern/source/11174_spider-web.png" id="1_oh47y"]
+[ext_resource type="Texture2D" uid="uid://bncifdl1ffytn" path="res://earth/models/items/bloodborn_lantern/source/98080_lantern_Normal.jpg" id="3_o5ylw"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.142
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_oh47y")
+emission = Color(0.57700837, 0.5770084, 0.57700837, 1)
+emission_energy_multiplier = 0.1
+normal_texture = ExtResource("3_o5ylw")

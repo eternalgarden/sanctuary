@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://da87jomsy1pgv"]
+
+[ext_resource type="PackedScene" uid="uid://b6kcdtc3758o" path="res://earth/models/items/bloodborn_lantern/source/bloodborn-lantern-source.gltf" id="1_ieubl"]
+[ext_resource type="Script" uid="uid://ciwlfo1grl52" path="res://moon/vfx/scripts/CandleFlicker.cs" id="2_gylrv"]
+
+[node name="bloodborn-lantern" unique_id=830609406 instance=ExtResource("1_ieubl")]
+
+[node name="lantern" parent="bloodborn_lantern/bloodborn_lantern " parent_id_path=PackedInt32Array(997752890) index="1" unique_id=1496847843]
+gi_mode = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="bloodborn_lantern/bloodborn_lantern /lantern" index="0" unique_id=2063860505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8660157, 0, -4.8468385)
+light_color = Color(0.28235295, 1, 1, 1)
+light_energy = 0.4
+light_volumetric_fog_energy = 0.2
+omni_shadow_mode = 0
+script = ExtResource("2_gylrv")
+BaseEnergy = 0.5
+EnergyVariation = 0.05
+FlickerSpeed = 1.0
+PositionDrift = 0.2
+_color1 = Color(0.28235295, 1, 1, 1)
+_color2 = Color(0.28235295, 0.73333335, 1, 1)
