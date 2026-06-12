@@ -44,6 +44,7 @@ todo
 		- serializers `Sanctuary.Common.Serializers`
 		- extensions `Sanctuary.Common.Extensions`
 		- math `Sanctuary.Common.Math`
+		- utility `Sanctuary.Common.Utility`
 - editor `Sanctuary.Editor`
 - forest `Sanctuary.Forest` (see [[#component structure]])
 	- *allowed to reference `common, fairies and matter, never each other`, a forest is many independent things sharing a single environment, each component is a tree, they communicate through a shared root system which takes its nutrients from water, this is `rzeka`* 
