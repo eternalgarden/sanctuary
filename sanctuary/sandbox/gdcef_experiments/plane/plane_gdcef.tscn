@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://xu4hx6dn0ysq"]
+
+[ext_resource type="PackedScene" uid="uid://28q78vtap88u" path="res://sandbox/_scenes/sandbox.tscn" id="1_gm2fk"]
+[ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://moon/assets/models/functional/scroll/scroll.tscn" id="2_0om8w"]
+[ext_resource type="Script" uid="uid://bnmh05m1y0i6m" path="res://sandbox/gdcef_experiments/plane/PlaneMeshGdcef.cs" id="3_5dsh0"]
+
+[node name="PlaneGdcef" type="Node3D" unique_id=552451467]
+
+[node name="Sandbox" parent="." unique_id=506889607 instance=ExtResource("1_gm2fk")]
+
+[node name="mesh_scroll" parent="." unique_id=910502028 instance=ExtResource("2_0om8w")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -1.2544875, 0, -4.897987)
+script = ExtResource("3_5dsh0")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1708253383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2866025, 1.0547504, -3.4647803)

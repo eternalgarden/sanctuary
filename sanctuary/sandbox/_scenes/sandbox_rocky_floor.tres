@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xqyhgpspvreq"]
+
+[ext_resource type="Texture2D" uid="uid://bn81p88dqkv5o" path="res://earth/textures/rock/rock_red_blocky_moss/rocky_terrain_diff_1k.jpg" id="1_gyuyx"]
+
+[resource]
+albedo_texture = ExtResource("1_gyuyx")
+uv1_scale = Vector3(2, 2, 2)

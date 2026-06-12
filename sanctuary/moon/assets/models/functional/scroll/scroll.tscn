@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d0b8f2q3myswe"]
+
+[ext_resource type="PackedScene" uid="uid://c0s65x3lpkvop" path="res://moon/assets/models/functional/scroll/mesh_scroll.fbx" id="1_vy6lo"]
+[ext_resource type="Material" uid="uid://b737effldetf7" path="res://moon/assets/models/functional/scroll/material_scroll.tres" id="2_ih3e5"]
+
+[node name="mesh_scroll" unique_id=910502028 instance=ExtResource("1_vy6lo")]
+
+[node name="scroll+door+mesh" parent="." index="0" unique_id=137685625]
+surface_material_override/0 = ExtResource("2_ih3e5")
