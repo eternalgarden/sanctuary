@@ -16,6 +16,10 @@
 export.cfg
 export_credentials.cfg
 
+# 🐖 Godot baked GI data (build artifacts - regenerate by re-baking, see rebake plan)
+*.VoxelGI_data.res
+*.lmbake
+
 # 🐖 Imported translations (automatically generated from CSV files)
 *.translation
 
