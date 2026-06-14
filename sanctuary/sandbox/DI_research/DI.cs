@@ -13,8 +13,8 @@ public partial class DI : Node
         Instance = this;
         var services = new ServiceCollection();
 
-        var spring = new Spring();
-        services.AddSingleton<IRzeka>(_ => spring.Create("sanctuary"));
+        // var spring = new Spring();
+        // services.AddSingleton<IRzeka>(_ => spring.Create("sanctuary"));
 
         _provider = services.BuildServiceProvider();
     }
