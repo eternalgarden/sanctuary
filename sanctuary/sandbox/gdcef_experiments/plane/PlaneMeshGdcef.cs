@@ -11,14 +11,25 @@ using Sanctuary.Common.Extensions;
 
 namespace Sanctuary.Sandbox;
 
+// Important pixel-perfect setup notes:
+// 1. Set texture sampling to Nearest (disable mipmapping)
+// 2. Disable TAA, at least at the moment when you want to switch to pix-perf
 public partial class PlaneMeshGdcef : Node3D
 {
     StandardMaterial3D _material;
     TextureRect _view;
 
-    public override void _EnterTree() { }
-
-    public override void _Ready()
+    // Create the browser already sized to `size` (the pixel-perfect resolution the
+    // focused note will occupy on screen). The caller (the controller) computes this
+    // and calls Initialize from ITS _Ready — which runs after this child's _Ready, so
+    // we deliberately do NOT create the browser in _Ready.
+    //
+    // The browser is built at its final size on purpose: resizing a live software-OSR
+    // CefTexture (setting _view.Size after it is in the tree) tears down and recreates
+    // its X surface and crashes with an XServer BadWindow fault. So there is no
+    // SetResolution — if the screen resolution changes, the whole view must be REBUILT
+    // (free this _view and call Initialize again with the new size), never resized.
+    public void Initialize(Vector2I size)
     {
         MeshInstance3D mesh = this.GetAllNodesOfType<MeshInstance3D>()[0];
 
@@ -30,15 +41,14 @@ public partial class PlaneMeshGdcef : Node3D
         );
         _material = mesh.GetActiveMaterial(0) as StandardMaterial3D;
         _view = browser as TextureRect;
-        float aspect = 1.6f; // the scroll mesh is specifically made for this aspect
-        _view.Size = new Vector2(1080, Mathf.RoundToInt(1080 * aspect)); // (1080, 1728) 1080 is arbitrary
+        _view.Size = size; // pixel-perfect: set ONCE, before AddChild, never resized live
         _view.Position = new Vector2(-10000, -10000);
         AddChild(_view);
     }
 
     public override void _Process(double delta)
     {
-        if (_view.Texture is Texture2D tex && _material.AlbedoTexture != tex)
+        if (_view is not null && _view.Texture is Texture2D tex && _material.AlbedoTexture != tex)
             _material.AlbedoTexture = tex;
     }
 

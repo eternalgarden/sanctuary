@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 [autoload]
 
 DI="*res://sandbox/DI_research/DI.cs"
-RiverSource="*uid://duiywhcgb3fgj"
+RzekaSource="*uid://b2oud7d0wc0x8"
 
 [display]
 
@@ -28,7 +28,7 @@ project/assembly_name="sanctuary"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/goblend/plugin.cfg")
 
 [input]
 
@@ -71,4 +71,3 @@ jump={
 
 rendering_device/driver.windows="d3d12"
 anti_aliasing/quality/use_debanding=true
-anti_aliasing/quality/use_taa=true
