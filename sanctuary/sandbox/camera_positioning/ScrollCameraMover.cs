@@ -10,21 +10,21 @@ using Godot;
 
 namespace Sanctuary.Sandbox;
 
-public sealed class FocusCameraMover
+public sealed class ScrollCameraMover
 {
     readonly Camera3D _worldCamera;
     readonly Camera3D _focusCamera;
     readonly Node _host; // Todo: we need this for createtween, later replace with di
     Tween _activeTween;
 
-    public FocusCameraMover(Camera3D world, Camera3D focus, Node host)
+    public ScrollCameraMover(Camera3D world, Camera3D focus, Node host)
     {
         _worldCamera = world;
         _focusCamera = focus;
         _host = host;
     }
 
-    public void BlendToNote(Transform3D target, NoteCameraSettings s)
+    public void BlendToNote(Transform3D target, ScrollFramingSettings s)
     {
         KillActive();
 
@@ -38,7 +38,7 @@ public sealed class FocusCameraMover
         Blend(_focusCamera.GlobalTransform, target, s.BlendInSeconds, s, onDone: null);
     }
 
-    public void BlendBackToPlayer(NoteCameraSettings s)
+    public void BlendBackToPlayer(ScrollFramingSettings s)
     {
         KillActive();
         Blend(
@@ -57,7 +57,7 @@ public sealed class FocusCameraMover
         _activeTween = null;
     }
 
-    void Blend(Transform3D from, Transform3D to, float seconds, NoteCameraSettings s, Action onDone)
+    void Blend(Transform3D from, Transform3D to, float seconds, ScrollFramingSettings s, Action onDone)
     {
         _activeTween = _host.CreateTween();
         _activeTween.SetTrans(s.Transition).SetEase(s.Ease);

@@ -10,7 +10,7 @@ using Godot;
 namespace Sanctuary.Sandbox;
 
 [GlobalClass]
-public partial class NoteCameraSettings : Resource
+public partial class ScrollFramingSettings : Resource
 {
     [Export(PropertyHint.Range, "0.5,1,0.01")]
     public float FillFraction { get; set; } = 0.9f;

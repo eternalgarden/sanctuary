@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bnmh05m1y0i6m" path="res://sandbox/gdcef_experiments/plane/PlaneMeshGdcef.cs" id="3_5dsh0"]
 [ext_resource type="Material" uid="uid://b737effldetf7" path="res://moon/assets/models/functional/scroll/material_scroll.tres" id="3_a0vyr"]
 [ext_resource type="Script" uid="uid://csxtpedlf1gvt" path="res://sandbox/camera_positioning/CameraPositioningSandbox.cs" id="4_m71sw"]
-[ext_resource type="Resource" uid="uid://d1tcjk71htoji" path="res://sandbox/camera_positioning/NoteCameraSettings.tres" id="5_j53n1"]
+[ext_resource type="Resource" uid="uid://d1tcjk71htoji" path="res://sandbox/camera_positioning/ScrollFramingSettings.tres" id="5_j53n1"]
 [ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="6_a0vyr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2q5t"]

@@ -21,25 +21,24 @@ public partial class CameraPositioningSandbox : Node3D
     public MeshInstance3D Note { get; set; }
 
     [Export]
-    public NoteCameraSettings Settings { get; set; }
+    public ScrollFramingSettings Settings { get; set; }
 
     [Export]
     public PlaneMeshGdcef NoteBrowser { get; set; }
 
     bool _focused;
-    FocusCameraMover _mover;
+    ScrollCameraMover _mover;
 
     public override void _Ready()
     {
-        _mover = new FocusCameraMover(WorldCamera, FocusCamera, this);
+        _mover = new ScrollCameraMover(WorldCamera, FocusCamera, this);
 
         // Build the browser ONCE at its pixel-perfect size. Done here (parent _Ready,
         // which runs after the child's) so the size is known before the browser is
         // created — the browser is never resized live (see PlaneMeshGdcef.Initialize).
         int viewportHeight = (int)GetViewport().GetVisibleRect().Size.Y;
-        FramingResult framing = NoteFramingSolver.Solve(
-            Note, WorldCamera.Fov, Settings.FillFraction, viewportHeight);
-        NoteBrowser.Initialize(framing.CefSize);
+        Vector2I cefSize = ScrollFramingSolver.SolveCefSize(Note, Settings.FillFraction, viewportHeight);
+        NoteBrowser.Initialize(cefSize);
     }
 
     public override void _UnhandledInput(InputEvent @event)
@@ -49,14 +48,8 @@ public partial class CameraPositioningSandbox : Node3D
             _focused = !_focused;
             if (_focused)
             {
-                int viewportHeight = (int)GetViewport().GetVisibleRect().Size.Y;
-                FramingResult framing = NoteFramingSolver.Solve(
-                    Note,
-                    WorldCamera.Fov,
-                    Settings.FillFraction,
-                    viewportHeight
-                );
-                _mover.BlendToNote(framing.Pose, Settings);
+                Transform3D pose = ScrollFramingSolver.SolvePose(Note, WorldCamera.Fov, Settings.FillFraction);
+                _mover.BlendToNote(pose, Settings);
             }
             else
                 _mover.BlendBackToPlayer(Settings);

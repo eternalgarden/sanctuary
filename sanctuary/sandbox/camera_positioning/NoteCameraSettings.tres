@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="NoteCameraSettings" format=3 uid="uid://d1tcjk71htoji"]
-
-[ext_resource type="Script" uid="uid://dtidjnbo3xont" path="res://sandbox/camera_positioning/NoteCameraSettings.cs" id="1_o7tqg"]
-
-[resource]
-script = ExtResource("1_o7tqg")
-metadata/_custom_type_script = "uid://dtidjnbo3xont"

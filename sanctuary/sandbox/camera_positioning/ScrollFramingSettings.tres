@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ScrollFramingSettings" format=3 uid="uid://d1tcjk71htoji"]
+
+[ext_resource type="Script" uid="uid://bcygxp42e2e6q" path="res://sandbox/camera_positioning/ScrollFramingSettings.cs" id="1_o7tqg"]
+
+[resource]
+script = ExtResource("1_o7tqg")
+FillFraction = 0.95
