@@ -14,7 +14,7 @@ using Rzeka.Dev;
 
 namespace Sanctuary.Forest.Autoloads;
 
-public partial class RzekaSource : Node
+public partial class RiverSource : Node
 {
     public static IRzeka Rzeka { get; private set; }
 
