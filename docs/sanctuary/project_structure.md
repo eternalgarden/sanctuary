@@ -1,5 +1,4 @@
-todo
-- enforce rules with NetArchTest
+
 # filesystem
 
 - addons
@@ -47,16 +46,17 @@ todo
 		- utility `Sanctuary.Common.Utility`
 - editor `Sanctuary.Editor`
 - forest `Sanctuary.Forest` (see [[#component structure]])
-	- *allowed to reference `common, fairies and matter, never each other`, a forest is many independent things sharing a single environment, each component is a tree, they communicate through a shared root system which takes its nutrients from water, this is `rzeka`* 
+	- **allowed to reference**: `common, fairies and matter, never each other`
+	- a forest is many independent things sharing a single environment, each component is a tree, they communicate through a shared root system which takes its nutrients from water, this is `rzeka`* 
 	- example contents:
 		- portals `Sanctuary.Forest.Portals
 		- inventory `Sanctuary.Forest.Inventory`
 		- post_processing `Sanctuary.Forest.PostProcessing`
 		- welcoming_screen `Sanctuary.Forest.WelcomingScreen`
 - fairies `Sanctuary.Fairies`
-	- *may reference `common, matter and other fairies' public interfaces - acyclically`. never `forest, never anyones .Internal`*
+	- **allowed to reference**: `common, matter and other fairies' public interfaces - acyclically`. never `forest, never anyones .Internal`*
 	- **fairy or forest?** 
-		- rule of thumb: **exposes an interface? fairy spotted.** 
+		- rule of thumb: **exposes an interface? fairy spotted.**
 		- a module is a `fairy` if it must expose a synchronously-queried interface that other modules depend on in runtime. 
 		- an example is very densely accessed information like player position or raycasting because it would totally pollute rzeka otherwise.
 		- this means a fairy is the only being that *can bypass rzeka*.
@@ -92,6 +92,10 @@ todo
 	1. `public interfaces and enums used in those interfaces`
 	2. `internal/` subdirectory (`Sanctuary.Fairies.Player.Internal`)
 		- actual implementation of data fairy
-	- `game/`
+		- `game/`
 		- player `.tscn` etc.
+
+# TODO
+
+- [ ] enforce rules with NetArchTest 
 

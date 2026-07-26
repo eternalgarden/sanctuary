@@ -1,0 +1,15 @@
+{
+  "anuppuccin-theme-settings@@anp-codeblock-numbers": true,
+  "anuppuccin-theme-settings@@anuppuccin-theme-dark": "ctp-frappe",
+  "anuppuccin-theme-settings@@anp-active-line": "anp-current-line",
+  "anuppuccin-theme-settings@@anp-code-text-color@@dark": "#FFBCE6",
+  "anuppuccin-theme-settings@@anp-alt-rainbow-style": "anp-simple-rainbow-color-toggle",
+  "Editor@@bold-color@@dark": "#EBDA5F",
+  "Editor@@italic-color@@dark": "#8599FF",
+  "Editor@@inline-code-normal@@dark": "#9BEB5F",
+  "Editor@@link-color@@dark": "#8599FF",
+  "Editor@@link-color-hover@@dark": "#24FFC4",
+  "Editor@@link-color@@light": "#5E94F2",
+  "Editor@@link-external-color@@dark": "#97A8FF",
+  "Editor@@link-external-color-hover@@dark": "#CDA3FF"
+}
