@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://ci8kg40ae4vnl"]
+
+[ext_resource type="Script" uid="uid://n8sksqrr2qpd" path="res://fillory/fairies/player/internal/character-controller/effects/audio/AudioInteract.cs" id="1_h7qps"]
+[ext_resource type="AudioStream" uid="uid://ds7ryp7lrjkbk" path="res://earth/sounds/collections/CharacterControllerPlugin/stepstone_8.wav" id="1_r63y8"]
+[ext_resource type="AudioStream" uid="uid://dygk2exfcwaxj" path="res://earth/sounds/collections/CharacterControllerPlugin/stepstone_7.wav" id="2_hgal4"]
+[ext_resource type="AudioStream" uid="uid://d1824xmt02a32" path="res://earth/sounds/collections/CharacterControllerPlugin/stepstone_1.wav" id="4_ec8je"]
+[ext_resource type="AudioStream" uid="uid://cxycqe7hdav7o" path="res://earth/sounds/collections/CharacterControllerPlugin/stepstone_2.wav" id="5_b6xfx"]
+
+[resource]
+script = ExtResource("1_h7qps")
+JumpAudio = ExtResource("1_r63y8")
+LandedAudio = ExtResource("2_hgal4")
+StepAudios = [ExtResource("4_ec8je"), ExtResource("5_b6xfx")]

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://8oy3xm2sff8"]
+
+[ext_resource type="PackedScene" uid="uid://ciu2qgckgu5sr" path="res://fillory/fairies/player/game/character-controller/controller.tscn" id="1_i5d1d"]
+[ext_resource type="Script" uid="uid://xkj47sp6uoov" path="res://fillory/fairies/player/internal/character-controller/core/FPSController3D.cs" id="2_6nmn0"]
+[ext_resource type="Script" uid="uid://5onr50ba6dq5" path="res://fillory/fairies/player/internal/character-controller/core/HeadMovement3D.cs" id="3_isk7p"]
+[ext_resource type="Script" uid="uid://c16aeqrp1mbee" path="res://fillory/fairies/player/internal/character-controller/effects/bob/HeadBob.cs" id="4_7m5s6"]
+[ext_resource type="Resource" uid="uid://duu5m0sajkuix" path="res://fillory/fairies/player/game/character-controller/curves/timed_bob_curve.tres" id="5_cryla"]
+
+[node name="FPSController3D" unique_id=1318750409 instance=ExtResource("1_i5d1d")]
+script = ExtResource("2_6nmn0")
+FovChangeSpeed = 4.0
+SprintFovMultiplier = 1.1
+CrouchFovMultiplier = 0.95
+SwimFovMultiplier = 1.0
+MouseSensitivity = 2.0
+VerticalAngleLimit = 90.0
+StepBobEnabled = true
+VerticalHorizontalRatio = 2.0
+JumpBobEnabled = true
+RotationToMove = true
+SpeedRotation = 4.0
+AngleLimitForRotation = 0.1
+
+[node name="Head" type="Marker3D" parent="." index="8" unique_id=760985275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
+script = ExtResource("3_isk7p")
+
+[node name="Camera" type="Camera3D" parent="Head" index="0" unique_id=2054136163]
+current = true
+
+[node name="Head Bob" type="Node" parent="Head" index="1" unique_id=974969197]
+script = ExtResource("4_7m5s6")
+HeadPath = NodePath("../Camera")
+TimedBobCurve = ExtResource("5_cryla")
