@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2t6smyr8xtty"]
 
-[ext_resource type="Script" uid="uid://dmryfk5l10hun" path="res://fillory/fairies/player/internal/character-controller/Level.cs" id="1_cikgd"]
+[ext_resource type="Script" uid="uid://dmryfk5l10hun" path="res://fillory/fairies/player/internal/character_controller/Level.cs" id="1_cikgd"]
 [ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://fillory/fairies/player/game/character-controller/player.tscn" id="2_nvo2f"]
 [ext_resource type="Material" uid="uid://2ciy11rdndma" path="res://fillory/fairies/player/game/character-controller/materials/grass.tres" id="3_7vb8p"]
 [ext_resource type="PackedScene" uid="uid://b3wdcta6c4k4t" path="res://fillory/fairies/player/game/character-controller/geometry/floor.tscn" id="3_80rlo"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8d2n0ji2eeh5"]
 
-[ext_resource type="Script" uid="uid://g32kutn8d4rp" path="res://fillory/fairies/player/internal/character-controller/effects/audio/PlayerAudios3D.cs" id="1_5jhob"]
+[ext_resource type="Script" uid="uid://g32kutn8d4rp" path="res://fillory/fairies/player/internal/character_controller/effects/audio/PlayerAudios3D.cs" id="1_5jhob"]
 [ext_resource type="AudioStream" uid="uid://dyj8811150sq5" path="res://earth/sounds/collections/CharacterControllerPlugin/stepdirt_1.wav" id="9_pghw8"]
 
 [node name="Player Audios" type="Node3D" unique_id=14933597]

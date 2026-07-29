@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2oxdgu03lnbk"]
 
 [ext_resource type="PackedScene" uid="uid://8oy3xm2sff8" path="res://fillory/fairies/player/game/character-controller/fps_controller_3d.tscn" id="1_fbpun"]
-[ext_resource type="Script" uid="uid://fnccaq1bcwdf" path="res://fillory/fairies/player/internal/character-controller/core/Player.cs" id="2_8r0nc"]
+[ext_resource type="Script" uid="uid://fnccaq1bcwdf" path="res://fillory/fairies/player/internal/character_controller/core/Player.cs" id="2_8r0nc"]
 [ext_resource type="Environment" uid="uid://b3cn01u84faiy" path="res://fillory/fairies/player/game/character-controller/underwater.tres" id="3_rtvao"]
 [ext_resource type="PackedScene" uid="uid://8d2n0ji2eeh5" path="res://fillory/fairies/player/game/character-controller/audio/player_audios.tscn" id="4_ux8kv"]
 [ext_resource type="Curve" uid="uid://dhx3p5wsiw0bs" path="res://fillory/fairies/player/game/character-controller/curves/bob_curve.tres" id="4_waarh"]
@@ -10,7 +10,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bklf2cx3fydt3" path="res://fillory/fairies/player/game/character-controller/physics/stone.tres" id="7_tfxft"]
 [ext_resource type="PhysicsMaterial" path="res://fillory/fairies/player/game/character-controller/physics/wood.tres" id="8_x73fn"]
 [ext_resource type="Resource" uid="uid://ci8kg40ae4vnl" path="res://fillory/fairies/player/game/character-controller/audio/stone_audio_interact.tres" id="9_mdj3p"]
-[ext_resource type="Script" uid="uid://n8sksqrr2qpd" path="res://fillory/fairies/player/internal/character-controller/effects/audio/AudioInteract.cs" id="10_jqtvs"]
+[ext_resource type="Script" uid="uid://n8sksqrr2qpd" path="res://fillory/fairies/player/internal/character_controller/effects/audio/AudioInteract.cs" id="10_jqtvs"]
 [ext_resource type="Resource" uid="uid://dx5kojv0cn4yl" path="res://fillory/fairies/player/game/character-controller/audio/wood_audio_interact.tres" id="10_xwjtq"]
 [ext_resource type="Resource" uid="uid://clro80qf2tdqi" path="res://fillory/fairies/player/game/character-controller/audio/water_audio_interact.tres" id="11_10eo5"]
 
