@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dphw5sd6sjyif"]
+
+[ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_qkk1h"]
+[ext_resource type="Environment" uid="uid://lbmwre72jldd" path="res://sandbox/_scenes/sandbox_environment.tres" id="2_uvrxh"]
+
+[node name="fillory" type="Node3D" unique_id=506889607]
+script = ExtResource("1_qkk1h")
+
+[node name="startup_process" type="Node3D" parent="." unique_id=1508289794]
+
+[node name="scene_loader" type="Node3D" parent="." unique_id=682544845]
+
+[node name="player_spawner" type="Node3D" parent="." unique_id=1793391172]
+
+[node name="world" type="Node3D" parent="." unique_id=1090028315]
+
+[node name="world_environment" type="WorldEnvironment" parent="world" unique_id=1245292406]
+environment = ExtResource("2_uvrxh")

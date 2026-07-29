@@ -1,20 +1,22 @@
+# todo
+
+- [ ] enforce rules with NetArchTest 
 
 # filesystem
 
 - addons
-	- Godot addons
+	- godot addons
 - earth
-	- *all external game art assets*.
-	- levels (entire 3d scenes)
-	- models (3d assets/packs)
-	- sounds
-	- textures
+	- *all external game art assets*:
+		- levels (entire 3d scenes)
+		- models (3d assets/packs)
+		- sounds
+		- textures
 - fillory
-	- 🌟 *project programming and game wiring*.
+	- *project programming and game wiring*
 	- see [[#fillory]] below
 - moon
-	- assets
-		- *first-party shared assets*.
+	- assets (*first-party shared assets*)
 		- levels
 		- models
 		- sounds
@@ -31,11 +33,13 @@
 				- will contain godot-specific particle systems and scenes
 			- ball_of_fire
 - sandbox
-	- *your research goes here, it is exampt from NatArchTest*.
+	- *your research goes here, it is exampt from NatArchTest*
 	- after you complete your work remove it from sandbox.
 	- use `Sanctuary.Sandbox` namespace
 
 # fillory
+
+## directory structure
 
 - common `Sanctuary.Common`
 	- *references **no one*** 
@@ -69,15 +73,17 @@
 			- exposing: `IRaycasterFairy`
 		- player `Sanctuary.Fairies.Player`
 			- exposing: `IPlayerLocatorFairy`
-- matter `Sanctuary.Matter`
-	- *matter subdirectories are flattened, it is the bloodsystem of the entire organism*
-	- portals `Sanctuary.Matter.Portals`
-	- data `Sanctuary.Matter.Data`
-	- player `Sanctuary.Matter.Player`
+- blood `Sanctuary.Blood`
+	- subdirectories are flattened, rzeka's *matter* is the bloodsystem of the entire organism, hence *blood*
+	- examples:
+		- portals `Sanctuary.Blood.Portals`
+		- data `Sanctuary.Blood.Data`
+		- player `Sanctuary.Blood.Player`
 
-## code component structure
+## component structure
 
-> 📜 Forest structure:
+### 📜 Forest structure
+
 - portals `Sanctuary.Forest.Portals
 	- all scripts go here
 		- you can put them in whatever subfolders make sense for you.
@@ -87,7 +93,10 @@
 	- `game/`
 		- special, optional folder for all godot `game assets` related to this forest - scenes, materials etc., no actual art assets!
 
-> 🧚🏻‍♀️ Fairy structure (on example of a Player fairy):
+### 🧚🏻‍♀️ Fairy structure 
+
+> On example of a *Player* fairy.
+
 - player `Sanctuary.Fairies.Player`
 	1. `public interfaces and enums used in those interfaces`
 	2. `internal/` subdirectory (`Sanctuary.Fairies.Player.Internal`)
@@ -95,7 +104,4 @@
 		- `game/`
 		- player `.tscn` etc.
 
-# TODO
-
-- [ ] enforce rules with NetArchTest 
 

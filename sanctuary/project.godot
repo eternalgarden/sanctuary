@@ -15,7 +15,7 @@ config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 
 [autoload]
 
-RiverSource="*uid://duiywhcgb3fgj"
+Ursprung="*uid://duiywhcgb3fgj"
 DI="*res://sandbox/research_DI/DI.cs"
 
 [display]
