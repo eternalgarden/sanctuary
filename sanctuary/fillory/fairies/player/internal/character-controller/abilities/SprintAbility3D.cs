@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Ability that adds extra speed when activated
 
 public partial class SprintAbility3D : MovementAbility3D

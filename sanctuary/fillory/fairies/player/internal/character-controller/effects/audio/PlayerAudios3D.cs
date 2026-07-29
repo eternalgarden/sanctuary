@@ -2,6 +2,8 @@ using System;
 using Godot;
 using Godot.Collections;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Script that plays sounds based on player actions.
 // Using an [AudioInteract] array synchronized with physic_materials array to 
 // identify different sound structures for each type of physical material.

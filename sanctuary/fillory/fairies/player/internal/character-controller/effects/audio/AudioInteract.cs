@@ -2,6 +2,8 @@ using System;
 using Godot;
 using Godot.Collections;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 [Tool]
 public partial class AudioInteract : Resource
 {

@@ -1,5 +1,4 @@
-# Third Party Notices
-
+# Template
 #### attrtemplate
 - **Filename:**
 - **Author:** 
@@ -7,7 +6,14 @@
 - **License:** CC BY 4.0
 - **Changes:** 
 
+# Third-Party Notices
 ## 3D
+
+#### bloodborn_lantern
+- **Author:** Polygon Experts
+- **Source:** https://sketchfab.com/3d-models/bloodborn-lantern-9c408b2ab6bb448ca8c75f533ec1256c
+- **License:** CC BY 4.0
+- **Changes:** 
 
 #### manul
 - **Filename:** lil_manul
@@ -24,15 +30,10 @@
     - Removed skybox and water plane to replace with custom shaders.
     - Corrected some floating bush meshes positions.
     
-#### bloodborn_lantern
-- **Author:** Polygon Experts
-- **Source:** https://sketchfab.com/3d-models/bloodborn-lantern-9c408b2ab6bb448ca8c75f533ec1256c
-- **License:** CC BY 4.0
-- **Changes:** 
-
 ## Textures
 
 ### ambient.cg - CC0
+
 > Such amazing place and so much beautiful work shared for free.
 
 List of textures from ambient.cg:
@@ -40,6 +41,15 @@ List of textures from ambient.cg:
 
 ### PolyHeaven - CC0
 
-#### rock_red_blocky_moss
-- **Author:** https://www.artstation.com/amalbubble
-- **Source:** https://polyhaven.com/a/rocky_terrain
+- [Rocky Terrain by Amal Kumar](https://polyhaven.com/a/rocky_terrain)
+
+## Plugins
+
+#### CharacterControllerPlugin
+
+- **Description**: Modular Character Controller for Godot 4. Includes FPS version with headbob and camera movement. (Walk, Crouch, Sprint, Swim and Fly Mode).
+- **Author**: Expresso Bits and Whimfoome
+- **Version**: 2.1.6
+- **Script**: CharacterControllerPlugin.cs
+- **Changes**: Gradual overhauls for the needs of Sanctuary (yes, double-jump).
+- **Source**: https://github.com/ExpressoBits/character-controller

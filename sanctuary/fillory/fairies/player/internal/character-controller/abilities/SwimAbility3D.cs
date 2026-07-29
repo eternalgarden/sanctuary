@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Swim ability of CharacterController3D.
 //
 // There are three possible states: 

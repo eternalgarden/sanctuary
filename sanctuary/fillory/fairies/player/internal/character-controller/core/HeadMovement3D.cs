@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Node that moves the character's head
 // To move just call the function [b]rotate_camera[/b]
 

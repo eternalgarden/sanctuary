@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Crouch Ability, change size collider and velocity of CharacterController3D.
 
 public partial class CrouchAbility3D : MovementAbility3D

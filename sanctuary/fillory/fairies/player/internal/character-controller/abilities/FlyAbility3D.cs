@@ -1,6 +1,7 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
 
 // Ability that gives free movement to CharacterController 3D completely ignoring gravity.
 

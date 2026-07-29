@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Movement skill abstract class.
 // 
 

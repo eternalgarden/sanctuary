@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // HeadBob Effect for [FPSController3D]
 
 public partial class HeadBob : Node

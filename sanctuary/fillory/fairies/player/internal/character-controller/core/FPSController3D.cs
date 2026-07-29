@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Character Controller 3D specialized in FPS.
 //
 // Contains camera information:[br]

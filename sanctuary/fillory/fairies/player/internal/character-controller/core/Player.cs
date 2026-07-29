@@ -1,6 +1,7 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
 
 public partial class Player : FPSController3D
 {

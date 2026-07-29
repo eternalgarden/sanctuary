@@ -3,6 +3,8 @@ using System.Linq;
 using Godot;
 using Godot.Collections;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Main class of the addon, contains abilities array for character movements.
 
 public partial class CharacterController3D : CharacterBody3D

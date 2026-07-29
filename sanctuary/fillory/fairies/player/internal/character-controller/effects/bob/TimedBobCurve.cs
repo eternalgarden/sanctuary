@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Timed Bob Curve.
 // Used by [HeadMovement] for a jump bob.
 [GlobalClass]

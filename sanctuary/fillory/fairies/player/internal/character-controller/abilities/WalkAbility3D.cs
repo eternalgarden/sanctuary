@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Basic movement ability
 
 public partial class WalkAbility3D : MovementAbility3D

@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 // Simple ability that adds a vertical impulse when activated (Jump)
 
 public partial class JumpAbility3D : MovementAbility3D

@@ -2,6 +2,8 @@ using Godot;
 using System;
 using System.Collections.ObjectModel;
 
+namespace Sanctuary.Fairies.Player.Internal.CharacterController;
+
 public partial class Level : Node3D
 {
     [Export] public bool FastClose { get; set; } = true;
