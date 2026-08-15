@@ -1,18 +1,60 @@
 [gd_scene format=3 uid="uid://dphw5sd6sjyif"]
 
 [ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_qkk1h"]
+[ext_resource type="Script" uid="uid://difh04demnsst" path="res://fillory/forest/scene_loader/SceneLoader.cs" id="2_pa321"]
 [ext_resource type="Environment" uid="uid://lbmwre72jldd" path="res://sandbox/_scenes/sandbox_environment.tres" id="2_uvrxh"]
+[ext_resource type="Script" uid="uid://bahan73d2s164" path="res://fillory/forest/startup/StartupProcess.cs" id="3_w8ka0"]
+[ext_resource type="Script" uid="uid://cw77qqkaok28p" path="res://fillory/forest/startup/StartingSceneLoader.cs" id="4_88waw"]
+[ext_resource type="Script" uid="uid://bil50viqe4kr0" path="res://fillory/forest/startup/StartupProgressDisplay.cs" id="5_ccn50"]
+[ext_resource type="Texture2D" uid="uid://brw7f0e84d106" path="res://earth/models/levels/psx_temple_island/textures/oceant text.png" id="6_ng7ke"]
 
 [node name="fillory" type="Node3D" unique_id=506889607]
 script = ExtResource("1_qkk1h")
 
-[node name="startup_process" type="Node3D" parent="." unique_id=1508289794]
-
 [node name="scene_loader" type="Node3D" parent="." unique_id=682544845]
+script = ExtResource("2_pa321")
 
 [node name="player_spawner" type="Node3D" parent="." unique_id=1793391172]
 
 [node name="world" type="Node3D" parent="." unique_id=1090028315]
 
-[node name="world_environment" type="WorldEnvironment" parent="world" unique_id=1245292406]
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1245292406]
 environment = ExtResource("2_uvrxh")
+
+[node name="startup" type="Node3D" parent="." unique_id=1508289794]
+script = ExtResource("3_w8ka0")
+
+[node name="starting_scene_loader" type="Node3D" parent="startup" unique_id=521568542 node_paths=PackedStringArray("WorldRoot")]
+script = ExtResource("4_88waw")
+StartingScenePath = "uid://c638aji5him1r"
+WorldRoot = NodePath("../../world")
+
+[node name="startup_progress_display" type="Control" parent="startup" unique_id=2113065571 node_paths=PackedStringArray("StepsContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_ccn50")
+StepsContainer = NodePath("steps_cleared_container")
+
+[node name="TextureRect" type="TextureRect" parent="startup/startup_progress_display" unique_id=806362689]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ng7ke")
+
+[node name="steps_cleared_container" type="VBoxContainer" parent="startup/startup_progress_display" unique_id=1164115088]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 650.0
+grow_vertical = 2
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=252297538]
+transform = Transform3D(1, 0, 0, 0, 0.99344677, 0.11429563, 0, -0.11429563, 0.99344677, -0.31440103, 0.71718514, 2.675528)
