@@ -29,6 +29,11 @@ public partial class StartingSceneLoader : Node
     [Export(PropertyHint.File, "*.tscn")]
     string StartingScenePath { get; set; }
 
+    // TODO One day the entire scene attachment process will have
+    // to be moved to its own component like DimensionPlanner which
+    // will decide at what coordinates a scene is spawned, because
+    // there will be multiple available at once, traversible through
+    // protals.
     [Export]
     Node3D WorldRoot { get; set; }
 
@@ -49,7 +54,8 @@ public partial class StartingSceneLoader : Node
                             )
                             .SelectMany(
                                 res => AttachStartingScene(res).ToObservable(),
-                                (res, _) => new StartingSceneLoaded()
+                                (res, _) =>
+                                    new StartingSceneLoaded().WithCircumstances(started, res)
                             )
                     )
         );
@@ -69,6 +75,8 @@ public partial class StartingSceneLoader : Node
                 $"Attaching scene failed for scene at path {load.Request.ScenePath}"
             );
 
+        // Instantiate() only allocates the node subtree
+        // it doesn't touch the live tree.
         Node scene = load.PackedScene.Instantiate();
 
         WorldRoot.CallDeferred(Node.MethodName.AddChild, scene);

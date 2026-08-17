@@ -30,7 +30,13 @@ public partial class SceneLoader : Node
             reqs =>
                 reqs.SelectMany(req =>
                     LoadSceneThreaded(this, req)
-                        .Select(scene => new LoadSceneResponse(req, scene, true))
+                        // TODO Godot's threaded loader is keyed by path, not by request. Two concurrent
+                        // LoadSceneRequests for the same ScenePath both poll the same status and both call
+                        // LoadThreadedGet - the second gets null because the first consumed it. De-duplicate
+                        // by path so one load serves every caller waiting on it, while still answering each
+                        // request (a Shuttle must be total).
+                        // scene is not null is a temp fix
+                        .Select(scene => new LoadSceneResponse(req, scene, scene is not null))
                         // ☔ Using Catch operator to emit failed response.
                         .Catch<LoadSceneResponse, Exception>(ex =>
                         {
@@ -82,7 +88,7 @@ public partial class SceneLoader : Node
         // Observable.Interval(TimeSpan.FromMilliseconds(33), rzeka.MainThread)
         // Better yet:
         who.EveryProcessFrame()
-            .Subscribe(_ =>
+            .Select(_ =>
             {
                 var progress = new Godot.Collections.Array();
                 ResourceLoader.ThreadLoadStatus status = ResourceLoader.LoadThreadedGetStatus(
@@ -90,13 +96,20 @@ public partial class SceneLoader : Node
                     progress
                 );
                 float fraction = progress.Count > 0 ? progress[0].AsSingle() : 0f;
-
+                return (status, fraction);
+            })
+            // Throttling the SceneLoadProgress spam
+            .DistinctUntilChanged(x => Mathf.Round(x.fraction * 100))
+            .Subscribe(x =>
+            {
+                // Plucking is not the cheapest thing on planet earth, consider a Strand that would
+                // be feed through a Subject onnexted here.
                 rzeka.Pluck(
                     who,
-                    new SceneLoadProgress(req.Guid, scenePath, fraction).WithCircumstances(req)
+                    new SceneLoadProgress(req.Guid, scenePath, x.fraction).WithCircumstances(req)
                 );
 
-                switch (status)
+                switch (x.status)
                 {
                     case ResourceLoader.ThreadLoadStatus.Loaded:
                         observer.OnNext((PackedScene)ResourceLoader.LoadThreadedGet(scenePath));

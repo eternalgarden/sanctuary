@@ -33,21 +33,19 @@ public partial class StartupProgressDisplay : Node
         Q += rzeka.Weave<FilloryLoadState>(
             this,
             spell =>
-                spell
-                    .ObserveOn(rzeka.MainThread)
-                    .Subscribe(
-                        onNext: state =>
+                spell.Subscribe(
+                    onNext: state =>
+                    {
+                        foreach (var step in state.LoadInfo.Steps)
                         {
-                            foreach (var step in state.LoadInfo.Steps)
+                            if (step.Done && _appended.Add(step.Name))
                             {
-                                if (step.Done && _appended.Add(step.Name))
-                                {
-                                    AppendClearedStep(step.Name, state.LoadInfo.Elapsed);
-                                }
+                                AppendClearedStep(step.Name, state.LoadInfo.Elapsed);
                             }
-                        },
-                        onError: err => rzeka.Whisper(err)
-                    )
+                        }
+                    },
+                    onError: err => rzeka.Whisper(err)
+                )
         );
 
         AppendClearedStep("meow", TimeSpan.MinValue);
@@ -68,7 +66,7 @@ public partial class StartupProgressDisplay : Node
             FitContent = true,
             ScrollActive = false,
             Text =
-                $"[color=#888888]+{elapsed.TotalSeconds:00.00}s[/color]"
+                $"[color=#888888][{elapsed.TotalSeconds:00.00}s][/color]"
                 + $" {name} : [color=#7cfc9e]yes[/color]",
         };
         StepsContainer.CallDeferred(Node.MethodName.AddChild, line);
