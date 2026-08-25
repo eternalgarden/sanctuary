@@ -11,7 +11,7 @@ namespace Sanctuary.Common.Utility;
 
 // Mostly just to be able to have things a world environment while doing
 // level design when ingame uses a central world environment.
-public partial class EditorOnlyNode : Node
+public partial class AutoremovedNode : Node
 {
     public override void _EnterTree()
     {

@@ -18,7 +18,7 @@ using Sanctuary.Forest.Autoloads;
 
 namespace Sanctuary.Forest.Startup;
 
-public partial class StartingSceneLoader : Node
+public partial class StartupSceneSpawner : Node
 {
     static IRzeka rzeka => Ursprung.Rzeka;
     CollectibleDisposable Q { get; set; } = new();

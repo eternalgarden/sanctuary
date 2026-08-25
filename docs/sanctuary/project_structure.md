@@ -99,9 +99,10 @@
 
 - player `Sanctuary.Fairies.Player`
 	1. `public interfaces and enums used in those interfaces`
-	2. `internal/` subdirectory (`Sanctuary.Fairies.Player.Internal`)
+	2. `internal/` 
+		- subdirectory (`Sanctuary.Fairies.Player.Internal`)
 		- actual implementation of data fairy
-		- `game/`
-		- player `.tscn` etc.
+	3. `game/`
+		- like in forest
 
 

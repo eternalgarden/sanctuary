@@ -38,7 +38,8 @@ public partial class StartupProcess : Node
             state =>
                 Observable
                     .Merge(
-                        On<StartingSceneLoaded>(prev => prev with { StartingSceneLoaded = true })
+                        On<StartingSceneLoaded>(prev => prev with { StartingSceneLoaded = true }),
+                        On<StartingPlayerControllerLoaded>(prev => prev with { PlayerSpawned = true })
                     )
                     .WithLatestFrom(
                         state,
