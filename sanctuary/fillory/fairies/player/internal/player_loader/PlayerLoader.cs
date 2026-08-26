@@ -15,7 +15,7 @@ using Rzeka;
 using Sanctuary.Blood.Player;
 using Sanctuary.Forest.Autoloads;
 
-namespace Sanctuary.Fairies.Player;
+namespace Sanctuary.Fairies.Player.Internal;
 
 public partial class PlayerLoader : Node
 {
@@ -72,7 +72,19 @@ public partial class PlayerLoader : Node
             );
         }
         Node3D player = PlayerScene.Instantiate<Node3D>();
-        // we don;t need to instantiate it because it is already auto-loaded through the export property?
+
+        // TODO: you made a comment:  The orphan-node window is still open, in both PlayerLoader.cs:72-74 
+        // and StartupSceneSpawner.cs:80-82. Same analysis as the crash we chased: between Instantiate 
+        // and the deferred AddChild landing, nothing owns the node, and a throw in that 
+        // window leaks it into a GC-finalizer crash at an unrelated later moment.
+        // can you please explain that, this means we need to manually handle disposal of the player node?
+        // why wouldn't it be automatically GCd?
+
+        // TODO: so earlier comment about instantiation was clearly self-contradicting
+        // what i meant was the case of resource loading, a packedscene is loaded eagerly
+        // so this means when we use [Export] attributes on godot Resource types this means
+        // we can then simply instantiate them without needing to use ResourceLoader, but
+        // this happens at the cost of an eagerly, meain-threadedly loaded data? ff
         PlayerNodeParent.CallDeferred(Node.MethodName.AddChild, player);
 
         _wasCharacterAlreadySpawned = true;

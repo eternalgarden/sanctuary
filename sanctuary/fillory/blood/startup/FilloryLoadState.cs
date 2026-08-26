@@ -21,6 +21,8 @@ public class FilloryLoadState : Matter
     public FilloryLoadState(FilloryLoadInfo loadInfo) => LoadInfo = loadInfo;
 }
 
+public enum StepState { Pending, Cleared, Failed }
+
 public record FilloryLoadInfo
 {
     /// Well clock for logs and saves. Do not subtract these two because it
@@ -40,15 +42,16 @@ public record FilloryLoadInfo
     ///  |::.|:. |
     ///  `--- ---'
     ///  ☔ Don't forget too add them to the IEnumerable Steps below aswell.
-    public bool StartingSceneLoaded { get; init; }
-    public bool PlayerSpawned { get; init; }
+    public StepState StartingSceneLoaded { get; init; } = StepState.Pending;
+    public StepState PlayerSpawned { get; init; } = StepState.Pending;
 
     // The "definition of done" for this minimal load: both milestones are in.
-    public bool IsLoadComplete => StartingSceneLoaded && PlayerSpawned;
+    public bool IsLoadComplete => Steps.All(step => step.state is StepState.Cleared);
+    public bool IsLoadFailed => Steps.Any(step => step.state is StepState.Failed);
 
     public TimeSpan Elapsed => TimeSpan.FromMilliseconds(Time.GetTicksMsec() - StartedAtMesc);
 
-    public IEnumerable<(string Name, bool Done)> Steps =>
+    public IEnumerable<(string Name, StepState state)> Steps =>
         new[]
         {
             (nameof(StartingSceneLoaded), StartingSceneLoaded),

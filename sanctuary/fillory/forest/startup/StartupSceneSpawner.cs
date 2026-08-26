@@ -41,6 +41,7 @@ public partial class StartupSceneSpawner : Node
 
     public override void _Ready()
     {
+        // TODO: name is misleading, should be StartingSceneAttached, add a comment
         Q += rzeka.Loom<StartupProcessReady, StartingSceneLoaded>(
             this,
             spell =>
@@ -52,6 +53,7 @@ public partial class StartupSceneSpawner : Node
                                 this,
                                 new LoadSceneRequest(StartingScenePath).WithCircumstances(started)
                             )
+                            .SelectMany(res => res)
                             .SelectMany(
                                 res => AttachStartingScene(res).ToObservable(),
                                 (res, _) =>

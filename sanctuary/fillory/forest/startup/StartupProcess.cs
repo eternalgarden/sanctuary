@@ -22,8 +22,21 @@ public partial class StartupProcess : Node
 
     delegate FilloryLoadInfo LoadStep(FilloryLoadInfo prev);
 
-    static IObservable<LoadStep> On<T>(LoadStep step)
-        where T : Matter => rzeka.Scry<T>().Take(1).Select(_ => step);
+    /*
+     * On<T> drops the cause from the graph. rzeka.Scry<T>().Take(1).Select(_ => step) discards the
+     * matter instance, so nothing stamps StartingSceneLoaded onto the resulting FilloryLoadState.
+     * Eris will show your load state transitioning with only the previous load state as a cause,
+     * and the events that actually drove it detached. It does not break the game, but graph
+     * fidelity is the reason this project exists. Threading the matter through the closure so
+     * the WithLatestFrom selector can stamp it is a small change.
+     * (The wiki's example has the same gap, so this is not you misreading it.)
+     */
+    // static IObservable<LoadStep> On<T>(LoadStep step)
+    //     where T : Matter => rzeka.Scry<T>().Take(1).Select(_ => step);
+
+    // TODO: is this the right direction?
+    static IObservable<(T trigger, LoadStep step)> On<T>(LoadStep step)
+        where T : Matter => rzeka.Scry<T>().Take(1).Select(trigger => (trigger, step));
 
     public override void _Ready()
     {
@@ -39,7 +52,12 @@ public partial class StartupProcess : Node
                 Observable
                     .Merge(
                         On<StartingSceneLoaded>(prev => prev with { StartingSceneLoaded = true }),
-                        On<StartingPlayerControllerLoaded>(prev => prev with { PlayerSpawned = true })
+                        On<StartingPlayerControllerLoaded>(prev =>
+                            prev with
+                            {
+                                PlayerSpawned = true,
+                            }
+                        )
                     )
                     .WithLatestFrom(
                         state,

@@ -47,8 +47,6 @@ public partial class StartupProgressDisplay : Node
                     onError: err => rzeka.Whisper(err)
                 )
         );
-
-        AppendClearedStep("meow", TimeSpan.MinValue);
     }
 
     public override void _Process(double delta) { }
