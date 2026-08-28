@@ -13,6 +13,7 @@ using Rzeka;
 using Sanctuary.Blood.Player;
 using Sanctuary.Blood.Startup;
 using Sanctuary.Forest.Autoloads;
+using static Sanctuary.Forest.Startup.StartupHelpers;
 
 namespace Sanctuary.Forest.Startup;
 
@@ -31,19 +32,19 @@ public partial class StartupPlayerSpawner : Node
         // One day this will also loom in the requested strting location
         // Potentially from save data of the last location
         // Or a default spawn location for a given scene
-        Q += rzeka.Loom<StartingSceneLoaded, StartingPlayerControllerLoaded>(
+        Q += rzeka.Loom<FilloryLoadState, StartupStepReached>(
             this,
-            spell =>
-                spell
+            state =>
+                state
+                    .Where(x => x.LoadInfo.CanPlayerSpawn)
                     .Take(1)
-                    .SelectMany(started =>
+                    .SelectMany(x =>
                         rzeka
                             .Ask<PlayerLoadRequest, PlayerLoadResponse>(
                                 this,
-                                new PlayerLoadRequest().WithCircumstances(started)
+                                new PlayerLoadRequest().WithCircumstances(x)
                             )
                             // TODO: move to a player positioning shuttle
-                            // TODO: add a check if player is null and the process failed
                             // TODO: add the capacity to process display to display failures in startup
                             // Question: how would we avoid further playermovereques if we failed on this step
                             // because the player move request will be a following ask below the above?
@@ -53,14 +54,19 @@ public partial class StartupPlayerSpawner : Node
                             // or a side effect with a plain Whisper?
                             .Perform(response =>
                             {
-                                response.Player.Position = PlayerStartingPosition;
-                            })
-                            .Select(response =>
-                                new StartingPlayerControllerLoaded().WithCircumstances(
-                                    started,
+                                if (response.WasSuccessful && response.Player is not null)
+                                {
+                                    response.Player.Position = PlayerStartingPosition;
+                                    return Cleared(StartupStep.UserControllerLoad, x, response);
+                                }
+
+                                return Failed(
+                                    StartupStep.UserControllerLoad,
+                                    "PlayedLoadRequest failed.",
+                                    x,
                                     response
-                                )
-                            )
+                                );
+                            })
                     )
         );
     }

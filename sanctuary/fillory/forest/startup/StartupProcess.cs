@@ -20,49 +20,56 @@ public partial class StartupProcess : Node
     static IRzeka rzeka => Ursprung.Rzeka;
     CollectibleDisposable Q { get; set; } = new();
 
-    delegate FilloryLoadInfo LoadStep(FilloryLoadInfo prev);
-
-    /*
-     * On<T> drops the cause from the graph. rzeka.Scry<T>().Take(1).Select(_ => step) discards the
-     * matter instance, so nothing stamps StartingSceneLoaded onto the resulting FilloryLoadState.
-     * Eris will show your load state transitioning with only the previous load state as a cause,
-     * and the events that actually drove it detached. It does not break the game, but graph
-     * fidelity is the reason this project exists. Threading the matter through the closure so
-     * the WithLatestFrom selector can stamp it is a small change.
-     * (The wiki's example has the same gap, so this is not you misreading it.)
-     */
+    // Keeping this as a reminder to the previous implementation which was very elegant and schick
+    // but was not allowing us to track step failures and would require a considerable amount of
+    // boilerplate across at least three different files which coould be easily overlooked and leading
+    // to a waste of debugging time. It was also breaking the casuality graph,
+    //
+    // delegate FilloryLoadInfo LoadStep(FilloryLoadInfo prev);
+    //
     // static IObservable<LoadStep> On<T>(LoadStep step)
     //     where T : Matter => rzeka.Scry<T>().Take(1).Select(_ => step);
-
-    // TODO: is this the right direction?
-    static IObservable<(T trigger, LoadStep step)> On<T>(LoadStep step)
-        where T : Matter => rzeka.Scry<T>().Take(1).Select(trigger => (trigger, step));
+    //
+    // Q += rzeka.Loom<FilloryLoadState, FilloryLoadState>(
+    //     this,
+    //     state =>5zh
+    //         Observable
+    //             .Merge(
+    //                 On<StartupSceneLoaded>(prev => prev with { StartupSceneLoaded = true }),
+    //                 On<PlayerLoaded>(prev => prev with { PlayerLoaded = true })
+    //             )
+    //             .WithLatestFrom(
+    //                 state,
+    //                 (step, currentState) => new FilloryLoadState(step(currentState.LoadInfo))
+    //             )
+    // );
+    // But casuality graph could have been fixed with this
+    // static IObservable<(T trigger, LoadStep step)> On<T>(LoadStep step)
+    //     where T : Matter => rzeka.Scry<T>().Take(1).Select(trigger => (trigger, step));
 
     public override void _Ready()
     {
         // Initial seed
-        // This is legale because the loom generating FilloryLoadState below is not yet inside the river.
+        // Beware, this is load-bearing in this position!
+        // Initial seed has to be emitted before the reducer loom before registers.
+        // It is to ensure no StartupStepReached vanishes unnoticed.
         rzeka.Pluck(this, new FilloryLoadState(new FilloryLoadInfo()));
 
         // Reducer – single writer of FilloryLoadState
-        // Loadup milestones are
-        Q += rzeka.Loom<FilloryLoadState, FilloryLoadState>(
+        // 🐖 neat!
+        Q += rzeka.Loom<FilloryLoadState, StartupStepReached, FilloryLoadState>(
             this,
-            state =>
-                Observable
-                    .Merge(
-                        On<StartingSceneLoaded>(prev => prev with { StartingSceneLoaded = true }),
-                        On<StartingPlayerControllerLoaded>(prev =>
-                            prev with
-                            {
-                                PlayerSpawned = true,
-                            }
+            (state, step) =>
+                step.Distinct(x => x.StartupStep)
+                    .WithLatestFromMatter(state)
+                    .Select(pair => (loadInfo: pair.Item2.LoadInfo, stepStatus: pair.Item1))
+                    .Select(x => new FilloryLoadState(
+                        x.loadInfo.WithStep(
+                            x.stepStatus.StartupStep,
+                            x.stepStatus.WasSuccessful ? StepState.Cleared : StepState.Failed,
+                            x.stepStatus.Reason
                         )
-                    )
-                    .WithLatestFrom(
-                        state,
-                        (step, currentState) => new FilloryLoadState(step(currentState.LoadInfo))
-                    )
+                    ))
         );
 
         Q += rzeka.Loom<FilloryLoadState, FilloryReady>(

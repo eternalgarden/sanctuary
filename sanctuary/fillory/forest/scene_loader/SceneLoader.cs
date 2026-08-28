@@ -102,7 +102,7 @@ public partial class SceneLoader : Node
             .DistinctUntilChanged(x => Mathf.Round(x.fraction * 100))
             .Subscribe(x =>
             {
-                // Plucking is not the cheapest thing on planet earth, consider a Strand that would
+                // TODO: Plucking is not the cheapest thing on planet earth, consider a Strand that would
                 // be feed through a Subject onnexted here.
                 rzeka.Pluck(
                     who,

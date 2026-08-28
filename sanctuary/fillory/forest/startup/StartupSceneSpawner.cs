@@ -15,6 +15,7 @@ using Rzeka;
 using Sanctuary.Blood.SceneLoader;
 using Sanctuary.Blood.Startup;
 using Sanctuary.Forest.Autoloads;
+using static Sanctuary.Forest.Startup.StartupHelpers;
 
 namespace Sanctuary.Forest.Startup;
 
@@ -41,24 +42,40 @@ public partial class StartupSceneSpawner : Node
 
     public override void _Ready()
     {
-        // TODO: name is misleading, should be StartingSceneAttached, add a comment
-        Q += rzeka.Loom<StartupProcessReady, StartingSceneLoaded>(
+        Q += rzeka.Loom<FilloryLoadState, StartupStepReached>(
             this,
-            spell =>
-                spell
+            state =>
+                state
+                    .Where(x => x.LoadInfo.CanSceneSpawn)
                     .Take(1)
-                    .SelectMany(started =>
+                    .SelectMany(x =>
                         rzeka
                             .Ask<LoadSceneRequest, LoadSceneResponse>(
                                 this,
-                                new LoadSceneRequest(StartingScenePath).WithCircumstances(started)
+                                new LoadSceneRequest(StartingScenePath).WithCircumstances(x)
                             )
-                            .SelectMany(res => res)
-                            .SelectMany(
-                                res => AttachStartingScene(res).ToObservable(),
-                                (res, _) =>
-                                    new StartingSceneLoaded().WithCircumstances(started, res)
+                            .SelectMany(res =>
+                                res.WasSuccessful && res.PackedScene is not null
+                                    ? Observable.FromAsync(() => AttachStartingScene(res))
+                                        .Select(_ =>
+                                            Cleared(StartupStep.StartingScene, x, res)
+                                        )
+                                    : Observable.Return(
+                                        Failed(
+                                            StartupStep.StartingScene,
+                                            $"LoadSceneRequest for ${StartingScenePath} failed.",
+                                            x,
+                                            res
+                                        )
+                                    )
                             )
+                            .Catch<StartupStepReached, Exception>(ex =>
+                            {
+                                rzeka.Whisper(ex, x);
+                                return Observable.Return(
+                                    Failed(StartupStep.StartingScene, ex.Message, x)
+                                );
+                            })
                     )
         );
     }
