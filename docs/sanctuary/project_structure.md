@@ -1,22 +1,27 @@
-# todo
 
+ > todo
 - [ ] enforce rules with NetArchTest 
 
 # filesystem
 
-- addons
+> *Five folders at the root directory.*
+
+- 🛠️ (1.) addons
 	- godot addons
-- earth
-	- *all external game art assets*:
+- 🌏 (2.) earth
+	- **external game art assets**:
 		- levels (entire 3d scenes)
 		- models (3d assets/packs)
+			- nature
+			- props
+			- ...
 		- sounds
 		- textures
-- fillory
-	- *project programming and game wiring*
+- 🧚🏻‍♀️ (3.) fillory
+	- **project programming and game wiring**
 	- see [[#fillory]] below
-- moon
-	- assets (*first-party shared assets*)
+- 🌒 (4.) moon
+	- **first-party shared assets**:
 		- levels
 		- models
 		- sounds
@@ -32,7 +37,7 @@
 			- flickering_light
 				- will contain godot-specific particle systems and scenes
 			- ball_of_fire
-- sandbox
+- ⏳ (5.) sandbox
 	- *your research goes here, it is exampt from NatArchTest*
 	- after you complete your work remove it from sandbox.
 	- use `Sanctuary.Sandbox` namespace
