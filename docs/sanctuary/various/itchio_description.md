@@ -1,37 +1,42 @@
 <h2>Sanctuary</h2>
-<p>A <strong>3D journaling application</strong> that lets you write notes with an  ingame text editor and then hang them around the 3D environment.&nbsp;<a href="https://www.youtube.com/watch?v=VebsZhbJbKQ" target="_blank">A big chonky cat who is your caring older sister from a different universe</a> follows you around to keep you company.</p>
-<br>
+<p>A <strong>3D journaling application</strong> that lets you write notes with an  ingame text editor and then hang them around the 3D environment.&nbsp;<a target="_blank" href="https://www.youtube.com/watch?v=VebsZhbJbKQ">A big chonky cat who is your caring older sister from a different universe</a> follows you around to keep you company.</p>
+<p></p>
+<p></p>
 <details style="border: 1px solid #B2D8D8; border-radius: 8px; padding: 12px 16px; margin: 30px 0; background: rgba(178, 216, 216, 0.07);">
 <summary style="cursor: pointer; font-weight: bold; letter-spacing: 3px; color: #B2D8D8;">🧙🏻‍♀️ Click me! <strong>Project past & future</strong></summary>
   <div style="margin-top: 14px;">
     <p>I'm actively weaving this project since 2015&nbsp;and it keeps growing because I love it and I'm not getting tired of it, what helps is that I love the process itself. If I'm overloaded with life I take counter-burnout breaks and return to it when magic returns.</p>
-    <p>However&nbsp;there will be a longer time now before the next release, because I am currently porting Sanctuary from Unity&nbsp;to an open-source engine <a target="_blank" href="https://godotengine.org/">Godot</a>. Final Unity version bears the 🐉 "lakedragon" name. Sanctuary will from now on become a fully <a target="_blank" href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FOSS</a> app aswell. You can track progress through the development logs here on this page or at <a target="_blank" href="https://github.com/eternalgarden/sanctuary">Sanctuary public GitHub repository</a>.</p>
+    <p>However&nbsp;there will be a longer time now before the next release, because I am currently porting Sanctuary from Unity&nbsp;to an open-source engine <a href="https://godotengine.org/" target="_blank">Godot</a>. Final Unity version bears the 🐉 "lakedragon" name. Sanctuary will from now on become a fully <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">FOSS</a> app aswell. You can track progress through the development logs here on this page or at <a href="https://github.com/eternalgarden/sanctuary" target="_blank">Sanctuary public GitHub repository</a>.</p>
 <p><strong>But you can totally use Sanctuary for your journaling&nbsp;</strong><strong>already</strong>, because all your notes will smothly transfer to the future version.</p>
-  </div>
-</details>
-<br>
+<p>
+If you are still curious, please watch this Sanctuary video spell <sup>not actual gameplay, though your older sister does keep you company.</sup>
+</p><div class="video-container"><iframe height="360" width="640" src="https://www.youtube.com/embed/VebsZhbJbKQ" frameborder="0" allowfullscreen=""></iframe></div><p></p>
+</div></details>
 <details style="border: 1px solid #B2D8D8; border-radius: 8px; padding: 12px 16px; margin: 30px 0; background: rgba(178, 216, 216, 0.07);">
-<summary style="cursor: pointer; font-weight: bold; letter-spacing: 3px; color: #B2D8D8;">🌲 Click me! <strong>Info for Sanctuary at Patreon</strong></summary>
+<summary style="cursor: pointer; font-weight: bold; letter-spacing: 3px; color: #B2D8D8;">💎 Click me! <strong>Info for Sanctuary at Patreon</strong></summary>
   <div style="margin-top: 14px;">
-    <p>If you really like Sanctuary, and have even 1$ per month to spare, you'd have my eternal gratitude for supporting it at <a target="_blank" href="https://www.patreon.com/cw/u103215489">its Patreon page</a>.
+    <p>
+	    If you really like Sanctuary, and have even 1$ per month to spare, you'd have my eternal gratitude for supporting it at <a href="https://www.patreon.com/cw/u103215489" target="_blank">its Patreon page</a>.
     </p>
-<p>Otherwise Sanctuary will always remain 100% free apart from potential future options for online backups (<em>naturally fully encrypted before being stored</em>) and shared online notebook dimensions where you could edit notes together with your friends – since that would of course have server upkeep costs for me.</p>
+	<p>
+		I must however note that due to the external circumstances I cannot promise rapid development. It would be a dream to work on Sanctuary fulltime, and I will keep dreaming, but I won't let a dream turn into ressentiment. That being said, there are rarely days when I don't think about or tinker with Sanctuary. Stay safe, magic is real! 
+	</p>
   </div>
 </details>
 <h3 style="text-align: center; color: #B2D8D8; letter-spacing: 6px; font-weight: normal; margin: 30px 0 30px 0; font-size: 20px;">
   ◆ ◇ ◆
 </h3>
 <h2 class="text-center">Info & Features</h2>
-<p class="text-center"><em>The old&nbsp;fairylike Sanctuary description can be found <a target="_blank" href="https://eternalgarden.itch.io/sanctuary/devlog/1649552/fairy-description">here</a>, with the list below I wanted to make things more accessible.</em></p>
+<p class="text-center"><em>The old&nbsp;fairylike Sanctuary description can be found <a href="https://eternalgarden.itch.io/sanctuary/devlog/1649552/fairy-description" target="_blank">here</a>, with the list below I wanted to make things more accessible.</em></p>
 <h3>Writing permanent notes and placing them around a 3D space.</h3>
 <p><strong><mark style="background-color: #B2D8D8; padding: 0 4px;">Note editing</mark></strong>:&nbsp;You can set basic things like text sizes,&nbsp;<em>italics</em>,&nbsp;<strong>boldness</strong>, but also&nbsp;insert images and emoji easily into your notes.</p>
-<p><strong><mark style="background-color: #B2D8D8; padding: 0 4px;">Spatiality</mark></strong>:&nbsp;Organise your notes is by <em>grouping&nbsp;them in spatial clusters</em>.&nbsp;This is strongly inspired by the <a target="_blank" href="https://en.wikipedia.org/wiki/Method_of_loci">method of loci</a> mnemonic technique and basically the core idea behind Sanctuary.</p>
+<p><strong><mark style="background-color: #B2D8D8; padding: 0 4px;">Spatiality</mark></strong>:&nbsp;Organise your notes is by <em>grouping&nbsp;them in spatial clusters</em>.&nbsp;This is strongly inspired by the <a href="https://en.wikipedia.org/wiki/Method_of_loci" target="_blank">method of loci</a> mnemonic technique and basically the core idea behind Sanctuary.</p>
 <p><strong><mark style="background-color: #B2D8D8; padding: 0 4px;">Customize themes</mark></strong>: If you learn a little bit of coding with css then you can create your own note themes! with your own fonts and colours.&nbsp;(todo: copy theming tut info from the ingame ui here)</p>
 <h3 style="text-align: center; color: #B2D8D8; letter-spacing: 6px; font-weight: normal; margin: 30px 0 30px 0; font-size: 20px;">
   ◆ ◇ ◆
 </h3>
 <p class="text-center"><em>Press the magic broom 🧹 emoji button while editing a note to open a menu with more note information, deletion <strong>and theme setting</strong>.</em></p>
-<img src="https://img.itch.zone/aW1nLzI5OTE1MTY5LnBuZw==/original/rNtlvJ.png">
+<p><img src="https://img.itch.zone/aW1nLzI5OTE1MTY5LnBuZw==/original/rNtlvJ.png"></p>
 <h3 style="text-align: center; color: #B2D8D8; letter-spacing: 6px; font-weight: normal; margin: 30px 0 30px 0; font-size: 20px;">
   ◆ ◇ ◆
 </h3>
@@ -46,7 +51,6 @@ Linux/Windows: ~/Documents/sanctuary_magic_box/
 Mac: ~/Library/Application Support/sanctuary_magic_box/
 </li>
 </ul>
-<p>You can also open the location</p>
 <p></p>
 <p><strong><mark style="background-color: #B2D8D8; padding: 0 4px;">Fileformat</mark></strong>:&nbsp;Notes are saved in a human-readable <strong>.html </strong>file format, if Sanctuary would stop functioning in future you can still easily read them (just open those files with your browser).</p>
 <p><strong><mark style="background-color: #B2D8D8; padding: 0 4px;">Built-in version control</mark></strong>:&nbsp;Note files are automatically tracked with a git version control system which greatly increases their safety. If you delete some things accidentally, you can revert it all with git.</p>
@@ -72,6 +76,7 @@ Mac: ~/Library/Application Support/sanctuary_magic_box/
   ◆ ◇ ◆
 </h3>
 <h3>Important Download Notice</h3>
-<p><em>It is preferrable to download Sanctuary NOT through the links below but using Itch's official App, here:&nbsp;</em><a href="https://itch.io/app"></a><em><a target="_blank" href="https://itch.io/app">https://itch.io/app</a></em></p>
+<p><em>It is preferrable to download Sanctuary NOT through the links below but using Itch's official App, here:&nbsp;</em><a href="https://itch.io/app"></a><em><a href="https://itch.io/app" target="_blank">https://itch.io/app</a></em></p>
+<p><strong>For some reason Sanctuary doesn't seem to be findable on Itch App search menu, so its better that you press the "Add To Collection" button on this page instead.</strong></p>
 <p><em>Especially if you are a Mac user:&nbsp;</em>if you don't use Itch App on mac you will need to unlock Sanctuary application yourself, because I don't have 100$/year to pay Apple for a Developer Account that lets me sign sanctuary app so that it isn't flagged as suspicious. Itch App handles app signing by itself, which is so neat!</p>
 <p><em>If you are not a mac user:&nbsp;</em>It is still nice to use Itch App, because you will be automatically getting Sanctuary updates instead of re-downloading them each time here. Also it will nicely let you access all your other Itch games, there is so much great stuff out here!</p>
