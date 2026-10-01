@@ -6,11 +6,9 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 */
 
 using System.Reactive.Concurrency;
-using System.Threading;
-using Godot;
-using Rzeka;
-// TODO: Add dev-only clause
+#if DEBUG
 using Rzeka.Dev;
+#endif
 
 namespace Sanctuary.Forest.Autoloads;
 
@@ -27,8 +25,9 @@ public partial class Ursprung : Node
 
         Spring spring = new();
 
-        // TODO: Add debug-build-only clause
+#if DEBUG
         Q += spring.EnableDevServer();
+#endif
 
         Rzeka = spring.Create(
             "Sanctuary",

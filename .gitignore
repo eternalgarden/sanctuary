@@ -2,9 +2,11 @@
 
 # 🐖 Directories
 **/node_modules/
+build/
 
 # 🐖 Blender stuff
 *.blend1
+goblend.log
 
 # 🐖 DEFAULT GODOT .gitignore
 # Godot 4+ specific ignores
