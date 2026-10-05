@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://j0i7q8gmtvii"]
+
+[ext_resource type="Texture2D" uid="uid://d01vxeoja7ihj" path="res://moon/assets/models/nature/mushrooms/mushroom_01/mushroom_01_colour.jpg" id="1_ca64a"]
+
+[resource]
+albedo_texture = ExtResource("1_ca64a")
