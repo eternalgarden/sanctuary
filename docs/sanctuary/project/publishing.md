@@ -1,7 +1,4 @@
 
-# notes
-
-- 
 # itch.io
 
 > Daily use publishing commands.
