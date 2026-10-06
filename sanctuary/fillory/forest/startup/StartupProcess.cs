@@ -20,6 +20,9 @@ public partial class StartupProcess : Node
     static IRzeka rzeka => Ursprung.Rzeka;
     CollectibleDisposable Q { get; set; } = new();
 
+    bool meow { get; set;}
+    bool oik { get; set;}
+
     // Keeping this as a reminder to the previous implementation which was very elegant and schick
     // but was not allowing us to track step failures and would require a considerable amount of
     // boilerplate across at least three different files which coould be easily overlooked and leading
@@ -51,7 +54,7 @@ public partial class StartupProcess : Node
     {
         // Initial seed
         // Beware, this is load-bearing in this position!
-        // Initial seed has to be emitted before the reducer loom before registers.
+        // Initial seed has to be emitted before the reducer loom below registers.
         // It is to ensure no StartupStepReached vanishes unnoticed.
         rzeka.Pluck(this, new FilloryLoadState(new FilloryLoadInfo()));
 

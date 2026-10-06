@@ -48,32 +48,32 @@ public partial class StartupSceneSpawner : Node
                 state
                     .Where(x => x.LoadInfo.CanSceneSpawn)
                     .Take(1)
-                    .SelectMany(x =>
+                    .SelectMany(y =>
                         rzeka
                             .Ask<LoadSceneRequest, LoadSceneResponse>(
                                 this,
-                                new LoadSceneRequest(StartingScenePath).WithCircumstances(x)
+                                new LoadSceneRequest(StartingScenePath).WithCircumstances(y)
                             )
                             .SelectMany(res =>
                                 res.WasSuccessful && res.PackedScene is not null
                                     ? Observable.FromAsync(() => AttachStartingScene(res))
                                         .Select(_ =>
-                                            Cleared(StartupStep.StartingScene, x, res)
+                                            Cleared(StartupStep.StartingScene, y, res)
                                         )
                                     : Observable.Return(
                                         Failed(
                                             StartupStep.StartingScene,
                                             $"LoadSceneRequest for ${StartingScenePath} failed.",
-                                            x,
+                                            y,
                                             res
                                         )
                                     )
                             )
                             .Catch<StartupStepReached, Exception>(ex =>
                             {
-                                rzeka.Whisper(ex, x);
+                                rzeka.Whisper(ex, y);
                                 return Observable.Return(
-                                    Failed(StartupStep.StartingScene, ex.Message, x)
+                                    Failed(StartupStep.StartingScene, ex.Message, y)
                                 );
                             })
                     )

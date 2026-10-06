@@ -121,13 +121,6 @@ public record FilloryLoadInfo
 
     public TimeSpan Elapsed => TimeSpan.FromMilliseconds(Time.GetTicksMsec() - StartedAtMesc);
 
-    // public IEnumerable<(string Name, StepState state)> Steps =>
-    //     new[]
-    //     {
-    //         (nameof(StartingSceneLoaded), StartingSceneLoaded),
-    //         (nameof(PlayerSpawned), PlayerSpawned),
-    //     };
-
     public StepStatus EffectiveState(StartupStep s) =>
         Steps[s].State == StepState.Pending && IsLoadFailed
             ? Steps[s] with
@@ -138,11 +131,6 @@ public record FilloryLoadInfo
 
     public IEnumerable<(StartupStep step, StepStatus state)> Progress =>
         Steps.Keys.Select(x => (x, EffectiveState(x)));
-    // public IEnumerable<string> ClearedSince(FilloryLoadInfo previous) =>
-    //     Steps
-    //         .Where(s => s.Done)
-    //         .Select(s => s.Name)
-    //         .Except(previous.Steps.Where(s => s.Done).Select(s => s.Name));
 }
 
 /* created at 2026-07-28, Tue, 00:33 🌊 */

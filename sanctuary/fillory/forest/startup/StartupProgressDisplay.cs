@@ -28,6 +28,15 @@ public partial class StartupProgressDisplay : Node
 
     [Export]
     VBoxContainer StepsContainer { get; set; }
+    
+    [Export]
+    Font MonoFont { get; set; }
+    
+    [Export]
+    Font VerdictFont { get; set; }
+
+    [Export]
+    int RowFontSize { get; set; } = 18;
 
     readonly Dictionary<StartupStep, RichTextLabel> _rows = new();
 
@@ -80,8 +89,11 @@ public partial class StartupProgressDisplay : Node
         };
 
         string text =
-            $"[color={dim}][{elapsed.TotalSeconds:00.00}s][/color]"
-            + $" {step} : [color={colour}]{verdict}[/color]";
+            $"[color={dim}][{elapsed.TotalSeconds:00.00}s][/font][/color]"
+            + $" {step} : [font={VerdictFont.ResourcePath}][color={colour}]{verdict}[/color][/font]";
+        //string text =
+            //$"[color={dim}][{elapsed.TotalSeconds:00.00}s][/color]"
+            //+ $" {step} : [color={colour}]{verdict}[/color]";
 
         if (string.IsNullOrWhiteSpace(status.Reason) is false)
         {
@@ -104,6 +116,12 @@ public partial class StartupProgressDisplay : Node
             ScrollActive = false,
             Text = text,
         };
+
+        // AddThemeFontOverride is the per-node escape hatch that sits on top of the theme
+        // cascade. The string is a theme *item name*, not a property name.
+        row.AddThemeFontOverride("normal_font", MonoFont);
+        
+        row.AddThemeFontSizeOverride("normal_font_size", RowFontSize);
 
         _rows[step] = row;
         StepsContainer.CallDeferred(Node.MethodName.AddChild, row);

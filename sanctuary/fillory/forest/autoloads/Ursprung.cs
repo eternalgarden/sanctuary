@@ -32,7 +32,7 @@ public partial class Ursprung : Node
         Rzeka = spring.Create(
             "Sanctuary",
             mainThread: mainThread,
-            describeOwner: who => (who as Node)?.Name
+            describeSpellOwner: who => (who as Node)?.Name
         );
 
         GD.Print("🌊 Rzeka is operational!");

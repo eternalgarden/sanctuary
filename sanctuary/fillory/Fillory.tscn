@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://brw7f0e84d106" path="res://earth/models/levels/psx_temple_island/textures/oceant text.png" id="6_ng7ke"]
 [ext_resource type="Script" uid="uid://bbho1qj7b0g2n" path="res://fillory/forest/startup/StartupSceneSpawner.cs" id="6_oqecv"]
 [ext_resource type="Script" uid="uid://ppa70qdc3qxn" path="res://fillory/forest/startup/StartupPlayerSpawner.cs" id="7_ks744"]
+[ext_resource type="FontFile" uid="uid://dywslc8fm4m4w" path="res://earth/fonts/nerd_fonts/MononokiNerdFont-Regular.ttf" id="10_e3por"]
+[ext_resource type="FontFile" uid="uid://cmfofd1sc2q5y" path="res://earth/fonts/avara/Avara-Bold.otf" id="11_e3por"]
 
 [node name="fillory" type="Node3D" unique_id=506889607]
 script = ExtResource("1_qkk1h")
@@ -52,6 +54,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_ccn50")
 StepsContainer = NodePath("steps_cleared_container")
+MonoFont = ExtResource("10_e3por")
+VerdictFont = ExtResource("11_e3por")
 
 [node name="TextureRect" type="TextureRect" parent="startup/startup_progress_display" unique_id=806362689]
 visible = false

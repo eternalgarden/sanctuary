@@ -464,3 +464,9 @@ physics_material_override = ExtResource("8_04xdu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/ArenaGeometry/TooSteep2/StaticBody3D" unique_id=883418357]
 shape = SubResource("ConcavePolygonShape3D_do582")
+
+[node name="mushroom_012" type="Node3D" parent="." unique_id=757338637]
+transform = Transform3D(11.656987, 0, -3.9153104, 0, 12.296951, 0, 3.9153104, 0, 11.656987, -5.9752626, 2.084417e-09, -1.722445)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="mushroom_012" unique_id=13404548]
+transform = Transform3D(0.08132097, 0, -1.8626451e-09, 0, 0.081320964, 0, 1.8626451e-09, 0, 0.08132097, -0.0018767118, 0.048473414, 0.10626359)
