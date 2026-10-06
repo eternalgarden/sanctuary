@@ -13,9 +13,15 @@ https://docs.godotengine.org/en/3.5/tutorials/assets_pipeline/importing_scenes.h
 
 ## format
 
-### GLB vs. GLTF
+### glb & gltf
 
 https://www.reddit.com/r/godot/comments/17cqalr/which_gltf_file_type_is_best_for_godot/
 
+> *glb vs gltf*
 - Use `.glb` when you won't reuses the asset texture.
 - Use `.gltf` when there will be multiple meshes with the same material using the same texture. With `.glb` this texture would be copiet for every mesh imported like that.
+
+> *Using the asset*
+- When using an external texture: export from blender with option:
+	- `Material » Images » None`
+	- Inside Godot, open the mesh file, go in the structure to the materials and select option `Use External` and point to the material using an external shader / textures.

@@ -47,9 +47,20 @@ List of textures from ambient.cg:
 
 #### CharacterControllerPlugin
 
-- **Description**: Modular Character Controller for Godot 4. Includes FPS version with headbob and camera movement. (Walk, Crouch, Sprint, Swim and Fly Mode).
+- **Description**: 
+	- Modular Character Controller for Godot 4. 
+	- Includes FPS version with headbob and camera movement
+	- Walk, Crouch, Sprint, Swim and Fly Mode
 - **Author**: Expresso Bits and Whimfoome
 - **Version**: 2.1.6
 - **Script**: CharacterControllerPlugin.cs
-- **Changes**: Gradual overhauls for the needs of Sanctuary (yes, double-jump).
+- **Changes**: Gradual overhauls for the needs of Sanctuary (yes, no sanctuary without double-jump).
 - **Source**: https://github.com/ExpressoBits/character-controller
+
+
+## Fonts
+
+### Mononoki
+- **Author:** Matthias Tellen
+- **Source:** https://github.com/madmalik/mononoki
+- **License:** SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
