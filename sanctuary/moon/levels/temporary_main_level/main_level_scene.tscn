@@ -4,6 +4,42 @@
 [ext_resource type="Environment" uid="uid://dxvg0fkso3lhd" path="res://moon/levels/temporary_main_level/main_level_environment.tres" id="2_o2mgg"]
 [ext_resource type="Script" uid="uid://dd0q6ycty4hgd" path="res://fillory/common/utility/AutoremovedNode.cs" id="3_bbcmg"]
 [ext_resource type="PackedScene" uid="uid://drmenpmf8f5pd" path="res://sandbox/_scenes/sandbox_mesh.blend" id="4_gqeqo"]
+[ext_resource type="Material" uid="uid://cuhdmp7p8jhdw" path="res://moon/assets/textures/ground/materials/dry_grass_01.tres" id="5_gqeqo"]
+[ext_resource type="PackedScene" uid="uid://d1p343rv6oev8" path="res://moon/assets/models/nature/mushrooms/mushroom_01/mushroom_01.glb" id="5_o2mgg"]
+[ext_resource type="Material" uid="uid://xqyhgpspvreq" path="res://sandbox/_scenes/sandbox_rocky_floor.tres" id="6_erj42"]
+[ext_resource type="PackedScene" uid="uid://d3ifhnpt0jv6r" path="res://moon/shaders/lorentian_butterfly/lorentian_butterfly.tscn" id="8_erj42"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_64fm0"]
+_surfaces = [{
+"aabb": AABB(-21.83242, 0, -21.83242, 43.66484, 1e-05, 43.66484),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p7sxa"]
+resource_name = "sandbox_mesh_plane "
+_surfaces = [{
+"aabb": AABB(-21.83242, 0, -21.83242, 43.66484, 1e-05, 43.66484),
+"attribute_data": PackedByteArray(255, 255, 255, 255, 111, 77, 111, 77, 255, 255, 111, 77, 111, 77, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": ExtResource("6_erj42"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(3.3060074, 3.3060074, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 84, 213, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 0, 0, 255, 255, 84, 213, 0, 0, 0, 0, 0, 0, 84, 213, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_64fm0")
 
 [node name="Sandbox" type="Node3D" unique_id=506889607]
 script = ExtResource("1_niose")
@@ -14,26 +50,64 @@ script = ExtResource("1_niose")
 environment = ExtResource("2_o2mgg")
 script = ExtResource("3_bbcmg")
 
-[node name="sandbox_mesh" parent="environment" unique_id=330653116 instance=ExtResource("4_gqeqo")]
+[node name="sandbox_mesh" parent="environment" unique_id=1470963140 instance=ExtResource("4_gqeqo")]
+transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, 0.035499573, 0.007167816)
+
+[node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=1439061064]
+transform = Transform3D(0.9999825, -0.002616454, 0.0052118385, 0.0026361884, 0.9999894, -0.0037825683, -0.0052018813, 0.0037962499, 0.99997914, 0, 0, 0)
+material_override = ExtResource("5_gqeqo")
+mesh = SubResource("ArrayMesh_p7sxa")
+surface_material_override/0 = ExtResource("5_gqeqo")
 
 [node name="light" type="Node3D" parent="." unique_id=927794639]
 
 [node name="Light2" type="OmniLight3D" parent="light" unique_id=1098316556]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 7.1187983, 8.095162, 13.516323)
+transform = Transform3D(-0.28680003, -0.770313, 0.5695292, -0.0582596, 0.60742825, 0.79223514, -0.9562173, 0.19403256, -0.21908858, 7.0857577, 8.08652, 13.579071)
 light_color = Color(0.78740174, 0.68367463, 0.9889856, 1)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
+light_energy = 2.863
+omni_range = 11.096
+omni_attenuation = -0.132
 
 [node name="Light3" type="OmniLight3D" parent="light" unique_id=1816697654]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, -13.352872, 9.546434, 15.780733)
+transform = Transform3D(-0.28680003, -0.770313, 0.5695292, -0.0582596, 0.60742825, 0.79223514, -0.9562173, 0.19403256, -0.21908858, -13.39164, 9.602747, 15.747084)
 light_color = Color(0.5892236, 0.8201975, 0.5184267, 1)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
+light_energy = 2.863
+omni_range = 11.096
+omni_attenuation = -0.132
 
-[node name="Light" type="OmniLight3D" parent="light" unique_id=2098772360]
-transform = Transform3D(-0.29086468, -0.77110094, 0.56639314, -0.055189036, 0.6045247, 0.79467237, -0.9551711, 0.19988343, -0.2183912, -13.752971, 8.095162, -10.196339)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
+[node name="Light4" type="OmniLight3D" parent="light" unique_id=1870827471]
+transform = Transform3D(-0.2868001, -0.7703131, 0.5695292, -0.05825959, 0.60742825, 0.7922353, -0.9562173, 0.19403261, -0.21908861, -0.04019642, 8.530504, -0.26521492)
+light_color = Color(0.9999998, 0.9493517, 0.7591758, 1)
+light_energy = 2.611
+light_indirect_energy = 1.295
+light_volumetric_fog_energy = 0.411
+shadow_enabled = true
+shadow_blur = 6.842
+omni_range = 26.633
+omni_attenuation = 0.053
+
+[node name="mushroom_012" parent="." unique_id=1692073404 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(6.105744, 1.9107852, -2.0663455, -1.8347304, 6.4454913, 0.5388998, 2.1341615, 0.07448931, 6.375015, -5.5528164, -0.028671263, -0.061793327)
+
+[node name="mushroom_013" parent="." unique_id=1288389160 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(10.495709, 0, 0, 0, 10.495709, 0, 0, 0, 10.495709, -3.1075172, -0.028671263, -4.016817)
+
+[node name="mushroom_014" parent="." unique_id=1048700213 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(6.7428727, -2.3010604, 3.091987, 2.4298973, 7.374379, 0.18900551, -2.9917986, 0.8032717, 7.122183, 5.9706035, -0.028671263, -3.9221191)
+
+[node name="mushroom_018" parent="." unique_id=832409134 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(2.1401873, -0.9673869, 10.229549, 3.2836995, 9.965542, 0.2554172, -9.736366, 3.148346, 2.3347375, 1.8309202, -0.028671263, -6.0359106)
+
+[node name="mushroom_015" parent="." unique_id=2059565295 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(10.495709, 0, 0, 0, 10.495709, 0, 0, 0, 10.495709, 5.40382, -0.028671263, 1.5738993)
+
+[node name="mushroom_016" parent="." unique_id=1468359358 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(9.565035, -1.7740126, 3.939912, 1.0360584, 10.232751, 2.092203, -4.1948314, -1.5177642, 9.50051, 2.410398, -0.028671263, 4.7317667)
+
+[node name="mushroom_017" parent="." unique_id=729632047 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(8.687628, -0.79078335, -5.836069, -0.5066247, 10.261762, -2.1446304, 5.86757, 2.0568845, 8.4558115, -3.2074947, -0.028671263, 3.3998432)
+
+[node name="LorentianButterfly" parent="." unique_id=446143710 instance=ExtResource("8_erj42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59328794, -1.1804303, -0.32941628)
+
+[editable path="environment/sandbox_mesh"]

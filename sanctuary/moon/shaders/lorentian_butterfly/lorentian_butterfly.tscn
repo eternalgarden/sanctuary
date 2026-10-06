@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d3ifhnpt0jv6r"]
+
+[ext_resource type="Script" uid="uid://ccwykibveo358" path="res://moon/shaders/lorentian_butterfly/LorenzButterfly.cs" id="1_p5m07"]
+
+[node name="LorentianButterfly" type="Node3D" unique_id=446143710]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=951501190]
+transform = Transform3D(-0.7841594, 0, 0.62055933, 0, 1, 0, -0.62055933, 0, -0.7841594, 0.57705784, 2.947616, -0.2001158)
+amount = 20000
+lifetime = 40.0
+explosiveness = 1.0
+fixed_fps = 0
+local_coords = true
+script = ExtResource("1_p5m07")
+RampSpeed = 120.0
