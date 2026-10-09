@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0ep8pivga2jo"]
+
+[ext_resource type="Texture2D" uid="uid://bhtsjv5l75xou" path="res://moon/assets/models/architecture/ancient_columns/dark.png" id="1_cejpl"]
+
+[resource]
+albedo_texture = ExtResource("1_cejpl")
