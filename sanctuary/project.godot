@@ -21,6 +21,7 @@ DI="*res://sandbox/research_DI/DI.cs"
 
 [display]
 
+window/size/mode=3
 window/quality/use_taa=false
 
 [dotnet]

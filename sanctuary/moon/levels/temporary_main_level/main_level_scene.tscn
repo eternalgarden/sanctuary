@@ -7,7 +7,9 @@
 [ext_resource type="Material" uid="uid://cuhdmp7p8jhdw" path="res://moon/assets/textures/ground/materials/dry_grass_01.tres" id="5_gqeqo"]
 [ext_resource type="PackedScene" uid="uid://d1p343rv6oev8" path="res://moon/assets/models/nature/mushrooms/mushroom_01/mushroom_01.glb" id="5_o2mgg"]
 [ext_resource type="Material" uid="uid://xqyhgpspvreq" path="res://sandbox/_scenes/sandbox_rocky_floor.tres" id="6_erj42"]
+[ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="7_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d3ifhnpt0jv6r" path="res://moon/shaders/lorentian_butterfly/lorentian_butterfly.tscn" id="8_erj42"]
+[ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://moon/assets/models/functional/scroll/scroll.tscn" id="10_fw6xg"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_64fm0"]
 _surfaces = [{
@@ -54,10 +56,22 @@ script = ExtResource("3_bbcmg")
 transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, 0.035499573, 0.007167816)
 
 [node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=1439061064]
-transform = Transform3D(0.9999825, -0.002616454, 0.0052118385, 0.0026361884, 0.9999894, -0.0037825683, -0.0052018813, 0.0037962499, 0.99997914, 0, 0, 0)
+transform = Transform3D(0.9999824, -0.0026164537, 0.005211838, 0.0026361882, 0.99998933, -0.003782568, -0.005201881, 0.0037962494, 0.9999791, 0, 0.25238404, 0)
 material_override = ExtResource("5_gqeqo")
 mesh = SubResource("ArrayMesh_p7sxa")
 surface_material_override/0 = ExtResource("5_gqeqo")
+
+[node name="037_ancient_columns" parent="environment/sandbox_mesh" unique_id=41858465 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.5012026, 0.24178924, 4.4032235)
+
+[node name="037_ancient_columns2" parent="environment/sandbox_mesh" unique_id=1580256462 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -7.479445, 0.22482997, 4.403223)
+
+[node name="037_ancient_columns3" parent="environment/sandbox_mesh" unique_id=1959334392 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -6.938743, 0.26527005, -5.977684)
+
+[node name="037_ancient_columns4" parent="environment/sandbox_mesh" unique_id=1573740525 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.4007783, 0.30860087, -6.1722736)
 
 [node name="light" type="Node3D" parent="." unique_id=927794639]
 
@@ -109,5 +123,9 @@ transform = Transform3D(8.687628, -0.79078335, -5.836069, -0.5066247, 10.261762,
 
 [node name="LorentianButterfly" parent="." unique_id=446143710 instance=ExtResource("8_erj42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59328794, -1.1804303, -0.32941628)
+visible = false
+
+[node name="mesh_scroll" parent="." unique_id=910502028 instance=ExtResource("10_fw6xg")]
+transform = Transform3D(-0.8646082, 0, 0.50244665, 0, 1, 0, -0.50244665, 0, -0.8646082, -9.792899, 0.5000065, 1.4439414)
 
 [editable path="environment/sandbox_mesh"]

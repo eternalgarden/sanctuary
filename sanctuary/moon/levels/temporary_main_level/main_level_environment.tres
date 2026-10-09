@@ -3,11 +3,11 @@
 [resource]
 background_energy_multiplier = 0.0
 ambient_light_source = 2
-ambient_light_color = Color(0.61880994, 0.4443225, 0.4216469, 1)
+ambient_light_color = Color(0.33497062, 0.333861, 0.33083797, 1)
 ambient_light_energy = 3.93
 ssao_radius = 3.92
 ssao_intensity = 5.1
 glow_enabled = true
 glow_hdr_threshold = 0.41
-fog_light_color = Color(0.33196172, 0.36162013, 0.40776464, 1)
-volumetric_fog_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.19823025, 0.21821702, 0.2475967, 1)

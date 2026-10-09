@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_qkk1h"]
 [ext_resource type="Script" uid="uid://difh04demnsst" path="res://fillory/forest/scene_loader/SceneLoader.cs" id="2_pa321"]
-[ext_resource type="Environment" uid="uid://lbmwre72jldd" path="res://sandbox/_scenes/sandbox_environment.tres" id="2_uvrxh"]
 [ext_resource type="Script" uid="uid://dpdbjofqlnj7u" path="res://fillory/fairies/player/internal/player_loader/PlayerLoader.cs" id="3_15tua"]
 [ext_resource type="Script" uid="uid://bahan73d2s164" path="res://fillory/forest/startup/StartupProcess.cs" id="3_w8ka0"]
 [ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://fillory/fairies/player/game/character-controller/player.tscn" id="4_oqecv"]
 [ext_resource type="Script" uid="uid://bil50viqe4kr0" path="res://fillory/forest/startup/StartupProgressDisplay.cs" id="5_ccn50"]
+[ext_resource type="Environment" uid="uid://dxvg0fkso3lhd" path="res://moon/levels/temporary_main_level/main_level_environment.tres" id="5_e3por"]
 [ext_resource type="Texture2D" uid="uid://brw7f0e84d106" path="res://earth/models/levels/psx_temple_island/textures/oceant text.png" id="6_ng7ke"]
 [ext_resource type="Script" uid="uid://bbho1qj7b0g2n" path="res://fillory/forest/startup/StartupSceneSpawner.cs" id="6_oqecv"]
 [ext_resource type="Script" uid="uid://ppa70qdc3qxn" path="res://fillory/forest/startup/StartupPlayerSpawner.cs" id="7_ks744"]
@@ -31,7 +31,7 @@ PlayerScene = ExtResource("4_oqecv")
 [node name="environment" type="Node3D" parent="world" unique_id=51890254]
 
 [node name="world_environment" type="WorldEnvironment" parent="." unique_id=1245292406]
-environment = ExtResource("2_uvrxh")
+environment = ExtResource("5_e3por")
 
 [node name="startup" type="Node3D" parent="." unique_id=1508289794]
 script = ExtResource("3_w8ka0")
