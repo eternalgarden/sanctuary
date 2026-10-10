@@ -32,6 +32,10 @@ project/assembly_name="sanctuary"
 
 enabled=PackedStringArray("res://addons/goblend/plugin.cfg")
 
+[godot_cef]
+
+advanced/custom_command_line_switches="--ozone-platform=headless"
+
 [input]
 
 move_forward={
