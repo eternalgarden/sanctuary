@@ -1,4 +1,6 @@
+```
 
+```
 # tools
 
 - godot
@@ -7,6 +9,11 @@
 		- [godot landscaper](https://github.com/dip000/godot-landscaper)
 	- godot shaders:
 		- [GPU Trail](https://github.com/celyk/GPUTrail)
+	- code
+		- CI/CD [setup-godot-action](https://github.com/marketplace/actions/setup-godot-action)
+		- testing with [GoDotTest](https://github.com/chickensoft-games/GoDotTest)
+		- DI with [AutoInject](https://github.com/chickensoft-games/AutoInject)
+		- multithreaded loading of multiple assets, dpi scaling with [GameTools](https://github.com/chickensoft-games/GameTools)
 - terminal:
 	- [ ] [godotdev.nvim](https://github.com/Mathijs-Bakker/godotdev.nvim)
 	- [ ] [(charmbracelet) vhs](https://github.com/charmbracelet/vhs)
