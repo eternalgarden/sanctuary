@@ -22,6 +22,9 @@ export_credentials.cfg
 *.VoxelGI_data.res
 *.lmbake
 
+# 🐖 godot-cef native binaries (~2.5 GB, fetch with sanctuary/moon/tools/fetch_godot_cef.sh)
+sanctuary/addons/godot_cef/bin/
+
 # 🐖 Imported translations (automatically generated from CSV files)
 *.translation
 
