@@ -4,12 +4,15 @@
 [ext_resource type="Environment" uid="uid://dxvg0fkso3lhd" path="res://moon/levels/temporary_main_level/main_level_environment.tres" id="2_o2mgg"]
 [ext_resource type="Script" uid="uid://dd0q6ycty4hgd" path="res://fillory/common/utility/AutoremovedNode.cs" id="3_bbcmg"]
 [ext_resource type="PackedScene" uid="uid://drmenpmf8f5pd" path="res://sandbox/_scenes/sandbox_mesh.blend" id="4_gqeqo"]
+[ext_resource type="Material" uid="uid://cag2k6xrsaecr" path="res://moon/assets/textures/ground/materials/undergrowth_wet.tres" id="5_alh16"]
 [ext_resource type="Material" uid="uid://cuhdmp7p8jhdw" path="res://moon/assets/textures/ground/materials/dry_grass_01.tres" id="5_gqeqo"]
 [ext_resource type="PackedScene" uid="uid://d1p343rv6oev8" path="res://moon/assets/models/nature/mushrooms/mushroom_01/mushroom_01.glb" id="5_o2mgg"]
 [ext_resource type="Material" uid="uid://xqyhgpspvreq" path="res://sandbox/_scenes/sandbox_rocky_floor.tres" id="6_erj42"]
 [ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="7_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d3ifhnpt0jv6r" path="res://moon/shaders/lorentian_butterfly/lorentian_butterfly.tscn" id="8_erj42"]
+[ext_resource type="PackedScene" uid="uid://b6wdkd78131eb" path="res://moon/assets/models/nature/undergrowth_floor/undergrowth.glb" id="8_x0uts"]
 [ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://moon/assets/models/functional/scroll/scroll.tscn" id="10_fw6xg"]
+[ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="11_c1tix"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_64fm0"]
 _surfaces = [{
@@ -56,22 +59,70 @@ script = ExtResource("3_bbcmg")
 transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, 0.035499573, 0.007167816)
 
 [node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=1439061064]
-transform = Transform3D(0.9999824, -0.0026164537, 0.005211838, 0.0026361882, 0.99998933, -0.003782568, -0.005201881, 0.0037962494, 0.9999791, 0, 0.25238404, 0)
-material_override = ExtResource("5_gqeqo")
+transform = Transform3D(2.0750098, -0.0026197887, 0.010873439, 0.005470213, 1.001264, -0.007891558, -0.010794144, 0.0038010885, 2.086253, 0.037929438, 0.2877136, -0.05015598)
+material_override = ExtResource("5_alh16")
 mesh = SubResource("ArrayMesh_p7sxa")
 surface_material_override/0 = ExtResource("5_gqeqo")
 
 [node name="037_ancient_columns" parent="environment/sandbox_mesh" unique_id=41858465 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.5012026, 0.24178924, 4.4032235)
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.501202, 0.38304126, 4.403223)
 
 [node name="037_ancient_columns2" parent="environment/sandbox_mesh" unique_id=1580256462 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -7.479445, 0.22482997, 4.403223)
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -7.479444, 0.36608198, 4.4032226)
 
 [node name="037_ancient_columns3" parent="environment/sandbox_mesh" unique_id=1959334392 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -6.938743, 0.26527005, -5.977684)
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -6.9387426, 0.4065221, -5.9776835)
 
 [node name="037_ancient_columns4" parent="environment/sandbox_mesh" unique_id=1573740525 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.4007783, 0.30860087, -6.1722736)
+transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.400778, 0.4498529, -6.1722727)
+
+[node name="039_undergrowth" parent="environment/sandbox_mesh" unique_id=286554090 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999988, 0, 0, 0, 0.27, 0, 0, 0, 0.49999988, 7.1733437, 0.4683196, 8.728973)
+
+[node name="039_undergrowth4" parent="environment/sandbox_mesh" unique_id=2125394637 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.4999998, 0, 0, 0, 0.27, 0, 0, 0, 0.4999998, 7.1733437, 0.4683196, -9.245491)
+
+[node name="039_undergrowth2" parent="environment/sandbox_mesh" unique_id=2128530106 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.4999998, 0, 0, 0, 0.27, 0, 0, 0, 0.4999998, 7.1733437, 0.4683196, 2.7229688)
+
+[node name="039_undergrowth3" parent="environment/sandbox_mesh" unique_id=950111843 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, 7.1733437, 0.4683196, -3.2678554)
+
+[node name="039_undergrowth5" parent="environment/sandbox_mesh" unique_id=243230050 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.4999998, 0, 0, 0, 0.27, 0, 0, 0, 0.4999998, 1.1568893, 0.4683196, 8.728973)
+
+[node name="039_undergrowth6" parent="environment/sandbox_mesh" unique_id=2126681071 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, 1.1568893, 0.4683196, -9.245491)
+
+[node name="039_undergrowth7" parent="environment/sandbox_mesh" unique_id=805731936 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, 1.1568893, 0.4683196, 2.7229698)
+
+[node name="039_undergrowth8" parent="environment/sandbox_mesh" unique_id=394513714 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999955, 0, 0, 0, 0.27, 0, 0, 0, 0.49999955, 1.1568893, 0.4683196, -3.2678535)
+
+[node name="039_undergrowth9" parent="environment/sandbox_mesh" unique_id=974024437 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, -4.8279576, 0.4683196, 8.728973)
+
+[node name="039_undergrowth10" parent="environment/sandbox_mesh" unique_id=2107558717 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999955, 0, 0, 0, 0.27, 0, 0, 0, 0.49999955, -4.8279576, 0.4683196, -9.245491)
+
+[node name="039_undergrowth11" parent="environment/sandbox_mesh" unique_id=1186806142 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999955, 0, 0, 0, 0.27, 0, 0, 0, 0.49999955, -4.8279576, 0.4683196, 2.7229707)
+
+[node name="039_undergrowth12" parent="environment/sandbox_mesh" unique_id=955529073 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999943, 0, 0, 0, 0.27, 0, 0, 0, 0.49999943, -4.8279576, 0.4683196, -3.2678518)
+
+[node name="039_undergrowth13" parent="environment/sandbox_mesh" unique_id=1404762455 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.4999996, 0, 0, 0, 0.27, 0, 0, 0, 0.4999996, -10.72793, 0.4683196, 8.728973)
+
+[node name="039_undergrowth14" parent="environment/sandbox_mesh" unique_id=2085855279 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.4999995, 0, 0, 0, 0.27, 0, 0, 0, 0.4999995, -10.72793, 0.4683196, -9.245491)
+
+[node name="039_undergrowth15" parent="environment/sandbox_mesh" unique_id=456905846 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.4999995, 0, 0, 0, 0.27, 0, 0, 0, 0.4999995, -10.72793, 0.4683196, 2.722971)
+
+[node name="039_undergrowth16" parent="environment/sandbox_mesh" unique_id=57999534 instance=ExtResource("8_x0uts")]
+transform = Transform3D(0.49999937, 0, 0, 0, 0.27, 0, 0, 0, 0.49999937, -10.72793, 0.4683196, -3.267851)
 
 [node name="light" type="Node3D" parent="." unique_id=927794639]
 
@@ -102,24 +153,35 @@ omni_attenuation = 0.053
 
 [node name="mushroom_012" parent="." unique_id=1692073404 instance=ExtResource("5_o2mgg")]
 transform = Transform3D(6.105744, 1.9107852, -2.0663455, -1.8347304, 6.4454913, 0.5388998, 2.1341615, 0.07448931, 6.375015, -5.5528164, -0.028671263, -0.061793327)
+visible = false
 
 [node name="mushroom_013" parent="." unique_id=1288389160 instance=ExtResource("5_o2mgg")]
 transform = Transform3D(10.495709, 0, 0, 0, 10.495709, 0, 0, 0, 10.495709, -3.1075172, -0.028671263, -4.016817)
+visible = false
 
 [node name="mushroom_014" parent="." unique_id=1048700213 instance=ExtResource("5_o2mgg")]
 transform = Transform3D(6.7428727, -2.3010604, 3.091987, 2.4298973, 7.374379, 0.18900551, -2.9917986, 0.8032717, 7.122183, 5.9706035, -0.028671263, -3.9221191)
+visible = false
 
 [node name="mushroom_018" parent="." unique_id=832409134 instance=ExtResource("5_o2mgg")]
 transform = Transform3D(2.1401873, -0.9673869, 10.229549, 3.2836995, 9.965542, 0.2554172, -9.736366, 3.148346, 2.3347375, 1.8309202, -0.028671263, -6.0359106)
+visible = false
+
+[node name="mushroom_019" parent="." unique_id=2004919471 instance=ExtResource("5_o2mgg")]
+transform = Transform3D(2.1401873, -0.9673869, 10.229549, 3.2836995, 9.965542, 0.2554172, -9.736366, 3.148346, 2.3347375, 1.8309202, 18.827078, -126.69709)
+visible = false
 
 [node name="mushroom_015" parent="." unique_id=2059565295 instance=ExtResource("5_o2mgg")]
 transform = Transform3D(10.495709, 0, 0, 0, 10.495709, 0, 0, 0, 10.495709, 5.40382, -0.028671263, 1.5738993)
+visible = false
 
 [node name="mushroom_016" parent="." unique_id=1468359358 instance=ExtResource("5_o2mgg")]
 transform = Transform3D(9.565035, -1.7740126, 3.939912, 1.0360584, 10.232751, 2.092203, -4.1948314, -1.5177642, 9.50051, 2.410398, -0.028671263, 4.7317667)
+visible = false
 
 [node name="mushroom_017" parent="." unique_id=729632047 instance=ExtResource("5_o2mgg")]
 transform = Transform3D(8.687628, -0.79078335, -5.836069, -0.5066247, 10.261762, -2.1446304, 5.86757, 2.0568845, 8.4558115, -3.2074947, -0.028671263, 3.3998432)
+visible = false
 
 [node name="LorentianButterfly" parent="." unique_id=446143710 instance=ExtResource("8_erj42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59328794, -1.1804303, -0.32941628)
@@ -127,5 +189,8 @@ visible = false
 
 [node name="mesh_scroll" parent="." unique_id=910502028 instance=ExtResource("10_fw6xg")]
 transform = Transform3D(-0.8646082, 0, 0.50244665, 0, 1, 0, -0.50244665, 0, -0.8646082, -9.792899, 0.5000065, 1.4439414)
+
+[node name="Sketchfab_Scene" parent="." unique_id=1505213626 instance=ExtResource("11_c1tix")]
+transform = Transform3D(-0.7509992, 0, -0.6603031, 0, 1, 0, 0.6603031, 0, -0.7509992, -4.25845, 0.77480066, 5.058625)
 
 [editable path="environment/sandbox_mesh"]

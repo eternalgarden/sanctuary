@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cag2k6xrsaecr"]
+
+[ext_resource type="Texture2D" uid="uid://b34vg1yyn4j03" path="res://moon/assets/textures/ground/undergrowth_wet_warsaw.jpg" id="1_mc3ni"]
+
+[resource]
+albedo_texture = ExtResource("1_mc3ni")
+metallic_specular = 0.0
+uv1_scale = Vector3(5, 5, 5)

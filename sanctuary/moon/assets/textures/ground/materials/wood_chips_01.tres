@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckb6hjhymtb47"]
+
+[ext_resource type="Texture2D" uid="uid://cdmeyijnbbov6" path="res://moon/assets/textures/ground/wood_chips_01.jpg" id="1_35qk7"]
+
+[resource]
+albedo_texture = ExtResource("1_35qk7")
+metallic_specular = 0.0
+uv1_scale = Vector3(5, 5, 5)

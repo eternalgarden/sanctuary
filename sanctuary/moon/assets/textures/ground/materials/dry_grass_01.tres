@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cuhdmp7p8jhdw"]
+
+[ext_resource type="Texture2D" uid="uid://d4kixv0nh4rmi" path="res://moon/assets/textures/ground/dry_grass_01.jpg" id="1_ejhx7"]
+
+[resource]
+albedo_texture = ExtResource("1_ejhx7")
+metallic_specular = 0.0
+uv1_scale = Vector3(5, 5, 5)

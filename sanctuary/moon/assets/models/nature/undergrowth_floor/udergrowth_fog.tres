@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b6e85ec2nanh5"]
+
+[ext_resource type="Shader" uid="uid://xdry56cnobws" path="res://moon/assets/models/nature/undergrowth_floor/undergrowth_fog.gdshader" id="1_ud3qt"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_u0vw8"]
+width = 512
+height = 512
+depth = 512
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ud3qt")
+shader_parameter/noise_tex = SubResource("NoiseTexture3D_u0vw8")
+shader_parameter/fog_color = Color(0.86250603, 0.8896199, 0.9252528, 1)
+shader_parameter/floor_y = 1.3
+shader_parameter/fog_height = 0.15
+shader_parameter/layer_alpha = 0.13
+shader_parameter/noise_scale = 0.1
+shader_parameter/wind = Vector3(0.2, 0.2, 0.1)
+shader_parameter/soft_distance = 0.08

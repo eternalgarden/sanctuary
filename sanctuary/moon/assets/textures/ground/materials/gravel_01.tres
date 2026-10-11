@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhvvgy2401080"]
+
+[ext_resource type="Texture2D" uid="uid://bn4qfrnor6cx1" path="res://moon/assets/textures/ground/gravel_01.jpg" id="1_2tvre"]
+
+[resource]
+albedo_texture = ExtResource("1_2tvre")
+metallic_specular = 0.0
+uv1_scale = Vector3(5, 5, 5)
