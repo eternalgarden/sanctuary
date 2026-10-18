@@ -12,7 +12,8 @@ script = ExtResource("1_3hkae")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="environment" unique_id=1245292406]
 environment = ExtResource("2_ncdwj")
 
-[node name="sandbox_mesh" parent="environment" unique_id=330653116 instance=ExtResource("3_3hkae")]
+[node name="sandbox_mesh" parent="environment" unique_id=1470963140 instance=ExtResource("3_3hkae")]
+transform = Transform3D(0.9884366, 0, 0, 0, 0.9884366, 0, 0, 0, 0.9884366, 0, 0, 0)
 
 [node name="light" type="Node3D" parent="." unique_id=927794639]
 
