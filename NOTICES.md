@@ -9,12 +9,6 @@
 # Third-Party Notices
 ## 3D
 
-#### bloodborn_lantern
-- **Author:** Polygon Experts
-- **Source:** https://sketchfab.com/3d-models/bloodborn-lantern-9c408b2ab6bb448ca8c75f533ec1256c
-- **License:** CC BY 4.0
-- **Changes:** 
-
 #### manul
 - **Filename:** lil_manul
 - **Author:** [lightinkat](https://sketchfab.com/lightinkat)
@@ -56,6 +50,17 @@ List of textures from ambient.cg:
 - **Script**: CharacterControllerPlugin.cs
 - **Changes**: Gradual overhauls for the needs of Sanctuary (yes, no sanctuary without double-jump).
 - **Source**: https://github.com/ExpressoBits/character-controller
+- **License**: MIT, Copyright (c) 2022 Dimitar "Whimfoome" Dimitrov
+
+#### godot-cef
+
+- **Description**: Chromium Embedded Framework (CEF) integration for Godot, powering the in-game browser.
+- **Author**: Delton Ding
+- **Version**: v1.17.0 (pinned in `sanctuary/moon/tools/fetch_godot_cef.sh`)
+- **Changes**: None. Native binaries are fetched by the script, not tracked.
+- **Source**: https://github.com/dsh0416/godot-cef
+- **License**: MIT, Copyright 2025-2026 Delton Ding
+- **Bundled**: CEF (BSD-3-Clause, Marshall A. Greenblatt) and Chromium, which carries its own third-party notices.
 
 
 ## Fonts
