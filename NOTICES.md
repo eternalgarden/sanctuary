@@ -69,3 +69,9 @@ List of textures from ambient.cg:
 - **Author:** Matthias Tellen
 - **Source:** https://github.com/madmalik/mononoki
 - **License:** SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+
+### Avara
+- **Filename:** avara (Avara-Bold, Avara-BoldItalic, Avara-Black)
+- **Author:** Raphaël Bastide, Wei Huang, Lucas Le Bihan, Jérémy Landes, Walid Bouchouchi (published by Velvetyne)
+- **Source:** https://gitlab.com/velvetyne/Avara
+- **License:** SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
