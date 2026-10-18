@@ -1,5 +1,4 @@
-<Project Sdk="Godot.NET.Sdk/4.6.1">
-
+<Project Sdk="Godot.NET.Sdk/4.7.2">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
@@ -7,14 +6,13 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
   </PropertyGroup>
-
   <!-- Global usings -->
   <ItemGroup>
     <Using Include="Godot" />
-    <Using Include="Godot.GD" Static="true" /> <!-- call Print() etc. directly -->
+    <Using Include="Godot.GD" Static="true" />
+    <!-- call Print() etc. directly -->
     <Using Include="Rzeka" />
   </ItemGroup>
-
   <!-- Packages -->
   <ItemGroup>
     <PackageReference Include="EternalGarden.Rzeka" Version="1.2.0" />
@@ -22,15 +20,12 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.7" />
     <PackageReference Include="System.Reactive" Version="6.1.0" />
   </ItemGroup>
-
   <!-- Dev-only: editor and debug exports (pair with #if DEBUG in code) -->
   <ItemGroup Condition="'$(Configuration)' != 'ExportRelease'">
     <PackageReference Include="EternalGarden.Rzeka.Dev" Version="1.2.0" />
   </ItemGroup>
-
   <!-- Release exports: leave sandbox code out -->
   <ItemGroup Condition="'$(Configuration)' == 'ExportRelease'">
     <Compile Remove="sandbox/**/*.cs" />
   </ItemGroup>
-
 </Project>

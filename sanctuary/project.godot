@@ -12,7 +12,7 @@ config_version=5
 
 config/name="sanctuary"
 run/main_scene="uid://dphw5sd6sjyif"
-config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 
 [autoload]
 
@@ -27,10 +27,6 @@ window/quality/use_taa=false
 [dotnet]
 
 project/assembly_name="sanctuary"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/goblend/plugin.cfg")
 
 [godot_cef]
 
@@ -87,3 +83,4 @@ move_fly_mode={
 
 rendering_device/driver.windows="d3d12"
 anti_aliasing/quality/use_debanding=true
+anti_aliasing/quality/use_taa=true
