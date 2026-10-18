@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2kp3067vs6ra"]
+
+[ext_resource type="Texture2D" uid="uid://b34vg1yyn4j03" path="res://moon/assets/textures/ground/undergrowth_wet_warsaw.jpg" id="1_dehts"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dehts"]
+load_path = "res://.godot/imported/autumn_leaves_with_green_grass_displacement.png-22f6d4536104a484148b34ed2c95c8df.s3tc.ctex"
+
+[resource]
+albedo_texture = ExtResource("1_dehts")
+metallic_specular = 0.0
+heightmap_texture = SubResource("CompressedTexture2D_dehts")
+uv1_scale = Vector3(5, 5, 5)

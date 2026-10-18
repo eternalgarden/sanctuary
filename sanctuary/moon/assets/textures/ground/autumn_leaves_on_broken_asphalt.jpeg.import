@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc3rmrbfa88hl"
-path.s3tc="res://.godot/imported/gravel_01_expo.jpg-747afbdaa9897a9d3631721f9bc3e23f.s3tc.ctex"
+uid="uid://b55tlyiyug2gu"
+path.s3tc="res://.godot/imported/autumn_leaves_on_broken_asphalt.jpeg-9bd3a3cbc15c21578887c2df070c7e83.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://moon/assets/textures/ground/gravel_01_expo.jpg"
-dest_files=["res://.godot/imported/gravel_01_expo.jpg-747afbdaa9897a9d3631721f9bc3e23f.s3tc.ctex"]
+source_file="res://moon/assets/textures/ground/autumn_leaves_on_broken_asphalt.jpeg"
+dest_files=["res://.godot/imported/autumn_leaves_on_broken_asphalt.jpeg-9bd3a3cbc15c21578887c2df070c7e83.s3tc.ctex"]
 
 [params]
 

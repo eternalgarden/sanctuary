@@ -38,5 +38,5 @@ void fragment() {
     ALPHA = d * layer_alpha * soft;
     //ALBEDO = vec3(h);
 //ALPHA = 1.0;
-    
+
 }

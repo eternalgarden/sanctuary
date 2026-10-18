@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4k157g1ihqe0"]
+
+[ext_resource type="Texture2D" uid="uid://c0ti88q656m8v" path="res://moon/assets/models/nature/undergrowth_floor/undergrowth_wet_warsaw_3d.jpg" id="1_2cxsh"]
+
+[resource]
+albedo_texture = ExtResource("1_2cxsh")
+metallic = 0.58
+roughness = 0.03

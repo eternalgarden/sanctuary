@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ohbh6frdbbs"
-path.s3tc="res://.godot/imported/undergrowth_undergrowth_wet_warsaw4.jpg-9a3ac476eeefaf8111d8ac3ee3393298.s3tc.ctex"
+uid="uid://dm011jny7ttsf"
+path.s3tc="res://.godot/imported/autumn_leaves_with_green_grass.jpeg-c624090508840ebebd03c121106c50dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "1758144220d4829b9514674132699e6f"
-}
 
 [deps]
 
-source_file="res://moon/assets/models/nature/undergrowth_floor/undergrowth_undergrowth_wet_warsaw4.jpg"
-dest_files=["res://.godot/imported/undergrowth_undergrowth_wet_warsaw4.jpg-9a3ac476eeefaf8111d8ac3ee3393298.s3tc.ctex"]
+source_file="res://moon/assets/textures/ground/autumn_leaves_with_green_grass.jpeg"
+dest_files=["res://.godot/imported/autumn_leaves_with_green_grass.jpeg-c624090508840ebebd03c121106c50dd.s3tc.ctex"]
 
 [params]
 

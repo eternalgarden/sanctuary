@@ -4,7 +4,7 @@
 [ext_resource type="Environment" uid="uid://dxvg0fkso3lhd" path="res://moon/levels/temporary_main_level/main_level_environment.tres" id="2_o2mgg"]
 [ext_resource type="Script" uid="uid://dd0q6ycty4hgd" path="res://fillory/common/utility/AutoremovedNode.cs" id="3_bbcmg"]
 [ext_resource type="PackedScene" uid="uid://drmenpmf8f5pd" path="res://sandbox/_scenes/sandbox_mesh.blend" id="4_gqeqo"]
-[ext_resource type="Material" uid="uid://cag2k6xrsaecr" path="res://moon/assets/textures/ground/materials/undergrowth_wet.tres" id="5_alh16"]
+[ext_resource type="Material" uid="uid://2kp3067vs6ra" path="res://moon/levels/temporary_main_level/main_level_ground.tres" id="5_alh16"]
 [ext_resource type="Material" uid="uid://cuhdmp7p8jhdw" path="res://moon/assets/textures/ground/materials/dry_grass_01.tres" id="5_gqeqo"]
 [ext_resource type="PackedScene" uid="uid://d1p343rv6oev8" path="res://moon/assets/models/nature/mushrooms/mushroom_01/mushroom_01.glb" id="5_o2mgg"]
 [ext_resource type="Material" uid="uid://xqyhgpspvreq" path="res://sandbox/_scenes/sandbox_rocky_floor.tres" id="6_erj42"]
@@ -58,11 +58,21 @@ script = ExtResource("3_bbcmg")
 [node name="sandbox_mesh" parent="environment" unique_id=1470963140 instance=ExtResource("4_gqeqo")]
 transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, 0.035499573, 0.007167816)
 
-[node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=1439061064]
+[node name="Light" parent="environment/sandbox_mesh" index="0" unique_id=1128245275]
+transform = Transform3D(-0.14843637, -0.3935143, 0.28904623, -0.028164508, 0.3085058, 0.4055435, -0.48745054, 0.10200609, -0.11145112, -13.75297, 8.095162, -11.952271)
+
+[node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=1202037038]
 transform = Transform3D(2.0750098, -0.0026197887, 0.010873439, 0.005470213, 1.001264, -0.007891558, -0.010794144, 0.0038010885, 2.086253, 0.037929438, 0.2877136, -0.05015598)
+visible = false
 material_override = ExtResource("5_alh16")
 mesh = SubResource("ArrayMesh_p7sxa")
 surface_material_override/0 = ExtResource("5_gqeqo")
+
+[node name="Light2" type="OmniLight3D" parent="environment/sandbox_mesh" unique_id=484368571]
+transform = Transform3D(-0.14843637, -0.3935143, 0.28904623, -0.028164499, 0.30850583, 0.4055435, -0.48745054, 0.1020061, -0.11145111, -13.752965, 3.5321536, 22.602995)
+light_color = Color(1, 0.80246735, 0.34496796, 1)
+light_energy = 16.0
+omni_range = 19.733
 
 [node name="037_ancient_columns" parent="environment/sandbox_mesh" unique_id=41858465 instance=ExtResource("7_p7sxa")]
 transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.501202, 0.38304126, 4.403223)
