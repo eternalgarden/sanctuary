@@ -89,7 +89,7 @@ public partial class StartupProgressDisplay : Node
         };
 
         string text =
-            $"[color={dim}][{elapsed.TotalSeconds:00.00}s][/font][/color]"
+            $"[color={dim}][{elapsed.TotalSeconds:00.00}s][/color]"
             + $" {step} : [font={VerdictFont.ResourcePath}][color={colour}]{verdict}[/color][/font]";
         //string text =
             //$"[color={dim}][{elapsed.TotalSeconds:00.00}s][/color]"
