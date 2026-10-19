@@ -75,3 +75,15 @@ List of textures from ambient.cg:
 - **Author:** Raphaël Bastide, Wei Huang, Lucas Le Bihan, Jérémy Landes, Walid Bouchouchi (published by Velvetyne)
 - **Source:** https://gitlab.com/velvetyne/Avara
 - **License:** SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+
+### Libertinus Mono
+- **Filename:** libertinus-mono (libertinusmono-regular, version 6.3)
+- **Author:** Philipp H. Poll (Linux Libertine, 2003-2012), Khaled Hosny and the Libertinus Project Authors (2012-)
+- **Source:** https://github.com/alerque/libertinus
+- **License:** SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+
+### Maple Mono
+- **Filename:** maple_mono (MapleMono, all weights with italics, version 7.900)
+- **Author:** The Maple Mono Project Authors (subframe7536)
+- **Source:** https://github.com/subframe7536/maple-font
+- **License:** SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
