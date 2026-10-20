@@ -5,7 +5,12 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
-using Godot;
+/*
+ * Magic basically, thank you Language.
+ *
+ * Figuring out for this to work in Unity with ortho camera tricks (which wouldn't work
+ * in Godot) took me about two weeks.
+ */
 
 namespace Sanctuary.Forest.Camera.ScrollInteraction;
 
@@ -53,7 +58,11 @@ public static class ScrollFramingSolver
     // Pixel-perfect browser resolution: the note occupies `fillFraction * viewportHeight`
     // screen px tall, so render at that many px (width keeps the note's aspect) for
     // 1 texel = 1 screen pixel.
-    public static Vector2I SolveCefSize(MeshInstance3D note, float fillFraction, int viewportHeightPx)
+    public static Vector2I SolveCefSize(
+        MeshInstance3D note,
+        float fillFraction,
+        int viewportHeightPx
+    )
     {
         Aabb box = note.GetAabb();
         float doorAspect = box.Size.X / box.Size.Y; // width / height (scale cancels)

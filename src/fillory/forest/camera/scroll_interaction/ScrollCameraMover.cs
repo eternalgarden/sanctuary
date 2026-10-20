@@ -5,9 +5,6 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
-using System;
-using Godot;
-
 namespace Sanctuary.Forest.Camera.ScrollInteraction;
 
 public sealed class ScrollCameraMover

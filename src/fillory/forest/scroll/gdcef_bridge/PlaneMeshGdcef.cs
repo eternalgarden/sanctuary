@@ -17,6 +17,7 @@ public partial class PlaneMeshGdcef : Node3D
 
     public void Initialize(Vector2I size)
     {
+        // TODO replace with DI
         MeshInstance3D mesh = this.GetAllNodesOfType<MeshInstance3D>()[0];
 
         _browser = ClassDB.Instantiate("CefTexture2D").As<Texture2D>();

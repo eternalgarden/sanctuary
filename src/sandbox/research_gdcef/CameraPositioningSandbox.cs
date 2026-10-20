@@ -5,7 +5,6 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
-using Godot;
 using Sanctuary.Forest.Camera.ScrollInteraction;
 using Sanctuary.Forest.Scroll.GdcefBridge;
 

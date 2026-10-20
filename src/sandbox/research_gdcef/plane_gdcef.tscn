@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://xu4hx6dn0ysq"]
 
 [ext_resource type="PackedScene" uid="uid://28q78vtap88u" path="res://sandbox/_scenes/sandbox.tscn" id="1_gm2fk"]
+[ext_resource type="Material" uid="uid://b737effldetf7" path="res://fillory/forest/scroll/game/scroll_plane/scroll_plane_mat.tres" id="3_0f1cm"]
 [ext_resource type="Script" uid="uid://bnmh05m1y0i6m" path="res://fillory/forest/scroll/gdcef_bridge/PlaneMeshGdcef.cs" id="3_5dsh0"]
-[ext_resource type="Material" uid="uid://b737effldetf7" path="res://fillory/forest/scroll/game/scroll_plane/scroll_mat.tres" id="3_a0vyr"]
 [ext_resource type="Script" uid="uid://csxtpedlf1gvt" path="res://sandbox/research_gdcef/CameraPositioningSandbox.cs" id="4_m71sw"]
 [ext_resource type="Resource" uid="uid://d1tcjk71htoji" path="res://fillory/forest/camera/game/CameraBlendSettings.tres" id="5_xjegs"]
 [ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="6_a0vyr"]
-[ext_resource type="Resource" uid="uid://2iuoolhdq3jj" path="res://fillory/forest/camera/game/ScrollDisplaySettings.tres" id="6_ampy5"]
+[ext_resource type="Resource" uid="uid://2iuoolhdq3jj" path="res://fillory/forest/scroll/game/ScrollDisplaySettings.tres" id="6_ampy5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2q5t"]
 
@@ -51,7 +51,7 @@ script = ExtResource("3_5dsh0")
 
 [node name="scroll+door+mesh" type="MeshInstance3D" parent="mesh_scroll" unique_id=137685625]
 mesh = SubResource("ArrayMesh_ti0bw")
-surface_material_override/0 = ExtResource("3_a0vyr")
+surface_material_override/0 = ExtResource("3_0f1cm")
 
 [node name="player" type="Node3D" parent="." unique_id=1246813259 node_paths=PackedStringArray("WorldCamera", "FocusCamera", "Note", "NoteBrowser")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2866025, 1.0547504, -3.4647803)

@@ -5,5 +5,5 @@
 
 [node name="mesh_scroll" unique_id=910502028 instance=ExtResource("1_vy6lo")]
 
-[node name="scroll+door+mesh" parent="." index="0" unique_id=137685625]
+[node name="scroll+door+mesh" parent="." index="0" unique_id=152791018]
 surface_material_override/0 = ExtResource("2_ih3e5")

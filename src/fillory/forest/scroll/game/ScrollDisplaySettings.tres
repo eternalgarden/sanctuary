@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="ScrollDisplaySettings" format=3 uid="uid://2iuoolhdq3jj"]
 
-[ext_resource type="Script" uid="uid://ci8u3mgla6a74" path="res://fillory/forest/scrolls/gdcef_bridge/ScrollDisplaySettings.cs" id="1_10ftk"]
+[ext_resource type="Script" uid="uid://ci8u3mgla6a74" path="res://fillory/forest/scroll/gdcef_bridge/ScrollDisplaySettings.cs" id="1_10ftk"]
 
 [resource]
 script = ExtResource("1_10ftk")
+FillFraction = 1.0
+HorizontalOffset = -1.0
 metadata/_custom_type_script = "uid://ci8u3mgla6a74"
