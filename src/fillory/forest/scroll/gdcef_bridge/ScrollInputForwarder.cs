@@ -18,12 +18,17 @@ public sealed class ScrollInputForwarder(
     Vector2I cefSize
 )
 {
-    // Two clipboards: the page's own (in-memory, Chromium runs headless) and the system's
-    // (Godot). Paste whichever was written last. Godot can't read the page's, so at each
-    // in-page copy/cut note what the system held; if it is unchanged at paste time, the
-    // page's copy is newer and Chromium pastes natively.
-    string? _systemTextAtPageCopy;
-
+    // TODO: the page's clipboard (Chromium's own, in-memory, it runs headless) and the
+    // system's (Godot's DisplayServer) are entirely separate, so copy/paste only works
+    // within the page. Bridging them means syncing both directions; doing only one would
+    // break in-page copy/paste. Leads, unverified:
+    // - page -> system: on Ctrl+C/X, eval `window.sendIpcMessage(getSelection().toString())`
+    //   and ClipboardSet from the CefTexture2D `ipc_message` signal. Top-level eval can't
+    //   see a selection inside a cross-origin iframe, so that likely needs a preload
+    //   script hooking `copy` in every frame.
+    // - system -> page: once the above keeps the system clipboard current, Ctrl+V can
+    //   always paste it via CefTexture2D `ime_commit_text` (presumably CEF's
+    //   ImeCommitText, which types into the focused field of any frame).
     public void Forward(InputEvent e)
     {
         switch (e)
@@ -62,21 +67,6 @@ public sealed class ScrollInputForwarder(
                         MetaPressed = b.MetaPressed,
                     }
                 );
-                break;
-
-            // in Forward(), replacing the current Ctrl+V case:
-            case InputEventKey { Pressed: true, Keycode: Key.C or Key.X, CtrlPressed: true } k:
-                if (!k.Echo)
-                    _systemTextAtPageCopy = DisplayServer.ClipboardGet();
-                browser.ForwardKey(k);
-                break;
-
-            case InputEventKey { Pressed: true, Keycode: Key.V, CtrlPressed: true } k:
-                string system = DisplayServer.ClipboardGet();
-                if (system == _systemTextAtPageCopy)
-                    browser.ForwardKey(k); // page's copy is newer: native paste, keeps rich text
-                else if (!k.Echo)
-                    browser.PasteText(system);
                 break;
 
             case InputEventKey k:

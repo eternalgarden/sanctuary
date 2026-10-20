@@ -9,9 +9,6 @@ using Sanctuary.Common.Extensions;
 
 namespace Sanctuary.Forest.Scroll.GdcefBridge;
 
-// Important pixel-perfect setup notes:
-// 1. Set texture sampling to Nearest (disable mipmapping)
-// 2. Disable TAA, at least at the moment when you want to switch to pix-perf
 public partial class PlaneMeshGdcef : Node3D
 {
     StandardMaterial3D? _material;
@@ -51,27 +48,6 @@ public partial class PlaneMeshGdcef : Node3D
             _material.AlbedoTexture = null;
         _browser?.Call("shutdown");
         _browser = null;
-    }
-
-    public void PasteText(string text)
-    {
-        if (string.IsNullOrEmpty(text))
-            return;
-
-        // Json.Stringify yields a quoted, escaped string literal that is also valid JS.
-        string js = $$"""
-            (() => {
-                const text = {{Json.Stringify(text)}};
-                const target = document.activeElement ?? document.body;
-                const data = new DataTransfer();
-                data.setData('text/plain', text);
-                const handled = !target.dispatchEvent(new ClipboardEvent('paste',
-                    { clipboardData: data, bubbles: true, cancelable: true }));
-                if (!handled)
-                    document.execCommand('insertText', false, text);
-            })();
-            """;
-        _browser?.Call("eval", js);
     }
 }
 
