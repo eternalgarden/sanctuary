@@ -1,4 +1,13 @@
+# building
 
+```bash
+
+# linux
+godot --headless --path ./sanctuary --export-release "Linux" ../build/sanctuary.x86_64
+
+```
+- called from the project root
+- `../` because Godot resolves from the src
 # itch.io
 
 > Daily use publishing commands.

@@ -1,10 +1,26 @@
-ki# setting up
+# setting up
+
+## 1. init
 
 - clone the repository
 - `cd` into repository
 - run `dotnet restore`
+
+## 2. dependencies
+
 - run the `moon/tools/fetch_godot_cef.sh` script
 	- this will download godot-cef binaries (for browser-rendered UI) which are very heavy and make no sense to be tracked by the project itself
+
+## 3. godot editor settings
+
+- indentation settings
+	- the idea is you probably won't use godots text editor apart from some minor tweaks and to ensure it doesn't ruin files indentation on your save there
+	- `Text Editor » Behavior`
+		- `» Indent`
+			- Type: `spaces`
+			- Size: `4`
+		- `» Files`
+			- Turn off: `Convert Indent on Save`
 
 # updating
 
