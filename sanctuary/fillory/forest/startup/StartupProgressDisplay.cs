@@ -5,12 +5,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
-using System;
-using System.Collections.Generic;
-using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Godot;
-using Rzeka;
 using Sanctuary.Blood.Startup;
 using Sanctuary.Forest.Autoloads;
 
@@ -21,17 +16,24 @@ public partial class StartupProgressDisplay : Node
     static IRzeka rzeka => Ursprung.Rzeka;
     CollectibleDisposable Q { get; set; } = new();
 
-    const string green = "#00ff41";
-    const string yellow = "#ffb000";
-    const string red = "#ff2d2d";
-    const string dim = "#4f7a4f";
-
     [Export]
     VBoxContainer StepsContainer { get; set; }
-    
+
+    [Export]
+    Color TimeCol { get; set; }
+
+    [Export]
+    Color PassedCol { get; set; }
+
+    [Export]
+    Color FailedCol { get; set; }
+
+    [Export]
+    Color WarningCol { get; set; }
+
     [Export]
     Font MonoFont { get; set; }
-    
+
     [Export]
     Font VerdictFont { get; set; }
 
@@ -82,22 +84,19 @@ public partial class StartupProgressDisplay : Node
     {
         (string colour, string verdict) = status.State switch
         {
-            StepState.Cleared => (green, "CLEARED"),
-            StepState.Failed => (red, "FAILED"),
-            StepState.Aborted => (yellow, "ABORTED"),
-            _ => (dim, status.State.ToString().ToUpperInvariant()),
+            StepState.Cleared => (PassedCol.ToHtml(false), "CLEARED"),
+            StepState.Failed => (FailedCol.ToHtml(false), "FAILED"),
+            StepState.Aborted => (WarningCol.ToHtml(false), "ABORTED"),
+            _ => ("FFFFFF", status.State.ToString().ToUpperInvariant()),
         };
 
         string text =
-            $"[color={dim}][{elapsed.TotalSeconds:00.00}s][/color]"
+            $"[color={TimeCol.ToHtml(false)}][{elapsed.TotalSeconds:00.00}s][/color]"
             + $" {step} : [font={VerdictFont.ResourcePath}][color={colour}]{verdict}[/color][/font]";
-        //string text =
-            //$"[color={dim}][{elapsed.TotalSeconds:00.00}s][/color]"
-            //+ $" {step} : [color={colour}]{verdict}[/color]";
 
         if (string.IsNullOrWhiteSpace(status.Reason) is false)
         {
-            text += $" [color={dim}]- {status.Reason}[/color]";
+            text += $" [color={TimeCol.ToHtml(false)}]- {status.Reason}[/color]";
         }
 
         if (_rows.TryGetValue(step, out RichTextLabel existing))
@@ -120,7 +119,7 @@ public partial class StartupProgressDisplay : Node
         // AddThemeFontOverride is the per-node escape hatch that sits on top of the theme
         // cascade. The string is a theme *item name*, not a property name.
         row.AddThemeFontOverride("normal_font", MonoFont);
-        
+
         row.AddThemeFontSizeOverride("normal_font_size", RowFontSize);
 
         _rows[step] = row;
