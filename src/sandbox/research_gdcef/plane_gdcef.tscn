@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://28q78vtap88u" path="res://sandbox/_scenes/sandbox.tscn" id="1_gm2fk"]
 [ext_resource type="Script" uid="uid://bnmh05m1y0i6m" path="res://fillory/forest/scroll/gdcef_bridge/PlaneMeshGdcef.cs" id="3_5dsh0"]
-[ext_resource type="Material" uid="uid://b737effldetf7" path="res://moon/assets/models/functional/scroll/material_scroll.tres" id="3_a0vyr"]
+[ext_resource type="Material" uid="uid://b737effldetf7" path="res://fillory/forest/scroll/game/scroll_plane/scroll_mat.tres" id="3_a0vyr"]
 [ext_resource type="Script" uid="uid://csxtpedlf1gvt" path="res://sandbox/research_gdcef/CameraPositioningSandbox.cs" id="4_m71sw"]
 [ext_resource type="Resource" uid="uid://d1tcjk71htoji" path="res://fillory/forest/camera/game/CameraBlendSettings.tres" id="5_xjegs"]
 [ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="6_a0vyr"]

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c0s65x3lpkvop"
-path="res://.godot/imported/mesh_scroll.fbx-d22cbe26331ae00139f791ac26ccc2ff.scn"
+path="res://.godot/imported/scroll_plane.fbx-b6b34039a5868c6f80c91f47fcec6441.scn"
 
 [deps]
 
-source_file="res://moon/assets/models/functional/scroll/mesh_scroll.fbx"
-dest_files=["res://.godot/imported/mesh_scroll.fbx-d22cbe26331ae00139f791ac26ccc2ff.scn"]
+source_file="res://fillory/forest/scroll/game/scroll_plane/scroll_plane.fbx"
+dest_files=["res://.godot/imported/scroll_plane.fbx-b6b34039a5868c6f80c91f47fcec6441.scn"]
 
 [params]
 

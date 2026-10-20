@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="7_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d3ifhnpt0jv6r" path="res://moon/shaders/lorentian_butterfly/lorentian_butterfly.tscn" id="8_erj42"]
 [ext_resource type="PackedScene" uid="uid://b6wdkd78131eb" path="res://moon/assets/models/nature/undergrowth_floor/undergrowth.glb" id="8_x0uts"]
-[ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://moon/assets/models/functional/scroll/scroll.tscn" id="10_fw6xg"]
+[ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://fillory/forest/scroll/game/scroll_plane/scroll_plane.tscn" id="10_fw6xg"]
 [ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="11_c1tix"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_64fm0"]
@@ -58,10 +58,10 @@ script = ExtResource("3_bbcmg")
 [node name="sandbox_mesh" parent="environment" unique_id=1470963140 instance=ExtResource("4_gqeqo")]
 transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, 0.035499573, 0.007167816)
 
-[node name="Light" parent="environment/sandbox_mesh" index="0" unique_id=1128245275]
+[node name="Light" parent="environment/sandbox_mesh" index="0" unique_id=691406570]
 transform = Transform3D(-0.14843637, -0.3935143, 0.28904623, -0.028164508, 0.3085058, 0.4055435, -0.48745054, 0.10200609, -0.11145112, -13.75297, 8.095162, -11.952271)
 
-[node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=1202037038]
+[node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=600957163]
 transform = Transform3D(2.0750098, -0.0026197887, 0.010873439, 0.005470213, 1.001264, -0.007891558, -0.010794144, 0.0038010885, 2.086253, 0.037929438, 0.2877136, -0.05015598)
 visible = false
 material_override = ExtResource("5_alh16")
