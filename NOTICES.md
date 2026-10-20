@@ -56,7 +56,7 @@ List of textures from ambient.cg:
 
 - **Description**: Chromium Embedded Framework (CEF) integration for Godot, powering the in-game browser.
 - **Author**: Delton Ding
-- **Version**: v1.17.0 (pinned in `sanctuary/moon/tools/fetch_godot_cef.sh`)
+- **Version**: v1.17.0 (pinned in `src/moon/tools/fetch_godot_cef.sh`)
 - **Changes**: None. Native binaries are fetched by the script, not tracked.
 - **Source**: https://github.com/dsh0416/godot-cef
 - **License**: MIT, Copyright 2025-2026 Delton Ding
