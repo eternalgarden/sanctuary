@@ -3,21 +3,23 @@
     // https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
     "compilerOptions": {
       "pretty": true,
-      "target": "es6",
-      "module": "ES2015",
+      "target": "es2022",
+      "module": "ESNext",
       "moduleResolution": "node",
       "importHelpers": true,
       "experimentalDecorators": true,
-      "declaration": true,
-      "declarationMap": true,
-      "sourceMap": true,
+      // FAST's @observable/@attr fields carry initialisers; with define semantics those
+      // would shadow the decorator's accessors, so keep the legacy assignment behaviour
+      "useDefineForClassFields": false,
+      // Vite transpiles, tsc only typechecks
+      "noEmit": true,
+      // emoji-mart ships broken .d.ts files (unresolvable imports), nothing we can fix
+      "skipLibCheck": true,
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
       "noEmitOnError": true,
       "strict": true,
       "strictPropertyInitialization": false,
-      "outDir": "sanctuary-ui-dist",
-      "rootDir": "src",
       "lib": [
         "dom",
         "esnext"

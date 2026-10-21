@@ -11,10 +11,6 @@ import {
     when,
 } from "@microsoft/fast-element"
 
-// Polyfill required for an old chromium used by ZFBrowser
-import 'core-js/actual/array/find-last';
-import 'core-js/actual/array/find-last-index';
-
 /* 🖱️ We count clicks ourselves rather than listening for `dblclick`. ZFBrowser sends
    CEF a clickCount of 2 only on the second mouse *down* — every mouse up goes out as 1
    (StandaloneBrowser.cs) — and a touchpad tap has to survive that plus a position
