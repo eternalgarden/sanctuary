@@ -24,6 +24,9 @@ export_credentials.cfg
 # 🐖 godot-cef native binaries (~2.5 GB, fetch with src/moon/tools/fetch_godot_cef.sh)
 src/addons/godot_cef/bin/
 
+# 🐖 Browser UI build output (npm run build in ui/)
+src/moon/browser/dist/
+
 # 🐖 Imported translations (automatically generated from CSV files)
 *.translation
 
@@ -42,3 +45,8 @@ py-tools/__pycache__/
 **/.obsidian/app.json
 **/.DS_Store
 **/Thumbs.db
+
+# 🐖 Claude Code (local agent config, instructions and the wiki primer symlink)
+.claude/
+CLAUDE.md
+Rzeka-Agent-Primer.md
