@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dk4mwnfmoo7by"]
+
+[ext_resource type="Script" uid="uid://67brhoyv5msu" path="res://sandbox/research_injection/demo/DemoScrollInstaller.cs" id="1_installer"]
+[ext_resource type="Script" uid="uid://bvoexqvkxprd0" path="res://sandbox/research_injection/demo/DemoScrollBadge.cs" id="2_badge"]
+
+[node name="DemoScroll" type="Node" unique_id=1424023515]
+script = ExtResource("1_installer")
+
+[node name="Badge" type="Node" parent="." unique_id=2066956313]
+script = ExtResource("2_badge")
