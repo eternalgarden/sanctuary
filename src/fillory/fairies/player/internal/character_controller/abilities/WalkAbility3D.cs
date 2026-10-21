@@ -1,5 +1,3 @@
-using System;
-using Godot;
 
 namespace Sanctuary.Fairies.Player.Internal.CharacterController;
 
@@ -19,11 +17,8 @@ public partial class WalkAbility3D : MovementAbility3D
     // Takes direction of movement from input and turns it into horizontal velocity.
     public override Vector3 Apply(Vector3 velocity, float speed, bool isOnFloor, Vector3 direction, float delta)
     {
-        GD.Print(IsActived());
         if (!IsActived())
             return velocity;
-
-        GD.Print("meow");
 
         // Using only the horizontal velocity, interpolate towards the input.
         Vector3 tempVel = velocity;
