@@ -1,0 +1,93 @@
+
+/* Fell Pica, beloved <3*/
+@font-face {
+    font-family: Fell Pica;
+    font-style: normal;
+    src: url("./../../../assets/fonts/IMFellTypes/IM_FELL_Pica_Covile.woff2");
+}
+
+@font-face {
+    font-family: Fell Pica;
+    font-style: italic;
+    src: url("./../../../assets/fonts/IMFellTypes/IM_FELL_DW_PICA_italic.otf");
+}
+
+/* The all-caps one */
+@font-face {
+    font-family: Fell Pica SC;
+    font-style: normal;
+    src: url("./../../../assets/fonts/IMFellTypes/IM_FELL_Pica_SC_Covile.woff2");
+}
+
+/* Also nice, more rectangular and serious */
+@font-face {
+    font-family: Double Pica;
+    font-style: normal;
+    src: url("./../../../assets/fonts/IMFellTypes/IM_FELL_Double_Pica.otf");
+}
+@font-face {
+    font-family: Double Pica;
+    font-style: italic;
+    src: url("./../../../assets/fonts/IMFellTypes/IM_FELL_Double_Pica_italic.otf");
+}
+
+/* @font-face {
+    font-family: Fell Tester;
+    font-style: normal;
+    src: url("./../../../assets/fonts/IMFellTypes/IM_FELL_Three_Line_Pica.otf");
+} */
+
+/* Initials 🌸 */
+
+@font-face {
+    font-family: Typographer Woodcut;
+    font-style: normal;
+    src: url("./../../../assets/fonts/Mediengestaltung/TypographerWoodcut.ttf");
+}
+
+@font-face {
+    font-family: Flowers Initials;
+    font-style: normal;
+    src: url("./../../../assets/fonts/Mediengestaltung/FlowersInitials.ttf");
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+    /* this was to deal with sometimes-appearing horizontal scroller and putting it deeper didn't work*/
+    overflow-x: hidden;
+}
+
+/*
+ * The note uses a custom #scrollbar element, so the native Chromium scrollbar should never show.
+ * Hiding it via ::-webkit-scrollbar is bulletproof across CEF versions and, unlike scrollbar-width,
+ * doesn't depend on overflow/resize timing — which matters now that scrolls reuse pooled browsers
+ * (a unit boots at a default size then resizes per borrow, and that race was leaving a native
+ * scrollbar shown on some scrolls).
+ */
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+html,
+body {
+    scrollbar-width: none; /* Firefox / newer Chromium */
+    -ms-overflow-style: none;
+}
+
+.ProseMirror {
+    scrollbar-color: transparent transparent;
+    scrollbar-width: none;
+}
+
+
+

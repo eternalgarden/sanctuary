@@ -1,0 +1,3 @@
+# updating tiptap
+
+@tiptap/core @tiptap/extension-blockquote @tiptap/extension-bold @tiptap/extension-bubble-menu @tiptap/extension-bullet-list  @tiptap/extension-code  @tiptap/extension-collaboration @tiptap/extension-color @tiptap/extension-document  @tiptap/extension-focus @tiptap/extension-font-family @tiptap/extension-gapcursor @tiptap/extension-hard-break @tiptap/extension-heading @tiptap/extension-highlight @tiptap/extension-history @tiptap/extension-italic @tiptap/extension-link @tiptap/extension-list-item @tiptap/extension-mention @tiptap/extension-ordered-list @tiptap/extension-paragraph @tiptap/extension-strike @tiptap/extension-text @tiptap/extension-text-style @tiptap/pm @tiptap/starter-kit @tiptap/extension-image @tiptap/extension-placeholder

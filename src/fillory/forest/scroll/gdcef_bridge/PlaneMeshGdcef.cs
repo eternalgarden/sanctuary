@@ -13,7 +13,9 @@ public partial class PlaneMeshGdcef : Node3D
 {
     StandardMaterial3D? _material;
     Texture2D? _browser;
-    string _url = "https://tiptap.dev/docs/editor/extensions/nodes/image";
+    // Built by ui/ (npm run build). #debug#editable fills the note with lorem
+    // ipsum and unlocks editing, since nothing on the Godot side sends note data yet.
+    string _url = "res://moon/browser/dist/note.html#debug#editable";
 
     public void Initialize(Vector2I size)
     {

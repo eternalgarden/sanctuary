@@ -1,0 +1,33 @@
+{
+    // More info on tsconfig
+    // https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+    "compilerOptions": {
+      "pretty": true,
+      "target": "es6",
+      "module": "ES2015",
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "experimentalDecorators": true,
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "noEmitOnError": true,
+      "strict": true,
+      "strictPropertyInitialization": false,
+      "outDir": "sanctuary-ui-dist",
+      "rootDir": "src",
+      "lib": [
+        "dom",
+        "esnext"
+      ],
+    },
+    "include": [
+      "src",
+      /* pffff, so how the hell are images handled in the end */
+      "./typings/common-typings.d.ts",
+      "./typings/images-import.d.ts",
+      "./typings/fonts-import.d.ts"
+    ],
+  }

@@ -1,0 +1,40 @@
+
+body {
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: Fell Great Primer;
+    font-style: normal;
+    src: url("./../../assets/fonts/IMFellTypes/IM_FELL_Great_Primer.otf");
+}
+
+@font-face {
+    font-family: Fell Great Primer;
+    font-style: italic;
+    src: url("./../../assets/fonts/IMFellTypes/IM_FELL_Great_Primer_italic.otf");
+}
+
+@font-face {
+    font-family: Fell Pica;
+    font-style: normal;
+    src: url("./../../assets/fonts/IMFellTypes/IM_FELL_Pica_Covile.woff2");
+}
+
+@font-face {
+    font-family: Fell Pica;
+    font-style: italic;
+    src: url("./../../assets/fonts/IMFellTypes/IM_FELL_DW_PICA_italic.otf");
+}
+
+@font-face {
+    font-family: Fell Pica SC;
+    font-style: normal;
+    src: url("./../../assets/fonts/IMFellTypes/IM_FELL_Pica_SC_Covile.woff2");
+}
+
+@font-face {
+    font-family: Monof55;
+    font-style: normal;
+    src: url("./../../assets/fonts/monof55.ttf");
+}

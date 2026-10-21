@@ -5,5 +5,4 @@
 [resource]
 script = ExtResource("1_10ftk")
 FillFraction = 1.0
-HorizontalOffset = -1.0
 metadata/_custom_type_script = "uid://ci8u3mgla6a74"
