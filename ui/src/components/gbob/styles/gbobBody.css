@@ -1,0 +1,27 @@
+/* fundamentals */
+
+:root {
+    --primary-color: hsl(0 0% 13% / 1);
+    /* --special-color: #2fe396; */
+    --special-color: #80b765;
+    --btn-hover-bg: #d3d3d3;
+    --btn-active-bg: hsl(44deg 100% 70.85% / 19%);
+    --btn-shadow-inset: 0.8rem;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::selection {
+    background: transparent; /* highlight color */
+    color: white; /* text color when selected */
+}

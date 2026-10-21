@@ -75,16 +75,16 @@ light_energy = 16.0
 omni_range = 19.733
 
 [node name="037_ancient_columns" parent="environment/sandbox_mesh" unique_id=41858465 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.501202, 0.38304126, 4.403223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.501202, 0.38304126, 4.403223)
 
 [node name="037_ancient_columns2" parent="environment/sandbox_mesh" unique_id=1580256462 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -7.479444, 0.36608198, 4.4032226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.479444, 0.36608198, 4.4032226)
 
 [node name="037_ancient_columns3" parent="environment/sandbox_mesh" unique_id=1959334392 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, -6.9387426, 0.4065221, -5.9776835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9387426, 0.4065221, -5.9776835)
 
 [node name="037_ancient_columns4" parent="environment/sandbox_mesh" unique_id=1573740525 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1.1271468, 0, 0, 0, 1.1271468, 0, 0, 0, 1.1271468, 6.400778, 0.4498529, -6.1722727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.400778, 0.4498529, -6.1722727)
 
 [node name="039_undergrowth" parent="environment/sandbox_mesh" unique_id=286554090 instance=ExtResource("8_x0uts")]
 transform = Transform3D(0.49999988, 0, 0, 0, 0.27, 0, 0, 0, 0.49999988, 7.1733437, 0.4683196, 8.728973)
@@ -198,9 +198,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59328794, -1.1804303, -0.32
 visible = false
 
 [node name="mesh_scroll" parent="." unique_id=910502028 instance=ExtResource("10_fw6xg")]
-transform = Transform3D(-0.8646082, 0, 0.50244665, 0, 1, 0, -0.50244665, 0, -0.8646082, -9.792899, 0.5000065, 1.4439414)
+transform = Transform3D(-1.8156772, 0, 1.0551379, 0, 2.1, 0, -1.0551379, 0, -1.8156772, -9.792899, 0.5000065, 1.4439414)
 
 [node name="Sketchfab_Scene" parent="." unique_id=1505213626 instance=ExtResource("11_c1tix")]
-transform = Transform3D(-0.7509992, 0, -0.6603031, 0, 1, 0, 0.6603031, 0, -0.7509992, -4.25845, 0.77480066, 5.058625)
+transform = Transform3D(-0.7509992, 0, -0.6603031, 0, 1, 0, 0.6603031, 0, -0.7509992, -5.692383, 0.7748009, 4.800602)
 
 [editable path="environment/sandbox_mesh"]

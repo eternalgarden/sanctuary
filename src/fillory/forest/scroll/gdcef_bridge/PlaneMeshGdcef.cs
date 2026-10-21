@@ -5,6 +5,8 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
+using System.Net;
+using System.Net.Sockets;
 using Sanctuary.Common.Extensions;
 
 namespace Sanctuary.Forest.Scroll.GdcefBridge;
@@ -13,7 +15,20 @@ public partial class PlaneMeshGdcef : Node3D
 {
     StandardMaterial3D? _material;
     Texture2D? _browser;
-    string _url = "https://tiptap.dev/docs/editor/extensions/nodes/image";
+    // TODO the UI url resolution below moves into a dedicated, DI'd url resolver once more
+    // browser views than the note get migrated; this class should only receive the url.
+
+    // The UI is built by ui/ (npm run build) into res://moon/browser/dist, which is not
+    // tracked in git. In debug runs a live `npm run dev` in ui/ takes precedence, so UI
+    // edits show up without a rebuild.
+    const string BuiltUi = "res://moon/browser/dist/";
+    const int UiDevServerPort = 9001;
+
+    const string NotePage = "components/note/note.html";
+
+    // Fills the note with lorem ipsum and unlocks editing, since nothing on the Godot side
+    // sends note data yet.
+    const string NoteDebugFragment = "#debug#editable";
 
     public void Initialize(Vector2I size)
     {
@@ -23,7 +38,7 @@ public partial class PlaneMeshGdcef : Node3D
         _browser = ClassDB.Instantiate("CefTexture2D").As<Texture2D>();
         _browser.Set("enable_accelerated_osr", false);
         _browser.Set("texture_size", size);
-        _browser.Set("url", _url);
+        _browser.Set("url", ResolveUiRoot() + NotePage + NoteDebugFragment);
         _material = (StandardMaterial3D)mesh.GetActiveMaterial(0);
         _material.AlbedoTexture = _browser;
     }
@@ -40,6 +55,40 @@ public partial class PlaneMeshGdcef : Node3D
         _browser?.Call("forward_mouse_motion_event", ev, 1.0f, 1.0f);
 
     public void ForwardKey(InputEventKey ev) => _browser?.Call("forward_key_event", ev, false);
+
+    static string ResolveUiRoot()
+    {
+        if (OS.IsDebugBuild() && IsUiDevServerUp())
+        {
+            GD.Print($"🌐 UI dev server found, loading the note from port {UiDevServerPort}");
+            return $"http://127.0.0.1:{UiDevServerPort}/";
+        }
+
+        // Still hand out the url, so the scroll shows gdcef's 404 page rather than
+        // failing somewhere further away.
+        if (!Godot.FileAccess.FileExists(BuiltUi + NotePage))
+            GD.PushError(
+                $"🌐 Browser UI is not built, {BuiltUi + NotePage} is missing. "
+                    + "Run `npm run build` in ui/, or `npm run dev` for a debug run."
+            );
+
+        return BuiltUi;
+    }
+
+    // A closed localhost port refuses at once, so this only waits when something is
+    // listening but slow to accept.
+    static bool IsUiDevServerUp()
+    {
+        using TcpClient client = new();
+        try
+        {
+            return client.ConnectAsync(IPAddress.Loopback, UiDevServerPort).Wait(100);
+        }
+        catch (Exception e) when (e is AggregateException or SocketException)
+        {
+            return false;
+        }
+    }
 
     public override void _ExitTree()
     {

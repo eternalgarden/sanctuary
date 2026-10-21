@@ -1,0 +1,4 @@
+export const SET_KNOWN_CUSTOM_THEME: string = "SET_KNOWN_CUSTOM_THEME"
+export const SET_SELECTED_THEME: string = "SET_SELECTED_THEME"
+export const SET_BASIC_NOTE_INFO: string = "SET_BASIC_NOTE_INFO"
+export const SET_MAGIC_BOX_PATHS: string = "SET_MAGIC_BOX_PATHS"

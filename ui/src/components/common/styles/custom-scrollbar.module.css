@@ -1,0 +1,34 @@
+
+@supports (scrollbar-width: auto) {
+    .scroller {
+        scrollbar-color: var(--scrollbar-color-thumb)
+            var(--scrollbar-color-track);
+    }
+
+    .warning {
+        display: none;
+    }
+}
+
+.scroller {
+    position: relative;
+    container-type: inline-size;
+
+    &:has(.content) {
+        background: white;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .content {
+        min-height: 75vh;
+        padding: 1rem 1rem;
+
+        *:first-child {
+            margin-top: 0;
+        }
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
