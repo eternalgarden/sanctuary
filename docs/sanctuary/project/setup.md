@@ -11,7 +11,16 @@
 - run the `moon/tools/fetch_godot_cef.sh` script
 	- this will download godot-cef binaries (for browser-rendered UI) which are very heavy and make no sense to be tracked by the project itself
 
-## 3. godot editor settings
+## 3. browser ui
+
+- go to the `ui/` directory
+- run `npm run build`
+- development note:
+	- use `npm run dev` instead while you are developing ui
+	- this will give you live ui reload *while ingame*!
+	- [ ] extract
+
+## 4. godot editor settings
 
 - indentation settings
 	- the idea is you probably won't use godots text editor apart from some minor tweaks and to ensure it doesn't ruin files indentation on your save there
