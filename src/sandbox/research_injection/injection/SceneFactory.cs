@@ -11,14 +11,15 @@ namespace Sanctuary.Sandbox.Injection;
 
 /// <summary>
 /// Spawns a scene whose root is an <see cref="Installer"/>, giving it its own scope under
-/// <paramref name="parent"/>, and hands back its facade. Zenject: BindFactory with
+/// <paramref name="parent"/>, and hands back a <see cref="Spawned{TFacade}"/>: its facade
+/// plus the means to despawn it. Zenject: BindFactory with
 /// FromSubContainerResolve().ByNewContextPrefab().UnderTransform().
 /// </summary>
 public sealed class SceneFactory<TFacade>(PackedScene scene, Node parentNode, IServiceProvider parent)
     where TFacade : notnull
 {
     /// <param name="extra">Per-instance registrations, e.g. the note a scroll shows.</param>
-    public TFacade Create(Action<IServiceCollection>? extra = null)
+    public Spawned<TFacade> Create(Action<IServiceCollection>? extra = null)
     {
         var installer = scene.Instantiate<Installer>();
 
@@ -39,7 +40,11 @@ public sealed class SceneFactory<TFacade>(PackedScene scene, Node parentNode, IS
         // After AddChild, so starting can rely on the nodes being in the tree.
         installer.Scope!.Start();
 
-        return installer.Scope.Services.GetRequiredService<TFacade>();
+        IServiceProvider services = installer.Scope.Services;
+        return new Spawned<TFacade>(
+            services.GetRequiredService<TFacade>(),
+            services.GetRequiredService<SceneLifetime>()
+        );
     }
 }
 

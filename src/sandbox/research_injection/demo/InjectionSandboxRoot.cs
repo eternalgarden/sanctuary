@@ -23,6 +23,12 @@ public partial class InjectionSandboxRoot : Installer
     [Export]
     Node ScrollsParent { get; set; }
 
+    [Export]
+    PackedScene SparkScene { get; set; }
+
+    [Export]
+    Node SparksParent { get; set; }
+
     protected override void Install(IServiceCollection services, IServiceProvider parent)
     {
         // Ursprung owns the river; registered as an instance, so this scope never disposes it.
@@ -30,6 +36,9 @@ public partial class InjectionSandboxRoot : Installer
 
         services.AddSingleton(provider =>
             new SceneFactory<DemoScroll>(ScrollScene, ScrollsParent, provider)
+        );
+        services.AddSingleton(provider =>
+            new SceneFactory<SparkFuse>(SparkScene, SparksParent, provider)
         );
         services.AddInitializable<DemoSpawner>();
     }

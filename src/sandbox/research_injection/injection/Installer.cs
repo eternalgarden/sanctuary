@@ -47,6 +47,7 @@ public abstract partial class Installer : Node
             throw new InvalidOperationException($"Installer '{Name}' is already installed.");
 
         var services = new ServiceCollection();
+        services.AddSingleton(new SceneLifetime(this));
         Install(services, parent);
         extra?.Invoke(services);
         Scope = new Scope(services);

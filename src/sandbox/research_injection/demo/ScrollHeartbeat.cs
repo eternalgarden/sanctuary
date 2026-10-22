@@ -20,7 +20,10 @@ public interface IHeartbeat
 /// both constructor-injected. Registered with AddSelfAndInterfaces, so its Dispose calls
 /// show the container disposing it once per registration.
 /// </summary>
-public sealed class ScrollHeartbeat(IRzeka rzeka, NoteId note) : IHeartbeat, IInitializable, IDisposable
+public sealed class ScrollHeartbeat(IRzeka rzeka, NoteId note)
+    : IHeartbeat,
+        IInitializable,
+        IDisposable
 {
     CollectibleDisposable Q { get; set; } = new();
     int _disposeCalls;

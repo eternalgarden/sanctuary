@@ -75,6 +75,15 @@
    `GetServices<T>()` (all, in registration order). For a single resolve the last registration wins.
 6. **Ownership.** Disposing a provider disposes what it **created** (type and factory
    registrations), newest first, and never what it was **handed** (instances).
+   - **Disposal is automatic.** Nobody calls `Dispose()` on services or registers them for
+     disposal: whenever the container builds an object, it checks for `IDisposable` /
+     `IAsyncDisposable` itself and remembers it. Implementing `IDisposable` is all a class
+     does to be cleaned up when its scope ends (e.g. `ScrollHeartbeat` dropping its rzeka
+     subscription). It is also why the container never frees a Godot node: nodes are
+     `IDisposable` too, but they are handed in, not built.
+   - Unlike Zenject, which only disposed what was **bound** as `IDisposable` (the reason for
+     `BindInterfacesAndSelfTo` in Source); here the object's own interfaces are what count,
+     whatever it was registered as.
    - It does not walk the frozen collection: it keeps a list of every disposable it builds
      and disposes that list. Singletons are built on first resolve, so a registration nothing
      ever resolved was never built and is never disposed.
@@ -85,6 +94,16 @@
      parent's object. Hence `Import` resolves eagerly and registers an instance.
    - Forwarded registrations dispose again: one `Dispose` per resolved registration exposing the
      object. `IDisposable` requires repeated calls to be harmless; `CollectibleDisposable` is.
+     The demo's heartbeat, step by step:
+     1. `AddSelfAndInterfaces<ScrollHeartbeat>()` adds two registrations: `ScrollHeartbeat`
+        (type: the container builds it) and `IHeartbeat` (a forward, a factory returning that
+        same object).
+     2. `Scope.Start()` resolves `ScrollHeartbeat` through its `InitializeEntry`: the object is
+        built and added to the disposal list. Call #1.
+     3. The facade `DemoScroll(IHeartbeat heartbeat)` resolves the forward: its factory returns
+        the existing object, and factory results count as created, so it is added again. Call #2.
+     A forward nobody resolves adds nothing, and `AddInitializable<T>()` registers only `T`,
+     which is why the spark disposes once.
    - Disposable transients are held until the provider dies. Avoid them.
 7. **Keyed services** (.NET 8). `AddKeyedSingleton(key, …)` + `[FromKeyedServices(key)]` on a
    constructor parameter. Replaces `WithId`; enum keys read best.
@@ -102,7 +121,9 @@
 | `AddSelfAndInterfaces<T>()` | One singleton reachable as itself and its interfaces | `BindInterfacesAndSelfTo<T>()` |
 | `Import<T>(parent)` | Bring a parent's service in as an instance | Subcontainer seeing its parent |
 | `Installer` (node) | Scene root owning a scope; `[Export]`s its nodes and registers them | `MonoInstaller` + `GameObjectContext` |
-| `SceneFactory<TFacade>` | Instantiate → build scope → `AddChild` → `Start` → facade | `BindFactory` + `ByNewContextPrefab` |
+| `SceneFactory<TFacade>` | Instantiate → build scope → `AddChild` → `Start` → `Spawned` handle | `BindFactory` + `ByNewContextPrefab` |
+| `Spawned<TFacade>` | The creator's handle: `Facade` to talk to, `Dispose()` to despawn | Destroying the context's GameObject |
+| `SceneLifetime` | Registered in every scope by `Installer`; `End()` frees the scene's root, nothing else | `Destroy(gameObject)` from inside |
 | `Resolve<T>()` / `FindInstaller()` | Nearest-installer lookup for the rare node that needs it | `[Inject]` on MonoBehaviours |
 
 Built in, no helper needed: `AddSingleton<T>()` (`AsSingle`), `AddSingleton(instance)`
@@ -127,7 +148,7 @@ registrations. Add one only when a real case needs it.
 
 - **Instance** (`AddSingleton(obj)`): someone else already made it.
   - Nodes: Godot created them by instancing the scene. Installers register their `[Export]`ed
-    nodes and `this`.
+    nodes.
   - Things from outside the scope: `Ursprung.Rzeka` in the root, `Import<T>(parent)` elsewhere.
   - Per-instance values: `new NoteId(guid)` through the factory's `extra`.
   - Exported resources and settings: a `PackedScene`, a config resource.
@@ -147,8 +168,45 @@ registrations. Add one only when a real case needs it.
 - The container owns what it created: plain classes and their rzeka subscriptions.
 - Godot owns the nodes (registered as instances, never disposed by the container).
 - The parent owns imports (registered as instances).
+- The creator owns what it spawned, through its `Spawned` handle. Facades never despawn
+  themselves or know their installer; a scroll wanting to close publishes rzeka matter
+  (e.g. `ScrollCloseRequested(NoteId)`) and the handle's owner disposes it.
 - A scope dies with its installer node: `QueueFree` → `_ExitTree` → `Scope.Dispose()`.
   Children exit before parents, so child scopes are gone before the scope they import from.
+
+### Ending a scene from inside: `SceneLifetime`
+
+The installer only installs, even when its scene ends itself: no gameplay, no listening to
+signals. The decision lives where it is made, usually a plain class in the scope, and reaches
+the root through `SceneLifetime`, which can do exactly one thing. `Spawned.Dispose()` calls the
+same `End()`, so a scene ends one way whether from outside or inside.
+
+```csharp
+// demo/SparkFuse.cs: nobody keeps the spark's handle, so it ends itself
+public sealed class SparkFuse(Timer fuse, SceneLifetime lifetime) : IInitializable, IDisposable
+{
+    public void Initialize()
+    {
+        fuse.Timeout += lifetime.End;   // the timer dies with the scene, no unsubscribing needed
+        fuse.Start();
+    }
+    …
+}
+
+// spawner: fire and forget, the handle is dropped on purpose
+sparks.Create();
+```
+
+When to use which:
+
+- **Nobody holds it** (one-shot effects, a dragon that delivers and flies off): it ends itself
+  through `SceneLifetime`.
+- **An owner holds its `Spawned` handle** (scrolls): it never ends itself. It publishes matter
+  (`ScrollCloseRequested(NoteId)`), and the owner disposes the handle, doing its bookkeeping.
+- **No scope at all** (plain one-shot scenes): no injection involved; the root script calls
+  `QueueFree()`, or a child's signal is connected to the root's `queue_free` in the editor.
+- A node frees only itself or what it created. Never its ancestors (the old `DemoScroll`
+  holding its installer) or its siblings.
 
 ### Spawning a scroll, end to end
 
@@ -164,7 +222,6 @@ public partial class ScrollInstaller : Installer
     protected override void Install(IServiceCollection services, IServiceProvider parent)
     {
         services.Import<IRzeka>(parent);                 // everything from outside, listed here
-        services.AddSingleton(this);
         services.AddKeyedSingleton(ScrollMesh.Front, _frontMesh);
         services.AddKeyedSingleton(ScrollMesh.Back, _backMesh);
         services.AddSelfAndInterfaces<ScrollReplanter>();
@@ -172,13 +229,21 @@ public partial class ScrollInstaller : Installer
     }
 }
 
-// spawning, triggered by rzeka matter inside the forest
-Scroll scroll = factory.Create(s => s.AddSingleton(new NoteId(guid)));
+// spawning, triggered by rzeka matter inside the forest, which keeps the handle
+Spawned<Scroll> scroll = factory.Create(s => s.AddSingleton(new NoteId(guid)));
+
+// despawning, e.g. on ScrollCloseRequested for that note
+scroll.Dispose();
 ```
 
 ## Conventions
 
 - One constructor per container-built class; constructors only store dependencies.
+- `Dispose()` must be safe to call more than once (the `IDisposable` contract; forwards make it
+  happen, see Ownership). Rzeka subscriptions live in `CollectibleDisposable Q`, whose
+  `Dispose()` already is. Any other cleanup goes behind a guard:
+  `if (_disposed) return; _disposed = true;`. Never put once-only side effects (publishing
+  matter, counters, freeing nodes without `IsInstanceValid`) outside that guard.
 - Per-instance values get a named record (`NoteId`), never a bare `Guid`/`string`/`float`.
   Microsoft's container also only takes reference types as instances.
 - Fairies expose a public `Install(IServiceCollection)` at their root that registers their

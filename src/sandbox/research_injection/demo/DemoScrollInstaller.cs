@@ -23,7 +23,6 @@ public partial class DemoScrollInstaller : Installer
         // Everything a scroll needs from outside, in one place.
         services.Import<IRzeka>(parent);
 
-        services.AddSingleton(this);
         services.AddSelfAndInterfaces<ScrollHeartbeat>();
         services.AddSingleton<DemoScroll>();
     }
