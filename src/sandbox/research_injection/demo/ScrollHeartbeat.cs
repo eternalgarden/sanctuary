@@ -17,8 +17,8 @@ public interface IHeartbeat
 
 /// <summary>
 /// A plain class living in one scroll's scope: the imported river plus that scroll's note,
-/// both constructor-injected. Registered with AddSelfAndInterfaces, so its Dispose calls
-/// show the container disposing it once per registration.
+/// both constructor-injected. Registered with AddInterfaces, so only IHeartbeat is visible,
+/// and its Dispose calls show the container disposing it once per registration.
 /// </summary>
 public sealed class ScrollHeartbeat(IRzeka rzeka, NoteId note)
     : IHeartbeat,

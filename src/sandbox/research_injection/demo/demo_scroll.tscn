@@ -3,8 +3,14 @@
 [ext_resource type="Script" uid="uid://67brhoyv5msu" path="res://sandbox/research_injection/demo/DemoScrollInstaller.cs" id="1_installer"]
 [ext_resource type="Script" uid="uid://bvoexqvkxprd0" path="res://sandbox/research_injection/demo/DemoScrollBadge.cs" id="2_badge"]
 
-[node name="DemoScroll" type="Node" unique_id=1424023515]
+[node name="DemoScroll" type="Node" unique_id=1424023515 node_paths=PackedStringArray("FrontMesh", "BackMesh")]
 script = ExtResource("1_installer")
+FrontMesh = NodePath("FrontMesh")
+BackMesh = NodePath("BackMesh")
 
 [node name="Badge" type="Node" parent="." unique_id=2066956313]
 script = ExtResource("2_badge")
+
+[node name="FrontMesh" type="Node3D" parent="."]
+
+[node name="BackMesh" type="Node3D" parent="."]

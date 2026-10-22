@@ -16,6 +16,12 @@ namespace Sanctuary.Sandbox.InjectionDemo;
 /// </summary>
 public partial class DemoScrollInstaller : Installer
 {
+    [Export]
+    Node3D FrontMesh { get; set; }
+
+    [Export]
+    Node3D BackMesh { get; set; }
+
     protected override bool SpawnOnly => true;
 
     protected override void Install(IServiceCollection services, IServiceProvider parent)
@@ -23,7 +29,13 @@ public partial class DemoScrollInstaller : Installer
         // Everything a scroll needs from outside, in one place.
         services.Import<IRzeka>(parent);
 
-        services.AddSelfAndInterfaces<ScrollHeartbeat>();
+        // Same type twice, so each gets a key. Zenject: BindInstance(...).WithId(...).
+        services.AddKeyedSingleton(ScrollSide.Front, FrontMesh);
+        services.AddKeyedSingleton(ScrollSide.Back, BackMesh);
+
+        // Only as IHeartbeat: nothing may depend on ScrollHeartbeat itself.
+        services.AddInterfaces<ScrollHeartbeat>();
+        services.AddInitializable<ScrollFaces>();
         services.AddSingleton<DemoScroll>();
     }
 }

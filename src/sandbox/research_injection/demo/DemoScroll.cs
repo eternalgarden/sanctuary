@@ -8,8 +8,8 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 namespace Sanctuary.Sandbox.InjectionDemo;
 
 /// <summary>The one object a spawned scroll shows to the outside. Zenject: the Scroll facade.</summary>
-// Takes the heartbeat by its interface on purpose: resolving the forwarded registration is
-// what makes the container dispose the heartbeat a second time.
+// Takes the heartbeat by its interface, the only way it is registered (AddInterfaces).
+// Resolving that forward is what makes the container dispose the heartbeat a second time.
 // Despawning is not its business: whoever spawned it holds the Spawned handle.
 public sealed class DemoScroll(IHeartbeat heartbeat)
 {
