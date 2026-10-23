@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cqg1wxwi015ch"]
+
+[ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_jx4l3"]
+[ext_resource type="Shader" uid="uid://ckanjptqmc4vk" path="res://sandbox/learn_shaders/001_basic_noise/001_basic_noise_sincos.gdshader" id="2_f4xj5"]
+
+[sub_resource type="Environment" id="Environment_48qbq"]
+background_mode = 1
+background_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+glow_enabled = true
+glow_intensity = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i36mh"]
+subdivide_width = 32
+subdivide_depth = 32
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfdlg"]
+render_priority = 0
+shader = ExtResource("2_f4xj5")
+
+[node name="ShaderScene" type="Node3D" unique_id=833627544]
+script = ExtResource("1_jx4l3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1264919858]
+environment = SubResource("Environment_48qbq")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=242953997]
+transform = Transform3D(1, 0, 0, 0, 0.97906786, 0.20353413, 0, -0.20353413, 0.97906786, 0, 1.679625, 4.654626)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=853310930]
+transform = Transform3D(-0.5478892, 0, -0.83655095, 0, 1, 0, 0.83655095, 0, -0.5478892, 0, 0, 0)
+mesh = SubResource("PlaneMesh_i36mh")
+surface_material_override/0 = SubResource("ShaderMaterial_wfdlg")

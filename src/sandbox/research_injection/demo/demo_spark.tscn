@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://sandbox/research_injection/demo/DemoSparkInstaller.cs" id="1_installer"]
+
+[node name="DemoSpark" type="Node" node_paths=PackedStringArray("Fuse")]
+script = ExtResource("1_installer")
+Fuse = NodePath("Fuse")
+
+[node name="Fuse" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

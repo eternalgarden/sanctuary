@@ -17,7 +17,6 @@ config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 [autoload]
 
 Ursprung="*uid://duiywhcgb3fgj"
-DI="*res://sandbox/research_DI/DI.cs"
 
 [display]
 

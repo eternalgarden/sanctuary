@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b8yeuqlt45qg1"]
+
+[ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_jje4b"]
+
+[sub_resource type="Environment" id="Environment_48qbq"]
+background_mode = 1
+background_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+glow_enabled = true
+glow_intensity = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_48qbq"]
+
+[node name="ShaderScene" type="Node3D" unique_id=833627544]
+script = ExtResource("1_jje4b")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1264919858]
+environment = SubResource("Environment_48qbq")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=156355020]
+transform = Transform3D(1, 0, 0, 0, 0.8886644, 0.4585581, 0, -0.4585581, 0.8886644, 0, 1.679625, 2.8657408)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1103507750]
+mesh = SubResource("PlaneMesh_48qbq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1749937681]
+transform = Transform3D(0.8314562, 0.3737403, -0.41109467, 0, 0.7399241, 0.6726904, 0.55559033, -0.5593126, 0.61521447, 0, 3.5226994, 0)
+light_color = Color(0.9869029, 0.97697145, 0.95989233, 1)

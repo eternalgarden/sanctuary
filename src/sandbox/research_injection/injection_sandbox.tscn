@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://sandbox/research_injection/demo/InjectionSandboxRoot.cs" id="1_root"]
+[ext_resource type="PackedScene" path="res://sandbox/research_injection/demo/demo_scroll.tscn" id="2_scroll"]
+[ext_resource type="PackedScene" path="res://sandbox/research_injection/demo/demo_spark.tscn" id="3_spark"]
+
+[node name="InjectionSandbox" type="Node" node_paths=PackedStringArray("ScrollsParent", "SparksParent")]
+script = ExtResource("1_root")
+ScrollScene = ExtResource("2_scroll")
+ScrollsParent = NodePath("Scrolls")
+SparkScene = ExtResource("3_spark")
+SparksParent = NodePath("Sparks")
+
+[node name="Scrolls" type="Node" parent="."]
+
+[node name="Sparks" type="Node" parent="."]
