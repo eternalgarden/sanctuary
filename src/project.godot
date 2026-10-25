@@ -13,6 +13,7 @@ config_version=5
 config/name="sanctuary"
 run/main_scene="uid://dphw5sd6sjyif"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
+run/max_fps=60
 
 [autoload]
 
