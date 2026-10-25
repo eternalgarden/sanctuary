@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d2rg866ltepai"]
+
+[ext_resource type="Texture2D" uid="uid://ddqkumuonyqla" path="res://earth/models/levels/forest_with_road_at_night/textures/Image_3.png" id="1_albedo"]
+[ext_resource type="Texture2D" uid="uid://pkbh8rwtfnit" path="res://earth/models/levels/forest_with_road_at_night/textures/Image_4.png" id="2_normal"]
+
+[resource]
+resource_name = "forest_ground"
+albedo_texture = ExtResource("1_albedo")
+roughness = 0.9
+normal_texture = ExtResource("2_normal")

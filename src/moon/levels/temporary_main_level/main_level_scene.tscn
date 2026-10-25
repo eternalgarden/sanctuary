@@ -3,153 +3,64 @@
 [ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_niose"]
 [ext_resource type="Environment" uid="uid://dxvg0fkso3lhd" path="res://moon/levels/temporary_main_level/main_level_environment.tres" id="2_o2mgg"]
 [ext_resource type="Script" uid="uid://dd0q6ycty4hgd" path="res://fillory/common/utility/AutoremovedNode.cs" id="3_bbcmg"]
-[ext_resource type="PackedScene" uid="uid://drmenpmf8f5pd" path="res://sandbox/_scenes/sandbox_mesh.blend" id="4_gqeqo"]
-[ext_resource type="Material" uid="uid://2kp3067vs6ra" path="res://moon/levels/temporary_main_level/main_level_ground.tres" id="5_alh16"]
-[ext_resource type="Material" uid="uid://cuhdmp7p8jhdw" path="res://moon/assets/textures/ground/materials/dry_grass_01.tres" id="5_gqeqo"]
-[ext_resource type="Material" uid="uid://xqyhgpspvreq" path="res://sandbox/_scenes/sandbox_rocky_floor.tres" id="6_erj42"]
 [ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="7_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d3ifhnpt0jv6r" path="res://moon/shaders/lorentian_butterfly/lorentian_butterfly.tscn" id="8_erj42"]
-[ext_resource type="PackedScene" uid="uid://b6wdkd78131eb" path="res://moon/assets/models/nature/undergrowth_floor/undergrowth.glb" id="8_x0uts"]
 [ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://fillory/forest/scroll/game/scroll_plane/scroll_plane.tscn" id="10_fw6xg"]
 [ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="11_c1tix"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_x0uts"]
-_surfaces = [{
-"aabb": AABB(-21.83242, 0, -21.83242, 43.66484, 1e-05, 43.66484),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_p7sxa"]
-resource_name = "sandbox_mesh_plane "
-_surfaces = [{
-"aabb": AABB(-21.83242, 0, -21.83242, 43.66484, 1e-05, 43.66484),
-"attribute_data": PackedByteArray(255, 255, 255, 255, 111, 77, 111, 77, 255, 255, 111, 77, 111, 77, 255, 255),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
-"material": ExtResource("6_erj42"),
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(3.3060074, 3.3060074, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 84, 213, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 0, 0, 255, 255, 84, 213, 0, 0, 0, 0, 0, 0, 84, 213, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170)
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_x0uts")
+[ext_resource type="PackedScene" uid="uid://cx0h0mfdki5ce" path="res://earth/models/nature/alien_slime_tree/alien_slime_tree.tscn" id="13_alh16"]
+[ext_resource type="PackedScene" uid="uid://cg7qtbufqxlfc" path="res://earth/models/levels/forest_with_road_at_night/forest_with_road_at_night.blend" id="14_yhx56"]
 
 [node name="Sandbox" type="Node3D" unique_id=506889607]
 script = ExtResource("1_niose")
 
 [node name="environment" type="Node3D" parent="." unique_id=1568498738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.721298, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="environment" unique_id=1245292406]
-environment = ExtResource("2_o2mgg")
-script = ExtResource("3_bbcmg")
+[node name="light" type="Node3D" parent="environment" unique_id=927794639]
 
-[node name="sandbox_mesh" parent="environment" unique_id=1470963140 instance=ExtResource("4_gqeqo")]
-transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, 0.035499573, 0.007167816)
-
-[node name="Light" parent="environment/sandbox_mesh" index="0" unique_id=691406570]
-transform = Transform3D(-0.14843637, -0.3935143, 0.28904623, -0.028164508, 0.3085058, 0.4055435, -0.48745054, 0.10200609, -0.11145112, -13.75297, 8.095162, -11.952271)
-
-[node name="Plane" parent="environment/sandbox_mesh" index="1" unique_id=600957163]
-transform = Transform3D(2.0750098, -0.0026197887, 0.010873439, 0.005470213, 1.001264, -0.007891558, -0.010794144, 0.0038010885, 2.086253, 0.037929438, 0.2877136, -0.05015598)
-visible = false
-material_override = ExtResource("5_alh16")
-mesh = SubResource("ArrayMesh_p7sxa")
-surface_material_override/0 = ExtResource("5_gqeqo")
-
-[node name="Light2" type="OmniLight3D" parent="environment/sandbox_mesh" unique_id=484368571]
-transform = Transform3D(-0.14843637, -0.3935143, 0.28904623, -0.028164499, 0.30850583, 0.4055435, -0.48745054, 0.1020061, -0.11145111, -13.752965, 3.5321536, 22.602995)
+[node name="Light6" type="OmniLight3D" parent="environment/light" unique_id=228797169]
+transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, -42.27483, 33.001957, -90.61737)
 light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 16.0
-omni_range = 19.733
+light_energy = 79.57747
+omni_range = 4096.0
+omni_attenuation = 2.0
 
-[node name="037_ancient_columns" parent="environment/sandbox_mesh" unique_id=41858465 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.501202, 0.38304126, 4.403223)
+[node name="Light8" type="OmniLight3D" parent="environment/light" unique_id=806281932]
+transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, -62.19044, 33.001957, -60.294388)
+light_color = Color(1, 0.80246735, 0.34496796, 1)
+light_energy = 79.57747
+omni_range = 4096.0
+omni_attenuation = 2.0
 
-[node name="037_ancient_columns2" parent="environment/sandbox_mesh" unique_id=1580256462 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.479444, 0.36608198, 4.4032226)
+[node name="Light9" type="OmniLight3D" parent="environment/light" unique_id=263492507]
+transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 34.003555, 33.001957, -36.18458)
+light_color = Color(1, 0.80246735, 0.34496796, 1)
+light_energy = 79.57747
+omni_range = 4096.0
+omni_attenuation = 2.0
 
-[node name="037_ancient_columns3" parent="environment/sandbox_mesh" unique_id=1959334392 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9387426, 0.4065221, -5.9776835)
+[node name="Light7" type="OmniLight3D" parent="environment/light" unique_id=1988516192]
+transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 28.990032, 10.984833, -63.38947)
+light_color = Color(1, 0.80246735, 0.34496796, 1)
+light_energy = 79.57747
+omni_range = 4096.0
+omni_attenuation = 2.0
 
-[node name="037_ancient_columns4" parent="environment/sandbox_mesh" unique_id=1573740525 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.400778, 0.4498529, -6.1722727)
-
-[node name="039_undergrowth" parent="environment/sandbox_mesh" unique_id=286554090 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999988, 0, 0, 0, 0.27, 0, 0, 0, 0.49999988, 7.1733437, 0.4683196, 8.728973)
-
-[node name="039_undergrowth4" parent="environment/sandbox_mesh" unique_id=2125394637 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.4999998, 0, 0, 0, 0.27, 0, 0, 0, 0.4999998, 7.1733437, 0.4683196, -9.245491)
-
-[node name="039_undergrowth2" parent="environment/sandbox_mesh" unique_id=2128530106 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.4999998, 0, 0, 0, 0.27, 0, 0, 0, 0.4999998, 7.1733437, 0.4683196, 2.7229688)
-
-[node name="039_undergrowth3" parent="environment/sandbox_mesh" unique_id=950111843 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, 7.1733437, 0.4683196, -3.2678554)
-
-[node name="039_undergrowth5" parent="environment/sandbox_mesh" unique_id=243230050 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.4999998, 0, 0, 0, 0.27, 0, 0, 0, 0.4999998, 1.1568893, 0.4683196, 8.728973)
-
-[node name="039_undergrowth6" parent="environment/sandbox_mesh" unique_id=2126681071 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, 1.1568893, 0.4683196, -9.245491)
-
-[node name="039_undergrowth7" parent="environment/sandbox_mesh" unique_id=805731936 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, 1.1568893, 0.4683196, 2.7229698)
-
-[node name="039_undergrowth8" parent="environment/sandbox_mesh" unique_id=394513714 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999955, 0, 0, 0, 0.27, 0, 0, 0, 0.49999955, 1.1568893, 0.4683196, -3.2678535)
-
-[node name="039_undergrowth9" parent="environment/sandbox_mesh" unique_id=974024437 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999967, 0, 0, 0, 0.27, 0, 0, 0, 0.49999967, -4.8279576, 0.4683196, 8.728973)
-
-[node name="039_undergrowth10" parent="environment/sandbox_mesh" unique_id=2107558717 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999955, 0, 0, 0, 0.27, 0, 0, 0, 0.49999955, -4.8279576, 0.4683196, -9.245491)
-
-[node name="039_undergrowth11" parent="environment/sandbox_mesh" unique_id=1186806142 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999955, 0, 0, 0, 0.27, 0, 0, 0, 0.49999955, -4.8279576, 0.4683196, 2.7229707)
-
-[node name="039_undergrowth12" parent="environment/sandbox_mesh" unique_id=955529073 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999943, 0, 0, 0, 0.27, 0, 0, 0, 0.49999943, -4.8279576, 0.4683196, -3.2678518)
-
-[node name="039_undergrowth13" parent="environment/sandbox_mesh" unique_id=1404762455 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.4999996, 0, 0, 0, 0.27, 0, 0, 0, 0.4999996, -10.72793, 0.4683196, 8.728973)
-
-[node name="039_undergrowth14" parent="environment/sandbox_mesh" unique_id=2085855279 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.4999995, 0, 0, 0, 0.27, 0, 0, 0, 0.4999995, -10.72793, 0.4683196, -9.245491)
-
-[node name="039_undergrowth15" parent="environment/sandbox_mesh" unique_id=456905846 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.4999995, 0, 0, 0, 0.27, 0, 0, 0, 0.4999995, -10.72793, 0.4683196, 2.722971)
-
-[node name="039_undergrowth16" parent="environment/sandbox_mesh" unique_id=57999534 instance=ExtResource("8_x0uts")]
-transform = Transform3D(0.49999937, 0, 0, 0, 0.27, 0, 0, 0, 0.49999937, -10.72793, 0.4683196, -3.267851)
-
-[node name="light" type="Node3D" parent="." unique_id=927794639]
-
-[node name="Light2" type="OmniLight3D" parent="light" unique_id=1098316556]
+[node name="Light2" type="OmniLight3D" parent="environment/light" unique_id=1098316556]
 transform = Transform3D(-0.28680003, -0.770313, 0.5695292, -0.0582596, 0.60742825, 0.79223514, -0.9562173, 0.19403256, -0.21908858, 7.0857577, 8.08652, 13.579071)
 light_color = Color(0.78740174, 0.68367463, 0.9889856, 1)
 light_energy = 2.863
 omni_range = 11.096
 omni_attenuation = -0.132
 
-[node name="Light3" type="OmniLight3D" parent="light" unique_id=1816697654]
-transform = Transform3D(-0.28680003, -0.770313, 0.5695292, -0.0582596, 0.60742825, 0.79223514, -0.9562173, 0.19403256, -0.21908858, -13.39164, 9.602747, 15.747084)
+[node name="Light3" type="OmniLight3D" parent="environment/light" unique_id=1816697654]
+transform = Transform3D(-0.28680006, -0.7703131, 0.56952924, -0.058259603, 0.6074283, 0.79223526, -0.95621735, 0.19403256, -0.2190886, -13.936242, 9.8115225, 15.596682)
 light_color = Color(0.5892236, 0.8201975, 0.5184267, 1)
 light_energy = 2.863
 omni_range = 11.096
 omni_attenuation = -0.132
 
-[node name="Light4" type="OmniLight3D" parent="light" unique_id=1870827471]
+[node name="Light4" type="OmniLight3D" parent="environment/light" unique_id=1870827471]
 transform = Transform3D(-0.2868001, -0.7703131, 0.5695292, -0.05825959, 0.60742825, 0.7922353, -0.9562173, 0.19403261, -0.21908861, -0.04019642, 8.530504, -0.26521492)
 light_color = Color(0.9999998, 0.9493517, 0.7591758, 1)
 light_energy = 2.611
@@ -160,14 +71,71 @@ shadow_blur = 6.842
 omni_range = 26.633
 omni_attenuation = 0.053
 
-[node name="LorentianButterfly" parent="." unique_id=446143710 instance=ExtResource("8_erj42")]
+[node name="LorentianButterfly" parent="environment" unique_id=446143710 instance=ExtResource("8_erj42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59328794, -1.1804303, -0.32941628)
 visible = false
 
-[node name="mesh_scroll" parent="." unique_id=910502028 instance=ExtResource("10_fw6xg")]
+[node name="mesh_scroll" parent="environment" unique_id=910502028 instance=ExtResource("10_fw6xg")]
 transform = Transform3D(-1.8156772, 0, 1.0551379, 0, 2.1, 0, -1.0551379, 0, -1.8156772, -9.792899, 0.5000065, 1.4439414)
 
-[node name="Sketchfab_Scene" parent="." unique_id=1505213626 instance=ExtResource("11_c1tix")]
-transform = Transform3D(-0.7509992, 0, -0.6603031, 0, 1, 0, 0.6603031, 0, -0.7509992, -5.692383, 0.7748009, 4.800602)
+[node name="Sketchfab_Scene" parent="environment" unique_id=1505213626 instance=ExtResource("11_c1tix")]
+transform = Transform3D(-0.7509992, 0, -0.6603031, 0, 1, 0, 0.6603031, 0, -0.7509992, -2.8484764, 2.462316, -0.7252755)
 
-[editable path="environment/sandbox_mesh"]
+[node name="alien_slime_tree" parent="environment" unique_id=604028302 instance=ExtResource("13_alh16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1464024, 1.1558459, -11.77087)
+
+[node name="alien_slime_tree2" parent="environment" unique_id=1755747674 instance=ExtResource("13_alh16")]
+transform = Transform3D(2.131638, 0, 0, 0, 2.131638, 0, 0, 0, 2.131638, 11.1676445, 1.1558459, -2.389225)
+
+[node name="alien_slime_tree3" parent="environment" unique_id=710104717 instance=ExtResource("13_alh16")]
+transform = Transform3D(0.36697605, 0, -1.5900185, 0, 1.631818, 0, 1.5900185, 0, 0.36697605, -5.458832, 1.1558459, 13.705097)
+
+[node name="forest_with_road_at_night" parent="environment" unique_id=962376272 instance=ExtResource("14_yhx56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9291725, -2.1342044, -26.573664)
+
+[node name="Node3D" type="Node3D" parent="environment" unique_id=675713278]
+
+[node name="Light4" type="OmniLight3D" parent="environment/Node3D" unique_id=1240631381]
+transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189017, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -68.32593, 12.859317, 34.731995)
+light_color = Color(0.54509807, 0.41568628, 1, 1)
+light_energy = 79.57747
+omni_range = 4096.0
+omni_attenuation = 2.0
+
+[node name="Light5" type="OmniLight3D" parent="environment/Node3D" unique_id=2011376590]
+transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.05518901, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839115, -81.54558, 21.405819, -27.182318)
+light_color = Color(0.543196, 0.4175097, 0.9999849, 1)
+light_energy = 79.57747
+omni_range = 25.456
+omni_attenuation = 2.0
+
+[node name="Light3" type="OmniLight3D" parent="environment/Node3D" unique_id=944658947]
+transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189025, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, 20.906965, 21.64732, -1.9737816)
+light_color = Color(1, 0.80246735, 0.34496796, 1)
+light_energy = 16.0
+omni_range = 70.486
+
+[node name="Light2" type="OmniLight3D" parent="environment/Node3D" unique_id=484368571]
+transform = Transform3D(-0.29086465, -0.7711008, 0.56639326, -0.05518901, 0.6045248, 0.7946723, -0.95517117, 0.19988339, -0.21839117, 3.4753244, 6.9568458, 25.532475)
+light_color = Color(1, 0.80246735, 0.34496796, 1)
+light_energy = 16.0
+omni_range = 19.733
+
+[node name="columns" type="Node3D" parent="environment/Node3D" unique_id=2065100622]
+transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, -1.6765642, 0.007167816)
+
+[node name="037_ancient_columns" parent="environment/Node3D/columns" unique_id=41858465 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 6.501201, 0.31167364, 4.403222)
+
+[node name="037_ancient_columns2" parent="environment/Node3D/columns" unique_id=1580256462 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -7.479441, -0.14849377, 4.4032207)
+
+[node name="037_ancient_columns3" parent="environment/Node3D/columns" unique_id=1959334392 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -6.938742, 0.40652207, -5.977683)
+
+[node name="037_ancient_columns4" parent="environment/Node3D/columns" unique_id=1573740525 instance=ExtResource("7_p7sxa")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 6.4007773, 0.44985288, -6.1722717)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1245292406]
+environment = ExtResource("2_o2mgg")
+script = ExtResource("3_bbcmg")

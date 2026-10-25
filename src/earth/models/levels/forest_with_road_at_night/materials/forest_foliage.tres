@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3tn0f483gqfr"]
+
+[ext_resource type="Texture2D" uid="uid://dokdwltme8k4n" path="res://earth/models/levels/forest_with_road_at_night/textures/Image_0.png" id="1_albedo"]
+
+[resource]
+resource_name = "forest_foliage"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_albedo")
+metallic = 0.58
+metallic_specular = 0.41
+roughness = 0.82

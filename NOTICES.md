@@ -23,6 +23,23 @@
     - Added Godot import suffixes. 
     - Removed skybox and water plane to replace with custom shaders.
     - Corrected some floating bush meshes positions.
+#### alien_slime_tree
+- **Filename:** alien_slime_tree
+- **Author:** LOLIPOP
+- **Source:** https://skfb.ly/prJwS ("Alien slime tree (game-ready, lowpoly)")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+#### forest_with_road_at_night
+- **Filename:** forest_with_road_at_night
+- **Author:** dasy444
+- **Source:** https://skfb.ly/pMHKA ("a forest (3) with a road at night for game")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Scaled up 10× to real-world size and applied all transforms.
+    - Removed the imported empty hierarchy and joined the forest meshes by material (foliage, bark, ground).
+    - Kept the loose source assets as separate objects with origins at their base.
+    - Switched the foliage material from alpha blend to alpha clip.
+    - Renamed the materials and replaced them in Godot with standard materials built from the original textures (ground roughness raised from 0 to 0.9).
     
 ## Textures
 

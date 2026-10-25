@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5yxj3g42d52x"]
+
+[ext_resource type="Texture2D" uid="uid://cu4j0yfuusbs8" path="res://earth/models/levels/forest_with_road_at_night/textures/Image_1.jpg" id="1_albedo"]
+[ext_resource type="Texture2D" uid="uid://dxrlt34rs6tt1" path="res://earth/models/levels/forest_with_road_at_night/textures/Image_2.png" id="2_normal"]
+
+[resource]
+resource_name = "forest_bark"
+albedo_texture = ExtResource("1_albedo")
+roughness = 0.82
+normal_texture = ExtResource("2_normal")

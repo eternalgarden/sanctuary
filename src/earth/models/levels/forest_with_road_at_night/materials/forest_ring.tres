@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyraxg4a8d1be"]
+
+[ext_resource type="Texture2D" uid="uid://dxrlt34rs6tt1" path="res://earth/models/levels/forest_with_road_at_night/textures/Image_2.png" id="2_uh7x4"]
+
+[resource]
+resource_name = "forest_bark"
+albedo_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+roughness = 0.82
+normal_texture = ExtResource("2_uh7x4")

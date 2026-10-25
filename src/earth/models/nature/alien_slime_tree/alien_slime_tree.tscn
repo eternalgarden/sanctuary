@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cx0h0mfdki5ce"]
+
+[ext_resource type="PackedScene" uid="uid://c7n4tyckgt0bw" path="res://earth/models/nature/alien_slime_tree/source/alien_slime_tree_game-ready_lowpoly.glb" id="1_cbu03"]
+
+[node name="alien_slime_tree" type="Node3D" unique_id=604028302]
+
+[node name="source" parent="." unique_id=650461603 instance=ExtResource("1_cbu03")]
