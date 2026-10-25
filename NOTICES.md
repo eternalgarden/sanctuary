@@ -3,7 +3,7 @@
 - **Filename:**
 - **Author:** 
 - **Source:** 
-- **License:** CC BY 4.0
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 - **Changes:** 
 
 # Third-Party Notices
@@ -13,22 +13,25 @@
 - **Filename:** lil_manul
 - **Author:** [lightinkat](https://sketchfab.com/lightinkat)
 - **Source:** https://sketchfab.com/3d-models/manul-63904e8b8e0042ffa678ec6c929d063b
-- **License:** CC BY 4.0
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 - **Changes:** 
+
 #### psx_temple_island
 - **Author:** Peter Seifert
 - **Source:** https://sketchfab.com/3d-models/psx-temple-island-2ed1d1300b3a41e28009efe369262baf
-- **License:** CC BY 4.0
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 - **Changes:** 
     - Added Godot import suffixes. 
     - Removed skybox and water plane to replace with custom shaders.
     - Corrected some floating bush meshes positions.
+
 #### alien_slime_tree
 - **Filename:** alien_slime_tree
 - **Author:** LOLIPOP
 - **Source:** https://skfb.ly/prJwS ("Alien slime tree (game-ready, lowpoly)")
 - **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 - **Changes:** 
+
 #### forest_with_road_at_night
 - **Filename:** forest_with_road_at_night
 - **Author:** dasy444
@@ -37,9 +40,40 @@
 - **Changes:** 
     - Scaled up 10× to real-world size and applied all transforms.
     - Removed the imported empty hierarchy and joined the forest meshes by material (foliage, bark, ground).
-    - Kept the loose source assets as separate objects with origins at their base.
     - Switched the foliage material from alpha blend to alpha clip.
     - Renamed the materials and replaced them in Godot with standard materials built from the original textures (ground roughness raised from 0 to 0.9).
+    - Surrounded the mesh with a void ring and copied some of the trees around on it.
+    - Added mighty invisible walls, you're safe within from what lurks beyond.
+    - Decorated the scene using this model with a variety of other landmarking models.
+    
+#### forest_houses
+- **Filename:** forest_houses
+- **Author:** [katydid](https://sketchfab.com/Katydid.)
+- **Source:** https://sketchfab.com/3d-models/forest-houses-c3f714eb2c1b4c35aacbe251cba7ea9f ("Forest houses")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Removed unused textures.
+
+#### jacaranda_tree
+- **Filename:** jacaranda_tree
+- **Author:** [Uncanny Bichilling](https://sketchfab.com/RokoSama)
+- **Source:** https://sketchfab.com/3d-models/jacaranda-tree-380a2c4bfa6d4ac5b73dc6b001651b4c ("JACARANDA_TREE")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Converted to a `.blend` file.
+    - Replaced the trunk material in Godot with a standard material built from the original trunk texture.
+    - Removed too heavy for a game animation of the leaves.
+
+#### stylised_redwood_trees_pack_with_lod_groups
+- **Filename:** stylised_redwood_trees_pack_with_lod_groups (stylised_redwood_trees_pack.blend)
+- **Author:** [Parelaxel](https://sketchfab.com/parelaxel)
+- **Source:** https://sketchfab.com/3d-models/stylised-redwood-trees-pack-with-lod-groups-80dec2fffb174051a5a88a404b760895 ("Stylised Redwood Trees Pack (with LOD groups)")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Converted to a `.blend` file and scaled from centimetres to metres.
+    - Split the display scene into separate trees, each joining its branch and wood meshes, with the origin at the trunk base.
+    - Merged the per-tree duplicate materials into one shared branch and one shared wood material.
+    - Removed the normal map from the wood material.
     
 ## Textures
 
