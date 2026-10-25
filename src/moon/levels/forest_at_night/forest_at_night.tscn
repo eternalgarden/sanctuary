@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://3pdohh6q7vsd"]
+
+[ext_resource type="PackedScene" uid="uid://cg7qtbufqxlfc" path="res://earth/models/levels/forest_with_road_at_night/forest_with_road_at_night.blend" id="1_rqh57"]
+[ext_resource type="PackedScene" uid="uid://46gsgho287pg" path="res://earth/models/nature/jacaranda_tree/jacaranda_tree.blend" id="2_e1ane"]
+
+[node name="forest_at_night" type="Node3D" unique_id=597230636]
+
+[node name="forest_with_road_at_night" parent="." unique_id=1139518446 instance=ExtResource("1_rqh57")]
+
+[node name="jacaranda_tree2" parent="." unique_id=636482984 instance=ExtResource("2_e1ane")]
+transform = Transform3D(1.8402338, -0.5123888, 2.3160155, 0, 2.9312742, 0.64850694, -2.372018, -0.39751598, 1.7967862, 38.4179, 3.6166525, -33.345673)
+
+[node name="jacaranda_tree" parent="." unique_id=1969206159 instance=ExtResource("2_e1ane")]
+transform = Transform3D(2.9303768, 0.38254666, 0.5286569, -0.25646037, 2.911612, -0.68532556, -0.60004026, 0.62377965, 2.8746789, 40.30059, 3.2406654, -29.740753)

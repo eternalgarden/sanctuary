@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://dd0q6ycty4hgd" path="res://fillory/common/utility/AutoremovedNode.cs" id="3_bbcmg"]
 [ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="7_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d3ifhnpt0jv6r" path="res://moon/shaders/lorentian_butterfly/lorentian_butterfly.tscn" id="8_erj42"]
+[ext_resource type="PackedScene" uid="uid://3pdohh6q7vsd" path="res://moon/levels/forest_at_night/forest_at_night.tscn" id="9_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://fillory/forest/scroll/game/scroll_plane/scroll_plane.tscn" id="10_fw6xg"]
 [ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="11_c1tix"]
 [ext_resource type="PackedScene" uid="uid://cx0h0mfdki5ce" path="res://earth/models/nature/alien_slime_tree/alien_slime_tree.tscn" id="13_alh16"]
-[ext_resource type="PackedScene" uid="uid://cg7qtbufqxlfc" path="res://earth/models/levels/forest_with_road_at_night/forest_with_road_at_night.blend" id="14_yhx56"]
 
 [node name="Sandbox" type="Node3D" unique_id=506889607]
 script = ExtResource("1_niose")
@@ -40,7 +40,7 @@ omni_range = 4096.0
 omni_attenuation = 2.0
 
 [node name="Light7" type="OmniLight3D" parent="environment/light" unique_id=1988516192]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 28.990032, 10.984833, -63.38947)
+transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 32.019585, 10.104631, -61.13067)
 light_color = Color(1, 0.80246735, 0.34496796, 1)
 light_energy = 79.57747
 omni_range = 4096.0
@@ -90,20 +90,17 @@ transform = Transform3D(2.131638, 0, 0, 0, 2.131638, 0, 0, 0, 2.131638, 11.16764
 [node name="alien_slime_tree3" parent="environment" unique_id=710104717 instance=ExtResource("13_alh16")]
 transform = Transform3D(0.36697605, 0, -1.5900185, 0, 1.631818, 0, 1.5900185, 0, 0.36697605, -5.458832, 1.1558459, 13.705097)
 
-[node name="forest_with_road_at_night" parent="environment" unique_id=962376272 instance=ExtResource("14_yhx56")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9291725, -2.1342044, -26.573664)
-
 [node name="Node3D" type="Node3D" parent="environment" unique_id=675713278]
 
 [node name="Light4" type="OmniLight3D" parent="environment/Node3D" unique_id=1240631381]
-transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189017, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -68.32593, 12.859317, 34.731995)
+transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189017, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -32.70671, 15.476517, 21.322655)
 light_color = Color(0.54509807, 0.41568628, 1, 1)
 light_energy = 79.57747
 omni_range = 4096.0
 omni_attenuation = 2.0
 
 [node name="Light5" type="OmniLight3D" parent="environment/Node3D" unique_id=2011376590]
-transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.05518901, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839115, -81.54558, 21.405819, -27.182318)
+transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.05518901, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -36.998413, 21.405819, -0.4498043)
 light_color = Color(0.543196, 0.4175097, 0.9999849, 1)
 light_energy = 79.57747
 omni_range = 25.456
@@ -115,8 +112,14 @@ light_color = Color(1, 0.80246735, 0.34496796, 1)
 light_energy = 16.0
 omni_range = 70.486
 
+[node name="Light6" type="OmniLight3D" parent="environment/Node3D" unique_id=1726471270]
+transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189025, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -20.487196, 13.679613, -45.566933)
+light_color = Color(1, 0.80246735, 0.34496796, 1)
+light_energy = 16.0
+omni_range = 70.486
+
 [node name="Light2" type="OmniLight3D" parent="environment/Node3D" unique_id=484368571]
-transform = Transform3D(-0.29086465, -0.7711008, 0.56639326, -0.05518901, 0.6045248, 0.7946723, -0.95517117, 0.19988339, -0.21839117, 3.4753244, 6.9568458, 25.532475)
+transform = Transform3D(-0.29086465, -0.7711008, 0.5663933, -0.05518901, 0.6045248, 0.7946723, -0.95517117, 0.19988337, -0.2183912, -0.7412751, 8.021764, 20.572058)
 light_color = Color(1, 0.80246735, 0.34496796, 1)
 light_energy = 16.0
 omni_range = 19.733
@@ -139,3 +142,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 6.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1245292406]
 environment = ExtResource("2_o2mgg")
 script = ExtResource("3_bbcmg")
+
+[node name="ForestAtNight" parent="." unique_id=597230636 instance=ExtResource("9_p7sxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1920586, -7.1555376, -25.115168)
