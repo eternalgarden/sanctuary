@@ -47,11 +47,15 @@
 ## directory structure
 
 - common `Sanctuary.Common`
-	- *references **no one*** 
+	- *references **no one** in fillory*
+		- no other fillory layer (no blood, forest or fairies)
+			- this means once its code references even a single matter type it already no longer belongs here, but to the forest
+		- external library references are fine: Godot, Rx and the `rzeka` library itself
 	- example contents:
 		- serializers `Sanctuary.Common.Serializers`
 		- extensions `Sanctuary.Common.Extensions`
 		- math `Sanctuary.Common.Math`
+		- reactive `Sanctuary.Common.Reactive` – generic Rx/rzeka helpers
 		- utility `Sanctuary.Common.Utility`
 - editor `Sanctuary.Editor`
 - forest `Sanctuary.Forest` (see [[#component structure]])
@@ -69,17 +73,17 @@
 		- a module is a `fairy` if it must expose a synchronously-queried interface that other modules depend on in runtime. 
 		- an example is very densely accessed information like player position or raycasting because it would totally pollute rzeka otherwise.
 		- this means a fairy is the only being that *can bypass rzeka*.
+		- **not a reason to be a fairy:** needing to share a helper or a command API. A command can travel as matter, and shared code that speaks rzeka goes to `common`. Keep the fairy list short, with every entry earning its bypass.
 	- example contents:
 		- data `Sanctuary.Fairies.Data`
 			- exposing: `ILibraryFairy 
-		- input `Sanctuary.Fairies.Input`
-			- exposing: `IMovementInputFairy`
 		- interaction `Sanctuary.Fairies.Interaction`
 			- exposing: `IRaycasterFairy`
 		- player `Sanctuary.Fairies.Player`
 			- exposing: `IPlayerLocatorFairy`
 - blood `Sanctuary.Blood`
 	- subdirectories are flattened, rzeka's *matter* is the bloodsystem of the entire organism, hence *blood*
+	- holds matter and the plain data it carries (records, enums, pure reducers like `FilloryLoadInfo.WithStep`). No helpers that act on the river; those go to `common`.
 	- examples:
 		- portals `Sanctuary.Blood.Portals`
 		- data `Sanctuary.Blood.Data`
