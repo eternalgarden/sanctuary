@@ -4,5 +4,4 @@
 
 [resource]
 albedo_texture = ExtResource("1_2tvre")
-metallic_specular = 0.0
 uv1_scale = Vector3(5, 5, 5)
