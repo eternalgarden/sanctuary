@@ -1,0 +1,156 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dt7jxpha3fvu7"
+path="res://.godot/imported/scene.gltf-3198195a2246854110252a4a5343c2ea.scn"
+
+[deps]
+
+source_file="res://earth/models/nature/realistic_grass_pack_for_games_free/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-3198195a2246854110252a4a5343c2ea.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Grass_A": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/materials/Grass_A.tres",
+"use_external/path": "uid://c1sypq2ydxes7"
+},
+"Grass_B": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/materials/Grass_B.tres",
+"use_external/path": "uid://bcc07p6g04ts3"
+},
+"Grass_C": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/materials/Grass_C.tres",
+"use_external/path": "uid://bi6ipa3egeype"
+},
+"WheatGrass_Low": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/materials/WheatGrass_Low.tres",
+"use_external/path": "uid://cc0kq35rnwgo3"
+},
+"Wheatgrass_Mat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/materials/Wheatgrass_Mat.tres",
+"use_external/path": "uid://dmmsmajcnpggq"
+}
+},
+"meshes": {
+"Sketchfab_Scene_Object_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_0.res",
+"save_to_file/path": "uid://buao40bdvmf6d"
+},
+"Sketchfab_Scene_Object_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_1.res",
+"save_to_file/path": "uid://ps5g0esrcrnj"
+},
+"Sketchfab_Scene_Object_2": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_2.res",
+"save_to_file/path": "uid://d3g6qduucgxp2"
+},
+"Sketchfab_Scene_Object_3": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_3.res",
+"save_to_file/path": "uid://755gpc6ex23e"
+},
+"Sketchfab_Scene_Object_4": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_4.res",
+"save_to_file/path": "uid://d35lob7wasf4u"
+},
+"Sketchfab_Scene_Object_5": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_5.res",
+"save_to_file/path": "uid://cy70djaxqqef5"
+},
+"Sketchfab_Scene_Object_6": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_6.res",
+"save_to_file/path": "uid://bw0q8ev61x12d"
+},
+"Sketchfab_Scene_Object_7": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_7.res",
+"save_to_file/path": "uid://8p8vsmoi8t1f"
+},
+"Sketchfab_Scene_Object_8": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://earth/models/nature/realistic_grass_pack_for_games_free/save_paths/Sketchfab_Scene_Object_8.res",
+"save_to_file/path": "uid://6k23yvjiwqbd"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

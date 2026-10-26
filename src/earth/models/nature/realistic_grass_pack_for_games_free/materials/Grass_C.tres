@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bi6ipa3egeype"]
+
+[ext_resource type="Texture2D" uid="uid://dm2nwlpqo0cve" path="res://earth/models/nature/realistic_grass_pack_for_games_free/textures/Grass_C_baseColor.png" id="1_372jt"]
+[ext_resource type="Texture2D" uid="uid://c0os7lnd8ib1c" path="res://earth/models/nature/realistic_grass_pack_for_games_free/textures/Grass_C_normal.png" id="2_8vhnc"]
+
+[resource]
+resource_name = "Grass_C"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_372jt")
+roughness = 0.695455
+normal_enabled = true
+normal_texture = ExtResource("2_8vhnc")
+metadata/_gltf_primary_texture_coord = 0
