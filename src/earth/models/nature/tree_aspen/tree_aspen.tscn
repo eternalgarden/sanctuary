@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://drplkbgvqxjus"]
+
+[ext_resource type="PackedScene" uid="uid://b7kwyk2etn2by" path="res://earth/models/nature/tree_aspen/tree_aspen.blend" id="1_sf82p"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dtgi1"]
+height = 4.7497463
+radius = 0.12792969
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rcwnq"]
+height = 1.2083154
+radius = 0.3564453
+
+[node name="TreeAspen" type="Node3D" unique_id=1376339905]
+
+[node name="tree_aspen2" parent="." unique_id=1055436914 instance=ExtResource("1_sf82p")]
+
+[node name="trunk" type="StaticBody3D" parent="." unique_id=934977022]
+
+[node name="shape" type="CollisionShape3D" parent="trunk" unique_id=1640491101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3748732, 0)
+shape = SubResource("CylinderShape3D_dtgi1")
+
+[node name="scatter_blocker" type="StaticBody3D" parent="." unique_id=1149020014]
+collision_layer = 4
+collision_mask = 0
+
+[node name="shape" type="CollisionShape3D" parent="scatter_blocker" unique_id=83806929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5653491, 0)
+shape = SubResource("CylinderShape3D_rcwnq")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://svciqya10ftb"]
+
+[ext_resource type="Texture2D" uid="uid://cjjyi3mp8tvah" path="res://earth/models/nature/tree_aspen/textures/aspen_bark_1k.png" id="1_wwilo"]
+
+[resource]
+resource_name = "aspen_bark"
+cull_mode = 2
+albedo_texture = ExtResource("1_wwilo")
+roughness = 0.75
+metadata/_gltf_primary_texture_coord = 0

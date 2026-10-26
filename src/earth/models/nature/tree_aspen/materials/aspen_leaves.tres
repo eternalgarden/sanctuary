@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn43k8knejhgl"]
+
+[ext_resource type="Texture2D" uid="uid://1onhwcm3xrt" path="res://earth/models/nature/tree_aspen/textures/aspen_leaves_2k.png" id="1_la6tb"]
+
+[resource]
+resource_name = "aspen_leaves"
+transparency = 2
+alpha_scissor_threshold = 0.25
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_la6tb")
+roughness = 0.75
+metadata/_gltf_primary_texture_coord = 0
