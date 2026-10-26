@@ -1,0 +1,530 @@
+[gd_scene format=3 uid="uid://oqthjt6q6q07"]
+
+[ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_24iv3"]
+[ext_resource type="PackedScene" uid="uid://nypu0s547xcy" path="res://moon/assets/models/environment/test_environment_01/test_environment_01.blend" id="1_ks4bw"]
+[ext_resource type="Script" uid="uid://dgqq1tf8prx5s" path="res://addons/proton_scatter/src/scatter.gd" id="2_pyeds"]
+[ext_resource type="Script" uid="uid://ba8jou0xje0c7" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="3_q1htq"]
+[ext_resource type="Script" uid="uid://b5s7ggmsi8g5u" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="4_cxdhi"]
+[ext_resource type="Script" uid="uid://gjjh4mw1wn51" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="5_0x0a3"]
+[ext_resource type="Script" uid="uid://b0332hlb7q5t1" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="6_24iv3"]
+[ext_resource type="Script" uid="uid://dc4rwlje6dfca" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="7_ycib1"]
+[ext_resource type="Script" uid="uid://it6ja2wjneak" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="8_5roam"]
+[ext_resource type="Script" uid="uid://c85i0481q4uog" path="res://addons/proton_scatter/src/scatter_item.gd" id="9_csnyf"]
+[ext_resource type="Script" uid="uid://dx7e7heldjwmg" path="res://addons/proton_scatter/src/scatter_shape.gd" id="10_ov56j"]
+[ext_resource type="Script" uid="uid://ba7ljvtfgk4cp" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="11_4e2ts"]
+[ext_resource type="ArrayMesh" uid="uid://nugycyh32w76" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/mesh_save_path/stylised_redwood_trees_pack_redwood_big_002.res" id="12_hgxia"]
+[ext_resource type="Script" uid="uid://dpqh21rwi7chu" path="res://addons/proton_scatter/src/modifiers/create_inside_poisson.gd" id="13_5roam"]
+[ext_resource type="ArrayMesh" uid="uid://cf2eiauac62fl" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/mesh_save_path/stylised_redwood_trees_pack_redwood_small_001.res" id="13_tqe7k"]
+[ext_resource type="ArrayMesh" uid="uid://cp2uwcuefu78k" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/mesh_save_path/stylised_redwood_trees_pack_redwood_medium_002.res" id="14_32qis"]
+[ext_resource type="ArrayMesh" uid="uid://cfs0mpi74pvgk" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/mesh_save_path/stylised_redwood_trees_pack_redwood_medium_003.res" id="15_485y6"]
+[ext_resource type="ArrayMesh" uid="uid://1qb2v32jvuo2" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/mesh_save_path/stylised_redwood_trees_pack_redwood_medium_004.res" id="16_3vkit"]
+[ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://fillory/fairies/player/game/character-controller/player.tscn" id="17_q1htq"]
+[ext_resource type="PackedScene" uid="uid://do65e4473t4gd" path="res://earth/models/nature/fern_grass_02/scenes/fern_03.tscn" id="20_5roam"]
+[ext_resource type="Script" uid="uid://bpckcc61yrsjl" path="res://addons/proton_scatter/src/modifiers/offset_position.gd" id="20_csnyf"]
+[ext_resource type="PackedScene" uid="uid://qy54sj6k6x05" path="res://earth/models/nature/fern_grass_02/scenes/fern_04.tscn" id="21_4e2ts"]
+[ext_resource type="Script" uid="uid://bbwcpx3d6w1mu" path="res://addons/proton_scatter/src/modifiers/offset_scale.gd" id="21_ov56j"]
+[ext_resource type="PackedScene" uid="uid://b3bsqcv7rekrl" path="res://earth/models/nature/fern_grass_02/scenes/fern_02.tscn" id="22_hgxia"]
+[ext_resource type="PackedScene" uid="uid://yh3nyy7omcw6" path="res://earth/models/nature/fern_grass_02/scenes/fern_01.tscn" id="23_tqe7k"]
+[ext_resource type="PackedScene" uid="uid://drplkbgvqxjus" path="res://earth/models/nature/tree_aspen/tree_aspen.tscn" id="26_hgxia"]
+
+[sub_resource type="Resource" id="Resource_tqe7k"]
+script = ExtResource("5_0x0a3")
+amount = 35
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_32qis"]
+script = ExtResource("6_24iv3")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(7, 360, 7)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_485y6"]
+script = ExtResource("7_ycib1")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_3vkit"]
+script = ExtResource("8_5roam")
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_hxdag"]
+script = ExtResource("3_q1htq")
+stack = Array[ExtResource("4_cxdhi")]([SubResource("Resource_tqe7k"), SubResource("Resource_32qis"), SubResource("Resource_485y6"), SubResource("Resource_3vkit")])
+
+[sub_resource type="Resource" id="Resource_g8bsm"]
+script = ExtResource("11_4e2ts")
+radius = 20.092209
+
+[sub_resource type="Resource" id="Resource_dvud3"]
+script = ExtResource("11_4e2ts")
+radius = 12.438332
+
+[sub_resource type="Resource" id="Resource_tsud6"]
+script = ExtResource("11_4e2ts")
+radius = 12.438332
+
+[sub_resource type="Resource" id="Resource_tx2d6"]
+script = ExtResource("11_4e2ts")
+radius = 12.438332
+
+[sub_resource type="Resource" id="Resource_dl3v0"]
+script = ExtResource("5_0x0a3")
+amount = 1500
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_8gcep"]
+script = ExtResource("13_5roam")
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_3lqp3"]
+script = ExtResource("6_24iv3")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(7, 360, 7)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_mv7yd"]
+script = ExtResource("7_ycib1")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_sa3x0"]
+script = ExtResource("8_5roam")
+ray_length = 25.0
+ray_offset = 20.0
+exclude_mask = 4
+
+[sub_resource type="Resource" id="Resource_wxwqo"]
+script = ExtResource("21_ov56j")
+scale = Vector3(5, 5, 5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_48g3m"]
+script = ExtResource("3_q1htq")
+stack = Array[ExtResource("4_cxdhi")]([SubResource("Resource_dl3v0"), SubResource("Resource_8gcep"), SubResource("Resource_3lqp3"), SubResource("Resource_mv7yd"), SubResource("Resource_sa3x0"), SubResource("Resource_wxwqo")])
+
+[sub_resource type="Resource" id="Resource_07etf"]
+script = ExtResource("11_4e2ts")
+radius = 20.092209
+
+[sub_resource type="Resource" id="Resource_dqlrt"]
+script = ExtResource("11_4e2ts")
+radius = 12.438332
+
+[sub_resource type="Resource" id="Resource_5roam"]
+script = ExtResource("11_4e2ts")
+radius = 8.595924
+
+[sub_resource type="Resource" id="Resource_8mgik"]
+script = ExtResource("11_4e2ts")
+radius = 15.750687
+
+[sub_resource type="Resource" id="Resource_82xic"]
+script = ExtResource("11_4e2ts")
+radius = 7.5185776
+
+[sub_resource type="Resource" id="Resource_hm0yb"]
+script = ExtResource("11_4e2ts")
+radius = 7.5185776
+
+[sub_resource type="Resource" id="Resource_ct1lv"]
+script = ExtResource("11_4e2ts")
+radius = 8.429916
+
+[sub_resource type="Resource" id="Resource_nv2ke"]
+script = ExtResource("11_4e2ts")
+radius = 6.3155594
+
+[sub_resource type="Resource" id="Resource_kurvu"]
+script = ExtResource("11_4e2ts")
+radius = 12.438332
+
+[sub_resource type="Resource" id="Resource_18f6x"]
+script = ExtResource("11_4e2ts")
+radius = 12.438332
+
+[sub_resource type="Resource" id="Resource_rnwj8"]
+script = ExtResource("11_4e2ts")
+radius = 15.406734
+
+[sub_resource type="Resource" id="Resource_6dm84"]
+script = ExtResource("11_4e2ts")
+radius = 12.438332
+
+[sub_resource type="Resource" id="Resource_5aikv"]
+script = ExtResource("11_4e2ts")
+radius = 11.029167
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sny7q"]
+sky_top_color = Color(0.45755643, 0.38807535, 0.70825046, 1)
+
+[sub_resource type="Sky" id="Sky_p5wfe"]
+sky_material = SubResource("ProceduralSkyMaterial_sny7q")
+
+[sub_resource type="Environment" id="Environment_48qbq"]
+background_mode = 2
+sky = SubResource("Sky_p5wfe")
+ambient_light_source = 2
+ambient_light_color = Color(0.27022192, 0.27022192, 0.2702219, 1)
+ambient_light_energy = 0.68
+
+[sub_resource type="Resource" id="Resource_m5p7y"]
+script = ExtResource("5_0x0a3")
+amount = 75
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_xlbvy"]
+script = ExtResource("6_24iv3")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(0, 360, 0)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_62yyi"]
+script = ExtResource("7_ycib1")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_5ftrn"]
+script = ExtResource("8_5roam")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_052ck"]
+script = ExtResource("20_csnyf")
+position = Vector3(0, 10, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_bgnjf"]
+script = ExtResource("21_ov56j")
+scale = Vector3(5, 5, 5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_u84gw"]
+script = ExtResource("3_q1htq")
+stack = Array[ExtResource("4_cxdhi")]([SubResource("Resource_m5p7y"), SubResource("Resource_xlbvy"), SubResource("Resource_62yyi"), SubResource("Resource_5ftrn"), SubResource("Resource_052ck"), SubResource("Resource_bgnjf")])
+
+[sub_resource type="Resource" id="Resource_almck"]
+script = ExtResource("11_4e2ts")
+radius = 49.020447
+
+[node name="TestEnvironment01" type="Node3D" unique_id=1622443137]
+script = ExtResource("1_24iv3")
+
+[node name="test_environment_01" parent="." unique_id=1506016264 instance=ExtResource("1_ks4bw")]
+transform = Transform3D(0.999177, 0, 0, 0, 0.999177, 0, 0, 0, 0.999177, 0.026672363, 0.03716278, 0.01593399)
+
+[node name="RedwoodTrees" type="Node3D" parent="." unique_id=154838506]
+
+[node name="redwood_scatter" type="Node3D" parent="RedwoodTrees" unique_id=732886625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.90773, 0, 11.236642)
+script = ExtResource("2_pyeds")
+render_mode = 1
+modifier_stack = SubResource("Resource_hxdag")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://dgqq1tf8prx5s"
+
+[node name="ScatterItem" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1600483462]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_001.tscn"
+
+[node name="ScatterItem2" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=191192171]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_002.tscn"
+
+[node name="ScatterItem3" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1432094874]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_003.tscn"
+
+[node name="ScatterItem4" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=667670545]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_001.tscn"
+
+[node name="ScatterItem5" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1822943058]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_002.tscn"
+
+[node name="ScatterItem6" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1596706297]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_003.tscn"
+
+[node name="ScatterItem7" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1170283691]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_004.tscn"
+
+[node name="ScatterItem8" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1094400317]
+script = ExtResource("9_csnyf")
+path = "res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_small_001.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1087012284]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_g8bsm")
+
+[node name="ScatterShape2" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=191733562]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -26.391693, 0, 25.470512)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_dvud3")
+
+[node name="ScatterShape3" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=352240499]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -98.11595, 0, 66.154396)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_tsud6")
+
+[node name="ScatterShape4" type="Node3D" parent="RedwoodTrees/redwood_scatter" unique_id=1535622533]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -104.41825, 0, 52.563328)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_tx2d6")
+
+[node name="grass_scatter" type="Node3D" parent="RedwoodTrees" unique_id=1891417027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.82008, 0, 11.218242)
+script = ExtResource("2_pyeds")
+modifier_stack = SubResource("Resource_48g3m")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://dgqq1tf8prx5s"
+
+[node name="ScatterItem9" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=370320493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31367493, 0, -0.25606728)
+script = ExtResource("9_csnyf")
+path = "uid://buao40bdvmf6d"
+
+[node name="ScatterItem10" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1478590949]
+script = ExtResource("9_csnyf")
+path = "uid://ps5g0esrcrnj"
+
+[node name="ScatterItem11" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1619469818]
+script = ExtResource("9_csnyf")
+path = "uid://d3g6qduucgxp2"
+
+[node name="ScatterItem12" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1681742553]
+script = ExtResource("9_csnyf")
+path = "uid://755gpc6ex23e"
+
+[node name="ScatterItem13" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=647483271]
+script = ExtResource("9_csnyf")
+path = "uid://d35lob7wasf4u"
+
+[node name="ScatterItem14" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=440158028]
+script = ExtResource("9_csnyf")
+path = "uid://cy70djaxqqef5"
+
+[node name="ScatterItem15" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1249801482]
+script = ExtResource("9_csnyf")
+path = "uid://bw0q8ev61x12d"
+
+[node name="ScatterItem16" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=363847702]
+script = ExtResource("9_csnyf")
+path = "uid://8p8vsmoi8t1f"
+
+[node name="ScatterItem17" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=656674720]
+script = ExtResource("9_csnyf")
+path = "uid://6k23yvjiwqbd"
+
+[node name="ScatterShape" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1140590507]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.14286804, 0, -0.13389397)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_07etf")
+
+[node name="ScatterShape2" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1130306856]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -26.391693, 0, 25.470512)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_dqlrt")
+
+[node name="ScatterShape12" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=314382039]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -34.67279, 0, 23.229824)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_5roam")
+
+[node name="ScatterShape13" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=652225793]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -8.515762, 0, 17.66151)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_8mgik")
+
+[node name="ScatterShape5" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1523824595]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -56.975967, 9.536743e-07, 45.544495)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_82xic")
+
+[node name="ScatterShape8" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=2115428847]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -58.679123, 9.536743e-07, 46.66964)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_hm0yb")
+
+[node name="ScatterShape6" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=260947652]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -12.609222, -0.26963806, 65.414986)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_ct1lv")
+
+[node name="ScatterShape7" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=229258398]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -19.56137, -0.26963806, 66.55425)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_nv2ke")
+
+[node name="ScatterShape3" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=680354255]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -98.11595, 0, 66.154396)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_kurvu")
+
+[node name="ScatterShape9" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1138074833]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -93.45276, 9.536743e-07, 69.35375)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_18f6x")
+
+[node name="ScatterShape10" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1111837850]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -101.17865, 9.536743e-07, 64.24668)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_rnwj8")
+
+[node name="ScatterShape4" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=249894544]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -104.41825, 0, 52.563328)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_6dm84")
+
+[node name="ScatterShape11" type="Node3D" parent="RedwoodTrees/grass_scatter" unique_id=1956562153]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -105.39768, 0, 46.678505)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_5aikv")
+
+[node name="StylisedRedwoodTreesPackRedwoodBig002" type="MeshInstance3D" parent="RedwoodTrees" unique_id=629785026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.53853, -0.9025686, -35.6814)
+mesh = ExtResource("12_hgxia")
+
+[node name="StylisedRedwoodTreesPackRedwoodSmall001" type="MeshInstance3D" parent="RedwoodTrees" unique_id=166922797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.50119, -0.61612487, -35.610977)
+mesh = ExtResource("13_tqe7k")
+
+[node name="StylisedRedwoodTreesPackRedwoodMedium002" type="MeshInstance3D" parent="RedwoodTrees" unique_id=2109116753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.46433, -0.52213573, 50.304634)
+mesh = ExtResource("14_32qis")
+
+[node name="StylisedRedwoodTreesPackRedwoodMedium003" type="MeshInstance3D" parent="RedwoodTrees" unique_id=1685827014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.63447, -0.52213573, 64.202156)
+mesh = ExtResource("15_485y6")
+
+[node name="StylisedRedwoodTreesPackRedwoodSmall002" type="MeshInstance3D" parent="RedwoodTrees" unique_id=105499760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.92515, -0.52213573, 51.41213)
+mesh = ExtResource("13_tqe7k")
+
+[node name="StylisedRedwoodTreesPackRedwoodMedium004" type="MeshInstance3D" parent="RedwoodTrees" unique_id=1910257984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.76745, -1.0140686, 70.41169)
+mesh = ExtResource("14_32qis")
+
+[node name="StylisedRedwoodTreesPackRedwoodMedium005" type="MeshInstance3D" parent="RedwoodTrees" unique_id=1172120004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.144135, -1.0140686, 81.814026)
+mesh = ExtResource("15_485y6")
+
+[node name="StylisedRedwoodTreesPackRedwoodBig003" type="MeshInstance3D" parent="RedwoodTrees" unique_id=1750410625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.2599, -1.0140686, 79.64789)
+mesh = ExtResource("12_hgxia")
+
+[node name="StylisedRedwoodTreesPackRedwoodMedium006" type="MeshInstance3D" parent="RedwoodTrees" unique_id=1754346804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.95247, -1.0140686, 84.88829)
+mesh = ExtResource("16_3vkit")
+
+[node name="fern_03" parent="RedwoodTrees" unique_id=413851690 instance=ExtResource("20_5roam")]
+transform = Transform3D(3.027397, 0, 0, 0, 3.027397, 0, 0, 0, 3.027397, 125.261284, 0.62370914, 2.9783418)
+
+[node name="fern_04" parent="RedwoodTrees" unique_id=929636904 instance=ExtResource("21_4e2ts")]
+transform = Transform3D(4.6367817, 0, 0, 0, 4.6367817, 0, 0, 0, 4.6367817, 130.60944, 0.5004365, 4.453197)
+
+[node name="fern_02" parent="RedwoodTrees" unique_id=134471700 instance=ExtResource("22_hgxia")]
+transform = Transform3D(3.3286743, 0, 0, 0, 3.3286743, 0, 0, 0, 3.3286743, 138.20674, 0.5897064, 4.2874713)
+
+[node name="fern_01" parent="RedwoodTrees" unique_id=2006268165 instance=ExtResource("23_tqe7k")]
+transform = Transform3D(3.2838638, 0, 0, 0, 3.2838638, 0, 0, 0, 3.2838638, 135.18466, 0.4398625, 11.896776)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RedwoodTrees" unique_id=1875366254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.261284, 3.0096803, 2.9783418)
+light_color = Color(0.99999994, 0.6249792, 0.23176739, 1)
+omni_range = 10.891
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="RedwoodTrees" unique_id=347330168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.74039, 3.0096803, 4.1753135)
+light_color = Color(0.99999994, 0.6249792, 0.23176739, 1)
+omni_range = 10.891
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="RedwoodTrees" unique_id=656673295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.73822, 3.0096803, 4.016231)
+light_color = Color(0.99999994, 0.6249792, 0.23176739, 1)
+omni_range = 10.891
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="RedwoodTrees" unique_id=1063542378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.1972, 3.0096803, 11.453756)
+light_color = Color(0.99999994, 0.6249792, 0.23176739, 1)
+omni_range = 10.891
+
+[node name="Player" parent="." unique_id=1679920196 instance=ExtResource("17_q1htq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.5335, 2.055318, 20.54732)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=306738270]
+environment = SubResource("Environment_48qbq")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1223856009]
+transform = Transform3D(10.389365, 0, 0, 0, 10.389365, 0, 0, 0, 10.389365, -42.308403, 11.740183, -29.35925)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sketchfab_Scene" unique_id=385487232]
+transform = Transform3D(0.09625227, 0, 0, 0, 0.09625227, 0, 0, 0, 0.09625227, -10.946166, 2.3153343, 6.191736)
+light_color = Color(0.9819527, 0.7957389, 0.5420747, 1)
+light_energy = 11.979
+omni_range = 23.723
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Sketchfab_Scene" unique_id=1653586204]
+transform = Transform3D(0.09625227, 0, 0, 0, 0.09625227, 0, 0, 0, 0.09625227, -9.558315, 2.3153343, 10.199739)
+light_color = Color(0.9819527, 0.7957389, 0.5420747, 1)
+light_energy = 11.979
+omni_range = 23.723
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Sketchfab_Scene" unique_id=2127741156]
+transform = Transform3D(0.09625227, 0, 0, 0, 0.09625227, 0, 0, 0, 0.09625227, -7.8491077, 2.3153343, 6.9693527)
+light_color = Color(0.9819527, 0.7957389, 0.5420747, 1)
+light_energy = 11.979
+omni_range = 23.723
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Sketchfab_Scene" unique_id=814632279]
+transform = Transform3D(0.09625227, 0, 0, 0, 0.09625227, 0, 0, 0, 0.09625227, -8.726014, 2.3153343, 4.753154)
+light_color = Color(0.9819527, 0.7957389, 0.5420747, 1)
+light_energy = 11.979
+omni_range = 23.723
+
+[node name="Oak Trees" type="Node3D" parent="." unique_id=1062051862]
+
+[node name="ProtonScatter" type="Node3D" parent="Oak Trees" unique_id=2113940567]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -136.187, 35.334946, 39.00634)
+script = ExtResource("2_pyeds")
+modifier_stack = SubResource("Resource_u84gw")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://dgqq1tf8prx5s"
+
+[node name="ScatterItem" type="Node3D" parent="Oak Trees/ProtonScatter" unique_id=1488750338]
+script = ExtResource("9_csnyf")
+source_ignore_rotation = false
+path = "uid://chp4ixpl8nw8k"
+
+[node name="ScatterItem2" type="Node3D" parent="Oak Trees/ProtonScatter" unique_id=371671486]
+script = ExtResource("9_csnyf")
+source_ignore_rotation = false
+path = "uid://dvwobmggxyy84"
+
+[node name="ScatterShape" type="Node3D" parent="Oak Trees/ProtonScatter" unique_id=116389192]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("10_ov56j")
+shape = SubResource("Resource_almck")
+
+[node name="TreeAspen" parent="." unique_id=1376339905 instance=ExtResource("26_hgxia")]
+transform = Transform3D(5.886124, 0, 0, 0, 5.886124, 0, 0, 0, 5.886124, 121.87641, 0.309206, 33.45657)
+
+[node name="TreeAspen2" parent="." unique_id=1410600849 instance=ExtResource("26_hgxia")]
+transform = Transform3D(6.4415455, 0, 0, 0, 6.4415455, 0, 0, 0, 6.4415455, 115.82114, 0.309206, 70.95978)

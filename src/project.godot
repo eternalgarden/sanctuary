@@ -79,6 +79,10 @@ move_fly_mode={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_3="scatter_blocker"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

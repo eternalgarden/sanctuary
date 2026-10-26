@@ -4,16 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://46gsgho287pg" path="res://earth/models/nature/jacaranda_tree/jacaranda_tree.blend" id="2_e1ane"]
 [ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="3_21jyj"]
 [ext_resource type="PackedScene" uid="uid://cx0h0mfdki5ce" path="res://earth/models/nature/alien_slime_tree/alien_slime_tree.tscn" id="4_g84ur"]
+[ext_resource type="PackedScene" uid="uid://e6b5sycbs5sq" path="res://earth/models/nature/blanket_phlox/scene.gltf" id="5_q5gk3"]
 
 [node name="forest_at_night" type="Node3D" unique_id=597230636]
 
 [node name="forest_with_road_at_night" parent="." unique_id=1139518446 instance=ExtResource("1_rqh57")]
 
 [node name="jacaranda_tree2" parent="." unique_id=636482984 instance=ExtResource("2_e1ane")]
-transform = Transform3D(1.8402338, -0.5123888, 2.3160155, 0, 2.9312742, 0.64850694, -2.372018, -0.39751598, 1.7967862, 38.4179, 3.6166525, -33.345673)
-
-[node name="jacaranda_tree" parent="." unique_id=1969206159 instance=ExtResource("2_e1ane")]
-transform = Transform3D(-2.8693097, -0.6325978, -0.6162859, -0.6356471, 2.9336314, -0.051828053, 0.61314106, 0.080951676, -2.93776, 40.30059, 3.2406654, -29.740753)
+transform = Transform3D(-2.8936496, -0.17277361, 0.78094274, -2.7421622e-08, 2.931274, 0.6485068, -0.7998265, 0.62506837, -2.8253312, 38.08096, 3.540083, -31.366343)
 
 [node name="columns" type="Node3D" parent="." unique_id=1042567981]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.0461578, -1.2931685, 4.244171)
@@ -43,7 +41,7 @@ transform = Transform3D(0.36093676, 0, -1.5914001, 0, 1.6318177, 0, 1.5914001, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2001257, -7.6293945e-06, 28.2062)
 
 [node name="Light7" type="OmniLight3D" parent="light" unique_id=1794620506]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 32.019585, 10.104631, -61.13067)
+transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 33.691326, 6.540772, -61.733685)
 light_color = Color(1, 0.80246735, 0.34496796, 1)
 light_energy = 79.57747
 omni_range = 4096.0
@@ -108,3 +106,9 @@ transform = Transform3D(-0.29086465, -0.7711008, 0.5663933, -0.05518901, 0.60452
 light_color = Color(1, 0.80246735, 0.34496796, 1)
 light_energy = 16.0
 omni_range = 19.733
+
+[node name="Sketchfab_Scene" parent="." unique_id=2132437677 instance=ExtResource("5_q5gk3")]
+transform = Transform3D(12.901798, -1.3506218, -3.6809363, 1.6922482, 13.337526, 1.0375357, 3.536915, -1.4546512, 12.930745, 3.529819, 1.494648, 40.7668)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=2111062563 instance=ExtResource("5_q5gk3")]
+transform = Transform3D(12.989838, -0.39244565, -3.5972264, -0.059089005, 13.3801, -1.673094, 3.6180882, 1.6274878, 12.887617, 8.129223, 2.0573306, 43.353073)
