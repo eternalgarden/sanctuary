@@ -133,7 +133,7 @@ provider's registrations, while our `Scope` is a provider of its own.
    missing `Import` fails with the type named. It cannot see inside factory lambdas.
    `ValidateScopes` catches singletons capturing scoped services.
 
-## The Neo layer (`injection/`)
+## The Neo layer (`fillory/common/injection/`)
 
 | Part | Role | Zenject counterpart |
 |---|---|---|

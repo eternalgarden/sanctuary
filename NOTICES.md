@@ -74,6 +74,50 @@
     - Split the display scene into separate trees, each joining its branch and wood meshes, with the origin at the trunk base.
     - Merged the per-tree duplicate materials into one shared branch and one shared wood material.
     - Removed the normal map from the wood material.
+
+#### tree_oak
+- **Filename:** tree_oak
+- **Author:** [Uncanny Bichilling](https://sketchfab.com/RokoSama)
+- **Source:** https://sketchfab.com/3d-models/tree-oak-fd9ec230eae14ad180a6808a585098e1 ("TREE_OAK")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Removed the normal and specular-glossiness textures.
+    - Replaced the materials in Godot with standard materials.
+
+#### fern_grass_02
+- **Filename:** fern_grass_02 (fern_grass_02.blend)
+- **Author:** [Digital screen official](https://sketchfab.com/ck212575)
+- **Source:** https://sketchfab.com/3d-models/fern-grass-02-93d1f6a261e24b8394d0ea41cf985ef9 ("fern grass 02")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Converted to a `.blend` file and scaled to real-world size.
+    - Split the clump into four separate ferns, with the origin at each plant's base.
+    - Removed the metallic-roughness texture and set a flat roughness instead.
+
+#### blanket_phlox
+- **Filename:** blanket_phlox
+- **Author:** [eb78](https://sketchfab.com/E.A.Cornell)
+- **Source:** https://sketchfab.com/3d-models/blanket-phlox-69bf5e21f767419dafec910f7a6be799 ("Blanket Phlox")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+
+#### realistic_grass_pack_for_games_free
+- **Filename:** realistic_grass_pack_for_games_free
+- **Author:** [Nicholas-3D](https://sketchfab.com/Nicholas01)
+- **Source:** https://sketchfab.com/3d-models/realistic-grass-pack-for-games-free-9b958d613e9a44dbba580748e7a1789c ("Realistic Grass Pack For Games Free!")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+
+#### tree_aspen
+- **Filename:** tree_aspen
+- **Author:** [Uncanny Bichilling](https://sketchfab.com/RokoSama)
+- **Source:** https://sketchfab.com/3d-models/tree-aspen-1bc91b9a1bd24af997b4a6587b4058a4 ("TREE_ASPEN")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Converted to a `.blend` file, joined into one object with the origin at the trunk base.
+    - Removed the leaf blend-shape animation.
+    - Merged the trunk and branch materials, switched the leaves to an alpha cutout, and removed the normal and metallic-roughness maps.
+    - Decimated the branches to half their triangles and downscaled the textures (leaves 2048, bark 1024).
     
 ## Textures
 
@@ -112,6 +156,14 @@ List of textures from ambient.cg:
 - **Source**: https://github.com/dsh0416/godot-cef
 - **License**: MIT, Copyright 2025-2026 Delton Ding
 - **Bundled**: CEF (BSD-3-Clause, Marshall A. Greenblatt) and Chromium, which carries its own third-party notices.
+
+#### Proton Scatter
+
+- **Description**: Procedural placement of props and foliage inside editable shapes, driven by a stack of modifiers.
+- **Author**: HungryProton
+- **Version**: 4.2.0
+- **Source**: https://github.com/HungryProton/scatter
+- **License**: MIT, Copyright (c) 2019 HungryProton
 
 
 ## Fonts

@@ -4,9 +4,8 @@
 > our own). Operational: "you see X in Source, write Y in Neo". The *why* behind each choice
 > lives in `src/sandbox/research_injection/neo_di_notes.md`.
 >
-> **Location:** the layer currently lives in `src/sandbox/research_injection/injection/`
-> (`Sanctuary.Sandbox.Injection`), with a runnable demo beside it. It will graduate to
-> `fillory/common/injection` (`Sanctuary.Common.Injection`); update the paths here when it does.
+> **Location:** the layer lives in `src/fillory/common/injection/` (`Sanctuary.Common.Injection`).
+> A runnable demo stays in `src/sandbox/research_injection/demo/`.
 
 ## The model in six lines
 
