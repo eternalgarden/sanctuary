@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://bflnl4e8k52mg"]
 
 [ext_resource type="ArrayMesh" uid="uid://cfs0mpi74pvgk" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/mesh_save_path/stylised_redwood_trees_pack_redwood_medium_003.res" id="1_mesh"]
 
@@ -6,13 +6,25 @@
 height = 7.6
 radius = 1.45
 
-[node name="redwood_medium_003" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_blocker"]
+height = 7.6
+radius = 2.2700195
 
-[node name="mesh" type="MeshInstance3D" parent="."]
+[node name="redwood_medium_003" type="Node3D" unique_id=2053759493]
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=1138450760]
 mesh = ExtResource("1_mesh")
 
-[node name="trunk" type="StaticBody3D" parent="."]
+[node name="trunk" type="StaticBody3D" parent="." unique_id=1426489875]
 
-[node name="shape" type="CollisionShape3D" parent="trunk"]
+[node name="shape" type="CollisionShape3D" parent="trunk" unique_id=614686642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
 shape = SubResource("CylinderShape3D_trunk")
+
+[node name="scatter_blocker" type="StaticBody3D" parent="." unique_id=1064062643]
+collision_layer = 4
+collision_mask = 0
+
+[node name="shape" type="CollisionShape3D" parent="scatter_blocker" unique_id=1311799988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
+shape = SubResource("CylinderShape3D_blocker")
