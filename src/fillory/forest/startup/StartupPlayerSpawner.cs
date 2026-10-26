@@ -22,6 +22,7 @@ public partial class StartupPlayerSpawner : Node
     static IRzeka rzeka => Ursprung.Rzeka;
     CollectibleDisposable Q { get; set; } = new();
 
+    // Used when the starting scene has no PlayerSpawnPoint.
     [Export]
     public Vector3 PlayerStartingPosition;
 
@@ -56,7 +57,7 @@ public partial class StartupPlayerSpawner : Node
                             {
                                 if (response.WasSuccessful && response.Player is not null)
                                 {
-                                    response.Player.Position = PlayerStartingPosition;
+                                    PlacePlayer(response.Player);
                                     return Cleared(StartupStep.UserControllerLoad, x, response);
                                 }
 
@@ -72,6 +73,31 @@ public partial class StartupPlayerSpawner : Node
     }
 
     public override void _Process(double delta) { }
+
+    // Runs after the starting scene is attached (CanPlayerSpawn waits for it), so its
+    // spawn point is already in the tree.
+    void PlacePlayer(Node3D player)
+    {
+        var points = GetTree()
+            .GetNodesInGroup(PlayerSpawnPoint.Group)
+            .OfType<PlayerSpawnPoint>()
+            .ToList();
+
+        if (points.Count == 0)
+        {
+            player.Position = PlayerStartingPosition;
+            return;
+        }
+
+        if (points.Count > 1)
+            GD.PushWarning(
+                $"{points.Count} player spawn points in the scene, using '{points[0].GetPath()}'."
+            );
+
+        // Yaw only: the player's body stays upright whatever the marker's tilt.
+        player.GlobalPosition = points[0].GlobalPosition;
+        player.GlobalRotation = new Vector3(0, points[0].GlobalRotation.Y, 0);
+    }
 
     public override void _ExitTree()
     {

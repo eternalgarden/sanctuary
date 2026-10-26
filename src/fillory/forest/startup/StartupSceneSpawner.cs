@@ -30,6 +30,11 @@ public partial class StartupSceneSpawner : Node
     [Export(PropertyHint.File, "*.tscn")]
     string StartingScenePath { get; set; }
 
+    // Debug builds only: when set, the game starts in this scene instead. A quick switch for
+    // testing a level without touching StartingScenePath; release builds ignore it.
+    [Export(PropertyHint.File, "*.tscn")]
+    string DebugStartingScenePath { get; set; } = "";
+
     // TODO One day the entire scene attachment process will have
     // to be moved to its own component like DimensionPlanner which
     // will decide at what coordinates a scene is spawned, because
@@ -42,6 +47,8 @@ public partial class StartupSceneSpawner : Node
 
     public override void _Ready()
     {
+        string scenePath = StartingScene();
+
         Q += rzeka.Loom<FilloryLoadState, StartupStepReached>(
             this,
             state =>
@@ -52,7 +59,7 @@ public partial class StartupSceneSpawner : Node
                         rzeka
                             .Ask<LoadSceneRequest, LoadSceneResponse>(
                                 this,
-                                new LoadSceneRequest(StartingScenePath).WithCircumstances(y)
+                                new LoadSceneRequest(scenePath).WithCircumstances(y)
                             )
                             .SelectMany(res =>
                                 res.WasSuccessful && res.PackedScene is not null
@@ -63,7 +70,7 @@ public partial class StartupSceneSpawner : Node
                                     : Observable.Return(
                                         Failed(
                                             StartupStep.StartingScene,
-                                            $"LoadSceneRequest for ${StartingScenePath} failed.",
+                                            $"LoadSceneRequest for {scenePath} failed.",
                                             y,
                                             res
                                         )
@@ -81,6 +88,15 @@ public partial class StartupSceneSpawner : Node
     }
 
     public override void _Process(double delta) { }
+
+    string StartingScene()
+    {
+        if (!OS.IsDebugBuild() || string.IsNullOrEmpty(DebugStartingScenePath))
+            return StartingScenePath;
+
+        GD.Print($"🎬 Debug starting scene: {DebugStartingScenePath}");
+        return DebugStartingScenePath;
+    }
 
     public override void _ExitTree()
     {

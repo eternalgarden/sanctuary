@@ -39,8 +39,9 @@ public partial class HeadMovement3D : Marker3D
     // Vector2 is sent with reference to the input of a mouse as an example
     public void RotateCamera(Vector2 mouseAxis)
     {
-        // Horizontal mouse look.
-        _actualRotation.Y -= mouseAxis.X * (MouseSensitivity / 1000);
+        // Horizontal mouse look. Starts from the body's current yaw, so turning the player from
+        // outside (a spawn point) sticks instead of snapping back on the next mouse move.
+        _actualRotation.Y = GetOwner<Node3D>().Rotation.Y - mouseAxis.X * (MouseSensitivity / 1000);
         // Vertical mouse look.
         _actualRotation.X = Mathf.Clamp(_actualRotation.X - mouseAxis.Y * (MouseSensitivity / 1000), -VerticalAngleLimit, VerticalAngleLimit);
 
