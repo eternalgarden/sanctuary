@@ -267,7 +267,6 @@ public partial class CharacterController3D : CharacterBody3D
     public Array<MovementAbility3D> LoadNodes(Array<NodePath> nodePaths)
     {
         var nodes = new Array<MovementAbility3D>();
-        GD.Print(nodePaths.Count);
 
         foreach (var nodePath in nodePaths)
         {
