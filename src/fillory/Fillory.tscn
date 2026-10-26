@@ -1,28 +1,40 @@
 [gd_scene format=3 uid="uid://dphw5sd6sjyif"]
 
-[ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_qkk1h"]
+[ext_resource type="Script" uid="uid://dxawi72868lk7" path="res://fillory/forest/debug/DebugQuitter.cs" id="1_mcln6"]
 [ext_resource type="Script" uid="uid://difh04demnsst" path="res://fillory/forest/scene_loader/SceneLoader.cs" id="2_pa321"]
 [ext_resource type="Script" uid="uid://dpdbjofqlnj7u" path="res://fillory/fairies/player/internal/player_loader/PlayerLoader.cs" id="3_15tua"]
 [ext_resource type="Script" uid="uid://bahan73d2s164" path="res://fillory/forest/startup/StartupProcess.cs" id="3_w8ka0"]
 [ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://fillory/fairies/player/game/character-controller/player.tscn" id="4_oqecv"]
 [ext_resource type="Script" uid="uid://bil50viqe4kr0" path="res://fillory/forest/startup/StartupProgressDisplay.cs" id="5_ccn50"]
 [ext_resource type="Environment" uid="uid://dxvg0fkso3lhd" path="res://moon/levels/temporary_main_level/main_level_environment.tres" id="5_e3por"]
+[ext_resource type="Script" uid="uid://5pad43xic0oy" path="res://fillory/forest/input_arbiter/InputArbiter.cs" id="5_mcln6"]
 [ext_resource type="Texture2D" uid="uid://brw7f0e84d106" path="res://earth/models/levels/psx_temple_island/textures/oceant text.png" id="6_ng7ke"]
 [ext_resource type="Script" uid="uid://bbho1qj7b0g2n" path="res://fillory/forest/startup/StartupSceneSpawner.cs" id="6_oqecv"]
+[ext_resource type="Script" uid="uid://bxsn276vthmrt" path="res://fillory/forest/input_arbiter/CursorKeeper.cs" id="6_weyyo"]
 [ext_resource type="Script" uid="uid://ppa70qdc3qxn" path="res://fillory/forest/startup/StartupPlayerSpawner.cs" id="7_ks744"]
 [ext_resource type="FontFile" uid="uid://bnwo2faqkamxi" path="res://earth/fonts/maple_mono/MapleMono-Regular.otf" id="10_ks744"]
 [ext_resource type="FontFile" uid="uid://b77j6rf8cw0ao" path="res://earth/fonts/medien_gestaltung/Medici_Text.ttf" id="11_e3por"]
 
 [node name="fillory" type="Node3D" unique_id=506889607]
-script = ExtResource("1_qkk1h")
+script = ExtResource("1_mcln6")
 
-[node name="scene_loader" type="Node3D" parent="." unique_id=682544845]
+[node name="loaders" type="Node3D" parent="." unique_id=155200318]
+
+[node name="scene_loader" type="Node3D" parent="loaders" unique_id=682544845]
 script = ExtResource("2_pa321")
 
-[node name="player_loader" type="Node3D" parent="." unique_id=1793391172 node_paths=PackedStringArray("PlayerNodeParent")]
+[node name="player_loader" type="Node3D" parent="loaders" unique_id=1793391172 node_paths=PackedStringArray("PlayerNodeParent")]
 script = ExtResource("3_15tua")
-PlayerNodeParent = NodePath("../world/player")
+PlayerNodeParent = NodePath("../../world/player")
 PlayerScene = ExtResource("4_oqecv")
+
+[node name="input_system" type="Node3D" parent="." unique_id=3375]
+
+[node name="input_arbiter" type="Node3D" parent="input_system" unique_id=1734609238]
+script = ExtResource("5_mcln6")
+
+[node name="cursor_keeper" type="Node3D" parent="input_system" unique_id=1776438220]
+script = ExtResource("6_weyyo")
 
 [node name="world" type="Node3D" parent="." unique_id=1090028315]
 

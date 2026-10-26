@@ -1,10 +1,22 @@
 using System;
+using System.Reactive.Linq;
 using Godot;
+using Rzeka;
+using Sanctuary.Blood.Input;
+using Sanctuary.Blood.Startup;
+using Sanctuary.Common.Reactive;
+using Sanctuary.Forest.Autoloads;
 
 namespace Sanctuary.Fairies.Player.Internal.CharacterController;
 
 public partial class Player : FPSController3D
 {
+    static IRzeka rzeka => Ursprung.Rzeka;
+    CollectibleDisposable Q { get; set; } = new();
+
+    // Cached from InputModeState; the player only reads input in Freewalk.
+    InputMode _mode = InputMode.Disabled;
+
     [Export] public string InputBackActionName { get; set; } = "move_backward";
     [Export] public string InputForwardActionName { get; set; } = "move_forward";
     [Export] public string InputLeftActionName { get; set; } = "move_left";
@@ -17,17 +29,49 @@ public partial class Player : FPSController3D
 
     public override void _Ready()
     {
-        Input.MouseMode = Input.MouseModeEnum.Captured;
         Setup();
         Emerged += OnControllerEmerged;
         Submerged += OnControllerSubemerged;
+
+        Q += rzeka.Weave<InputModeState>(
+            this,
+            states =>
+                states.Subscribe(
+                    onNext: s => _mode = s.Current,
+                    onError: err => rzeka.Whisper(err)
+                )
+        );
+
+        // The player spawns during startup, so it is already listening when FilloryReady lands.
+        Q += rzeka.Weave<FilloryReady>(
+            this,
+            ready =>
+                ready
+                    .Take(1)
+                    .Subscribe(
+                        onNext: r =>
+                        {
+                            var request = new InputModeRequested(InputMode.Freewalk);
+                            Q += rzeka.Lease(
+                                this,
+                                request,
+                                () => new InputModeReleased(request.LeaseId),
+                                r
+                            );
+                        },
+                        onError: err => rzeka.Whisper(err)
+                    )
+        );
+    }
+
+    public override void _ExitTree()
+    {
+        Q.Dispose();
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        bool IsValidInput = Input.MouseMode == Input.MouseModeEnum.Captured;
-        
-        if (IsValidInput)
+        if (_mode == InputMode.Freewalk)
         {
             if (Input.IsActionJustPressed(InputFlyModeActionName))
             {
@@ -51,8 +95,8 @@ public partial class Player : FPSController3D
 
     public override void _Input(InputEvent @event)
     {
-        // Mouse look (only if the mouse is captured).
-        if (@event is InputEventMouseMotion eventMouseMotion && Input.MouseMode == Input.MouseModeEnum.Captured)
+        // Mouse look, only in Freewalk.
+        if (@event is InputEventMouseMotion eventMouseMotion && _mode == InputMode.Freewalk)
         {
             RotateHead(eventMouseMotion.Relative);
         }

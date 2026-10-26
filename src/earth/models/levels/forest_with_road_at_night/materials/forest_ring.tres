@@ -4,6 +4,6 @@
 
 [resource]
 resource_name = "forest_bark"
-albedo_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
-roughness = 0.82
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
 normal_texture = ExtResource("2_uh7x4")

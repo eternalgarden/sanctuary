@@ -31,6 +31,13 @@
 		- `» Files`
 			- Turn off: `Convert Indent on Save`
 
+# developing
+### eris rzeka debugger
+
+- clone rzeka
+- go to `~/path/to/rzeka/ui`
+- start the dev server with `npm run dev`
+
 # updating
 
 > *Updating any NET nuget package to a newer version*. (including rzeka)

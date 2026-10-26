@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chr55g7848h0k"]
+
+[ext_resource type="Texture2D" uid="uid://bynnvw12wer7w" path="res://earth/models/levels/forest_houses/textures/TextureMaterial_22_baseColor.png" id="1_burnu"]
+
+[resource]
+albedo_texture = ExtResource("1_burnu")
