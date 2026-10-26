@@ -14,61 +14,6 @@ script = ExtResource("1_niose")
 [node name="environment" type="Node3D" parent="." unique_id=1568498738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.721298, 0)
 
-[node name="light" type="Node3D" parent="environment" unique_id=927794639]
-
-[node name="Light6" type="OmniLight3D" parent="environment/light" unique_id=228797169]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, -42.27483, 33.001957, -90.61737)
-light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
-
-[node name="Light8" type="OmniLight3D" parent="environment/light" unique_id=806281932]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, -62.19044, 33.001957, -60.294388)
-light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
-
-[node name="Light9" type="OmniLight3D" parent="environment/light" unique_id=263492507]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 34.003555, 33.001957, -36.18458)
-light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
-
-[node name="Light7" type="OmniLight3D" parent="environment/light" unique_id=1988516192]
-transform = Transform3D(-0.2908647, -0.77110094, 0.56639314, -0.05518904, 0.6045247, 0.79467237, -0.95517117, 0.19988346, -0.2183912, 32.019585, 10.104631, -61.13067)
-light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
-
-[node name="Light2" type="OmniLight3D" parent="environment/light" unique_id=1098316556]
-transform = Transform3D(-0.28680003, -0.770313, 0.5695292, -0.0582596, 0.60742825, 0.79223514, -0.9562173, 0.19403256, -0.21908858, 7.0857577, 8.08652, 13.579071)
-light_color = Color(0.78740174, 0.68367463, 0.9889856, 1)
-light_energy = 2.863
-omni_range = 11.096
-omni_attenuation = -0.132
-
-[node name="Light3" type="OmniLight3D" parent="environment/light" unique_id=1816697654]
-transform = Transform3D(-0.28680006, -0.7703131, 0.56952924, -0.058259603, 0.6074283, 0.79223526, -0.95621735, 0.19403256, -0.2190886, -13.936242, 9.8115225, 15.596682)
-light_color = Color(0.5892236, 0.8201975, 0.5184267, 1)
-light_energy = 2.863
-omni_range = 11.096
-omni_attenuation = -0.132
-
-[node name="Light4" type="OmniLight3D" parent="environment/light" unique_id=1870827471]
-transform = Transform3D(-0.2868001, -0.7703131, 0.5695292, -0.05825959, 0.60742825, 0.7922353, -0.9562173, 0.19403261, -0.21908861, -0.04019642, 8.530504, -0.26521492)
-light_color = Color(0.9999998, 0.9493517, 0.7591758, 1)
-light_energy = 2.611
-light_indirect_energy = 1.295
-light_volumetric_fog_energy = 0.411
-shadow_enabled = true
-shadow_blur = 6.842
-omni_range = 26.633
-omni_attenuation = 0.053
-
 [node name="LorentianButterfly" parent="environment" unique_id=446143710 instance=ExtResource("8_erj42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59328794, -1.1804303, -0.32941628)
 visible = false
@@ -78,40 +23,6 @@ transform = Transform3D(-1.8156772, 0, 1.0551379, 0, 2.1, 0, -1.0551379, 0, -1.8
 
 [node name="Sketchfab_Scene" parent="environment" unique_id=1505213626 instance=ExtResource("11_c1tix")]
 transform = Transform3D(-0.7509992, 0, -0.6603031, 0, 1, 0, 0.6603031, 0, -0.7509992, -2.8484764, 2.462316, -0.7252755)
-
-[node name="Node3D" type="Node3D" parent="environment" unique_id=675713278]
-
-[node name="Light4" type="OmniLight3D" parent="environment/Node3D" unique_id=1240631381]
-transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189017, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -32.70671, 15.476517, 21.322655)
-light_color = Color(0.54509807, 0.41568628, 1, 1)
-light_energy = 79.57747
-omni_range = 4096.0
-omni_attenuation = 2.0
-
-[node name="Light5" type="OmniLight3D" parent="environment/Node3D" unique_id=2011376590]
-transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.05518901, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -36.998413, 21.405819, -0.4498043)
-light_color = Color(0.543196, 0.4175097, 0.9999849, 1)
-light_energy = 79.57747
-omni_range = 25.456
-omni_attenuation = 2.0
-
-[node name="Light3" type="OmniLight3D" parent="environment/Node3D" unique_id=944658947]
-transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189025, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, 20.906965, 21.64732, -1.9737816)
-light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 16.0
-omni_range = 70.486
-
-[node name="Light6" type="OmniLight3D" parent="environment/Node3D" unique_id=1726471270]
-transform = Transform3D(-0.29086468, -0.7711009, 0.56639314, -0.055189025, 0.6045247, 0.79467237, -0.95517117, 0.19988343, -0.21839117, -20.487196, 13.679613, -45.566933)
-light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 16.0
-omni_range = 70.486
-
-[node name="Light2" type="OmniLight3D" parent="environment/Node3D" unique_id=484368571]
-transform = Transform3D(-0.29086465, -0.7711008, 0.5663933, -0.05518901, 0.6045248, 0.7946723, -0.95517117, 0.19988337, -0.2183912, -0.7412751, 8.021764, 20.572058)
-light_color = Color(1, 0.80246735, 0.34496796, 1)
-light_energy = 16.0
-omni_range = 19.733
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1245292406]
 environment = ExtResource("2_o2mgg")
