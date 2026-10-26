@@ -88,6 +88,9 @@ public partial class CharacterController3D : CharacterBody3D
     [ExportGroup("Jump")]
     // Jump/Impulse height
     [Export] public int JumpHeight = 10;
+    // Minimum time in the air before touching the floor counts as landing. Uneven ground
+    // drops IsOnFloor for a frame or two while walking, which would otherwise "land" every step.
+    [Export] public float MinAirTimeToLand = 0.15f;
     [ExportGroup("Fly")]
     // Speed multiplier when fly mode is actived
     [Export] public int FlyModeSpeedModifier = 2;
@@ -140,6 +143,8 @@ public partial class CharacterController3D : CharacterBody3D
     private int _normalSpeed;
     // True if in the last frame it was on the ground
     private bool _lastIsOnFloor = false;
+    // Seconds since it last touched the ground
+    private float _airTime;
     // Default controller height, affects collider
     private float _defaultHeight;
 
@@ -178,7 +183,7 @@ public partial class CharacterController3D : CharacterBody3D
 
         if (!SwimAbility.IsFloating())
         {
-            CheckLanded();
+            CheckLanded(delta);
         }
 
         if (!JumpAbility.IsActived() && !IsFlyMode() && !IsSubmerged() && !IsFloating())
@@ -319,14 +324,16 @@ public partial class CharacterController3D : CharacterBody3D
         SwimAbility.SubmergedSpeedMultiplier = SubmergedSpeedMultiplier;
     }
 
-    public void CheckLanded()
+    public void CheckLanded(float delta)
     {
-        if (IsOnFloor() && !_lastIsOnFloor)
+        bool isOnFloor = IsOnFloor();
+        if (isOnFloor && !_lastIsOnFloor && _airTime >= MinAirTimeToLand)
         {
             EmitSignal(SignalName.Landed);
             ResetStep();
         }
-        _lastIsOnFloor = IsOnFloor();
+        _airTime = isOnFloor ? 0f : _airTime + delta;
+        _lastIsOnFloor = isOnFloor;
     }
 
     public void CheckStep(float delta)
