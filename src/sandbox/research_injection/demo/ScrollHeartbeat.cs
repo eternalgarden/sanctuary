@@ -6,7 +6,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 */
 
 using Sanctuary.Blood.Startup;
-using Sanctuary.Sandbox.Injection;
+using Sanctuary.Common.Injection;
 
 namespace Sanctuary.Sandbox.InjectionDemo;
 

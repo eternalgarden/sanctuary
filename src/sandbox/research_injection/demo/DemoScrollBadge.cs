@@ -5,7 +5,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
-using Sanctuary.Sandbox.Injection;
+using Sanctuary.Common.Injection;
 
 namespace Sanctuary.Sandbox.InjectionDemo;
 

@@ -1,12 +1,10 @@
 # research_injection
 
-Sketch of Neo's dependency injection: Microsoft.Extensions.DependencyInjection plus a thin
-layer standing in for what Source used from Zenject. Meant to graduate into
-`fillory/common/injection` (`Sanctuary.Common.Injection`).
+Research behind Neo's dependency injection: Microsoft.Extensions.DependencyInjection plus a
+thin layer standing in for what Source used from Zenject. The layer itself has graduated to
+`fillory/common/injection` (`Sanctuary.Common.Injection`); what stays here is the reasoning
+(`neo_di_notes.md`) and a runnable demo that exercises it.
 
-- `injection/` — the module: `IInitializable`, `Scope`, registration helpers (`AddInitializable`,
-  `AddInterfaces`, `AddSelfAndInterfaces`, `Import`), the `Installer` base node, `SceneFactory` with its `Spawned` handle,
-  `SceneLifetime`, and the node lookup (`Resolve<T>`).
 - `demo/` — a root installer spawning two scrolls, each with its own scope, then freeing one
   (each scroll also takes its two meshes as keyed services);
   and a fire-and-forget spark that ends its own scene.

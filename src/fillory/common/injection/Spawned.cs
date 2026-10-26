@@ -5,7 +5,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
-namespace Sanctuary.Sandbox.Injection;
+namespace Sanctuary.Common.Injection;
 
 /// <summary>
 /// A scene spawned by a <see cref="SceneFactory{TFacade}"/>, held by whoever spawned it.

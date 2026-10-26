@@ -6,7 +6,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 */
 
 using Microsoft.Extensions.DependencyInjection;
-using Sanctuary.Sandbox.Injection;
+using Sanctuary.Common.Injection;
 
 namespace Sanctuary.Sandbox.InjectionDemo;
 

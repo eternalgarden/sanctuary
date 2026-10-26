@@ -7,7 +7,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Sanctuary.Sandbox.Injection;
+namespace Sanctuary.Common.Injection;
 
 /// <summary>
 /// Spawns a scene whose root is an <see cref="Installer"/>, giving it its own scope under

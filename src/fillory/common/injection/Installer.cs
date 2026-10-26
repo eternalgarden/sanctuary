@@ -7,7 +7,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Sanctuary.Sandbox.Injection;
+namespace Sanctuary.Common.Injection;
 
 /// <summary>
 /// Root node of a scene that owns a <see cref="Scope"/>. Zenject: a MonoInstaller on a

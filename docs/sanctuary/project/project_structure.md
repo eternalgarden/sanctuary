@@ -50,12 +50,13 @@
 	- *references **no one** in fillory*
 		- no other fillory layer (no blood, forest or fairies)
 			- this means once its code references even a single matter type it already no longer belongs here, but to the forest
-		- external library references are fine: Godot, Rx and the `rzeka` library itself
+		- external library references are fine: Godot, Rx, Microsoft.Extensions.DependencyInjection and the `rzeka` library itself
 	- example contents:
 		- serializers `Sanctuary.Common.Serializers`
 		- extensions `Sanctuary.Common.Extensions`
 		- math `Sanctuary.Common.Math`
 		- reactive `Sanctuary.Common.Reactive` – generic Rx/rzeka helpers
+		- injection `Sanctuary.Common.Injection` – the DI layer on Microsoft.Extensions.DependencyInjection (see `docs/sanctuary/development/zenject_migration.md`)
 		- utility `Sanctuary.Common.Utility`
 - editor `Sanctuary.Editor`
 - forest `Sanctuary.Forest` (see [[#component structure]])

@@ -7,7 +7,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Sanctuary.Sandbox.Injection;
+namespace Sanctuary.Common.Injection;
 
 /// <summary>
 /// One built container plus the lifecycle Zenject's kernel used to run implicitly:

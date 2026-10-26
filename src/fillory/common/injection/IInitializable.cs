@@ -5,7 +5,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     '---''(_/--'  `-'\_)
 */
 
-namespace Sanctuary.Sandbox.Injection;
+namespace Sanctuary.Common.Injection;
 
 /// <summary>
 /// The "start acting" phase of a container-built class. The constructor only stores

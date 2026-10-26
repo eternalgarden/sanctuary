@@ -7,7 +7,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
 using Microsoft.Extensions.DependencyInjection;
 using Sanctuary.Forest.Autoloads;
-using Sanctuary.Sandbox.Injection;
+using Sanctuary.Common.Injection;
 
 namespace Sanctuary.Sandbox.InjectionDemo;
 

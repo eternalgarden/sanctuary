@@ -7,7 +7,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Sanctuary.Sandbox.Injection;
+namespace Sanctuary.Common.Injection;
 
 /// <summary>
 /// The only injection code a node script should ever see, and it should stay rare: most
