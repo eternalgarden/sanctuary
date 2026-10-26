@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ck7g3pd1y6u5t"]
+
+[ext_resource type="Texture2D" uid="uid://0xfpuslixfvb" path="res://earth/models/nature/fern_grass_02/textures/Material_baseColor.png" id="1_3j4lt"]
+[ext_resource type="Texture2D" uid="uid://b6as1n31jytv3" path="res://earth/models/nature/fern_grass_02/textures/Material_metallicRoughness.png" id="2_ahs30"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpo6x"]
+load_path = "res://.godot/imported/Material_normal.png-b61d9ea1bf5674dbff8a7487abe19326.s3tc.ctex"
+
+[resource]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_3j4lt")
+metallic = 0.26
+metallic_texture = ExtResource("2_ahs30")
+roughness_texture = ExtResource("2_ahs30")
+normal_texture = SubResource("CompressedTexture2D_cpo6x")
