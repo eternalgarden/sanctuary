@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dphw5sd6sjyif"]
 
-[ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_qkk1h"]
+[ext_resource type="Script" uid="uid://dxawi72868lk7" path="res://fillory/forest/debug/DebugQuitter.cs" id="1_mcln6"]
 [ext_resource type="Script" uid="uid://difh04demnsst" path="res://fillory/forest/scene_loader/SceneLoader.cs" id="2_pa321"]
 [ext_resource type="Script" uid="uid://dpdbjofqlnj7u" path="res://fillory/fairies/player/internal/player_loader/PlayerLoader.cs" id="3_15tua"]
 [ext_resource type="Script" uid="uid://bahan73d2s164" path="res://fillory/forest/startup/StartupProcess.cs" id="3_w8ka0"]
@@ -16,7 +16,7 @@
 [ext_resource type="FontFile" uid="uid://b77j6rf8cw0ao" path="res://earth/fonts/medien_gestaltung/Medici_Text.ttf" id="11_e3por"]
 
 [node name="fillory" type="Node3D" unique_id=506889607]
-script = ExtResource("1_qkk1h")
+script = ExtResource("1_mcln6")
 
 [node name="loaders" type="Node3D" parent="." unique_id=155200318]
 
