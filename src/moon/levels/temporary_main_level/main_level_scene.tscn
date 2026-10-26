@@ -3,12 +3,10 @@
 [ext_resource type="Script" uid="uid://d0keauhnkjde5" path="res://fillory/common/utility/EscapeGameQuitter.cs" id="1_niose"]
 [ext_resource type="Environment" uid="uid://dxvg0fkso3lhd" path="res://moon/levels/temporary_main_level/main_level_environment.tres" id="2_o2mgg"]
 [ext_resource type="Script" uid="uid://dd0q6ycty4hgd" path="res://fillory/common/utility/AutoremovedNode.cs" id="3_bbcmg"]
-[ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="7_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d3ifhnpt0jv6r" path="res://moon/shaders/lorentian_butterfly/lorentian_butterfly.tscn" id="8_erj42"]
 [ext_resource type="PackedScene" uid="uid://3pdohh6q7vsd" path="res://moon/levels/forest_at_night/forest_at_night.tscn" id="9_p7sxa"]
 [ext_resource type="PackedScene" uid="uid://d0b8f2q3myswe" path="res://fillory/forest/scroll/game/scroll_plane/scroll_plane.tscn" id="10_fw6xg"]
 [ext_resource type="PackedScene" uid="uid://boki6f32koly7" path="res://earth/models/characters/lil_manul/manul.glb" id="11_c1tix"]
-[ext_resource type="PackedScene" uid="uid://cx0h0mfdki5ce" path="res://earth/models/nature/alien_slime_tree/alien_slime_tree.tscn" id="13_alh16"]
 
 [node name="Sandbox" type="Node3D" unique_id=506889607]
 script = ExtResource("1_niose")
@@ -81,15 +79,6 @@ transform = Transform3D(-1.8156772, 0, 1.0551379, 0, 2.1, 0, -1.0551379, 0, -1.8
 [node name="Sketchfab_Scene" parent="environment" unique_id=1505213626 instance=ExtResource("11_c1tix")]
 transform = Transform3D(-0.7509992, 0, -0.6603031, 0, 1, 0, 0.6603031, 0, -0.7509992, -2.8484764, 2.462316, -0.7252755)
 
-[node name="alien_slime_tree" parent="environment" unique_id=604028302 instance=ExtResource("13_alh16")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1464024, 1.1558459, -11.77087)
-
-[node name="alien_slime_tree2" parent="environment" unique_id=1755747674 instance=ExtResource("13_alh16")]
-transform = Transform3D(2.131638, 0, 0, 0, 2.131638, 0, 0, 0, 2.131638, 11.1676445, 1.1558459, -2.389225)
-
-[node name="alien_slime_tree3" parent="environment" unique_id=710104717 instance=ExtResource("13_alh16")]
-transform = Transform3D(0.36697605, 0, -1.5900185, 0, 1.631818, 0, 1.5900185, 0, 0.36697605, -5.458832, 1.1558459, 13.705097)
-
 [node name="Node3D" type="Node3D" parent="environment" unique_id=675713278]
 
 [node name="Light4" type="OmniLight3D" parent="environment/Node3D" unique_id=1240631381]
@@ -123,21 +112,6 @@ transform = Transform3D(-0.29086465, -0.7711008, 0.5663933, -0.05518901, 0.60452
 light_color = Color(1, 0.80246735, 0.34496796, 1)
 light_energy = 16.0
 omni_range = 19.733
-
-[node name="columns" type="Node3D" parent="environment/Node3D" unique_id=2065100622]
-transform = Transform3D(1.9595242, 0, 0, 0, 1.9595242, 0, 0, 0, 1.9595242, -0.08231354, -1.6765642, 0.007167816)
-
-[node name="037_ancient_columns" parent="environment/Node3D/columns" unique_id=41858465 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 6.501201, 0.31167364, 4.403222)
-
-[node name="037_ancient_columns2" parent="environment/Node3D/columns" unique_id=1580256462 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -7.479441, -0.14849377, 4.4032207)
-
-[node name="037_ancient_columns3" parent="environment/Node3D/columns" unique_id=1959334392 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -6.938742, 0.40652207, -5.977683)
-
-[node name="037_ancient_columns4" parent="environment/Node3D/columns" unique_id=1573740525 instance=ExtResource("7_p7sxa")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 6.4007773, 0.44985288, -6.1722717)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1245292406]
 environment = ExtResource("2_o2mgg")
