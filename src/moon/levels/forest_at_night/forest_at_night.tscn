@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://3pdohh6q7vsd"]
+
+[ext_resource type="PackedScene" uid="uid://cg7qtbufqxlfc" path="res://earth/models/levels/forest_with_road_at_night/forest_with_road_at_night.blend" id="1_rqh57"]
+[ext_resource type="PackedScene" uid="uid://46gsgho287pg" path="res://earth/models/nature/jacaranda_tree/jacaranda_tree.blend" id="2_e1ane"]
+[ext_resource type="PackedScene" uid="uid://b631yluwb2skb" path="res://moon/assets/models/architecture/ancient_columns/ancient_column.glb" id="3_21jyj"]
+[ext_resource type="PackedScene" uid="uid://cx0h0mfdki5ce" path="res://earth/models/nature/alien_slime_tree/alien_slime_tree.tscn" id="4_g84ur"]
+
+[node name="forest_at_night" type="Node3D" unique_id=597230636]
+
+[node name="forest_with_road_at_night" parent="." unique_id=1139518446 instance=ExtResource("1_rqh57")]
+
+[node name="jacaranda_tree2" parent="." unique_id=636482984 instance=ExtResource("2_e1ane")]
+transform = Transform3D(1.8402338, -0.5123888, 2.3160155, 0, 2.9312742, 0.64850694, -2.372018, -0.39751598, 1.7967862, 38.4179, 3.6166525, -33.345673)
+
+[node name="jacaranda_tree" parent="." unique_id=1969206159 instance=ExtResource("2_e1ane")]
+transform = Transform3D(-2.8693097, -0.6325978, -0.6162859, -0.6356471, 2.9336314, -0.051828053, 0.61314106, 0.080951676, -2.93776, 40.30059, 3.2406654, -29.740753)
+
+[node name="columns" type="Node3D" parent="." unique_id=1042567981]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.0461578, -1.2931685, 4.244171)
+
+[node name="037_ancient_columns" parent="columns" unique_id=1116446159 instance=ExtResource("3_21jyj")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 20.298769, 0.5017313, 21.32545)
+
+[node name="037_ancient_columns2" parent="columns" unique_id=1880859415 instance=ExtResource("3_21jyj")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -20.940948, 0.35526752, 21.182625)
+
+[node name="037_ancient_columns3" parent="columns" unique_id=460569776 instance=ExtResource("3_21jyj")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -22.16182, 3.6807227, -21.099323)
+
+[node name="037_ancient_columns4" parent="columns" unique_id=651321530 instance=ExtResource("3_21jyj")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 20.75213, 1.3522668, -20.277601)
+
+[node name="alien_slime_tree" parent="." unique_id=604028302 instance=ExtResource("4_g84ur")]
+transform = Transform3D(0.8163086, 0, 0.577616, 0, 1, 0, -0.577616, 0, 0.8163086, -7.434928, 0.3333683, 38.2166)
+
+[node name="alien_slime_tree2" parent="." unique_id=2118841952 instance=ExtResource("4_g84ur")]
+transform = Transform3D(-1.091575, 0, -1.8309405, 0, 2.131638, 0, 1.8309405, 0, -1.091575, 12.563672, 1.9093657, 37.291874)
+
+[node name="alien_slime_tree3" parent="." unique_id=1011181325 instance=ExtResource("4_g84ur")]
+transform = Transform3D(0.36093676, 0, -1.5914001, 0, 1.6318177, 0, 1.5914001, 0, 0.36093676, -0.43747568, 1.0466175, 45.04234)

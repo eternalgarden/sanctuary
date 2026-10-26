@@ -7,6 +7,10 @@
 	- terrain:
 		- [Terrain3D for Godot4](https://github.com/TokisanGames/Terrain3D)
 		- [godot landscaper](https://github.com/dip000/godot-landscaper)
+		- [TerraBrush](https://github.com/spimort/TerraBrush)
+		- [godot spatial landscaper](https://github.com/dreadpon/godot_spatial_gardener)
+		- [Proton Scatter](https://github.com/HungryProton/scatter)
+		- [Yugens-Terrain-Authoring-Toolkit](https://github.com/ToumaKamijou/Yugens-Terrain-Authoring-Toolkit)
 	- godot shaders:
 		- [GPU Trail](https://github.com/celyk/GPUTrail)
 	- code
@@ -25,6 +29,7 @@
 		- [Terminal.GUI](https://github.com/tui-cs/Terminal.Gui)
 - blender:
 	- [Goblend-Export-Addon](https://github.com/Togira123/Goblend-Export-Addon)
+	- [MACHIN3tools](https://machin3.io/MACHIN3tools) (paid)
 - textures:
 	- [resynthesizer](https://github.com/bootchk/resynthesizer)
 	- [pyxelate](https://github.com/sedthh/pyxelate)

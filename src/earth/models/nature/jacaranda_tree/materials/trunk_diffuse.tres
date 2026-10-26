@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dgu77ylcyywej"]
+
+[ext_resource type="Texture2D" uid="uid://b0p0ux5p4recw" path="res://earth/models/nature/jacaranda_tree/textures/Trunk_diffuse.png" id="1_mcqbc"]
+
+[resource]
+albedo_texture = ExtResource("1_mcqbc")
