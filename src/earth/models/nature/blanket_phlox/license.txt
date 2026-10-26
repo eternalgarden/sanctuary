@@ -1,0 +1,11 @@
+Model Information:
+* title:	Blanket Phlox
+* source:	https://sketchfab.com/3d-models/blanket-phlox-69bf5e21f767419dafec910f7a6be799
+* author:	eb78 (https://sketchfab.com/E.A.Cornell)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Blanket Phlox" (https://sketchfab.com/3d-models/blanket-phlox-69bf5e21f767419dafec910f7a6be799) by eb78 (https://sketchfab.com/E.A.Cornell) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
