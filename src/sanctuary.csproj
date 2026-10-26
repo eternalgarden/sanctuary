@@ -15,14 +15,14 @@
   </ItemGroup>
   <!-- Packages -->
   <ItemGroup>
-    <PackageReference Include="EternalGarden.Rzeka" Version="1.2.0" />
+    <PackageReference Include="EternalGarden.Rzeka" Version="1.2.2" />
     <PackageReference Include="Fleck" Version="1.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.7" />
     <PackageReference Include="System.Reactive" Version="6.1.0" />
   </ItemGroup>
   <!-- Dev-only: editor and debug exports (pair with #if DEBUG in code) -->
   <ItemGroup Condition="'$(Configuration)' != 'ExportRelease'">
-    <PackageReference Include="EternalGarden.Rzeka.Dev" Version="1.2.0" />
+    <PackageReference Include="EternalGarden.Rzeka.Dev" Version="1.2.2" />
   </ItemGroup>
   <!-- Release exports: leave sandbox code out -->
   <ItemGroup Condition="'$(Configuration)' == 'ExportRelease'">
