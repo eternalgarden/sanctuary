@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://qy54sj6k6x05"]
+
+[ext_resource type="ArrayMesh" uid="uid://cuyrck3ratcm1" path="res://earth/models/nature/fern_grass_02/save_paths/fern_grass_02_fern_04.res" id="1_mesh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_blocker"]
+height = 0.64
+radius = 0.39892578
+
+[node name="fern_04" type="Node3D" unique_id=929636904]
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=1854169493]
+cast_shadow = 0
+mesh = ExtResource("1_mesh")
+
+[node name="scatter_blocker" type="StaticBody3D" parent="." unique_id=1421959346]
+collision_layer = 4
+collision_mask = 0
+
+[node name="shape" type="CollisionShape3D" parent="scatter_blocker" unique_id=1884773430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0)
+shape = SubResource("CylinderShape3D_blocker")
