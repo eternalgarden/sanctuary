@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7sk7i5rkf5wd"
-path.s3tc="res://.godot/imported/Stone_01.png-75748ddad5892e0c24227f287e0406e4.s3tc.ctex"
+uid="uid://batm3fq35uaq4"
+path.s3tc="res://.godot/imported/Stone_01_stairs.png-daedaba7c93c67270a9b5cbe2cb5fe51.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://earth/textures/by_author/emerald_fel_entertainment/Stone_01.png"
-dest_files=["res://.godot/imported/Stone_01.png-75748ddad5892e0c24227f287e0406e4.s3tc.ctex"]
+source_file="res://earth/textures/by_author/emerald_eel_entertainment/Stone_01_stairs.png"
+dest_files=["res://.godot/imported/Stone_01_stairs.png-daedaba7c93c67270a9b5cbe2cb5fe51.s3tc.ctex"]
 
 [params]
 

@@ -22,7 +22,7 @@ signal cache_restored
 signal cache_load_threaded_finished
 
 
-@export_file("*.res", "*.tres") var cache_file: String = "":
+@export_file_path("*.res", "*.tres") var cache_file: String = "":
 	set(val):
 		cache_file = val
 		if is_inside_tree():
@@ -267,7 +267,7 @@ func _load_cache_threaded() -> void:
 
 
 func save_cache() -> void:
-	var err: Error = ResourceSaver.save(_local_cache, cache_file)
+	var err: Error = ResourceSaver.save(_local_cache, ResourceUID.ensure_path(cache_file))
 	if err != OK:
 		printerr("ProtonScatter error: Failed to save the cache file. Code: ", err)
 

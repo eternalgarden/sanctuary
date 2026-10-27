@@ -132,6 +132,34 @@ List of textures from ambient.cg:
 
 - [Rocky Terrain by Amal Kumar](https://polyhaven.com/a/rocky_terrain)
 
+### Kenney - CC0
+
+#### kenney_skyboxes
+- **Filename:** kenney_skyboxes (skybox-day, skybox-morning)
+- **Author:** [Kenney](https://www.kenney.nl)
+- **Source:** https://kenney.nl/assets/skyboxes ("Skyboxes", 1.0)
+- **License:** [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/)
+- **Changes:** 
+    - Kept only the day and morning skyboxes.
+
+### OpenGameArt - CC0
+
+#### emerald_eel_entertainment
+- **Filename:** emerald_eel_entertainment
+- **Author:** Emerald Eel Entertainment
+- **Source:** https://opengameart.org/content/n64-stair-texture-template ("N64 Stair Texture Template")
+- **License:** [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/)
+- **Changes:** 
+    - Kept only a few of the stair and example textures.
+
+#### facade_gaikan
+- **Filename:** facade_gaikan
+- **Author:** [FacadeGaikan](https://opengameart.org/users/facadegaikan)
+- **Source:** https://opengameart.org/content/64x-textures-an-overlays ("64x Textures an Overlays")
+- **License:** [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/)
+- **Changes:** 
+    - Removed unused textures.
+
 ## Plugins
 
 #### CharacterControllerPlugin
@@ -164,6 +192,7 @@ List of textures from ambient.cg:
 - **Version**: 4.2.0
 - **Source**: https://github.com/HungryProton/scatter
 - **License**: MIT, Copyright (c) 2019 HungryProton
+- **Local patches**: `src/cache/scatter_cache.gd` — `cache_file` uses `@export_file_path` and `save_cache()` resolves it with `ResourceUID.ensure_path()`, because Godot 4.4+ stores `@export_file` values as `uid://` and `ResourceSaver.save()` rejects those (error 15). Re-apply when updating.
 
 
 ## Fonts

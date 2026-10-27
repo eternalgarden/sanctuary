@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blr64ek80cuu1"
-path.s3tc="res://.godot/imported/Bricks_01.png-879fb659de299f60fea6ac84b2b9fd13.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bricks_01.png-4d512391c70307df3ad170cbe6fb3f62.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://earth/textures/by_author/emerald_fel_entertainment/Bricks_01.png"
-dest_files=["res://.godot/imported/Bricks_01.png-879fb659de299f60fea6ac84b2b9fd13.s3tc.ctex"]
+source_file="res://earth/textures/by_author/emerald_eel_entertainment/Bricks_01.png"
+dest_files=["res://.godot/imported/Bricks_01.png-4d512391c70307df3ad170cbe6fb3f62.s3tc.ctex"]
 
 [params]
 

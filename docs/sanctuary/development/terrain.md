@@ -29,15 +29,14 @@
 				- make it too large and you will have plain gaps of undergrowth around it
 			- layer 3 was arbitrarilly selected, it is now reserved for `scatter_block`
 
-
 - 4. Scatter it
 	- *One ProtonScatter node per layer* (trees, bushes, grass). 
 		- Variants of the same thing go in as ScatterItems in the same node, with proportion controlling the mix.
-	- Trees:
+	- *Trees*:
 		- Render mode `Create Copies`, so the colliders become real nodes.
 		- Create Inside (`Poisson`) with *radius set to the trunk-to-trunk distance*.
 		- Then `Project On Colliders` to snap them to the ground.
-	- Undergrowth:
+	- *Undergrowth*:
 		- Use Instancing render mode.
 		- Only one Create modifier.
 		- Project On Colliders settings:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duuyl04dm4wme"
-path="res://.godot/imported/Stairs_05_512px.png-5b362fc1b02bec535959c56307985e35.ctex"
+uid="uid://d20m4f6htibrl"
+path="res://.godot/imported/Stairs_16_512px.png-d6da3cc9b2da74d53d68cc94af9ee2de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://earth/textures/by_author/emerald_fel_entertainment/Stairs_05_512px.png"
-dest_files=["res://.godot/imported/Stairs_05_512px.png-5b362fc1b02bec535959c56307985e35.ctex"]
+source_file="res://earth/textures/by_author/emerald_eel_entertainment/Stairs_16_512px.png"
+dest_files=["res://.godot/imported/Stairs_16_512px.png-d6da3cc9b2da74d53d68cc94af9ee2de.ctex"]
 
 [params]
 
