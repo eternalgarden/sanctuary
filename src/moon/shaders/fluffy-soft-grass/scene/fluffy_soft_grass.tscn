@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://d0knrem0ff46c" path="res://moon/shaders/fluffy-soft-grass/scene/fluffy_soft_grass.blend" id="1_scac7"]
 [ext_resource type="Script" uid="uid://c8fqmgydj57d3" path="res://fillory/forest/startup/PlayerSpawnPoint.cs" id="2_7jm6k"]
 [ext_resource type="Texture2D" uid="uid://c0dl314ri8a3y" path="res://earth/textures/by_author/kenney/kenney_skyboxes/Skyboxes/skybox-morning.png" id="3_w0i8f"]
+[ext_resource type="Shader" uid="uid://bu31pb1wkga3s" path="res://moon/shaders/fluffy-soft-grass/shaders/development/01_one_sheet.gdshader" id="4_bsind"]
 [ext_resource type="PackedScene" uid="uid://e5slxacys3kp" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_001.tscn" id="4_vnm4t"]
 [ext_resource type="PackedScene" uid="uid://buave1lvng38t" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_002.tscn" id="5_0jutr"]
+[ext_resource type="Shader" uid="uid://40uct0orcns" path="res://moon/shaders/fluffy-soft-grass/shaders/fluffy_soft_grass.gdshader" id="5_ukswk"]
 [ext_resource type="PackedScene" uid="uid://dt5a8q1j3w0ha" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_003.tscn" id="6_y48a6"]
 [ext_resource type="PackedScene" uid="uid://dbolxncuxwquf" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_001.tscn" id="7_tuo50"]
 [ext_resource type="PackedScene" uid="uid://dtbvuy025msrq" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_small_001.tscn" id="8_7a5rk"]
@@ -37,6 +39,64 @@ ambient_light_sky_contribution = 0.11
 ssao_enabled = true
 volumetric_fog_density = 0.0031
 volumetric_fog_sky_affect = 0.208
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i36mh"]
+size = Vector2(4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md4hw"]
+albedo_color = Color(0.76, 0.55784, 0.44080004, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3dsn"]
+render_priority = 0
+shader = ExtResource("4_bsind")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_awt07"]
+noise_type = 2
+frequency = 0.15
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ukswk"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_awt07")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bsind"]
+noise_type = 2
+frequency = 0.15
+cellular_return_type = 0
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_grass"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_bsind")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_awt07"]
+render_priority = 0
+shader = ExtResource("5_ukswk")
+shader_parameter/grass_pattern = SubResource("NoiseTexture2D_grass")
+shader_parameter/blade_shape = SubResource("NoiseTexture2D_ukswk")
+shader_parameter/tiling = 4.0
+shader_parameter/instance_count = 32
+shader_parameter/pile_height = 0.09200000227445
+shader_parameter/cutoff = 0.0
+shader_parameter/grass_color = Color(0.35, 0.6, 0.2, 1)
+shader_parameter/bottom_grass_color = Color(0.06629542, 0.18861839, 1.2032688e-08, 1)
+shader_parameter/curve = 4.095000147012501
+shader_parameter/blade_curve = 1.0
+shader_parameter/tip_width = 1.0
+shader_parameter/test_flip = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sheet"]
+material = SubResource("ShaderMaterial_awt07")
+size = Vector2(4, 4)
+
+[sub_resource type="MultiMesh" id="MultiMesh_ltsbh"]
+transform_format = 1
+instance_count = 32
+mesh = SubResource("PlaneMesh_sheet")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
 
 [sub_resource type="Resource" id="Resource_osngv"]
 script = ExtResource("14_bf2p1")
@@ -122,15 +182,38 @@ radius = 7.2222176
 
 [node name="FluffySoftGrass" type="Node3D" unique_id=1276029772]
 
-[node name="fluffy_soft_grass" parent="." unique_id=1095057981 instance=ExtResource("1_scac7")]
+[node name="Level" parent="." unique_id=1095057981 instance=ExtResource("1_scac7")]
 
-[node name="spawn_point" type="Marker3D" parent="." unique_id=283914602]
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=283914602]
 transform = Transform3D(-0.9999873, 0, -0.0050325096, 0, 1, 0, 0.0050325096, 0, -0.9999873, 0.21938324, 0.5783019, 9.304044)
 gizmo_extents = 1.4
 script = ExtResource("2_7jm6k")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1843312083]
 environment = SubResource("Environment_mcln6")
+
+[node name="Development" type="Node3D" parent="." unique_id=1421790374]
+
+[node name="01_Sheets" type="Node3D" parent="Development" unique_id=528068602]
+transform = Transform3D(0.6262931, 0, -0.7795876, 0, 1, 0, 0.7795876, 0, 0.6262931, -12.314925, 1.5401225, 11.830692)
+
+[node name="ground" type="MeshInstance3D" parent="Development/01_Sheets" unique_id=392242077]
+mesh = SubResource("PlaneMesh_i36mh")
+surface_material_override/0 = SubResource("StandardMaterial3D_md4hw")
+
+[node name="grass" type="MeshInstance3D" parent="Development/01_Sheets" unique_id=1084184403]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0.104985714, 0)
+mesh = SubResource("PlaneMesh_i36mh")
+surface_material_override/0 = SubResource("ShaderMaterial_v3dsn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Development/01_Sheets" unique_id=873118610]
+transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 0, 1.4052196, 0)
+
+[node name="Sheets" type="MultiMeshInstance3D" parent="Development" unique_id=1688192098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.397694, 1.8542163, -2.183855)
+cast_shadow = 0
+extra_cull_margin = 1.0
+multimesh = SubResource("MultiMesh_ltsbh")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=604851577]
 
@@ -181,7 +264,7 @@ transform = Transform3D(0.09487448, -0.67509127, 0.7316082, -1.677306e-08, 0.734
 light_color = Color(0.99999934, 0.9532632, 0.9384676, 1)
 shadow_enabled = true
 
-[node name="ProtonScatter" type="Node3D" parent="." unique_id=700505801]
+[node name="FoliageScatter" type="Node3D" parent="." unique_id=700505801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.65541, 0, -12.746761)
 script = ExtResource("11_52vyo")
 force_rebuild_on_load = false
@@ -190,109 +273,109 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dgqq1tf8prx5s"
 
-[node name="ScatterShape" type="Node3D" parent="ProtonScatter" unique_id=63809712]
+[node name="ScatterShape" type="Node3D" parent="FoliageScatter" unique_id=63809712]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 1.1188679, 9.536743e-07, -2.6315832)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_g8bsm")
 
-[node name="ScatterShape7" type="Node3D" parent="ProtonScatter" unique_id=2025711534]
+[node name="ScatterShape7" type="Node3D" parent="FoliageScatter" unique_id=2025711534]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -1.116066, 9.536743e-07, 27.718136)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_6m1jx")
 
-[node name="ScatterShape3" type="Node3D" parent="ProtonScatter" unique_id=1665714147]
+[node name="ScatterShape3" type="Node3D" parent="FoliageScatter" unique_id=1665714147]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 34.782406, 9.536743e-07, 19.448765)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_vu088")
 
-[node name="ScatterShape8" type="Node3D" parent="ProtonScatter" unique_id=289686051]
+[node name="ScatterShape8" type="Node3D" parent="FoliageScatter" unique_id=289686051]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 17.592796, 9.536743e-07, 31.338)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_iplxp")
 
-[node name="ScatterShape9" type="Node3D" parent="ProtonScatter" unique_id=1217454526]
+[node name="ScatterShape9" type="Node3D" parent="FoliageScatter" unique_id=1217454526]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 36.60034, 9.536743e-07, 32.817047)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_ydux4")
 
-[node name="ScatterShape4" type="Node3D" parent="ProtonScatter" unique_id=1473212114]
+[node name="ScatterShape4" type="Node3D" parent="FoliageScatter" unique_id=1473212114]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 10.262783, 9.536743e-07, -7.2106495)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_u2tbc")
 
-[node name="ScatterShape5" type="Node3D" parent="ProtonScatter" unique_id=1102117187]
+[node name="ScatterShape5" type="Node3D" parent="FoliageScatter" unique_id=1102117187]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 21.676422, -9.536743e-07, -6.6719303)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_l4bny")
 
-[node name="ScatterShape10" type="Node3D" parent="ProtonScatter" unique_id=2051810069]
+[node name="ScatterShape10" type="Node3D" parent="FoliageScatter" unique_id=2051810069]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -2.728588, -9.536743e-07, 14.016722)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_ycu6p")
 
-[node name="ScatterShape11" type="Node3D" parent="ProtonScatter" unique_id=382742966]
+[node name="ScatterShape11" type="Node3D" parent="FoliageScatter" unique_id=382742966]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -3.173092, -9.536743e-07, 4.144883)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_6ee0l")
 
-[node name="ScatterShape12" type="Node3D" parent="ProtonScatter" unique_id=921972946]
+[node name="ScatterShape12" type="Node3D" parent="FoliageScatter" unique_id=921972946]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.2977581, -9.536743e-07, 19.201801)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_ru7l4")
 
-[node name="ScatterShape6" type="Node3D" parent="ProtonScatter" unique_id=895733655]
+[node name="ScatterShape6" type="Node3D" parent="FoliageScatter" unique_id=895733655]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 36.285934, -9.536743e-07, 8.611836)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_ic7gg")
 
-[node name="ScatterShape2" type="Node3D" parent="ProtonScatter" unique_id=1009364515]
+[node name="ScatterShape2" type="Node3D" parent="FoliageScatter" unique_id=1009364515]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 31.324528, -9.536743e-07, -2.2403612)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_cu8jh")
 
-[node name="ScatterItem9" type="Node3D" parent="ProtonScatter" unique_id=83285903]
+[node name="ScatterItem9" type="Node3D" parent="FoliageScatter" unique_id=83285903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31367493, 0, -0.25606728)
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://buao40bdvmf6d"
 
-[node name="ScatterItem10" type="Node3D" parent="ProtonScatter" unique_id=1505567929]
+[node name="ScatterItem10" type="Node3D" parent="FoliageScatter" unique_id=1505567929]
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://ps5g0esrcrnj"
 
-[node name="ScatterItem11" type="Node3D" parent="ProtonScatter" unique_id=980224691]
+[node name="ScatterItem11" type="Node3D" parent="FoliageScatter" unique_id=980224691]
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://d3g6qduucgxp2"
 
-[node name="ScatterItem12" type="Node3D" parent="ProtonScatter" unique_id=1770806991]
+[node name="ScatterItem12" type="Node3D" parent="FoliageScatter" unique_id=1770806991]
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://755gpc6ex23e"
 
-[node name="ScatterItem13" type="Node3D" parent="ProtonScatter" unique_id=1794436465]
+[node name="ScatterItem13" type="Node3D" parent="FoliageScatter" unique_id=1794436465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16560745, 1.9073486e-06, -0.15228176)
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://d35lob7wasf4u"
 
-[node name="ScatterItem14" type="Node3D" parent="ProtonScatter" unique_id=1779042055]
+[node name="ScatterItem14" type="Node3D" parent="FoliageScatter" unique_id=1779042055]
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://cy70djaxqqef5"
 
-[node name="ScatterItem15" type="Node3D" parent="ProtonScatter" unique_id=156748356]
+[node name="ScatterItem15" type="Node3D" parent="FoliageScatter" unique_id=156748356]
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://bw0q8ev61x12d"
 
-[node name="ScatterItem16" type="Node3D" parent="ProtonScatter" unique_id=1713263066]
+[node name="ScatterItem16" type="Node3D" parent="FoliageScatter" unique_id=1713263066]
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://8p8vsmoi8t1f"
 
-[node name="ScatterItem17" type="Node3D" parent="ProtonScatter" unique_id=45689042]
+[node name="ScatterItem17" type="Node3D" parent="FoliageScatter" unique_id=45689042]
 script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://6k23yvjiwqbd"
