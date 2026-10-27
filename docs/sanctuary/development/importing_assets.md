@@ -7,8 +7,12 @@
 	- Double-click the .blend in the FileSystem dock to open Advanced Import Settings, then use `Actions » Set Mesh Save Paths`. 
 	- Each tree becomes a .res mesh you can drop into a `MeshInstance3D` or, better for scattering lots of trees, a `MultiMeshInstance3D`. 
 	- The meshes update whenever you re-save the .blend, neat.
-- Poly count
-	- Aim for `3k - 15k` for trees (medium poly)
+- *Poly count*
+	- Trees: `3k - 15k` (medium poly)
+	- Grass clump: `20-400` (thousands in a scene)
+	- Small undergrowth: `300-1500` (hundreds)
+	- Bushes and shrubs: `1000-4000` (dozens to low hundreds)
+	- Special elements `~10000k` (just a few)
 
 ## blender
 

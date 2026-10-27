@@ -50,3 +50,14 @@
 				- this is a crucial setting for the undergrowth to respect collisions from the exclude mask
 		- *`scatter_parent`*: set it to the tree scatter, so it rebuilds after the trees.
 		- *For performance*: turn off cast_shadow on grass, and set a visibility range with fade on small items.
+
+- 5. Setting up the scatter cache for a level (*so that it does not regenerate when scene loads, slow and bugged*)
+	- Add the ProtonScatterCache node and type its Cache File path by hand as `res://…/<level>_scatter_cache.tres`, next to the level.
+		- 🧨 (bug) Don't pick it with the file dialog, which stores a uid:// link that the save probably can't use. 
+		- You don't need to create the file; the first update creates it.
+	- Press `Enable Cache For All` so every scatter restores from the cache instead of rebuilding at startup.
+	- Press `Update Cache`.
+	- Check that it worked. 
+		- The cache file should exist and contain a data = { section with numbers in it; a few hundred bytes means it's empty. 
+		- Also glance at the Output panel for ProtonScatter error lines.
+	- Run the game.
