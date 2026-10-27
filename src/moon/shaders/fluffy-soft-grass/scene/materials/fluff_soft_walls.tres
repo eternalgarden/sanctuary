@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4icman6rxg8f"]
+
+[ext_resource type="Texture2D" uid="uid://drm6uply6kv33" path="res://earth/textures/rock/rock_gray_moss/Rock032_1K-PNG_AmbientOcclusion.png" id="1_iqtrq"]
+
+[resource]
+resource_name = "walls"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_iqtrq")
+roughness = 0.5
+uv1_scale = Vector3(5, 5, 5)

@@ -51,7 +51,7 @@ script = ExtResource("3_w8ka0")
 [node name="startup_scene_spawner" type="Node3D" parent="startup" unique_id=521568542 node_paths=PackedStringArray("WorldRoot")]
 script = ExtResource("6_oqecv")
 StartingScenePath = "uid://qo0nv7hqs537"
-DebugStartingScenePath = "uid://oqthjt6q6q07"
+DebugStartingScenePath = "uid://cesp38blnaflb"
 WorldRoot = NodePath("../../world/environment")
 
 [node name="startup_player_spawner" type="Node3D" parent="startup" unique_id=882839838]
