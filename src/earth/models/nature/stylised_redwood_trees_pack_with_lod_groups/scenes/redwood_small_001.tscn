@@ -6,7 +6,7 @@
 height = 2.77
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_blocker"]
-height = 2.77
+height = 16.333614
 radius = 1.144043
 
 [node name="redwood_small_001" type="Node3D" unique_id=946969907]
@@ -25,5 +25,5 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="shape" type="CollisionShape3D" parent="scatter_blocker" unique_id=1060781135]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.385, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.166807, 0)
 shape = SubResource("CylinderShape3D_blocker")
