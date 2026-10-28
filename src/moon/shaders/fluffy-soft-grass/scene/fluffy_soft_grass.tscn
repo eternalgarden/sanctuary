@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://cesp38blnaflb"]
+[gd_scene format=4 uid="uid://cesp38blnaflb"]
 
 [ext_resource type="PackedScene" uid="uid://d0knrem0ff46c" path="res://moon/shaders/fluffy-soft-grass/scene/fluffy_soft_grass.blend" id="1_scac7"]
 [ext_resource type="Script" uid="uid://c8fqmgydj57d3" path="res://fillory/forest/startup/PlayerSpawnPoint.cs" id="2_7jm6k"]
+[ext_resource type="Script" uid="uid://sl5foi5x3y6m" path="res://moon/shaders/fluffy-soft-grass/scripts/GrassShells.cs" id="2_bsind"]
+[ext_resource type="Material" uid="uid://b4icman6rxg8f" path="res://moon/shaders/fluffy-soft-grass/scene/materials/fluff_soft_walls.tres" id="2_ukswk"]
+[ext_resource type="Material" uid="uid://bcx122acubtym" path="res://moon/shaders/fluffy-soft-grass/scene/materials/fluff_soft_mat.tres" id="3_bsind"]
 [ext_resource type="Texture2D" uid="uid://c0dl314ri8a3y" path="res://earth/textures/by_author/kenney/kenney_skyboxes/Skyboxes/skybox-morning.png" id="3_w0i8f"]
-[ext_resource type="Shader" uid="uid://bu31pb1wkga3s" path="res://moon/shaders/fluffy-soft-grass/shaders/development/01_one_sheet.gdshader" id="4_bsind"]
+[ext_resource type="Material" uid="uid://qep3mhhaeuou" path="res://moon/shaders/fluffy-soft-grass/scene/materials/fluff.tres" id="4_awt07"]
 [ext_resource type="PackedScene" uid="uid://e5slxacys3kp" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_001.tscn" id="4_vnm4t"]
 [ext_resource type="PackedScene" uid="uid://buave1lvng38t" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_002.tscn" id="5_0jutr"]
-[ext_resource type="Shader" uid="uid://40uct0orcns" path="res://moon/shaders/fluffy-soft-grass/shaders/fluffy_soft_grass.gdshader" id="5_ukswk"]
+[ext_resource type="PackedScene" uid="uid://dbqcm314ewwof" path="res://earth/models/props/stylized_startrek_tricorder/scene.gltf" id="6_fri7c"]
 [ext_resource type="PackedScene" uid="uid://dt5a8q1j3w0ha" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_003.tscn" id="6_y48a6"]
 [ext_resource type="PackedScene" uid="uid://dbolxncuxwquf" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_001.tscn" id="7_tuo50"]
 [ext_resource type="PackedScene" uid="uid://dtbvuy025msrq" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_small_001.tscn" id="8_7a5rk"]
@@ -25,6 +28,51 @@
 [ext_resource type="Script" uid="uid://c85i0481q4uog" path="res://addons/proton_scatter/src/scatter_item.gd" id="21_bsjkl"]
 [ext_resource type="Script" uid="uid://6mvg0gb77knh" path="res://addons/proton_scatter/src/cache/scatter_cache.gd" id="22_v17n6"]
 [ext_resource type="PackedScene" uid="uid://e6b5sycbs5sq" path="res://earth/models/nature/blanket_phlox/scene.gltf" id="23_to860"]
+[ext_resource type="PackedScene" uid="uid://d3lecj3w6ea2r" path="res://earth/models/nature/free_tree_download.fbx/scene.gltf" id="28_s2r6m"]
+[ext_resource type="PackedScene" uid="uid://xsbonof4g4j7" path="res://earth/models/nature/pine_tree_-_ps1_low_poly/pine_tree_ps1.blend" id="29_bsjkl"]
+[ext_resource type="PackedScene" uid="uid://dk8cgqu06xsp1" path="res://earth/models/props/astronomic_map/scene.gltf" id="30_osngv"]
+[ext_resource type="ArrayMesh" uid="uid://b5sb32j6jjdit" path="res://earth/models/nature/fir_tree_stylized/save_paths/fir_tree_stylized_fir_tree_stylized_001.res" id="31_hrx1v"]
+[ext_resource type="ArrayMesh" uid="uid://cyrqopq2eepvd" path="res://earth/models/nature/fir_tree_stylized/save_paths/fir_tree_stylized_fir_tree_stylized_002.res" id="32_0xx2y"]
+[ext_resource type="ArrayMesh" uid="uid://yyslv3mjklwv" path="res://earth/models/nature/fir_tree_stylized/save_paths/fir_tree_stylized_fir_tree_stylized_003.res" id="33_fri7c"]
+[ext_resource type="PackedScene" uid="uid://bax2kgex72nup" path="res://earth/models/props/stylized_tent/scene.gltf" id="34_0xx2y"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uibwa"]
+_surfaces = [{
+"aabb": AABB(-12.038824, -0.66835606, -12.658368, 24.077648, 1e-05, 22.899202),
+"format": 34896613377,
+"index_count": 15,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABQABAAQA"),
+"name": "fluff",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAAAAMhhAAD/fwAAgo0AAOQwAAD//wAAGs8AAP//AAD/fwAAAAAAAP//AADIYQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tdbwb"]
+resource_name = "fluffy_soft_grass_Plane_001"
+_surfaces = [{
+"aabb": AABB(-12.038824, -0.66835606, -12.658368, 24.077648, 1e-05, 22.899202),
+"attribute_data": PackedByteArray("Z6YdU7Ge2mqDii9cg4qGeaO32mpnppeC"),
+"format": 34896613399,
+"index_count": 15,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABQABAAQA"),
+"material": ExtResource("4_awt07"),
+"name": "fluff",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAAAAMhhVNX/fwAAgo1U1eQwAAD//1TVGs8AAP//VNX/fwAAAABU1f//AADIYVTVVNWqKlTVqipU1aoqVNWqKlTVqipU1aoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_uibwa")
+
+[sub_resource type="MultiMesh" id="MultiMesh_fri7c"]
+transform_format = 1
+instance_count = 128
+mesh = SubResource("ArrayMesh_tdbwb")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3i5u1"]
 panorama = ExtResource("3_w0i8f")
@@ -46,57 +94,38 @@ size = Vector2(4, 4)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md4hw"]
 albedo_color = Color(0.76, 0.55784, 0.44080004, 1)
 
+[sub_resource type="Shader" id="Shader_bf2p1"]
+code = " 
+shader_type spatial;
+render_mode cull_disabled;
+
+// Fine, high-frequency noise: each bright speck will become one blade.
+uniform sampler2D grass_pattern : hint_default_white, filter_linear_mipmap, repeat_enable;
+
+uniform float tiling = 4.0;
+uniform float instance_count : hint_range(1.0, 16.0);
+
+uniform float cutoff : hint_range(0.0, 1.0) = 0.5;
+uniform vec3 grass_color : source_color = vec3(0.35, 0.6, 0.2);
+
+void vertex() {
+    float step = float(INSTANCE_ID) / floor(instance_count - 1.0);
+    float height = mix(0, pile_height, step);
+}
+
+void fragment() {
+	float noise = texture(grass_pattern, UV * tiling).r;
+	if (noise < cutoff) {
+		discard;
+	}
+	ALBEDO = grass_color;
+	ROUGHNESS = 1.0;
+}
+"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3dsn"]
 render_priority = 0
-shader = ExtResource("4_bsind")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_awt07"]
-noise_type = 2
-frequency = 0.15
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ukswk"]
-width = 256
-height = 256
-noise = SubResource("FastNoiseLite_awt07")
-seamless = true
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_bsind"]
-noise_type = 2
-frequency = 0.15
-cellular_return_type = 0
-metadata/_preview_in_3d_space_ = true
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_grass"]
-width = 256
-height = 256
-noise = SubResource("FastNoiseLite_bsind")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_awt07"]
-render_priority = 0
-shader = ExtResource("5_ukswk")
-shader_parameter/grass_pattern = SubResource("NoiseTexture2D_grass")
-shader_parameter/blade_shape = SubResource("NoiseTexture2D_ukswk")
-shader_parameter/tiling = 4.0
-shader_parameter/instance_count = 32
-shader_parameter/pile_height = 0.09200000227445
-shader_parameter/cutoff = 0.0
-shader_parameter/grass_color = Color(0.35, 0.6, 0.2, 1)
-shader_parameter/bottom_grass_color = Color(0.06629542, 0.18861839, 1.2032688e-08, 1)
-shader_parameter/curve = 4.095000147012501
-shader_parameter/blade_curve = 1.0
-shader_parameter/tip_width = 1.0
-shader_parameter/test_flip = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_sheet"]
-material = SubResource("ShaderMaterial_awt07")
-size = Vector2(4, 4)
-
-[sub_resource type="MultiMesh" id="MultiMesh_ltsbh"]
-transform_format = 1
-instance_count = 32
-mesh = SubResource("PlaneMesh_sheet")
-buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+shader = SubResource("Shader_bf2p1")
 
 [sub_resource type="Resource" id="Resource_osngv"]
 script = ExtResource("14_bf2p1")
@@ -113,7 +142,7 @@ reference_frame = 1
 script = ExtResource("16_ukswk")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
-scale = Vector3(0.1, 0.1, 0.1)
+scale_range = Vector2(1, 1.1)
 reference_frame = 2
 
 [sub_resource type="Resource" id="Resource_fri7c"]
@@ -126,7 +155,7 @@ restrict_height = true
 script = ExtResource("18_ltsbh")
 ray_length = 5.0
 ray_offset = 5.0
-remove_points_on_miss = false
+exclude_mask = 4
 
 [sub_resource type="Resource" id="Resource_fycq5"]
 script = ExtResource("12_v17n6")
@@ -149,6 +178,18 @@ script = ExtResource("20_s2r6m")
 radius = 6.218876
 
 [sub_resource type="Resource" id="Resource_ydux4"]
+script = ExtResource("20_s2r6m")
+radius = 5.214716
+
+[sub_resource type="Resource" id="Resource_awt07"]
+script = ExtResource("20_s2r6m")
+radius = 5.214716
+
+[sub_resource type="Resource" id="Resource_ltsbh"]
+script = ExtResource("20_s2r6m")
+radius = 5.214716
+
+[sub_resource type="Resource" id="Resource_7juky"]
 script = ExtResource("20_s2r6m")
 radius = 5.214716
 
@@ -180,12 +221,140 @@ radius = 5.575509
 script = ExtResource("20_s2r6m")
 radius = 7.2222176
 
+[sub_resource type="Resource" id="Resource_adway"]
+script = ExtResource("14_bf2p1")
+amount = 3500
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_p8tlq"]
+script = ExtResource("15_bsind")
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_j7hhy"]
+script = ExtResource("16_ukswk")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale_range = Vector2(0.1, 1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_e4nyk"]
+script = ExtResource("17_awt07")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_eq0ms"]
+script = ExtResource("18_ltsbh")
+ray_length = 5.0
+ray_offset = 5.0
+exclude_mask = 4
+
+[sub_resource type="Resource" id="Resource_1scud"]
+script = ExtResource("12_v17n6")
+stack = Array[ExtResource("13_to860")]([SubResource("Resource_adway"), SubResource("Resource_p8tlq"), SubResource("Resource_j7hhy"), SubResource("Resource_e4nyk"), SubResource("Resource_eq0ms")])
+
+[sub_resource type="Resource" id="Resource_khk62"]
+script = ExtResource("20_s2r6m")
+radius = 7.2222176
+
+[sub_resource type="Resource" id="Resource_lg0pe"]
+script = ExtResource("20_s2r6m")
+radius = 8.904198
+
+[sub_resource type="Resource" id="Resource_k1j5d"]
+script = ExtResource("20_s2r6m")
+radius = 6.218876
+
+[sub_resource type="Resource" id="Resource_y746v"]
+script = ExtResource("20_s2r6m")
+radius = 6.218876
+
+[sub_resource type="Resource" id="Resource_e2v37"]
+script = ExtResource("20_s2r6m")
+radius = 5.214716
+
+[sub_resource type="Resource" id="Resource_cekc5"]
+script = ExtResource("20_s2r6m")
+radius = 5.214716
+
+[sub_resource type="Resource" id="Resource_k6fse"]
+script = ExtResource("20_s2r6m")
+radius = 5.214716
+
+[sub_resource type="Resource" id="Resource_15fjv"]
+script = ExtResource("20_s2r6m")
+radius = 5.214716
+
+[sub_resource type="Resource" id="Resource_72sdt"]
+script = ExtResource("20_s2r6m")
+radius = 6.218876
+
+[sub_resource type="Resource" id="Resource_x7ffo"]
+script = ExtResource("20_s2r6m")
+radius = 5.575509
+
+[sub_resource type="Resource" id="Resource_w06vc"]
+script = ExtResource("20_s2r6m")
+radius = 5.575509
+
+[sub_resource type="Resource" id="Resource_72bbe"]
+script = ExtResource("20_s2r6m")
+radius = 5.575509
+
+[sub_resource type="Resource" id="Resource_a4euf"]
+script = ExtResource("20_s2r6m")
+radius = 5.575509
+
+[sub_resource type="Resource" id="Resource_hi25w"]
+script = ExtResource("20_s2r6m")
+radius = 5.575509
+
+[sub_resource type="Resource" id="Resource_m0a24"]
+script = ExtResource("20_s2r6m")
+radius = 7.2222176
+
 [node name="FluffySoftGrass" type="Node3D" unique_id=1276029772]
 
 [node name="Level" parent="." unique_id=1095057981 instance=ExtResource("1_scac7")]
 
+[node name="boxes" parent="Level" index="0" unique_id=1863628521]
+material_override = ExtResource("2_ukswk")
+
+[node name="StaticBody3D" parent="Level/boxes" index="0" unique_id=8723444]
+collision_layer = 5
+
+[node name="grass_bed" parent="Level" index="1" unique_id=443065106]
+layers = 0
+surface_material_override/0 = ExtResource("2_ukswk")
+
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/grass_bed" index="0" unique_id=1278042906]
+material_override = ExtResource("3_bsind")
+instance_shader_parameters/instance_count = 128
+instance_shader_parameters/tiling = 14.0
+multimesh = SubResource("MultiMesh_fri7c")
+script = ExtResource("2_bsind")
+LayerCount = 128
+Tiling = 14.0
+GrassMaterial = ExtResource("3_bsind")
+
+[node name="slope" parent="Level" index="3" unique_id=1434725708]
+layers = 1
+material_override = ExtResource("2_ukswk")
+
+[node name="StaticBody3D" parent="Level/slope" index="0" unique_id=789246989]
+collision_layer = 5
+collision_mask = 0
+
+[node name="StaticBody3D" parent="Level/sphere" parent_id_path=PackedInt32Array(1095057981, 918554455) index="0" unique_id=389178408]
+collision_layer = 5
+
+[node name="Sketchfab_Scene" parent="Level" unique_id=1051161431 instance=ExtResource("6_fri7c")]
+transform = Transform3D(0.068554364, 0.08525067, 0.026339516, 0, 0.03793545, -0.10585223, -0.077212945, 0.07569075, 0.023385828, -5.7332215, 1.0848765, -3.1441965)
+
 [node name="SpawnPoint" type="Marker3D" parent="." unique_id=283914602]
-transform = Transform3D(-0.9999873, 0, -0.0050325096, 0, 1, 0, 0.0050325096, 0, -0.9999873, 0.21938324, 0.5783019, 9.304044)
+transform = Transform3D(-0.9999873, 0, -0.0050325096, 0, 1, 0, 0.0050325096, 0, -0.9999873, 3.9549189, 1.3546855, -5.2976227)
 gizmo_extents = 1.4
 script = ExtResource("2_7jm6k")
 
@@ -209,19 +378,13 @@ surface_material_override/0 = SubResource("ShaderMaterial_v3dsn")
 [node name="OmniLight3D" type="OmniLight3D" parent="Development/01_Sheets" unique_id=873118610]
 transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 0, 1.4052196, 0)
 
-[node name="Sheets" type="MultiMeshInstance3D" parent="Development" unique_id=1688192098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.397694, 1.8542163, -2.183855)
-cast_shadow = 0
-extra_cull_margin = 1.0
-multimesh = SubResource("MultiMesh_ltsbh")
-
 [node name="Node3D" type="Node3D" parent="." unique_id=604851577]
 
 [node name="redwood_big_001" parent="Node3D" unique_id=464441949 instance=ExtResource("4_vnm4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.732256, 0, 15.253447)
 
 [node name="redwood_big_002" parent="Node3D" unique_id=58798760 instance=ExtResource("5_0jutr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.456932, 0, 11.098885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.569958, 0, 13.378486)
 
 [node name="redwood_big_003" parent="Node3D" unique_id=977199017 instance=ExtResource("6_y48a6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8399754, 9.536743e-07, 19.021765)
@@ -239,7 +402,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.521599, 0, 20.176117)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.193844, 3.8146973e-06, -18.604162)
 
 [node name="redwood_medium_002" parent="Node3D" unique_id=856937827 instance=ExtResource("7_tuo50")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.318794, 0, -16.64111)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.631751, -9.536743e-07, -18.275236)
 
 [node name="redwood_medium_003" parent="Node3D" unique_id=1250646022 instance=ExtResource("9_jclgq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7285776, 0, 21.042816)
@@ -266,6 +429,7 @@ shadow_enabled = true
 
 [node name="FoliageScatter" type="Node3D" parent="." unique_id=700505801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.65541, 0, -12.746761)
+visible = false
 script = ExtResource("11_52vyo")
 force_rebuild_on_load = false
 modifier_stack = SubResource("Resource_fycq5")
@@ -297,6 +461,21 @@ shape = SubResource("Resource_iplxp")
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 36.60034, 9.536743e-07, 32.817047)
 script = ExtResource("19_7juky")
 shape = SubResource("Resource_ydux4")
+
+[node name="ScatterShape13" type="Node3D" parent="FoliageScatter" unique_id=1746799515]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 28.722145, 9.536743e-07, 28.84989)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_awt07")
+
+[node name="ScatterShape15" type="Node3D" parent="FoliageScatter" unique_id=1518294536]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 6.484432, 9.536743e-07, -1.8616428)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_ltsbh")
+
+[node name="ScatterShape14" type="Node3D" parent="FoliageScatter" unique_id=1316949051]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 9.171421, 0, 30.647465)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_7juky")
 
 [node name="ScatterShape4" type="Node3D" parent="FoliageScatter" unique_id=1473212114]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 10.262783, 9.536743e-07, -7.2106495)
@@ -380,10 +559,173 @@ script = ExtResource("21_bsjkl")
 source_scale_multiplier = 3.0
 path = "uid://6k23yvjiwqbd"
 
+[node name="FoliageScatter2" type="Node3D" parent="." unique_id=1505169025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.65541, 0, -12.746761)
+script = ExtResource("11_52vyo")
+force_rebuild_on_load = false
+modifier_stack = SubResource("Resource_1scud")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://dgqq1tf8prx5s"
+
+[node name="ScatterShape" type="Node3D" parent="FoliageScatter2" unique_id=110513506]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 1.1188679, 9.536743e-07, -2.6315832)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_khk62")
+
+[node name="ScatterShape7" type="Node3D" parent="FoliageScatter2" unique_id=472881644]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -1.116066, 9.536743e-07, 27.718136)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_lg0pe")
+
+[node name="ScatterShape3" type="Node3D" parent="FoliageScatter2" unique_id=1059776808]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 34.782406, 9.536743e-07, 19.448765)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_k1j5d")
+
+[node name="ScatterShape8" type="Node3D" parent="FoliageScatter2" unique_id=920639778]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 17.592796, 9.536743e-07, 31.338)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_y746v")
+
+[node name="ScatterShape9" type="Node3D" parent="FoliageScatter2" unique_id=406075057]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 36.60034, 9.536743e-07, 32.817047)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_e2v37")
+
+[node name="ScatterShape13" type="Node3D" parent="FoliageScatter2" unique_id=916776024]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 28.722145, 9.536743e-07, 28.84989)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_cekc5")
+
+[node name="ScatterShape15" type="Node3D" parent="FoliageScatter2" unique_id=2123379295]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 6.484432, 9.536743e-07, -1.8616428)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_k6fse")
+
+[node name="ScatterShape14" type="Node3D" parent="FoliageScatter2" unique_id=1506407004]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 9.171421, 0, 30.647465)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_15fjv")
+
+[node name="ScatterShape4" type="Node3D" parent="FoliageScatter2" unique_id=409216387]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 10.262783, 9.536743e-07, -7.2106495)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_72sdt")
+
+[node name="ScatterShape5" type="Node3D" parent="FoliageScatter2" unique_id=1788807569]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 21.676422, -9.536743e-07, -6.6719303)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_x7ffo")
+
+[node name="ScatterShape10" type="Node3D" parent="FoliageScatter2" unique_id=39684615]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -2.728588, -9.536743e-07, 14.016722)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_w06vc")
+
+[node name="ScatterShape11" type="Node3D" parent="FoliageScatter2" unique_id=1819385949]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -3.173092, -9.536743e-07, 4.144883)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_72bbe")
+
+[node name="ScatterShape12" type="Node3D" parent="FoliageScatter2" unique_id=186265180]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.2977581, -9.536743e-07, 19.201801)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_a4euf")
+
+[node name="ScatterShape6" type="Node3D" parent="FoliageScatter2" unique_id=1628010525]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 36.285934, -9.536743e-07, 8.611836)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_hi25w")
+
+[node name="ScatterShape2" type="Node3D" parent="FoliageScatter2" unique_id=1102851726]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 31.324528, -9.536743e-07, -2.2403612)
+script = ExtResource("19_7juky")
+shape = SubResource("Resource_m0a24")
+
+[node name="ScatterItem9" type="Node3D" parent="FoliageScatter2" unique_id=1638568609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31367493, 0, -0.25606728)
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://qylvuj2v5gkg"
+
+[node name="ScatterItem10" type="Node3D" parent="FoliageScatter2" unique_id=751484568]
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://c08u4x71hfbjf"
+
+[node name="ScatterItem11" type="Node3D" parent="FoliageScatter2" unique_id=1982238584]
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://cb0vx51nyujkg"
+
+[node name="ScatterItem12" type="Node3D" parent="FoliageScatter2" unique_id=686799890]
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://co5ck4n2wxm4v"
+
+[node name="ScatterItem13" type="Node3D" parent="FoliageScatter2" unique_id=364127743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16560745, 1.9073486e-06, -0.15228176)
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://s76oqxf5wmx5"
+
+[node name="ScatterItem14" type="Node3D" parent="FoliageScatter2" unique_id=1699683916]
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://cy70djaxqqef5"
+
+[node name="ScatterItem15" type="Node3D" parent="FoliageScatter2" unique_id=2005900152]
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://bw0q8ev61x12d"
+
+[node name="ScatterItem16" type="Node3D" parent="FoliageScatter2" unique_id=1756096390]
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://8p8vsmoi8t1f"
+
+[node name="ScatterItem17" type="Node3D" parent="FoliageScatter2" unique_id=2029137243]
+script = ExtResource("21_bsjkl")
+source_scale_multiplier = 3.0
+path = "uid://6k23yvjiwqbd"
+
 [node name="ProtonScatterCache" type="Node" parent="." unique_id=1329336029]
 script = ExtResource("22_v17n6")
 cache_file = "uid://o38ab4lyp624"
 metadata/_custom_type_script = "uid://6mvg0gb77knh"
 
 [node name="Sketchfab_Scene" parent="." unique_id=2132437677 instance=ExtResource("23_to860")]
-transform = Transform3D(11.565461, 0, 0, 0, 11.565461, 0, 0, 0, 11.565461, -6.045104, 0.00821737, 14.6483345)
+transform = Transform3D(6.914019, 0, 0, 0, 6.914019, 0, 0, 0, 6.914019, -3.3140607, -0.6118051, 6.6924033)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=588122554 instance=ExtResource("28_s2r6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1942043, -0.66835487, 6.096213)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=461358834 instance=ExtResource("28_s2r6m")]
+transform = Transform3D(0.62834924, 0, 0.7779314, 0, 1, 0, -0.7779314, 0, 0.62834924, -8.8506775, -0.66835487, -2.8127074)
+
+[node name="Sketchfab_Scene4" parent="." unique_id=1597085017 instance=ExtResource("28_s2r6m")]
+transform = Transform3D(-0.32363513, 0, 0.946182, 0, 1, 0, -0.946182, 0, -0.32363513, 1.9120035, -0.66835487, -7.988937)
+
+[node name="Sketchfab_Scene5" parent="." unique_id=1760576786 instance=ExtResource("29_bsjkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40449, -1.2773914, 5.854376)
+
+[node name="Sketchfab_Scene6" parent="." unique_id=484859422 instance=ExtResource("30_osngv")]
+transform = Transform3D(-0.84669787, 2.8876395, -2.1314235, -0.030521246, 2.184059, 2.9710743, 3.5889406, 0.69982153, -0.47757563, -6.2950726, 0.74562436, -2.3142958)
+
+[node name="FirTreeStylizedFirTreeStylized001" type="MeshInstance3D" parent="." unique_id=791214892]
+transform = Transform3D(3.2700682, 0, 0, 0, 3.2700682, 0, 0, 0, 3.2700682, 1.2314506, -0.66835594, 7.8800526)
+mesh = ExtResource("31_hrx1v")
+
+[node name="FirTreeStylizedFirTreeStylized002" type="MeshInstance3D" parent="." unique_id=1882530151]
+transform = Transform3D(2.9651375, 0, 0, 0, 2.9651375, 0, 0, 0, 2.9651375, -5.4576855, -0.66835594, -5.8362164)
+mesh = ExtResource("32_0xx2y")
+
+[node name="FirTreeStylizedFirTreeStylized003" type="MeshInstance3D" parent="." unique_id=2092352155]
+transform = Transform3D(3.2005596, 0, 0, 0, 3.2005596, 0, 0, 0, 3.2005596, -2.7068777, -0.66835594, -7.8290734)
+mesh = ExtResource("33_fri7c")
+
+[node name="Sketchfab_Scene7" parent="." unique_id=410342126 instance=ExtResource("34_0xx2y")]
+transform = Transform3D(10.45019, 0, 10.693052, 0, 14.951516, 0, -10.693052, 0, 10.45019, -7.3586025, -0.5389605, 1.9918118)
+
+[editable path="Level"]

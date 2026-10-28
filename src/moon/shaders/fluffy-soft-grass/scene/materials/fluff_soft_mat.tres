@@ -1,0 +1,50 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bcx122acubtym"]
+
+[ext_resource type="Shader" uid="uid://40uct0orcns" path="res://moon/shaders/fluffy-soft-grass/shaders/fluffy_soft_grass.gdshader" id="1_f0mr8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_awt07"]
+noise_type = 2
+frequency = 0.15
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ukswk"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_awt07")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ukswk"]
+noise_type = 3
+frequency = 0.0252
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bsind"]
+noise = SubResource("FastNoiseLite_ukswk")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bsind"]
+noise_type = 2
+frequency = 0.15
+cellular_return_type = 0
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_grass"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_bsind")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_f0mr8")
+shader_parameter/grass_pattern = SubResource("NoiseTexture2D_grass")
+shader_parameter/blade_shape = SubResource("NoiseTexture2D_ukswk")
+shader_parameter/color_noise = SubResource("NoiseTexture2D_bsind")
+shader_parameter/pile_height = 0.32500001334195
+shader_parameter/density_cutoff = 0.3370000160075
+shader_parameter/tip_width = 0.0
+shader_parameter/grass_color = Color(0.35, 0.6, 0.2, 1)
+shader_parameter/bottom_grass_color = Color(0.26185283, 0.22499442, 0.093877696, 1)
+shader_parameter/variation_color = Color(0.94707817, 0.71681595, 0.47655463, 1)
+shader_parameter/variation_strength = 0.6410000304475
+shader_parameter/color_map_scale = 0.02400000114
+shader_parameter/curve = 1.0
+shader_parameter/blade_curve = 4.92500022741773
