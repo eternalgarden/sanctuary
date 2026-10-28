@@ -1,0 +1,16 @@
+Fantasia Grass Mod by acidzebra - https://www.nexusmods.com/morrowind/mods/56570
+Permissions as listed on the Nexus page, retrieved 2026-10-28.
+
+Credits and distribution permission
+
+    Other user's assets: All the assets in this file belong to the author, or are from free-to-use modder's resources
+    Upload permission: You can upload this file to other sites but you must credit me as the creator of the file
+    Modification permission: You are allowed to modify my files and release bug fixes or improve on the features so long as you credit me as the original creator
+    Conversion permission: You can convert this file to work with other games as long as you credit me as the creator of the file
+    Asset use permission: You are allowed to use the assets in this file without permission as long as you credit me
+    Asset use permission in mods/files that are being sold: You are not allowed to use assets from this file in any mods/files that are being sold, for money, on Steam Workshop or other platforms
+    Asset use permission in mods/files that earn donation points: You are allowed to earn Donation Points for your mods if they use my assets
+
+File credits
+
+This work builds on meshes created by Remiros and Rytelier for their excellent grass mods; review their grass mod pages permissions section if you want to use the meshes. The textures are mostly my own except for one or two made by either R&R (albeit made worse by my edits). In the spirit of their open permissions, you are free to create new mods with my stuff as long as you credit the creators and keep the permissions open so others can build on your work.
