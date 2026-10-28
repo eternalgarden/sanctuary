@@ -42,13 +42,13 @@
 @font-face {
     font-family: Typographer Woodcut;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/TypographerWoodcut.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/TypographerWoodcut.ttf");
 }
 
 @font-face {
     font-family: Flowers Initials;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/FlowersInitials.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/FlowersInitials.ttf");
 }
 
 html {
