@@ -123,6 +123,30 @@ var chunk_dimensions := Vector3.ONE * 15.0:
 		_dependency_parent.build_completed.connect(rebuild, CONNECT_DEFERRED)
 
 
+# Neo patch: fill the scatter with one ScatterItem per mesh or scene in a folder
+@export_group("Items From Directory", "items_")
+
+## Folder holding the meshes (.res, .mesh) or scenes (.tscn, .scn) to scatter.
+@export_dir var items_directory := ""
+
+## Also look inside subfolders.
+@export var items_recursive := false
+
+## Adds a ScatterItem for every file in the folder that does not have one yet,
+## so pressing it again after adding files only creates the new ones.
+@export_tool_button("Create Items From Directory", "Add")
+var items_create_button: Callable:
+	# a getter, not an initializer: nodes that existed before a script reload would hold Nil
+	get:
+		return _create_items_from_directory
+
+## Removes every ScatterItem of this scatter, whatever its source.
+@export_tool_button("Clear All Items", "Remove")
+var items_clear_button: Callable:
+	get:
+		return _clear_all_items
+
+
 @export_group("Debug", "dbg_")
 
 ## Debug option to disable multithreading during scatter operations.
@@ -172,6 +196,97 @@ var _dependency_parent
 var _physics_helper: ProtonScatterPhysicsHelper
 var _body_rid: RID
 var _collision_shapes: Array[RID]
+# Neo patch: see items_directory
+func _create_items_from_directory() -> void:
+	if items_directory.is_empty() or not DirAccess.dir_exists_absolute(items_directory):
+		push_warning("ProtonScatter warning: Pick an existing items directory first.")
+		return
+
+	var existing := {}
+	for c in get_children():
+		if c is ProtonScatterItem and c.source == 1:
+			existing[c.path] = true
+
+	var new_items: Array[ProtonScatterItem] = []
+	for file in _list_item_files(items_directory):
+		if existing.has(file):
+			continue
+		var res := load(file)
+		if not (res is Mesh or res is PackedScene):
+			continue
+		var item := ProtonScatterItem.new()
+		item.name = file.get_file().get_basename()
+		item.path = file
+		new_items.push_back(item)
+
+	if new_items.is_empty():
+		print("ProtonScatter: no new items in ", items_directory)
+		return
+
+	var scene_root: Node = get_tree().edited_scene_root if Engine.is_editor_hint() else owner
+	if undo_redo:
+		undo_redo.create_action("Create %d scatter items" % new_items.size())
+		for item in new_items:
+			undo_redo.add_do_method(self, "add_child", item, true)
+			undo_redo.add_do_property(item, "owner", scene_root)
+			undo_redo.add_do_reference(item)
+			undo_redo.add_undo_method(self, "remove_child", item)
+		undo_redo.add_do_method(self, "rebuild", true)
+		undo_redo.add_undo_method(self, "rebuild", true)
+		undo_redo.commit_action()
+	else:
+		for item in new_items:
+			add_child(item, true)
+			item.owner = scene_root
+		rebuild(true)
+
+	print("ProtonScatter: created %d items from %s" % [new_items.size(), items_directory])
+
+
+# Neo patch: see items_clear_button
+func _clear_all_items() -> void:
+	var old_items: Array[Node] = []
+	for c in get_children():
+		if c is ProtonScatterItem:
+			old_items.push_back(c)
+
+	if old_items.is_empty():
+		return
+
+	if undo_redo:
+		undo_redo.create_action("Clear %d scatter items" % old_items.size())
+		for item in old_items:
+			undo_redo.add_do_method(self, "remove_child", item)
+			undo_redo.add_undo_method(self, "add_child", item, true)
+			undo_redo.add_undo_method(self, "move_child", item, item.get_index())
+			undo_redo.add_undo_property(item, "owner", item.owner)
+			undo_redo.add_undo_reference(item)
+		undo_redo.add_do_method(self, "rebuild", true)
+		undo_redo.add_undo_method(self, "rebuild", true)
+		undo_redo.commit_action()
+	else:
+		for item in old_items:
+			remove_child(item)
+			item.queue_free()
+		rebuild(true)
+
+	print("ProtonScatter: cleared %d items" % old_items.size())
+
+
+func _list_item_files(dir_path: String) -> PackedStringArray:
+	var files := PackedStringArray()
+	for file in DirAccess.get_files_at(dir_path):
+		# exported builds list remapped resources with a .remap suffix
+		file = file.trim_suffix(".remap")
+		if file.get_extension() in ["res", "mesh", "tscn", "scn"]:
+			files.push_back(dir_path.path_join(file))
+	if items_recursive:
+		for sub in DirAccess.get_directories_at(dir_path):
+			files.append_array(_list_item_files(dir_path.path_join(sub)))
+	files.sort()
+	return files
+
+
 var _ignore_transform_notification = false
 var _is_using_jolt: bool = false
 

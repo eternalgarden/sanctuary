@@ -147,7 +147,11 @@ func _process_transforms(transforms, domain, _seed) -> void:
 		if hit.is_empty():
 			exclude_queries[index].collision_mask = 0 # this point is empty anyway, we dont care
 			continue
-		exclude_queries[index].to = hit.position # only cast up to hit point for correct ordering
+		# only cast up to hit point for correct ordering
+		# Neo patch: reach a hair past the hit, so a body on both collision_mask and exclude_mask
+		# still counts; a ray that ends exactly on a surface misses it
+		var exclude_dir: Vector3 = (exclude_queries[index].to - exclude_queries[index].from).normalized()
+		exclude_queries[index].to = hit.position + exclude_dir * 0.05
 
 	var exclude_hits : Array[Dictionary] = []
 	if exclude_mask != 0: # Only cast the rays if it makes any sense

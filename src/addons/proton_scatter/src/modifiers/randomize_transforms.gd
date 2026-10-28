@@ -4,7 +4,9 @@ extends "base_modifier.gd"
 
 @export var position := Vector3.ZERO
 @export var rotation := Vector3.ZERO
-@export var scale := Vector3.ZERO
+# Neo patch: one uniform multiplier between x (min) and y (max), instead of upstream's
+# per-axis Vector3 that could only grow (1 + randf() * scale)
+@export var scale_range := Vector2.ONE
 
 var _rng: RandomNumberGenerator
 
@@ -25,9 +27,8 @@ func _process_transforms(transforms, domain, random_seed) -> void:
 	_rng.set_seed(random_seed)
 
 	var t: Transform3D
-	var global_t: Transform3D
 	var basis: Basis
-	var random_scale: Vector3
+	var random_scale: float
 	var random_position: Vector3
 	var s_gt: Transform3D = domain.get_global_transform()
 	var s_gt_inverse := s_gt.affine_inverse()
@@ -57,20 +58,11 @@ func _process_transforms(transforms, domain, random_seed) -> void:
 		basis = basis.rotated(axis_z, deg_to_rad(_random_float() * rotation.z))
 
 		# Apply scale
-		random_scale = Vector3.ONE + (_rng.randf() * scale)
+		# still a single randf() call, so seeds keep their positions and rotations
+		random_scale = lerpf(scale_range.x, scale_range.y, _rng.randf())
 
-		if is_using_individual_instances_space():
-			basis.x *= random_scale.x
-			basis.y *= random_scale.y
-			basis.z *= random_scale.z
-
-		elif is_using_global_space():
-			global_t = s_gt * Transform3D(basis, Vector3.ZERO)
-			global_t = global_t.scaled(random_scale)
-			basis = (s_gt_inverse * global_t).basis
-
-		else:
-			basis = basis.scaled(random_scale)
+		# uniform, so the reference frame does not matter
+		basis = basis.scaled(Vector3.ONE * random_scale)
 
 		# Apply position
 		random_position = _random_vec3() * position
