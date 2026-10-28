@@ -1,95 +1,89 @@
 @font-face {
     font-family: Acorn Initials;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/AcornInitials.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/AcornInitials.ttf");
 }
 
 @font-face {
     font-family: Anglican Text;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/AnglicanText.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/AnglicanText.ttf");
 }
 
 @font-face {
     font-family: Barock Caps;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/BarockCaps.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/BarockCaps.ttf");
 }
 
 @font-face {
     font-family: Blackwood Castle;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/BlackwoodCastle.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/BlackwoodCastle.ttf");
 }
 
 @font-face {
     font-family: Blackwood Castle Shadow;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/BlackwoodCastleShadow.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/BlackwoodCastleShadow.ttf");
 }
 
 @font-face {
     font-family: DS Zierschrift;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/DSZierschrift.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/DSZierschrift.ttf");
 }
 
 @font-face {
     font-family: Franktur Schmuck;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/Frakturschmuck.ttf");
-}
-
-@font-face {
-    font-family: Horror Dingbats;
-    font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/HorrorDingbats.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/Frakturschmuck.ttf");
 }
 
 @font-face {
     font-family: Kaiserzeit Gotisch;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/KaiserzeitGotisch.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/KaiserzeitGotisch.ttf");
 }
 
 @font-face {
     font-family: Medici Text;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/MediciText.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/MediciText.ttf");
 }
 
 @font-face {
     font-family: Monats Vignetten;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/MonatsVignetten1.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/MonatsVignetten1.ttf");
 }
 
 @font-face {
     font-family: Schluss Vignetten;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/SchlussVignetten.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/SchlussVignetten.ttf");
 }
 
 @font-face {
     font-family: Schwabacher;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/Schwabacher.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/Schwabacher.ttf");
 }
 
 @font-face {
     font-family: Celtic Frames;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/CelticFrames.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/CelticFrames.ttf");
 }
 
 @font-face {
     font-family: Typographer Woodcut;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/TypographerWoodcut.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/TypographerWoodcut.ttf");
 }
 
 @font-face {
     font-family: Flowers Initials;
     font-style: normal;
-    src: url("./../../../assets/fonts/Mediengestaltung/FlowersInitials.ttf");
+    src: url("./../../../assets/fonts/typographer_mediengestaltung/FlowersInitials.ttf");
 }

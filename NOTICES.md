@@ -7,6 +7,9 @@
 - **Changes:** 
 
 # Third-Party Notices
+
+Sanctuary's own license does not cover the third-party assets, plugins and fonts listed below. Each is distributed under its own license, as stated in its entry.
+
 ## 3D
 
 #### manul
@@ -214,3 +217,31 @@ List of textures from ambient.cg:
 - **Author:** The Maple Mono Project Authors (subframe7536)
 - **Source:** https://github.com/subframe7536/maple-font
 - **License:** SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+
+### Typographer Mediengestaltung (Dieter Steffmann)
+- **Directories:** `ui/src/assets/fonts/typographer_mediengestaltung` (web UI), `src/earth/fonts/typographer_mediengestaltung` (Godot)
+- **Author:** Dieter Steffmann, Typographer Mediengestaltung (Kreuztal, Germany)
+- **Source:** https://www.1001fonts.com/users/steffmann/
+- **License:** Free for commercial use without any restrictions, per the author's own statement (copy in `author_statement.txt` in both directories, retrieved 2026-10-28). Also listed on 1001fonts under the [1001Fonts FFC license](https://www.1001fonts.com/licenses/ffc.html).
+- **Embedded notice:** every font carries "Copyright (c) Typographer Mediengestaltung, <year>. All rights reserved." unless noted otherwise; historical designers credited in the fonts themselves are listed with each font.
+- **Fonts:**
+    - Acorn Initials (AcornInitials.ttf, 2000)
+    - Anglican Text (AnglicanText.ttf, 2001)
+    - Arabesque Initialen (ArabesqueInitialen.ttf, 2002), digitized by Dieter Steffmann
+    - Barock Initialen (BarockCaps.ttf, 2002)
+    - Blackwood Castle (BlackwoodCastle.ttf, 2000)
+    - Blackwood Castle Shadow (BlackwoodCastleShadow.ttf, 2000)
+    - Celtic Frames (CelticFrames.ttf, 2000)
+    - DS Zierschrift (DSZierschrift.ttf, 2012), after the Deutsche Zierschrift by Prof. Rudolf Koch, 1919–1921; digitized by Dieter Steffmann
+    - Eichenlaub Initialen (EichenlaubInitialen.ttf, 2000)
+    - Flowers Initials (FlowersInitials.ttf, 2000)
+    - Fraktur-Schmuck (Frakturschmuck.ttf, 2001), digitized by Dieter Steffmann
+    - Goudy Initialen (GoudyInitialen.ttf, 2000), after the floriated Goudy Initials No. 296 by Frederic W. Goudy for Lanston, early 1900s
+    - Grusskarten Gotisch (GrusskartenGotisch.ttf, 2001)
+    - Kaiserzeit Gotisch (KaiserzeitGotisch.ttf, 2001)
+    - Medici Text (MediciText.ttf in the UI, Medici_Text.ttf in Godot, 2002), full character set added by Dieter Steffmann
+    - Monats-Vignetten 1 (MonatsVignetten1.ttf, 2002), after drawings by Franz Franke for the Bauersche Giesserei, c. 1920; digitized by Dieter Steffmann
+    - Paulus Franck Initialen (PaulusFranckInitialen.ttf, 2002), initials by Paulus Franck from the Nürnberger Schatzkammer; digitized by Dieter Steffmann
+    - Schluss-Vignetten (SchlussVignetten.ttf, 2002), after drawings by the Bauersche Giesserei; digitized by Dieter Steffmann
+    - Schwabacher (Schwabacher.ttf, 2000)
+    - Typographer Woodcut Initials One (TypographerWoodcut.ttf, 2002), digitized by Dieter Steffmann

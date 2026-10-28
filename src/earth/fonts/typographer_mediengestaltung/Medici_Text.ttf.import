@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b77j6rf8cw0ao"
-path="res://.godot/imported/Medici_Text.ttf-eff4beca4de7a2617f8ba568c1434aac.fontdata"
+path="res://.godot/imported/Medici_Text.ttf-49d1b1a6bb3abda679e18429d428a729.fontdata"
 
 [deps]
 
-source_file="res://earth/fonts/medien_gestaltung/Medici_Text.ttf"
-dest_files=["res://.godot/imported/Medici_Text.ttf-eff4beca4de7a2617f8ba568c1434aac.fontdata"]
+source_file="res://earth/fonts/typographer_mediengestaltung/Medici_Text.ttf"
+dest_files=["res://.godot/imported/Medici_Text.ttf-49d1b1a6bb3abda679e18429d428a729.fontdata"]
 
 [params]
 
