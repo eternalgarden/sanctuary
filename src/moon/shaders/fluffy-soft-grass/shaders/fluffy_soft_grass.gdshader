@@ -1,17 +1,19 @@
+/*
+      |\      _,,,---,,_
+ZZZzz /,`.-'`'    -.  ;-;;,_
+     |,4-  ) )-,_. ,\ (  `'-'
+    '---''(_/--'  `-'\_)
+*/
+
 
 shader_type spatial;
 render_mode cull_disabled;
+#include "res://moon/shaders/wind/wind.gdshaderinc"
 
 // Fine, high-frequency noise: each bright speck will become one blade.
 uniform sampler2D grass_pattern : hint_default_white, filter_linear_mipmap, repeat_enable;
 uniform sampler2D blade_shape : hint_default_white, filter_linear_mipmap, repeat_enable;
 uniform sampler2D color_noise : hint_default_white, filter_linear_mipmap, repeat_enable;
-
-global uniform sampler2D wind_noise;
-global uniform vec2 wind_direction;
-global uniform vec2 wind_scale;
-global uniform float wind_speed;
-global uniform float wind_strength;
 
 instance uniform int instance_count : hint_range(1, 32) = 32;
 instance uniform float pile_height : hint_range(0.03, 0.5) = 0.08;
@@ -51,14 +53,11 @@ void vertex() {
 
 void fragment() {
 
-    vec2 wind_dir = wind_direction;
-    vec2 wind_sampling = world_position * wind_scale - wind_dir * TIME * wind_speed;
-	float wind_map = texture(wind_noise, wind_sampling).r;
-    float wind_offset = wind_map * layer * layer * wind_strength;
+    vec2 wind = wind_offset(world_position, layer * layer);
 
     // noise samples cell value
     // it determines how tall a grass blade is
-    vec2 sampling = (world_position + wind_offset * wind_dir) * tiling;
+    vec2 sampling = (world_position + wind) * tiling;
 	float noise = texture(grass_pattern, sampling).r;
 
     // blade samples distance
