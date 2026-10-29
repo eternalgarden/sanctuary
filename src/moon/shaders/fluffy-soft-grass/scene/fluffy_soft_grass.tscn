@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dt5a8q1j3w0ha" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_big_003.tscn" id="6_y48a6"]
 [ext_resource type="PackedScene" uid="uid://dbolxncuxwquf" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_001.tscn" id="7_tuo50"]
 [ext_resource type="PackedScene" uid="uid://dtbvuy025msrq" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_small_001.tscn" id="8_7a5rk"]
+[ext_resource type="PackedScene" uid="uid://dcrxqx41nrifo" path="res://earth/models/props/hand_painted_lamp/hand_painted_lamp.blend" id="9_cpveg"]
 [ext_resource type="PackedScene" uid="uid://4ibq5843mn0g" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_002.tscn" id="9_jclgq"]
 [ext_resource type="PackedScene" uid="uid://vcaw7ioe6q8n" path="res://earth/models/nature/stylised_redwood_trees_pack_with_lod_groups/scenes/redwood_medium_004.tscn" id="10_d43vi"]
 [ext_resource type="Script" uid="uid://dgqq1tf8prx5s" path="res://addons/proton_scatter/src/scatter.gd" id="11_52vyo"]
@@ -38,6 +39,44 @@
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uibwa"]
 _surfaces = [{
+"aabb": AABB(13.751943, 0.67818964, 0.50945187, 7.8958673, 0.86682963, 10.232278),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "fluff",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("QHUAALu9AADdlAAAAAAAAP//AAAQawAAHwoAAKpSAAAha/////8AAL6K//9DQgAA3/X//1StAAAAAP//7pQAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tdbwb"]
+resource_name = "fluffy_soft_grass_Plane_003"
+_surfaces = [{
+"aabb": AABB(13.751943, 0.67818964, 0.50945187, 7.8958673, 0.86682963, 10.232278),
+"attribute_data": PackedByteArray("/v////9//3////9//3////7/////f/9/////f/9///8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": ExtResource("4_awt07"),
+"name": "fluff",
+"primitive": 3,
+"uv_scale": Vector4(0.66666657, 0.66666675, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("QHUAALu998fdlAAAAAD3x///AAAQa/fHHwoAAKpS98cha//////3x76K//9DQvfH3/X//1St98cAAP//7pT3x4/At5+PwLefj8C3n4/At5+PwLefj8C3n4/At5+PwLef")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_uibwa")
+
+[sub_resource type="MultiMesh" id="MultiMesh_cpveg"]
+transform_format = 1
+instance_count = 128
+mesh = SubResource("ArrayMesh_tdbwb")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_urp24"]
+_surfaces = [{
 "aabb": AABB(-12.038824, -0.66835606, -12.658368, 24.077648, 1e-05, 22.899202),
 "format": 34896613377,
 "index_count": 15,
@@ -50,7 +89,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_tdbwb"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_v2no3"]
 resource_name = "fluffy_soft_grass_Plane_001"
 _surfaces = [{
 "aabb": AABB(-12.038824, -0.66835606, -12.658368, 24.077648, 1e-05, 22.899202),
@@ -66,12 +105,90 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAMhhVNX/fwAAgo1U1eQwAAD//1TVGs8AAP//VNX/fwAAAABU1f//AADIYVTVVNWqKlTVqipU1aoqVNWqKlTVqipU1aoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_uibwa")
+shadow_mesh = SubResource("ArrayMesh_urp24")
 
-[sub_resource type="MultiMesh" id="MultiMesh_fri7c"]
+[sub_resource type="MultiMesh" id="MultiMesh_fycq5"]
 transform_format = 1
 instance_count = 128
-mesh = SubResource("ArrayMesh_tdbwb")
+mesh = SubResource("ArrayMesh_v2no3")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p71ak"]
+_surfaces = [{
+"aabb": AABB(2.3152895, -1.5419183, -20.211418, 14.145951, 4.100529, 13.054614),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUA"),
+"name": "fluff",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("+CVA9jM4AAD//74JH4YAAHzV//9SvgAAelAAAAAAAAAAAJwP33kAAISvWxn//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mdb7t"]
+resource_name = "fluffy_soft_grass_Plane_006"
+_surfaces = [{
+"aabb": AABB(2.3152895, -1.5419183, -20.211418, 14.145951, 4.100529, 13.054614),
+"attribute_data": PackedByteArray("/79U1f9//v//f1TV/7/+////VNX/v////79U1f////8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": ExtResource("4_awt07"),
+"name": "fluff",
+"primitive": 3,
+"uv_scale": Vector4(1.3333333, 2, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("+CVA9jM4i+7//74JH4b36HzV//9Svn3uelAAAAAA9+gAAJwP33mm9nzV//9Svn3uhK9bGf//pvb4JUD2MziL7t3HnBEHrBALrseREQesEAs54FgXrseRETngWBfdx5wR")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_p71ak")
+
+[sub_resource type="MultiMesh" id="MultiMesh_6m1jx"]
+transform_format = 1
+instance_count = 128
+mesh = SubResource("ArrayMesh_mdb7t")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gxx6w"]
+_surfaces = [{
+"aabb": AABB(-12.893833, -2.7557807, -16.362247, 5.248131, 5.518201, 5.518196),
+"format": 34896613377,
+"index_count": 240,
+"index_data": PackedByteArray("BQANABYABQAMAA0AFgAPAAUABQAOAAwABQAPAA4AFwAPABYADgAYAAwADAAZAA0ADwAaAA4ADAAYAAcADAAHABkADgAEABgADgAaAAQADwAAABoAFwAAAA8AGgAbAAQABAAcABgABAAbABwAHQAbABoAAAAdABoAFwARAAAAAAARAB0AHAAeABgAGAAeAAcAGwAfABwAHQALABsAGwALAB8AHQAgAAsAEQAgAB0ACwAhAB8AIAAhAAsAHAAfAAYAHAAGAB4AIQAUAB8AHwAUAAYAEgAhACAAEQABACAAAQASACAAIgABABEAIgARABcAIwASAAEAIgAjAAEAEgACACEAIQACABQAAwAiABcAAwAXABYAJAAjACIAAwAkACIAEwASACMAEwACABIAFgAlAAMAJQAkAAMADQAlABYAJAAKACMACgATACMAJgAkACUAJgAKACQADQAIACUACAAmACUADQAZAAgAJgAnAAoAJwATAAoACAAQACYAEAAnACYAGQAQAAgAFQATACcAFQACABMAFAACABUACQAVACcAEAAJACcAFAAVACgAKAAVAAkABgAUACgAHgAGACgAKQAQABkAKQAJABAAKQAoAAkAHgAoACkABwApABkABwAeACkA"),
+"lods": [0.69243854, PackedByteArray("BQAMAA0ADAAHAA0ADQAIAAUADQAHAAgABQAOAAwABQAPAA4ADgAEAAwADAAEAAcADwAAAA4ADgAAAAQAAwAPAAUABQAIAAMAAwAAAA8ABwAQAAgAAwARAAAABwAJABAAEAAJAAgAAwABABEAEQABAAAACAAKAAMACAAJAAoAAwAKAAEACgASAAEAAAABAAsAAAALAAQAEgACAAEAAQACAAsAEwASAAoAEwACABIACQATAAoAAgAUAAsAFQACABMAFAACABUAFQATAAkACwAUAAYAFAAVAAYABAALAAYABgAVAAkABAAGAAcABwAGAAkA"), 1.0386578, PackedByteArray("BQAHAAgABwAJAAgABQAIAAMACAAJAAoACAAKAAMACQACAAoAAwAKAAEACgACAAEAAwAAAAUAAwABAAAABQAEAAcABQAAAAQABwAGAAkAAgAJAAYABAAGAAcAAQACAAsAAAABAAsACwACAAYAAAALAAQABAALAAYA"), 3.812854, PackedByteArray("AAABAAIAAwABAAAAAwACAAEAAAACAAQAAwAAAAUABQACAAMABQAAAAQABAACAAYABQAGAAIABAAGAAUA")],
+"name": "walls",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 42,
+"vertex_data": PackedByteArray("YuHBRrQ8AABf+D25/38AAP9/////fwAAYuHBRkrDAADMWsFGHRMAAP9/AAD/fwAAnB49ubQ8AACfB8FG/38AAMxawUbh7AAAnB49uUrDAAAypT254ewAADKlPbkdEwAAPjkdE/9/AAAiah0T/78AACJqHRP/PwAAPbkdE3FYAADkMP9/jOcAAP7//39xWAAAwMbh7P9/AADcleHs/78AAMFG4exxWAAAwUbh7I2nAAA9uR0TjacAAHvytDz/fwAAYCO0PP8/AABgI7Q8/78AAGCjtDxyGAAA/3//fwAAAADkMP9/chgAABrP/39xGAAAAAD/f3FYAACeXErDchgAAJ7cSsP/PwAA3JXh7P8/AAD///9/jacAAJ7cSsP/vwAAGs//f4znAABgo7Q8jOcAAP9//3///wAAnlxKw4znAACDDUrD/38AAAAA/3+NpwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g74ho"]
+resource_name = "fluffy_soft_grass_Plane_005"
+_surfaces = [{
+"aabb": AABB(-12.893833, -2.7557807, -16.362247, 5.248131, 5.518201, 5.518196),
+"attribute_data": PackedByteArray("XHSv1xZdYK9cdBGH0UWv10UXEYeLLv//Fl3//+iir9eii///Lbpgr7no//9z0RGHc9Gv1///r9e56GCvLbr//6KLYK/oohGHiy5gr9FFEYdFF6/XAABgrxbd1+tc9NfrXPSIwxbdOZvQxTmb0MXX64qu1+uKrjmbRZfX6/9/1+u5aDmbuWiIw7lo1+t0UTmbLjo5m+gi1+uiC4jD6CI5m6ILOZsuOtfriy6v1+giiMMuOojDRRdgr9FFYK90UYjDFl2v13RR1+tcdGCv/385m/9/iMOii6/XRZeIw+iiYK9Flzmbiq6Iwy26r9fQxYjDc9FgrxbdiMO56K/X"),
+"format": 34896613399,
+"index_count": 240,
+"index_data": PackedByteArray("BQAlACkAJQAqACkAJQAUACoAKQAqAAMAFAArACoAFAAmACsAKgAsAAMAKwAsACoAJgAtACsAJgAVAC0AFQAoAC0AKAAnAC0AKAAEACcALQAnABIAKwAtABIAKwASACwALAASAC4AEgAkAC4AJAAjAC4AJAATACMALgAjAAEALAAuAC8ALwAuAAEAAwAsAC8AAwAvADAAAwAwADEAMAAiADEAMQAiAAYAMAAAACIALwAhADAAMAAhAAAALwABACEAIQABADIAAQAgADIAIAAzADIAIAACADMAMgAzABAAIQAyADQANAAyABAAAAAhADQAAAA0ADUAHwAAADUAHwA1AB4ACAAfAB4AHgA1AAcANAA2ADUANQA2AAcANAAQADYANgAQADcAEAA4ADcAOAAdADcAOAARAB0ANwAdAAkANgA3ADkAOQA3AAkABwA2ADkABwA5ADoAHAAHADoAHAA6ABsADwAcABsAGwA6AAwAOQA7ADoAOgA7AAwAOQAJADsAOwAJADwACQAaADwAGgAZADwAGgALABkAPAAZAA4AOwA8AD0APQA8AA4ADAA7AD0APQAOABgADAA9AD4APQAYAD4APgAYAA0AFgAMAD4AFwA+AA0AFgA+ABcACgAWABcA"),
+"lods": [0.69243854, PackedByteArray("CgAWABcAFgAMABcAFwAMAA0ADAAYAA0ADAAOABgADAAJAA4ACQAZAA4AGgAZAAkAGgALABkABwAJAAwAGwAHAAwAHAAHABsADwAcABsABwAQAAkAEAAdAAkAEQAdABAAAAAQAAcAHgAAAAcACAAfAB4AHwAAAB4AAAABABAAAQACABAAIAACAAEAIQABAAAAAwAhAAAAAwABACEAAwAAACIAAwAiAAYAAwASAAEAEgAjAAEAJAAjABIAJAATACMAFAASAAMABQAUAAMAJQAUAAUAFAAVABIAJgAVABQAFQAnABIAKAAnABUAKAAEACcA"), 1.0386578, PackedByteArray("CgAMAA0ADAAOAA0ADAAJAA4ACwAOAAkABwAJAAwADwAHAAwABwAQAAkAEAARAAkAAAAQAAcACAAAAAcAAAABABAAAQACABAAAwABAAAAAwAAAAYAAwASAAEAEgATAAEAFAASAAMABQAUAAMAFAAVABIAFQAEABIA"), 3.812854, PackedByteArray("AAABAAIAAwABAAAAAwAEAAEABQAEAAMAAwAAAAYAAAACAAcACAAAAAcABwACAAkABwAJAAoACgAJAAsA")],
+"material": ExtResource("2_ukswk"),
+"name": "walls",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 63,
+"vertex_data": PackedByteArray("YuHBRrQ8tNpf+D25/38mwv9/////f13lYuHBRkrDeqr/f////3/+wP9/AAD/f/7A/38AAP9/VNXMWsFGHROK8/9/AAD/f/b2nB49ubQ8tNr/fwAA/390yP9/////f1TVnwfBRv9/JsLMWsFG4exxm5wePblKw/qs/38AAP9/XeUypT25HROK8/9/////f/b2MqU9ueHswJb/f////390yMxawUbh7DKXnB49uUrDi6k+OR0T/3+YwiJqHRP/vziy5DD/f4znqpnBRuHsjacLwcFG4exxWAXWPjkdE/9/PdQiah0T/z8q68FG4exxWEnpImodE/8/C/89uR0TcVhJ6cDG4ez/fz3U/v//f3FY0Mw9uR0TcVgF1sDG4ez/f5jC3JXh7P+/OLIiah0T/7+NrOQw/3+M56qZ3JXh7P+/jazBRuHsjac6sz25HRONpzqzYKO0PIzn2Zn/f/9////ngRrP/3+M56qZnlxKw4zn2Zme3ErD/78YrP///3+Npzqze/K0PP9/CsM9uR0TjacLwZ7cSsP/Pyvb3JXh7P8/Kusaz/9/cRhn5mCjtDxyGK/z/3//fwAA//+eXErDchiv89yV4ez/Pwv/5DD/f3IYZ+ZgI7Q8/z8r2wAA/39xWNDMgw1Kw/9/CsMAAP9/jac6s2AjtDz/vxispXSgIQyphhT9zPwZGV2tNDThZI/KHppwVFVUVYNkPfybdrFEWYte3k0gmcCqqqqq8lZ465YpLdPGmJTIATMC5nubwQNjiU27DdH4RbHfZT/EOKCl67b4zpI39so4IVPHJ4tC/ZKhlLOtpJK+00AU7/BD2efLgdfM77bO8zN+JzMrv+oQBnvhAlFbbEFsyAg1xt6rOC4eSYIni0L90OG1fbzRSKtCLrZUZzVoVv9//3/XdLwCl8qWqX26vybWgr8Gz2hfLmxeakxppvcMDrwlGOeC2QOqe7Af7YIR/VSETuAPSTAMF30l/JVZB/P4hB39L5ef0Sh9P/mBRT/Z")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gxx6w")
+
+[sub_resource type="MultiMesh" id="MultiMesh_vu088"]
+transform_format = 1
+instance_count = 128
+mesh = SubResource("ArrayMesh_g74ho")
 buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3i5u1"]
@@ -85,47 +202,11 @@ background_mode = 2
 sky = SubResource("Sky_weyyo")
 ambient_light_sky_contribution = 0.11
 ssao_enabled = true
+glow_enabled = true
+glow_bloom = 0.08
+glow_hdr_threshold = 0.0
 volumetric_fog_density = 0.0031
 volumetric_fog_sky_affect = 0.208
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_i36mh"]
-size = Vector2(4, 4)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md4hw"]
-albedo_color = Color(0.76, 0.55784, 0.44080004, 1)
-
-[sub_resource type="Shader" id="Shader_bf2p1"]
-code = " 
-shader_type spatial;
-render_mode cull_disabled;
-
-// Fine, high-frequency noise: each bright speck will become one blade.
-uniform sampler2D grass_pattern : hint_default_white, filter_linear_mipmap, repeat_enable;
-
-uniform float tiling = 4.0;
-uniform float instance_count : hint_range(1.0, 16.0);
-
-uniform float cutoff : hint_range(0.0, 1.0) = 0.5;
-uniform vec3 grass_color : source_color = vec3(0.35, 0.6, 0.2);
-
-void vertex() {
-    float step = float(INSTANCE_ID) / floor(instance_count - 1.0);
-    float height = mix(0, pile_height, step);
-}
-
-void fragment() {
-	float noise = texture(grass_pattern, UV * tiling).r;
-	if (noise < cutoff) {
-		discard;
-	}
-	ALBEDO = grass_color;
-	ROUGHNESS = 1.0;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3dsn"]
-render_priority = 0
-shader = SubResource("Shader_bf2p1")
 
 [sub_resource type="Resource" id="Resource_osngv"]
 script = ExtResource("14_bf2p1")
@@ -319,36 +400,82 @@ radius = 7.2222176
 
 [node name="Level" parent="." unique_id=1095057981 instance=ExtResource("1_scac7")]
 
-[node name="boxes" parent="Level" index="0" unique_id=1863628521]
+[node name="boxes" parent="Level" index="0" unique_id=1627503252]
 material_override = ExtResource("2_ukswk")
 
-[node name="StaticBody3D" parent="Level/boxes" index="0" unique_id=8723444]
+[node name="StaticBody3D" parent="Level/boxes" index="0" unique_id=19148562]
 collision_layer = 5
 
-[node name="grass_bed" parent="Level" index="1" unique_id=443065106]
+[node name="boxes_top" parent="Level" index="1" unique_id=1766100220]
+layers = 0
+
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/boxes_top" index="1" unique_id=590255385]
+material_override = ExtResource("3_bsind")
+extra_cull_margin = 0.6
+instance_shader_parameters/instance_count = 128
+instance_shader_parameters/pile_height = 0.6
+multimesh = SubResource("MultiMesh_cpveg")
+script = ExtResource("2_bsind")
+LayerCount = 128
+PileHeight = 0.6
+GrassMaterial = ExtResource("3_bsind")
+VisualLayers = 1
+
+[node name="grass_bed" parent="Level" index="2" unique_id=1448708324]
 layers = 0
 surface_material_override/0 = ExtResource("2_ukswk")
 
 [node name="grass_shells" type="MultiMeshInstance3D" parent="Level/grass_bed" index="0" unique_id=1278042906]
 material_override = ExtResource("3_bsind")
+extra_cull_margin = 0.6
 instance_shader_parameters/instance_count = 128
-instance_shader_parameters/tiling = 14.0
-multimesh = SubResource("MultiMesh_fri7c")
+instance_shader_parameters/pile_height = 0.6
+multimesh = SubResource("MultiMesh_fycq5")
 script = ExtResource("2_bsind")
 LayerCount = 128
-Tiling = 14.0
+PileHeight = 0.6
 GrassMaterial = ExtResource("3_bsind")
 
-[node name="slope" parent="Level" index="3" unique_id=1434725708]
+[node name="slope" parent="Level" index="4" unique_id=65823509]
 layers = 1
 material_override = ExtResource("2_ukswk")
 
-[node name="StaticBody3D" parent="Level/slope" index="0" unique_id=789246989]
+[node name="StaticBody3D" parent="Level/slope" index="0" unique_id=1193664091]
 collision_layer = 5
 collision_mask = 0
 
-[node name="StaticBody3D" parent="Level/sphere" parent_id_path=PackedInt32Array(1095057981, 918554455) index="0" unique_id=389178408]
+[node name="slope_top" parent="Level" index="5" unique_id=38453726]
+layers = 0
+
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/slope_top" index="1" unique_id=274161026]
+material_override = ExtResource("3_bsind")
+extra_cull_margin = 0.6
+instance_shader_parameters/instance_count = 128
+instance_shader_parameters/pile_height = 0.6
+multimesh = SubResource("MultiMesh_6m1jx")
+script = ExtResource("2_bsind")
+LayerCount = 128
+PileHeight = 0.6
+GrassMaterial = ExtResource("3_bsind")
+VisualLayers = 1
+
+[node name="sphere" parent="Level" index="6" unique_id=543087381]
+layers = 0
+
+[node name="StaticBody3D" parent="Level/sphere" index="0" unique_id=2101334480]
 collision_layer = 5
+
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/sphere" index="1" unique_id=970055510]
+material_override = ExtResource("3_bsind")
+extra_cull_margin = 0.6
+instance_shader_parameters/instance_count = 128
+instance_shader_parameters/pile_height = 0.6
+multimesh = SubResource("MultiMesh_vu088")
+script = ExtResource("2_bsind")
+LayerCount = 128
+PileHeight = 0.6
+GrassMaterial = ExtResource("3_bsind")
+VisualLayers = 1
 
 [node name="Sketchfab_Scene" parent="Level" unique_id=1051161431 instance=ExtResource("6_fri7c")]
 transform = Transform3D(0.068554364, 0.08525067, 0.026339516, 0, 0.03793545, -0.10585223, -0.077212945, 0.07569075, 0.023385828, -5.7332215, 1.0848765, -3.1441965)
@@ -361,22 +488,25 @@ script = ExtResource("2_7jm6k")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1843312083]
 environment = SubResource("Environment_mcln6")
 
-[node name="Development" type="Node3D" parent="." unique_id=1421790374]
+[node name="hand_painted_lamp2" parent="." unique_id=335704031 instance=ExtResource("9_cpveg")]
+transform = Transform3D(-0.4887794, 0, -0.3106316, 0, 0.57913494, 0, 0.3106316, 0, -0.4887794, 20.561941, 2.182941, 6.327419)
 
-[node name="01_Sheets" type="Node3D" parent="Development" unique_id=528068602]
-transform = Transform3D(0.6262931, 0, -0.7795876, 0, 1, 0, 0.7795876, 0, 0.6262931, -12.314925, 1.5401225, 11.830692)
+[node name="OmniLight3D" type="OmniLight3D" parent="hand_painted_lamp2" unique_id=1778197196]
+transform = Transform3D(1, 0, 3.4519136e-08, 0, 1, 0, -3.4519136e-08, 0, 1, 1.1414242, 3.319585, 0.2684021)
+light_color = Color(0.9418825, 0.6096858, 0, 1)
+light_energy = 3.6
+shadow_enabled = true
+omni_range = 11.387
 
-[node name="ground" type="MeshInstance3D" parent="Development/01_Sheets" unique_id=392242077]
-mesh = SubResource("PlaneMesh_i36mh")
-surface_material_override/0 = SubResource("StandardMaterial3D_md4hw")
+[node name="hand_painted_lamp3" parent="." unique_id=1169063156 instance=ExtResource("9_cpveg")]
+transform = Transform3D(0.19457966, 0, 0.54546857, 0, 0.5791349, 0, -0.54546857, 0, 0.19457966, -11.6353445, 2.8012302, -11.707379)
 
-[node name="grass" type="MeshInstance3D" parent="Development/01_Sheets" unique_id=1084184403]
-transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0.104985714, 0)
-mesh = SubResource("PlaneMesh_i36mh")
-surface_material_override/0 = SubResource("ShaderMaterial_v3dsn")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Development/01_Sheets" unique_id=873118610]
-transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 0, 1.4052196, 0)
+[node name="OmniLight3D" type="OmniLight3D" parent="hand_painted_lamp3" unique_id=1212737357]
+transform = Transform3D(1, 0, 3.4519136e-08, 0, 1, 0, -3.4519136e-08, 0, 1, 1.1414242, 3.319585, 0.2684021)
+light_color = Color(0.9418825, 0.6096858, 0, 1)
+light_energy = 3.6
+shadow_enabled = true
+omni_range = 11.387
 
 [node name="Node3D" type="Node3D" parent="." unique_id=604851577]
 
@@ -692,7 +822,7 @@ path = "uid://6k23yvjiwqbd"
 
 [node name="ProtonScatterCache" type="Node" parent="." unique_id=1329336029]
 script = ExtResource("22_v17n6")
-cache_file = "uid://o38ab4lyp624"
+cache_file = "res://moon/shaders/fluffy-soft-grass/scene/fluffy_soft_grass.scatter_cache.res"
 metadata/_custom_type_script = "uid://6mvg0gb77knh"
 
 [node name="Sketchfab_Scene" parent="." unique_id=2132437677 instance=ExtResource("23_to860")]

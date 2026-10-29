@@ -13,9 +13,6 @@ public partial class GrassShells : MultiMeshInstance3D
     [Export]
     int LayerCount { get; set; } = 32;
 
-    [Export]
-    float Tiling { get; set; } = 4f;
-
     [Export(PropertyHint.Range, "0.05,0.6")]
     float PileHeight { get; set; } = 0.08f;
 
@@ -88,7 +85,6 @@ public partial class GrassShells : MultiMeshInstance3D
         meshInstance.Layers = 0;
 
         SetInstanceShaderParameter("instance_count", LayerCount);
-        SetInstanceShaderParameter("tiling", Tiling);
         SetInstanceShaderParameter("pile_height", PileHeight);
         MaterialOverride = GrassMaterial;
         ExtraCullMargin = PileHeight;

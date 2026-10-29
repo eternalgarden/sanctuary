@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+proton_scatter/always_show_gizmos=false
+
 [application]
 
 config/name="sanctuary"
@@ -91,3 +95,4 @@ move_fly_mode={
 
 rendering_device/driver.windows="d3d12"
 anti_aliasing/quality/use_debanding=true
+anti_aliasing/quality/use_taa=true

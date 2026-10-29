@@ -21,6 +21,9 @@ export_credentials.cfg
 *.VoxelGI_data.res
 *.lmbake
 
+# 🐖 ProtonScatter caches (rebuilt from the scene when missing; Rebuild Scatter Caches tool in src/moon/tools)
+*.scatter_cache.res
+
 # 🐖 godot-cef native binaries (~2.5 GB, fetch with src/moon/tools/fetch_godot_cef.sh)
 src/addons/godot_cef/bin/
 

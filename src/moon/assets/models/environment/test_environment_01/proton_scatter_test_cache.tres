@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="ProtonScatterCacheResource" format=3 uid="uid://dqo3ewub5xryk"]
-
-[ext_resource type="Script" uid="uid://cik70n6nyg224" path="res://addons/proton_scatter/src/common/cache_resource.gd" id="1_4fy7v"]
-
-[resource]
-script = ExtResource("1_4fy7v")
-metadata/_custom_type_script = "uid://cik70n6nyg224"

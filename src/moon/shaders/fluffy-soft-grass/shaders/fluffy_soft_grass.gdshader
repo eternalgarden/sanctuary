@@ -7,10 +7,10 @@ uniform sampler2D grass_pattern : hint_default_white, filter_linear_mipmap, repe
 uniform sampler2D blade_shape : hint_default_white, filter_linear_mipmap, repeat_enable;
 uniform sampler2D color_noise : hint_default_white, filter_linear_mipmap, repeat_enable;
 
-instance uniform float tiling = 4.0;
 instance uniform int instance_count : hint_range(1, 32) = 32;
 instance uniform float pile_height : hint_range(0.03, 0.5) = 0.08;
 
+uniform float tiling = 4.0;
 // 0 = a blade on every cell, higher = fewer blades over bare (but solid) floor.
 uniform float density_cutoff : hint_range(0.0, 0.99) = 0.0;
 uniform float tip_width : hint_range(0.0, 1.0) = 0.5;
@@ -46,11 +46,11 @@ void vertex() {
 void fragment() {
     // noise samples cell value
     // it determines how tall a grass blade is
-	float noise = texture(grass_pattern, UV * tiling).r;
+	float noise = texture(grass_pattern, world_position * tiling * 0.1).r;
 
     // blade samples distance
     // 0 is the centre line of a grass blade
-	float blade = texture(blade_shape, UV * tiling).r;
+	float blade = texture(blade_shape, world_position * tiling).r;
 
     // layer at which this blade's tip is, 0–1
     // float max_layer = noise; 

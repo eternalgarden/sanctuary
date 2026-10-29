@@ -66,20 +66,13 @@ func _ready() -> void:
 								Please open the scene in the editor and set a default value.")
 			return
 
-		# Retrieve the scene name to create a unique recognizable name
+		# Neo patch: the cache sits next to its scene as <scene>.scatter_cache.res, a name
+		# .gitignore matches (caches are rebuilt from the scene, see restore_cache)
 		var scene_path: String = _scene_root.get_scene_file_path()
-		var scene_name: String
-
-		# If the scene path is not available, set a random name
 		if scene_path.is_empty():
-			scene_name = str(randi())
+			cache_file = DEFAULT_CACHE_FOLDER.path_join(str(randi()) + ".scatter_cache.res")
 		else:
-			# Use the base name of the scene file and append a hash to avoid collisions
-			scene_name = scene_path.get_file().get_basename()
-			scene_name += "_" + str(scene_path.hash())
-
-		# Set the cache path to the cache folder, incorporating the scene name
-		cache_file = DEFAULT_CACHE_FOLDER.get_basename().path_join(scene_name + "_scatter_cache.res")
+			cache_file = scene_path.get_basename() + ".scatter_cache.res"
 		return
 
 	restore_cache()
@@ -172,9 +165,13 @@ func update_cache() -> void:
 
 
 func restore_cache() -> void:
-	# Load the cache file if it exists
+	# Neo patch: cache files are git-ignored, so a fresh clone has none; rebuild the scatters
+	# instead of leaving them empty (and in the editor, write the cache again)
 	if not ResourceLoader.exists(cache_file):
-		printerr("Could not find cache file ", cache_file)
+		print("ProtonScatter: no cache at ", cache_file, ", rebuilding the scatters")
+		_scatter_nodes.clear()
+		_discover_scatter_nodes(_scene_root)
+		await _rebuild_in_dependency_order(_get_cached_scatter_nodes())
 		return
 
 	if is_inside_tree():
@@ -185,16 +182,23 @@ func restore_cache() -> void:
 	else:
 		_local_cache = load(cache_file)
 
-	if not _local_cache:
-		printerr("Could not load cache: ", cache_file)
-		return
-
 	_scatter_nodes.clear()
 	_discover_scatter_nodes(_scene_root)
+
+	if not _local_cache:
+		printerr("Could not load cache: ", cache_file)
+		await _rebuild_in_dependency_order(_get_cached_scatter_nodes()) # Neo patch
+		return
+
+	var missing: Array[ProtonScatter] = [] # Neo patch: scatters the cache has no entry for
 
 	for s: ProtonScatter in _scatter_nodes:
 		if s.force_rebuild_on_load:
 			continue # Ignore the cache if the scatter node is about to rebuild anyway.
+
+		if not _local_cache.data.has(String(_scene_root.get_path_to(s))):
+			missing.push_back(s)
+			continue
 
 		# Send the cached transforms to the scatter node.
 		var transforms: ProtonScatterTransformList = ProtonScatterTransformList.new()
@@ -205,6 +209,70 @@ func restore_cache() -> void:
 		_scatter_nodes[s] = 0
 
 	cache_restored.emit()
+
+	if not missing.is_empty():
+		await _rebuild_in_dependency_order(missing)
+
+
+## Neo patch: rebuilds every scatter this cache stores and saves a fresh cache
+## (used by res://moon/tools/rebuild_scatter_caches.gd).
+func rebuild_all() -> void:
+	_scatter_nodes.clear()
+	_discover_scatter_nodes(_scene_root)
+	_local_cache = ProtonScatterCacheResource.new()
+	await _rebuild_in_dependency_order(_get_cached_scatter_nodes())
+
+
+# Neo patch: the scatters that load from the cache instead of rebuilding on their own
+func _get_cached_scatter_nodes() -> Array[ProtonScatter]:
+	var nodes: Array[ProtonScatter] = []
+	for s: ProtonScatter in _scatter_nodes:
+		if not s.force_rebuild_on_load:
+			nodes.push_back(s)
+	return nodes
+
+
+# Neo patch: rebuild one scatter at a time, each after its scatter_parent (trees before
+# undergrowth), since the scatter_parent signal chain is not connected at scene load
+func _rebuild_in_dependency_order(nodes: Array[ProtonScatter]) -> void:
+	if nodes.is_empty():
+		return
+
+	# let every scatter finish _ready and the colliders reach the physics space first
+	await get_tree().process_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+
+	var pending: Array[ProtonScatter] = nodes.duplicate()
+	while not pending.is_empty():
+		var next: ProtonScatter = pending[0]
+		for s: ProtonScatter in pending:
+			var parent: Node = null
+			if not s.scatter_parent.is_empty():
+				parent = s.get_node_or_null(s.scatter_parent)
+			if parent not in pending:
+				next = s
+				break
+		pending.erase(next)
+		await _rebuild_and_wait(next)
+
+	if Engine.is_editor_hint():
+		update_cache()
+
+
+func _rebuild_and_wait(s: ProtonScatter) -> void:
+	var done: Array[bool] = [false]
+	var on_done := func() -> void: done[0] = true
+	s.build_completed.connect(on_done, CONNECT_ONE_SHOT)
+	s.rebuild()
+
+	# a scatter with no items or shapes aborts without build_completed, so don't wait forever
+	var start: int = Time.get_ticks_msec()
+	while not done[0] and Time.get_ticks_msec() - start < 30000:
+		await get_tree().process_frame
+
+	if s.build_completed.is_connected(on_done):
+		s.build_completed.disconnect(on_done)
 
 
 func enable_for_all_nodes() -> void:

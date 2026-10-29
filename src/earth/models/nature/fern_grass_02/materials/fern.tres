@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b6as1n31jytv3" path="res://earth/models/nature/fern_grass_02/textures/Material_metallicRoughness.png" id="2_ahs30"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpo6x"]
-load_path = "res://.godot/imported/Material_normal.png-b61d9ea1bf5674dbff8a7487abe19326.s3tc.ctex"
 
 [resource]
 transparency = 3
