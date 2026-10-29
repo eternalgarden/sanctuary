@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvpe2c7ddrwd1"]
+
+[ext_resource type="Texture2D" uid="uid://b4sv874rfj4gt" path="res://earth/models/props/hand_painted_lamp/textures/lamp_glass_color.png" id="1_color"]
+
+[resource]
+resource_name = "lamp_glass"
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 0.37)
+roughness = 0.6
+emission_enabled = true
+emission_energy_multiplier = 3.81
+emission_texture = ExtResource("1_color")
