@@ -29,6 +29,9 @@ UnderwaterEnv = ExtResource("3_rtvao")
 [node name="Fly Ability 3D" parent="." index="6" unique_id=181098017]
 _active = true
 
+[node name="Camera" parent="Head" parent_id_path=PackedInt32Array(760985275) index="0" unique_id=2054136163]
+cull_mask = 1047551
+
 [node name="Head Bob" parent="Head" parent_id_path=PackedInt32Array(760985275) index="1" unique_id=974969197]
 BobCurve = ExtResource("4_waarh")
 

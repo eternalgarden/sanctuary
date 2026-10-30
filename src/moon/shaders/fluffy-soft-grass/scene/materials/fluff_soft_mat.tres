@@ -1,6 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://bcx122acubtym"]
 
 [ext_resource type="Shader" uid="uid://40uct0orcns" path="res://moon/shaders/fluffy-soft-grass/shaders/fluffy_soft_grass.gdshader" id="1_f0mr8"]
+[ext_resource type="Texture2D" uid="uid://j4ab4ifqged4" path="res://earth/textures/ground/simple_seamless_tiles_of_dirt_and_sand/Dirt 3 .png" id="2_m1ngp"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_awt07"]
 noise_type = 2
@@ -39,12 +40,17 @@ shader_parameter/grass_pattern = SubResource("NoiseTexture2D_grass")
 shader_parameter/blade_shape = SubResource("NoiseTexture2D_ukswk")
 shader_parameter/color_noise = SubResource("NoiseTexture2D_bsind")
 shader_parameter/tiling = 0.3
-shader_parameter/density_cutoff = 0.0390000018525
+shader_parameter/ground_texture = ExtResource("2_m1ngp")
+shader_parameter/ground_tiling = 0.2
+shader_parameter/ground_blend_height = 0.09600000456
+shader_parameter/ground_blend_softness = 0.0770000036575
+shader_parameter/trace_regrowth_shift_scale = 0.5290000251275
+shader_parameter/density_cutoff = 0.0
 shader_parameter/tip_width = 1.0
 shader_parameter/grass_color = Color(0.59716034, 0.7222628, 0.30117664, 1)
-shader_parameter/bottom_grass_color = Color(0.114851244, 0.050924495, 0.010015046, 1)
-shader_parameter/variation_color = Color(0.809011, 0.79869705, 0.16095641, 1)
+shader_parameter/bottom_grass_color = Color(0.21686852, 0.11586512, 0.037180826, 1)
+shader_parameter/variation_color = Color(0.8524246, 0.78197396, 0.14234123, 1)
 shader_parameter/variation_strength = 1.0
 shader_parameter/color_map_scale = 0.02400000114
-shader_parameter/curve = 1.0
+shader_parameter/curve = 2.0770000511575
 shader_parameter/blade_curve = 4.92500022741773
