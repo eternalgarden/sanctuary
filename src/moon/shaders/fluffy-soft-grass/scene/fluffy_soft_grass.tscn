@@ -37,11 +37,6 @@
 [ext_resource type="ArrayMesh" uid="uid://cyrqopq2eepvd" path="res://earth/models/nature/fir_tree_stylized/save_paths/fir_tree_stylized_fir_tree_stylized_002.res" id="32_0xx2y"]
 [ext_resource type="ArrayMesh" uid="uid://yyslv3mjklwv" path="res://earth/models/nature/fir_tree_stylized/save_paths/fir_tree_stylized_fir_tree_stylized_003.res" id="33_fri7c"]
 [ext_resource type="PackedScene" uid="uid://bax2kgex72nup" path="res://earth/models/props/stylized_tent/scene.gltf" id="34_0xx2y"]
-[ext_resource type="Material" uid="uid://c0ykin0ycb56s" path="res://moon/shaders/fluffy-soft-grass/game/trace_particle_process_material.tres" id="37_6m1jx"]
-[ext_resource type="Script" uid="uid://drwbypqx4wq5p" path="res://moon/shaders/fluffy-soft-grass/scripts/GrassTraces.cs" id="37_ydux4"]
-[ext_resource type="Script" uid="uid://c2vlnfygmmr7x" path="res://moon/shaders/fluffy-soft-grass/scripts/CircleWalker.cs" id="38_iplxp"]
-[ext_resource type="Environment" uid="uid://dl0w1yjjdefx1" path="res://moon/shaders/fluffy-soft-grass/game/trace_env.tres" id="38_vu088"]
-[ext_resource type="Material" uid="uid://cmljdejim00c8" path="res://moon/shaders/fluffy-soft-grass/game/trace_quad_material.tres" id="39_vu088"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uibwa"]
 _surfaces = [{
@@ -75,7 +70,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_uibwa")
 
-[sub_resource type="MultiMesh" id="MultiMesh_u2tbc"]
+[sub_resource type="MultiMesh" id="MultiMesh_fycq5"]
 transform_format = 1
 instance_count = 128
 mesh = SubResource("ArrayMesh_tdbwb")
@@ -113,7 +108,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_urp24")
 
-[sub_resource type="MultiMesh" id="MultiMesh_l4bny"]
+[sub_resource type="MultiMesh" id="MultiMesh_6m1jx"]
 transform_format = 1
 instance_count = 128
 mesh = SubResource("ArrayMesh_v2no3")
@@ -151,7 +146,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p71ak")
 
-[sub_resource type="MultiMesh" id="MultiMesh_ycu6p"]
+[sub_resource type="MultiMesh" id="MultiMesh_vu088"]
 transform_format = 1
 instance_count = 128
 mesh = SubResource("ArrayMesh_mdb7t")
@@ -191,7 +186,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gxx6w")
 
-[sub_resource type="MultiMesh" id="MultiMesh_6ee0l"]
+[sub_resource type="MultiMesh" id="MultiMesh_iplxp"]
 transform_format = 1
 instance_count = 128
 mesh = SubResource("ArrayMesh_g74ho")
@@ -313,13 +308,6 @@ radius = 5.575509
 script = ExtResource("20_s2r6m")
 radius = 7.2222176
 
-[sub_resource type="QuadMesh" id="QuadMesh_c6l1b"]
-size = Vector2(0.8, 0.8)
-orientation = 1
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_48qbq"]
-viewport_path = NodePath("GrassTraces/SubViewport")
-
 [node name="FluffySoftGrass" type="Node3D" unique_id=1276029772]
 
 [node name="Level" parent="." unique_id=1095057981 instance=ExtResource("1_scac7")]
@@ -330,22 +318,19 @@ material_override = ExtResource("2_ukswk")
 [node name="StaticBody3D" parent="Level/boxes" index="0" unique_id=551759124]
 collision_layer = 5
 
-[node name="boxes_top" parent="Level" index="1" unique_id=1455288697]
-layers = 0
-
-[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/boxes_top" index="0" unique_id=590255385]
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/boxes_top" parent_id_path=PackedInt32Array(1095057981, 1455288697) index="0" unique_id=590255385]
 material_override = ExtResource("3_bsind")
 extra_cull_margin = 0.259
 instance_shader_parameters/instance_count = 128
 instance_shader_parameters/pile_height = 0.259
-multimesh = SubResource("MultiMesh_u2tbc")
+multimesh = SubResource("MultiMesh_fycq5")
 script = ExtResource("2_bsind")
 LayerCount = 128
 PileHeight = 0.259
 GrassMaterial = ExtResource("3_bsind")
 VisualLayers = 1
 
-[node name="StaticBody3D" parent="Level/boxes_top" index="1" unique_id=436971747]
+[node name="StaticBody3D" parent="Level/boxes_top" parent_id_path=PackedInt32Array(1095057981, 1455288697) index="1" unique_id=436971747]
 collision_layer = 5
 
 [node name="grass_bed" parent="Level" index="2" unique_id=780840065]
@@ -357,7 +342,7 @@ material_override = ExtResource("3_bsind")
 extra_cull_margin = 0.259
 instance_shader_parameters/instance_count = 128
 instance_shader_parameters/pile_height = 0.259
-multimesh = SubResource("MultiMesh_l4bny")
+multimesh = SubResource("MultiMesh_6m1jx")
 script = ExtResource("2_bsind")
 LayerCount = 128
 PileHeight = 0.259
@@ -371,36 +356,30 @@ material_override = ExtResource("2_ukswk")
 collision_layer = 5
 collision_mask = 0
 
-[node name="slope_top" parent="Level" index="5" unique_id=1753957459]
-layers = 0
-
-[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/slope_top" index="0" unique_id=274161026]
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/slope_top" parent_id_path=PackedInt32Array(1095057981, 1753957459) index="0" unique_id=274161026]
 material_override = ExtResource("3_bsind")
 extra_cull_margin = 0.259
 instance_shader_parameters/instance_count = 128
 instance_shader_parameters/pile_height = 0.259
-multimesh = SubResource("MultiMesh_ycu6p")
+multimesh = SubResource("MultiMesh_vu088")
 script = ExtResource("2_bsind")
 LayerCount = 128
 PileHeight = 0.259
 GrassMaterial = ExtResource("3_bsind")
 VisualLayers = 1
 
-[node name="StaticBody3D" parent="Level/slope_top" index="1" unique_id=1958942463]
+[node name="StaticBody3D" parent="Level/slope_top" parent_id_path=PackedInt32Array(1095057981, 1753957459) index="1" unique_id=1958942463]
 collision_layer = 5
 
-[node name="sphere" parent="Level" index="6" unique_id=1490647055]
-layers = 0
-
-[node name="StaticBody3D" parent="Level/sphere" index="0" unique_id=698285312]
+[node name="StaticBody3D" parent="Level/sphere" parent_id_path=PackedInt32Array(1095057981, 1490647055) index="0" unique_id=698285312]
 collision_layer = 5
 
-[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/sphere" index="1" unique_id=970055510]
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/sphere" parent_id_path=PackedInt32Array(1095057981, 1490647055) index="1" unique_id=970055510]
 material_override = ExtResource("3_bsind")
 extra_cull_margin = 0.6
 instance_shader_parameters/instance_count = 128
 instance_shader_parameters/pile_height = 0.6
-multimesh = SubResource("MultiMesh_6ee0l")
+multimesh = SubResource("MultiMesh_iplxp")
 script = ExtResource("2_bsind")
 LayerCount = 128
 PileHeight = 0.6
@@ -633,54 +612,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.672415, 3.8146973e-06, -10
 
 [node name="redwood_medium_006" parent="Environment/Node3D" unique_id=255588873 instance=ExtResource("7_tuo50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.025585, 1.9073486e-06, 20.825123)
-
-[node name="GrassTraces" type="Node3D" parent="." unique_id=525780237]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="GrassTraces" unique_id=1204611982]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.131027, 0.3876254, -1.6070901)
-light_color = Color(1, 0.36915982, 0.51950765, 1)
-light_energy = 1.6
-
-[node name="SubViewport" type="SubViewport" parent="GrassTraces" unique_id=581182633]
-size = Vector2i(2048, 2048)
-render_target_update_mode = 4
-script = ExtResource("37_ydux4")
-
-[node name="GrassWalkCamera" type="Camera3D" parent="GrassTraces/SubViewport" unique_id=1887193553]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.3257794, 10.110744, 0.12613297)
-cull_mask = 1024
-environment = ExtResource("38_vu088")
-projection = 1
-size = 50.0
-
-[node name="Walker" type="Node3D" parent="GrassTraces" unique_id=240074645]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3257794, 0.11074406, 0.12613297)
-script = ExtResource("38_iplxp")
-Radius = 5.0
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="GrassTraces/Walker" unique_id=321410300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31779385, 0, -1.7459797)
-layers = 1024
-material_override = ExtResource("39_vu088")
-amount = 256
-lifetime = 12.0
-process_material = ExtResource("37_6m1jx")
-draw_pass_1 = SubResource("QuadMesh_c6l1b")
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="GrassTraces/Walker" unique_id=1931554031]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-remote_path = NodePath("../../SubViewport/GrassWalkCamera")
-update_rotation = false
-update_scale = false
-
-[node name="Debug" type="Node3D" parent="GrassTraces" unique_id=834359941]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="GrassTraces/Debug" unique_id=1833606753]
-
-[node name="TextureRect" type="TextureRect" parent="GrassTraces/Debug/CanvasLayer" unique_id=312434273]
-custom_maximum_size = Vector2(256, 256)
-offset_right = 256.0
-offset_bottom = 256.0
-texture = SubResource("ViewportTexture_48qbq")
 
 [editable path="Level"]

@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://n8sksqrr2qpd" path="res://fillory/fairies/player/internal/character_controller/effects/audio/AudioInteract.cs" id="10_jqtvs"]
 [ext_resource type="Resource" uid="uid://dx5kojv0cn4yl" path="res://fillory/fairies/player/game/character-controller/audio/wood_audio_interact.tres" id="10_xwjtq"]
 [ext_resource type="Resource" uid="uid://clro80qf2tdqi" path="res://fillory/fairies/player/game/character-controller/audio/water_audio_interact.tres" id="11_10eo5"]
+[ext_resource type="PackedScene" path="res://moon/shaders/fluffy-soft-grass/game/grass_trace_emitter.tscn" id="12_gtrace"]
 
 [node name="Player" unique_id=1679920196 instance=ExtResource("1_fbpun")]
 script = ExtResource("2_8r0nc")
@@ -40,3 +41,5 @@ AudioInteract = ExtResource("5_6q4eq")
 PhysicMaterials = Array[PhysicsMaterial]([ExtResource("6_cb2o2"), ExtResource("7_tfxft"), ExtResource("8_x73fn")])
 AudioInteracts = Array[ExtResource("10_jqtvs")]([ExtResource("5_6q4eq"), ExtResource("9_mdj3p"), ExtResource("10_xwjtq")])
 WaterAudioInteract = ExtResource("11_10eo5")
+
+[node name="GrassTraceEmitter" parent="." instance=ExtResource("12_gtrace")]
