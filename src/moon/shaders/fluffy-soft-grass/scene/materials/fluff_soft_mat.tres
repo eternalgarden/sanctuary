@@ -13,14 +13,6 @@ height = 256
 noise = SubResource("FastNoiseLite_awt07")
 seamless = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ukswk"]
-noise_type = 3
-frequency = 0.0252
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bsind"]
-noise = SubResource("FastNoiseLite_ukswk")
-seamless = true
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bsind"]
 noise_type = 2
 frequency = 0.15
@@ -33,24 +25,33 @@ height = 256
 noise = SubResource("FastNoiseLite_bsind")
 seamless = true
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kslb6"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_76her"]
+noise = SubResource("FastNoiseLite_kslb6")
+
 [resource]
 render_priority = 0
 shader = ExtResource("1_f0mr8")
 shader_parameter/grass_pattern = SubResource("NoiseTexture2D_grass")
 shader_parameter/blade_shape = SubResource("NoiseTexture2D_ukswk")
-shader_parameter/color_noise = SubResource("NoiseTexture2D_bsind")
 shader_parameter/tiling = 0.3
 shader_parameter/ground_texture = ExtResource("2_m1ngp")
 shader_parameter/ground_tiling = 0.2
-shader_parameter/ground_blend_height = 0.09600000456
+shader_parameter/ground_blend_height = 0.058000002755
 shader_parameter/ground_blend_softness = 0.0770000036575
 shader_parameter/trace_regrowth_shift_scale = 0.5290000251275
+shader_parameter/variation_noise = SubResource("NoiseTexture2D_76her")
+shader_parameter/variation_color = Color(0.8524246, 0.78197396, 0.14234123, 1)
+shader_parameter/variation_color_strength = 0.462000021945
+shader_parameter/variation_height_strength = 0.3990000189525
+shader_parameter/wind_scaler = 1.7690000365275
+shader_parameter/wind_darkening = 0.40800001938
+shader_parameter/wind_desaturation = 0.1310000062225
 shader_parameter/density_cutoff = 0.0
 shader_parameter/tip_width = 1.0
 shader_parameter/grass_color = Color(0.59716034, 0.7222628, 0.30117664, 1)
 shader_parameter/bottom_grass_color = Color(0.21686852, 0.11586512, 0.037180826, 1)
-shader_parameter/variation_color = Color(0.8524246, 0.78197396, 0.14234123, 1)
-shader_parameter/variation_strength = 1.0
 shader_parameter/color_map_scale = 0.02400000114
 shader_parameter/curve = 2.0770000511575
 shader_parameter/blade_curve = 4.92500022741773

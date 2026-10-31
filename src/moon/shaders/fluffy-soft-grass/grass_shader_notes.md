@@ -268,6 +268,10 @@ Uneven ground (hills, ramps) works, since sheets move along each vertex's `NORMA
       every sheet is lit the same because all normals point straight up.
 - [ ] **9. Distance fade and performance:** far sheets collapse to zero size, so a whole valley
       costs about as much as a flat floor. Profile it.
+      Quick wins first: the spawners run 128 layers (try 32–48 side by side); `CastShadow`
+      off on the spawner (with `discard`, every shadow cascade reruns all layers); trace
+      SubViewport 2048 → 1024. Measure with Perspective → Display Overdraw and the Visual
+      Profiler.
 - [ ] **10. Polish:** grass masks (grass only where painted, bare paths), near-camera smoosh,
       maybe mowing.
 
@@ -277,8 +281,17 @@ Uneven ground (hills, ramps) works, since sheets move along each vertex's `NORMA
       (needed because Godot has no geometry shaders).
 - [ ] A wind node that drives the wind globals at runtime
       (`RenderingServer.GlobalShaderParameterSet`) for gusts and storms.
-- [ ] The trace emitter follows the player; wiring it through rzeka and the player fairy can
-      wait until it works here.
+- [x] The trace emitter follows the player: `game/grass_trace_emitter.tscn` (footprint
+      particles, trace SubViewport + camera, `RemoteTransform3D`) instanced under `Player` in
+      `fillory/fairies/player/game/character-controller/player.tscn`. Never two emitters in
+      one scene: they fight over the same global map.
+- [ ] **No footprints while airborne** (jumping, fly mode): the map is top-down, so flying
+      over grass flattens it. The player fairy owns its scene, so its own code can set
+      `Footprints.Emitting = IsOnFloor()` on the child; no interface, DI or rzeka needed.
+- [ ] Later, when other walkers (animals, NPCs) should leave trails too: split into **one
+      trace map in the world** (a forest following `IPlayerLocatorFairy` → position, still an
+      empty placeholder) and **many footprint emitters** on whoever walks. Moon rule: once
+      code needs rzeka or a fairy, it moves to `fillory`.
 
 ## Way of working
 
