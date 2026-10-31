@@ -45,6 +45,10 @@ uniform float wind_scaler : hint_range(1.0, 5.0) = 1.0;
 uniform float wind_darkening : hint_range(0.0, 1.0) = 0.3;
 uniform float wind_desaturation : hint_range(0.0, 1.0) = 0.5;
 
+group_uniforms RimLight;
+uniform vec3 rim_color : source_color = vec3(0.35, 0.6, 0.2);
+uniform float rim_power : hint_range(0.5, 8.0) = 3.0;
+
 group_uniforms Other;
 // 0 = a blade on every cell, higher = fewer blades over bare (but solid) floor.
 uniform float density_cutoff : hint_range(0.0, 0.99) = 0.0;
@@ -133,17 +137,19 @@ void fragment() {
 		discard;
 	}
 
-    // sample grass colouring variation noise map
-
-
+    /* top grass colour with appliet variation color */
     vec3 top_col = mix(grass_color, variation_color, variation * variation_color_strength);
-float luma = dot(top_col, vec3(0.2126, 0.7152, 0.0722));
-top_col = mix(vec3(luma), top_col, 1.0 - wind.z * wind_desaturation);
+
+    /* wind desaturation*/
+    float luma = dot(top_col, vec3(0.2126, 0.7152, 0.0722));
+    top_col = mix(vec3(luma), top_col, 1.0 - wind.z * wind_desaturation);
+
+    /* wind darkening*/
     top_col *= 1.0 - min(wind.z * wind_darkening, 1.0);
+
 
     // todo, work on it, idea to make grass darken on wind
     // top_col = mix(top_col, top_col * 0.2, normalize(length(wind)));
-
     float trace_regrowth_shift = trace * max_layer_pre_trace * trace_regrowth_shift_scale;
     float t = min(pow(layer, curve) + trace_regrowth_shift, 1.0);
     vec3 grass = mix(bottom_grass_color, top_col, t);
@@ -158,6 +164,13 @@ top_col = mix(vec3(luma), top_col, 1.0 - wind.z * wind_desaturation);
     float weight = smoothstep(edge0, edge1, layer);
 
     vec3 final_color = mix(ground, grass, weight);
+
+    /* rim light (fresnel)*/
+    float rim = min(1.0 - dot(NORMAL, VIEW), 1.0);
+    rim = pow(rim, rim_power);
+    rim *= layer;
+    final_color += rim_color * rim;
+    final_color = min(final_color, 1.0);
 
 	ALBEDO = final_color;
 	ROUGHNESS = 1.0;
