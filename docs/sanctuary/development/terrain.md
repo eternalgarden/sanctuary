@@ -28,7 +28,7 @@
 				- consider the size of the undergrowth element that should surround it, despite a distance it might be broad enough to overlap anyway
 				- make it too large and you will have plain gaps of undergrowth around it
 			- layer 3 was arbitrarilly selected, it is now reserved for `scatter_block`
-
+k
 - 4. Scatter it
 	- *One ProtonScatter node per layer* (trees, bushes, grass). 
 		- Variants of the same thing go in as ScatterItems in the same node, with proportion controlling the mix.

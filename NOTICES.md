@@ -121,7 +121,54 @@ Sanctuary's own license does not cover the third-party assets, plugins and fonts
     - Removed the leaf blend-shape animation.
     - Merged the trunk and branch materials, switched the leaves to an alpha cutout, and removed the normal and metallic-roughness maps.
     - Decimated the branches to half their triangles and downscaled the textures (leaves 2048, bark 1024).
-    
+
+#### fir_tree_stylized
+- **Filename:** fir_tree_stylized (fir_tree_stylized.blend)
+- **Author:** [AnnaBelle Fibonacci](https://sketchfab.com/annabellefibonacci)
+- **Source:** https://sketchfab.com/3d-models/fir-tree-stylized-f47b67799db24877bf005091ade07e79 ("Fir Tree Stylized")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Converted to a `.blend` file.
+    - Split the three trees apart, each joining its bark and branch meshes, with the origin at the trunk base.
+    - Switched the branches to an alpha cutout, removed the normal and metallic-roughness maps, and set a flat roughness instead.
+
+#### pine_tree_-_ps1_low_poly
+- **Filename:** pine_tree_-_ps1_low_poly (pine_tree_ps1.blend)
+- **Author:** [Wersaus33](https://sketchfab.com/wersaus33)
+- **Source:** https://sketchfab.com/3d-models/pine-tree-ps1-low-poly-d71ceeb303644e649d09fe8038aa5e47 ("Pine Tree - PS1 Low Poly")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Converted to a `.blend` file, with the origin at the trunk base.
+
+#### free_tree_download
+- **Filename:** free_tree_download.fbx
+- **Author:** [davs27](https://sketchfab.com/daanvs27)
+- **Source:** https://sketchfab.com/3d-models/free-tree-downloadfbx-7e0f8422b91d4bc3a7a4c6d0318082a0 ("Free Tree download.FBX")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+
+#### fantasia_grass
+- **Filename:** fantasia_grass (fantasia_grass.blend)
+- **Author:** [acidzebra](https://www.nexusmods.com/profile/acidzebra); with textures partly by Remiros and Rytelier
+- **Source:** https://www.nexusmods.com/morrowind/mods/56570 ("Fantasia Grass Mod", v2.0 Sea of Grass Edition)
+- **License:** Nexus Mods permissions: free to use with credit, not in works that are sold (copy in `permissions.txt`). Some textures may be by Remiros and Rytelier, so they are credited too.
+- **Changes:** 
+    - Used only the textures (`textures/grass/az`), converted from DDS, and cut each plant out of its texture atlas.
+    - Built new crossed-card meshes for each plant, with the origin at the base, and fern rosettes for the gl03 fronds and du02 sprigs.
+    - Repacked the selected plants into nine 2048 atlases at half resolution, with padding.
+    - Split each card into three rows and added a base-to-tip vertex colour (`wind_mask`) for wind.
+
+#### hand_painted_lamp
+- **Filename:** hand_painted_lamp (hand_painted_lamp.blend)
+- **Author:** [Qifan Zhang](https://sketchfab.com/qifanzhang)
+- **Source:** https://sketchfab.com/3d-models/hand-painted-lamp-fce79955c9224e10ba96efa8d6464c3f ("Hand-painted Lamp")
+- **License:** [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- **Changes:** 
+    - Converted to a `.blend` file and removed the reference sheet.
+    - Joined all parts into one mesh with the origin at the foot of the vine, and decimated it from 125k to 40k faces (leaves and flowers to a quarter, lamp and vines to half).
+    - Removed the normal maps, which did nothing on the emission-only materials, and downscaled the textures (lamp and branch 2048, candle 1024, glass 512).
+    - Made the lamp and branch materials unshaded in Godot; the candle and glass keep their glow.
+
 ## Textures
 
 ### ambient.cg - CC0
@@ -195,7 +242,11 @@ List of textures from ambient.cg:
 - **Version**: 4.2.0
 - **Source**: https://github.com/HungryProton/scatter
 - **License**: MIT, Copyright (c) 2019 HungryProton
-- **Local patches**: `src/cache/scatter_cache.gd` — `cache_file` uses `@export_file_path` and `save_cache()` resolves it with `ResourceUID.ensure_path()`, because Godot 4.4+ stores `@export_file` values as `uid://` and `ResourceSaver.save()` rejects those (error 15). Re-apply when updating.
+- **Local patches**:
+    - `src/cache/scatter_cache.gd` — `cache_file` uses `@export_file_path` and `save_cache()` resolves it with `ResourceUID.ensure_path()`, because Godot 4.4+ stores `@export_file` values as `uid://` and `ResourceSaver.save()` rejects those (error 15). Neo's cache files are git-ignored (`*.scatter_cache.res`, named after their scene by default), so a missing or incomplete cache now rebuilds its scatters one at a time in `scatter_parent` order (and in the editor saves the cache again) instead of leaving them empty; `rebuild_all()` serves `src/moon/tools/rebuild_scatter_caches.gd`. Re-apply when updating.
+    - `src/modifiers/project_on_geometry.gd` — the exclude ray now ends 5 cm past the ground hit instead of exactly on it, because a ray ending on a surface misses it; without this, a body on both the ground layer and the exclude layer (walkable but grass-free, e.g. layers 1 + 3) does not block. Re-apply when updating.
+    - `src/modifiers/randomize_transforms.gd` — the per-axis `scale` (Vector3, applied as `1 + randf() * scale`, so it could only grow) is replaced by `scale_range` (Vector2, min and max of one uniform multiplier); the presets and Neo scenes were converted to the equivalent range. Re-apply when updating, or scenes lose their scale randomization.
+    - `src/scatter.gd` — new "Items From Directory" group: a folder field, a recursive toggle and a button that adds one ScatterItem per mesh (`.res`, `.mesh`) or scene (`.tscn`, `.scn`) in the folder, skipping files that already have an item, and a button that removes all ScatterItems; both undoable. Re-apply when updating.
 
 
 ## Fonts

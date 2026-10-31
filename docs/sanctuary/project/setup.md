@@ -5,20 +5,27 @@
 - clone the repository
 - `cd` into repository
 - run `dotnet restore`
+- done
 
 ## 2. dependencies
 
 - run the `moon/tools/fetch_godot_cef.sh` script
 	- this will download godot-cef binaries (for browser-rendered UI) which are very heavy and make no sense to be tracked by the project itself
+- wait for it to download
+- done
 
-## 3. browser ui
+## 3. baking
 
-- go to the `ui/` directory
-- run `npm run build`
-- development note:
-	- use `npm run dev` instead while you are developing ui
-	- this will give you live ui reload *while ingame*!
-	- [ ] extract
+- A. browser ui
+	- go to the `ui/` directory
+	- run `npm run build`
+	- done
+- B. mesh scattering data
+	- open the `gd` script at `res://moon/tools/rebuild_scatter_caches.gd`
+	- go to `File » Run` (or press `Ctrl + Shift + X`)
+	- look at the output log while the editor opens scenes one after another baking the mesh scattering data untill:
+	- `Rebuild scatter caches: done, X scenes`
+	- done
 
 ## 4. godot editor settings
 
