@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://1axi5eipym20"]
+
+[ext_resource type="Script" uid="uid://drwbypqx4wq5p" path="res://moon/shaders/fluffy-soft-grass/scripts/GrassTraces.cs" id="1_traces"]
+[ext_resource type="Environment" uid="uid://dl0w1yjjdefx1" path="res://moon/shaders/fluffy-soft-grass/game/trace_env.tres" id="2_env"]
+[ext_resource type="Material" uid="uid://cmljdejim00c8" path="res://moon/shaders/fluffy-soft-grass/game/trace_quad_material.tres" id="3_quad"]
+[ext_resource type="Material" uid="uid://c0ykin0ycb56s" path="res://moon/shaders/fluffy-soft-grass/game/trace_particle_process_material.tres" id="4_process"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_footprint"]
+size = Vector2(0.8, 0.8)
+orientation = 1
+
+[node name="GrassTraceEmitter" type="Node3D" unique_id=1267508004]
+
+[node name="Footprints" type="GPUParticles3D" parent="." unique_id=2109884779]
+layers = 1024
+material_override = ExtResource("3_quad")
+amount = 256
+lifetime = 12.0
+process_material = ExtResource("4_process")
+draw_pass_1 = SubResource("QuadMesh_footprint")
+
+[node name="TraceMap" type="SubViewport" parent="." unique_id=1737377422]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 4
+script = ExtResource("1_traces")
+
+[node name="TraceCamera" type="Camera3D" parent="TraceMap" unique_id=2083868322]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
+cull_mask = 1024
+environment = ExtResource("2_env")
+projection = 1
+size = 50.0
+
+[node name="CameraFollow" type="RemoteTransform3D" parent="." unique_id=559949843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+remote_path = NodePath("../TraceMap/TraceCamera")
+update_rotation = false
+update_scale = false

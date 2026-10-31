@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://n8sksqrr2qpd" path="res://fillory/fairies/player/internal/character_controller/effects/audio/AudioInteract.cs" id="10_jqtvs"]
 [ext_resource type="Resource" uid="uid://dx5kojv0cn4yl" path="res://fillory/fairies/player/game/character-controller/audio/wood_audio_interact.tres" id="10_xwjtq"]
 [ext_resource type="Resource" uid="uid://clro80qf2tdqi" path="res://fillory/fairies/player/game/character-controller/audio/water_audio_interact.tres" id="11_10eo5"]
+[ext_resource type="PackedScene" path="res://moon/shaders/fluffy-soft-grass/game/grass_trace_emitter.tscn" id="12_gtrace"]
 
 [node name="Player" unique_id=1679920196 instance=ExtResource("1_fbpun")]
 script = ExtResource("2_8r0nc")
@@ -26,6 +27,12 @@ InputCrouchActionName = "move_crouch"
 InputFlyModeActionName = "move_fly_mode"
 UnderwaterEnv = ExtResource("3_rtvao")
 
+[node name="Fly Ability 3D" parent="." index="6" unique_id=181098017]
+_active = true
+
+[node name="Camera" parent="Head" parent_id_path=PackedInt32Array(760985275) index="0" unique_id=2054136163]
+cull_mask = 1047551
+
 [node name="Head Bob" parent="Head" parent_id_path=PackedInt32Array(760985275) index="1" unique_id=974969197]
 BobCurve = ExtResource("4_waarh")
 
@@ -34,3 +41,5 @@ AudioInteract = ExtResource("5_6q4eq")
 PhysicMaterials = Array[PhysicsMaterial]([ExtResource("6_cb2o2"), ExtResource("7_tfxft"), ExtResource("8_x73fn")])
 AudioInteracts = Array[ExtResource("10_jqtvs")]([ExtResource("5_6q4eq"), ExtResource("9_mdj3p"), ExtResource("10_xwjtq")])
 WaterAudioInteract = ExtResource("11_10eo5")
+
+[node name="GrassTraceEmitter" parent="." index="10" unique_id=247573099 instance=ExtResource("12_gtrace")]

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ls4483hx6njc"]
+
+[ext_resource type="Texture2D" uid="uid://bmnldrfbrerl" path="res://earth/textures/by_author/facade_gaikan/Sand.png" id="1_5if4w"]
+
+[resource]
+resource_name = "ground"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_5if4w")
+roughness = 0.5
+uv1_scale = Vector3(7, 7, 7)

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dr1ukmc7eyhff"]
+
+[ext_resource type="Texture2D" uid="uid://c2780pequq2br" path="res://earth/models/props/astronomic_map/textures/Material.001_baseColor.png" id="1_k6kp4"]
+
+[resource]
+albedo_texture = ExtResource("1_k6kp4")

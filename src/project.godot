@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+proton_scatter/always_show_gizmos=false
+
 [application]
 
 config/name="sanctuary"
@@ -81,6 +85,7 @@ move_fly_mode={
 
 [layer_names]
 
+3d_render/layer_11="grass_walk_traces"
 3d_physics/layer_3="scatter_blocker"
 
 [physics]
@@ -91,3 +96,39 @@ move_fly_mode={
 
 rendering_device/driver.windows="d3d12"
 anti_aliasing/quality/use_debanding=true
+anti_aliasing/quality/use_taa=true
+
+[shader_globals]
+
+wind_noise={
+"type": "sampler2D",
+"value": "res://moon/shaders/wind/wind_noise.tres"
+}
+wind_direction={
+"type": "vec2",
+"value": Vector2(0.5, 0.5)
+}
+wind_speed={
+"type": "float",
+"value": 0.08
+}
+wind_strength={
+"type": "float",
+"value": 0.2
+}
+wind_scale={
+"type": "float",
+"value": 0.01
+}
+trace_map={
+"type": "sampler2D",
+"value": ""
+}
+trace_center={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
+trace_size={
+"type": "float",
+"value": 50.0
+}

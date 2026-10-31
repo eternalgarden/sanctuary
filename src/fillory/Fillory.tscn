@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://bxsn276vthmrt" path="res://fillory/forest/input_arbiter/CursorKeeper.cs" id="6_weyyo"]
 [ext_resource type="Script" uid="uid://ppa70qdc3qxn" path="res://fillory/forest/startup/StartupPlayerSpawner.cs" id="7_ks744"]
 [ext_resource type="FontFile" uid="uid://bnwo2faqkamxi" path="res://earth/fonts/maple_mono/MapleMono-Regular.otf" id="10_ks744"]
-[ext_resource type="FontFile" uid="uid://b77j6rf8cw0ao" path="res://earth/fonts/medien_gestaltung/Medici_Text.ttf" id="11_e3por"]
+[ext_resource type="FontFile" uid="uid://b77j6rf8cw0ao" path="res://earth/fonts/typographer_mediengestaltung/Medici_Text.ttf" id="11_e3por"]
 
 [node name="fillory" type="Node3D" unique_id=506889607]
 script = ExtResource("1_mcln6")
@@ -51,7 +51,7 @@ script = ExtResource("3_w8ka0")
 [node name="startup_scene_spawner" type="Node3D" parent="startup" unique_id=521568542 node_paths=PackedStringArray("WorldRoot")]
 script = ExtResource("6_oqecv")
 StartingScenePath = "uid://qo0nv7hqs537"
-DebugStartingScenePath = "uid://oqthjt6q6q07"
+DebugStartingScenePath = "uid://cesp38blnaflb"
 WorldRoot = NodePath("../../world/environment")
 
 [node name="startup_player_spawner" type="Node3D" parent="startup" unique_id=882839838]

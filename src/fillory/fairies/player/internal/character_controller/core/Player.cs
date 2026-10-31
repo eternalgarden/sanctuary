@@ -27,9 +27,13 @@ public partial class Player : FPSController3D
     [Export] public string InputFlyModeActionName { get; set; } = "move_fly_mode";
     [Export] public Godot.Environment UnderwaterEnv { get; set; }
 
+    // The grass trace emitter's particles. Optional: null if the player scene has no emitter.
+    GpuParticles3D? _footprints;
+
     public override void _Ready()
     {
         Setup();
+        _footprints = GetNodeOrNull<GpuParticles3D>("GrassTraceEmitter/Footprints");
         Emerged += OnControllerEmerged;
         Submerged += OnControllerSubemerged;
 
@@ -90,6 +94,13 @@ public partial class Player : FPSController3D
         else
         {
             Move((float)delta);
+        }
+
+        // The trace map is painted top-down, so footprints left mid-air or while flying would
+        // flatten the grass below. Checked after Move, which updates IsOnFloor.
+        if (_footprints is not null)
+        {
+            _footprints.Emitting = IsOnFloor() && !IsFlyMode();
         }
     }
 
