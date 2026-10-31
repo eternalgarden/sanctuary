@@ -42,4 +42,4 @@ PhysicMaterials = Array[PhysicsMaterial]([ExtResource("6_cb2o2"), ExtResource("7
 AudioInteracts = Array[ExtResource("10_jqtvs")]([ExtResource("5_6q4eq"), ExtResource("9_mdj3p"), ExtResource("10_xwjtq")])
 WaterAudioInteract = ExtResource("11_10eo5")
 
-[node name="GrassTraceEmitter" parent="." instance=ExtResource("12_gtrace")]
+[node name="GrassTraceEmitter" parent="." index="10" unique_id=247573099 instance=ExtResource("12_gtrace")]

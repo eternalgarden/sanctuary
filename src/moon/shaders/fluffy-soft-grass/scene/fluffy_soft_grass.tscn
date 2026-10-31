@@ -318,10 +318,7 @@ material_override = ExtResource("2_ukswk")
 [node name="StaticBody3D" parent="Level/boxes" index="0" unique_id=551759124]
 collision_layer = 5
 
-[node name="boxes_top" parent="Level" index="1" unique_id=1455288697]
-layers = 0
-
-[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/boxes_top" index="0" unique_id=590255385]
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/boxes_top" parent_id_path=PackedInt32Array(1095057981, 1455288697) index="0" unique_id=590255385]
 material_override = ExtResource("3_bsind")
 extra_cull_margin = 0.287
 instance_shader_parameters/instance_count = 32
@@ -332,7 +329,7 @@ PileHeight = 0.287
 GrassMaterial = ExtResource("3_bsind")
 VisualLayers = 1
 
-[node name="StaticBody3D" parent="Level/boxes_top" index="1" unique_id=436971747]
+[node name="StaticBody3D" parent="Level/boxes_top" parent_id_path=PackedInt32Array(1095057981, 1455288697) index="1" unique_id=436971747]
 collision_layer = 5
 
 [node name="grass_bed" parent="Level" index="2" unique_id=780840065]
@@ -358,10 +355,7 @@ material_override = ExtResource("2_ukswk")
 collision_layer = 5
 collision_mask = 0
 
-[node name="slope_top" parent="Level" index="5" unique_id=1753957459]
-layers = 0
-
-[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/slope_top" index="0" unique_id=274161026]
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/slope_top" parent_id_path=PackedInt32Array(1095057981, 1753957459) index="0" unique_id=274161026]
 material_override = ExtResource("3_bsind")
 extra_cull_margin = 0.287
 instance_shader_parameters/instance_count = 32
@@ -372,16 +366,13 @@ PileHeight = 0.287
 GrassMaterial = ExtResource("3_bsind")
 VisualLayers = 1
 
-[node name="StaticBody3D" parent="Level/slope_top" index="1" unique_id=1958942463]
+[node name="StaticBody3D" parent="Level/slope_top" parent_id_path=PackedInt32Array(1095057981, 1753957459) index="1" unique_id=1958942463]
 collision_layer = 5
 
-[node name="sphere" parent="Level" index="6" unique_id=1490647055]
-layers = 0
-
-[node name="StaticBody3D" parent="Level/sphere" index="0" unique_id=698285312]
+[node name="StaticBody3D" parent="Level/sphere" parent_id_path=PackedInt32Array(1095057981, 1490647055) index="0" unique_id=698285312]
 collision_layer = 5
 
-[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/sphere" index="1" unique_id=970055510]
+[node name="grass_shells" type="MultiMeshInstance3D" parent="Level/sphere" parent_id_path=PackedInt32Array(1095057981, 1490647055) index="1" unique_id=970055510]
 material_override = ExtResource("3_bsind")
 extra_cull_margin = 0.6
 instance_shader_parameters/instance_count = 128
