@@ -50,6 +50,9 @@ uniform vec3 rim_color : source_color = vec3(0.35, 0.6, 0.2);
 uniform float rim_power : hint_range(0.5, 8.0) = 3.0;
 
 group_uniforms Other;
+
+uniform int max_fade_band = 3;
+uniform float fade_band_width = 20.0;
 // 0 = a blade on every cell, higher = fewer blades over bare (but solid) floor.
 uniform float density_cutoff : hint_range(0.0, 0.99) = 0.0;
 uniform float tip_width : hint_range(0.0, 1.0) = 0.5;
@@ -71,16 +74,35 @@ varying flat float layer;
 // is no longer bound to the UV, but to the world coordinates.
 varying vec2 world_position;
 
+varying float skip;
+
 
 void vertex() {
     layer = float(INSTANCE_ID) / float(max(instance_count - 1, 1));
 
+
+    vec3 world_position_static = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+    float dist = distance(CAMERA_POSITION_WORLD, world_position_static);
+    float band = floor(dist / fade_band_width);
+    // How many layers to skip at this distance: 1, 2, 4, 8, ...
+    int stride = 1 << int(min(band, float(max_fade_band)));
+
+    // Keep only every stride-th layer; the floor (0) is always kept.
+
+
     VERTEX += NORMAL * layer * pile_height;
 
     world_position = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz; 
+
+        skip = (INSTANCE_ID % stride != 0) ? 1.0 : 0.0;
 }
 
 void fragment() {
+
+    if (skip > 0.5)
+    {
+    discard;
+    }
 
     /*
     Two main noise samples, both are using noise maps with same frequency.
