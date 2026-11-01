@@ -64,8 +64,6 @@ uniform float color_map_scale : hint_range(0.0, 0.5) = 0.2;
 uniform float curve : hint_range(1.0, 5.0) = 2;
 uniform float blade_curve : hint_range(0.2, 5.0) = 2;
 
-// uniform bool test_flip;
-
 // Flat to save GPU from bothering to interpolate, because it is based on an int INSTANCE_ID
 // so it will be same for all vertices of a given face.
 varying flat float layer;
@@ -78,30 +76,38 @@ varying float skip;
 
 
 void vertex() {
-    layer = float(INSTANCE_ID) / float(max(instance_count - 1, 1));
-
-
+    /* 
+    long distance banding optimization.
+    half-done, the banding is visibly choppy in the distance
+    but for now it will suffice, because this grass won't be used for large areas anyway
+    if need arises consider dithering
+    */ 
     vec3 world_position_static = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
     float dist = distance(CAMERA_POSITION_WORLD, world_position_static);
     float band = floor(dist / fade_band_width);
     // How many layers to skip at this distance: 1, 2, 4, 8, ...
     int stride = 1 << int(min(band, float(max_fade_band)));
+    skip = (INSTANCE_ID % stride != 0) ? 1.0 : 0.0;
 
-    // Keep only every stride-th layer; the floor (0) is always kept.
 
+    /* Three little vertex spells */
 
+    // 1. Which layer are we at.
+    layer = float(INSTANCE_ID) / float(max(instance_count - 1, 1));
+
+    // 2. Offset by that layer and arbitrary pile_height which mostly serves to make it smaller.
     VERTEX += NORMAL * layer * pile_height;
 
+    // 3. World position of a transformed VERTEX
     world_position = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz; 
-
-        skip = (INSTANCE_ID % stride != 0) ? 1.0 : 0.0;
 }
 
 void fragment() {
 
+    /* band skip */
     if (skip > 0.5)
     {
-    discard;
+        discard;
     }
 
     /*
@@ -111,21 +117,16 @@ void fragment() {
     blade_noise     – samples the distance (0 is the centreuline of a grass blane)
     */
     vec3 wind = wind_offset(world_position, layer * layer * wind_scaler);
-
     vec2 noise_sampling = (world_position + wind.xy) * tiling;
 
 	float height_noise = texture(grass_pattern, noise_sampling).r;
 	float blade = texture(blade_shape, noise_sampling).r;
 
-    /*
-    Player walk traces.
-    */
-    float trace = trace_col(world_position).r;
-    float inv_trace = 1.0 - trace;
+
 
     /* 
-        Variation noise sampling.
-        Impact grass height and color variation.
+    Variation noise sampling.
+    Impacts grass height and color variation.
     */
 	float variation = texture(variation_noise, world_position * color_map_scale).r;
 
@@ -133,12 +134,15 @@ void fragment() {
     Layer at which this blade's tip is, 0–1.
     */
     float max_layer_pre_trace = (height_noise - density_cutoff) / (1.0 - density_cutoff);
-
-    // todo, a better way to impact grass height with variation map?
+    
+    /*
+    Player walk traces.
+    */
+    float trace = trace_col(world_position).r;
+    float inv_trace = 1.0 - trace;
     float max_layer = max_layer_pre_trace * inv_trace;
     max_layer *= mix(1.0 - variation_height_strength, 1.0, variation);
 
-    
     // rename to something like which layer we are on
     float current_height = layer / max(max_layer,1e-4);
 
